@@ -22,12 +22,9 @@
 
 <body>
 	<div class="wrapper">
-		<nav id="sidebar" class="sidebar js-sidebar">
+	<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="activities.php">
-				<nav id="sidebar" class="sidebar js-sidebar">
-				
-				<!-- <a class="sidebar-brand" href="announce.php"> -->
+				<a class="sidebar-brand" href="admin.php">
 					<span class="align-middle">schoolAdmin</span>
 				</a>
 
@@ -98,13 +95,11 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="teachers.php">
+						<a class="sidebar-link" href="teacher.php">
 							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Teachers</span>
 						</a>
 					</li>
 				</ul>
-			</div>
-		</nav>
 			</div>
 		</nav>
 	
@@ -275,30 +270,20 @@
 				<div class="container-fluid">
 					<div class="row text-muted">
 						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a>								&copy;
-							</p>
+
 						</div>
 						<div class="col-6 text-end">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>
+							<p class="mb-0">
+								<a class="text-muted" href="https://adminkit.io/"
+									target="_blank"><strong>schoolAdmin</strong></a>
+							</p>
 						</div>
 					</div>
 				</div>
 			</footer>
+
 		</div>
+	</div>
 	</div>
 
 	<script src="js/app.js"></script>
