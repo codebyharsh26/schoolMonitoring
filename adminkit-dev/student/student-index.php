@@ -3,7 +3,7 @@
 
 <head>
 	<?php
-	include_once "sidebar.php";
+	include_once "student-sidebar.php";
 	?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -324,7 +324,7 @@
 					</div>
 					<div class="col-6 text-end">
 						<p class="mb-0">
-							<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>schoolAdmin</strong></a>
+							<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>studentAdmin</strong></a>
 						</p>
 					</div>
 				</div>
