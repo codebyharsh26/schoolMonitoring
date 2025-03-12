@@ -3,6 +3,14 @@
 
 <head>
 	<?php
+	$con = mysqli_connect("localhost", "root", "", "bnpss");
+	if (mysqli_connect_errno()) {
+		echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		exit();
+	}
+
+	?>
+	<?php
 	include_once "student-sidebar.php";
 	?>
 	<meta charset="utf-8">
@@ -22,11 +30,30 @@
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
+	<link rel="stylesheet" href="card-direction.css">
 </head>
 
 <body>
-
-
+	<?php
+	$select = "select * from student ";
+	$query = mysqli_query($con, $select);
+	if ($query) {
+		$row = mysqli_fetch_array($query);
+		$id = $row['id'];
+		$name = $row['full_name'];
+		$dob = $row['date_of_birth'];
+		$address = $row['address'];
+		$gender = $row['gender'];
+		$standard = $row['standard'];
+		$roll = $row['roll'];
+		$mother_name = $row['mother_name'];
+		$mother_phone = $row['mother_phone_number'];
+		$father_name = $row['father_name'];
+		$father_phone = $row['father_phone_number'];
+		$blood_group = $row['blood_group'];
+		$school_name = $row['school_name'];
+	}
+	?>
 	<div class="main">
 		<nav class="navbar navbar-expand navbar-light navbar-bg">
 			<a class="sidebar-toggle js-sidebar-toggle">
@@ -172,149 +199,96 @@
 							<i class="align-middle" data-feather="settings"></i>
 						</a>
 
-						<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-							<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-						</a>
-						<div class="dropdown-menu dropdown-menu-end">
-							<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-							<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-							<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Log out</a>
-						</div>
+
 					</li>
 				</ul>
 			</div>
 		</nav>
-
+		<section>
 		<main class="content">
 			<div class="container-fluid p-0">
 
-				<h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
-				<div class="row">
-					<div class="col-xl-12 d-flex">
-						<div class="w-100">
-							<div class="row d-flex flex-nowrap gap-3"> <!-- gap-3 adds spacing -->
-								<div class="col my-card card">
-									<div class="card-body">
-										<h5 class="card-title">Total Teachers</h5>
-										<h1 class="mt-1 mb-3">2.382</h1>
-										<div class="mb-0">
-											<span class="text-danger">-3.65%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
+
+
+				<main class="content">
+					<div class="container-fluid p-0">
+
+
+						<div class="row">
+							<div class="col-md-4 col-xl-3" style="width: 700px; margin-left: 240px;">
+								<div class="card mb-3">
+									<div class="card-header">
+										<h5 class="card-title mb-0">Profile Details</h5>
 									</div>
-								</div>
+									<div class="card-body text-center">
+										<img src="img/avatars/avatar-4.jpg" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
 
-								<div class="col my-card card">
-									<div class="card-body">
-										<h5 class="card-title">Total Students</h5>
-										<h1 class="mt-1 mb-3">14.212</h1>
-										<div class="mb-0">
-											<span class="text-success">5.25%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
-									</div>
-								</div>
-
-								<div class="col my-card card">
-									<div class="card-body">
-										<h5 class="card-title">Total Admission</h5>
-										<h1 class="mt-1 mb-3">$21.300</h1>
-										<div class="mb-0">
-											<span class="text-success">6.65%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
-									</div>
-								</div>
-
-								<div class="col my-card card">
-									<div class="card-body">
-										<h5 class="card-title">Student Left</h5>
-										<h1 class="mt-1 mb-3">64</h1>
-										<div class="mb-0">
-											<span class="text-danger">-2.25%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-3">
-						<div class="card flex-fill w-100">
-							<div class="card-header">
-
-								<h5 class="card-title mb-0">Admission Graph</h5>
-							</div>
-							<div class="card-body d-flex w-100">
-								<div class="align-self-center chart chart-lg">
-									<canvas id="chartjs-dashboard-bar"></canvas>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-2">
-						<div class="card flex-fill w-100">
-							<div class="card-header">
-								<h5 class="card-title mb-0">Overall Academic Result</h5>
-							</div>
-							<div class="card-body d-flex">
-								<div class="align-self-center w-100">
-									<div class="py-3">
-										<div class="chart chart-xs">
-											<canvas id="chartjs-dashboard-pie"></canvas>
-										</div>
-									</div>
-
-									<table class="table mb-0">
-										<tbody>
+										<h5><?php echo $name; ?></h5>
+										<table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
 											<tr>
-												<td>PASS</td>
-												<td class="text-end">90%</td>
+												<td style="text-align: left;">Date-of-birth: </td>
+												<td style="text-align: left;"><?php echo $dob; ?></td>
 											</tr>
 											<tr>
-												<td>FAIL</td>
-												<td class="text-end">10%</td>
+												<td style="text-align: left;">Address:</td>
+												<td style="text-align: left;"><?php echo $address; ?></td>
 											</tr>
+											<tr>
+												<td style="text-align: left;">Gender:</td>
+												<td style="text-align: left;"><?php echo $gender; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">Standard:</td>
+												<td style="text-align: left;"><?php echo $standard; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">Roll-No.:</td>
+												<td style="text-align: left;"><?php echo $roll; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">Mother Name:</td>
+												<td style="text-align: left;"><?php echo $mother_name; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">Mother-Phone-No.:</td>
+												<td style="text-align: left;"><?php echo $mother_phone; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">Father Name:</td>
+												<td style="text-align: left;"><?php echo $father_name; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">Father-Phone-No.:</td>
+												<td style="text-align: left;"><?php echo $father_phone; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">Blood-Group:</td>
+												<td style="text-align: left;"><?php echo $blood_group; ?></td>
+											</tr>
+											<tr>
+												<td style="text-align: left;">School Name:</td>
+												<td style="text-align: left;"><?php echo $school_name; ?></td>
+											</tr>
+										</table>
 
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
-						<div class="card flex-fill">
-							<div class="card-header">
-
-								<h5 class="card-title mb-0">Calendar</h5>
-							</div>
-							<div class="card-body d-flex">
-								<div class="align-self-center w-100">
-									<div class="chart">
-										<div id="datetimepicker-dashboard"></div>
 									</div>
+
 								</div>
 							</div>
+
+
 						</div>
+
 					</div>
-
-				</div>
-
-				<div class="row">
-
-				</div>
 
 			</div>
 		</main>
+		
+		</section>
+
+		<section>
+			
+		</section>
 
 		<footer class="footer">
 			<div class="container-fluid">

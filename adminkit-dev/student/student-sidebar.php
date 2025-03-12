@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>sidebar</title>
 </head>
 
 <body>
@@ -12,7 +12,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="index.html">
-					<span class="align-middle">studentAdmin</span>
+					<span class="align-middle">schoolAdmin</span>
 				</a>
 
 				<ul class="sidebar-nav">
@@ -20,72 +20,60 @@
 						Pages
 					</li>
 
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="index.html">
-							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-						</a>
-					</li>
+					
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
+						<a class="sidebar-link" href="admin-profile.php">
 							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-in.html">
+						<a class="sidebar-link" href="admin-log-out.php">
 							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign Out</span>
 						</a>
 					</li>
 
-					<li class="sidebar-header">
-						Forms
-					</li>
+					
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-buttons.html">
-							<i class="align-middle" data-feather="square"></i> <span class="align-middle">Teacher Enrollment</span>
+						<a class="sidebar-link" href="tr-enroll.php">
+							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Result and Progress</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-forms.html">
-							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Student Enrollment--Forms</span>
+						<a class="sidebar-link" href="std-enroll.php">
+							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Time Table</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-cards.html">
-							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Add Marks</span>
+						<a class="sidebar-link" href="add-marks.php">
+							<i class="align-middle" data-feather="square"></i> <span class="align-middle">Notes</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-typography.html">
-							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Anouncement</span>
+						<a class="sidebar-link" href="announce.php">
+							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Syllabus</span>
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="ui-typography.html">
-							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Activities</span>
+						<a class="sidebar-link" href="activities.php">
+							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Announcement</span>
 						</a>
 					</li>
 
-					<li class="sidebar-header">
-						Monitoring
-					</li>
+					
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="charts-chartjs.html">
-							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Students</span>
+						<a class="sidebar-link" href="student.php">
+							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Activites</span>
 						</a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="maps-google.html">
-							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Teachers</span>
-						</a>
-					</li>
+					
 				</ul>
 			</div>
 		</nav>

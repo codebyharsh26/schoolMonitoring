@@ -12,9 +12,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-	<link rel="canonical" href="https://demo-basic.adminkit.io/upgrade-to-pro.html" />
+	<link rel="canonical" href="https://demo-basic.adminkit.io/ui-cards.html" />
 
-	<title>Upgrade to Pro | AdminKit Demo</title>
+	<title>Cards | AdminKit Demo</title>
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
+						<a class="sidebar-link" href="pages-profile.php">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
             </a>
 					</li>
@@ -79,7 +79,7 @@
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="ui-cards.html">
               <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Cards</span>
             </a>
@@ -277,7 +277,7 @@
                 <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
               </a>
 							<div class="dropdown-menu dropdown-menu-end">
-								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="pages-profile.php"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
@@ -293,117 +293,66 @@
 			<main class="content">
 				<div class="container-fluid p-0">
 
-					<h1 class="h3 mb-3">Upgrade to Pro</h1>
-
+					<div class="mb-3">
+						<h1 class="h3 d-inline align-middle">Cards</h1>
+						<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">
+      Get more card examples
+  </a>
+					</div>
 					<div class="row">
-						<div class="col-12 col-md-11 col-lg-10 col-xl-8 col-xxl-6 mx-auto">
+						<div class="col-12 col-md-6">
 							<div class="card">
-								<img class="card-img-top" src="https://assets.adminkit.io/banners/adminkit-bootstrap-5-admin-template-social-preview.png" alt="AdminKit - Free & Premium Bootstrap 5 Admin Template">
+								<img class="card-img-top" src="img/photos/unsplash-1.jpg" alt="Unsplash">
 								<div class="card-header">
-									<h5 class="card-title">AdminKit PRO</h5>
-									<h6 class="card-subtitle text-muted">Looking for more components and customizations? Check out our premium version. </h6>
+									<h5 class="card-title mb-0">Card with image and links</h5>
 								</div>
 								<div class="card-body">
-									<div class="table-responsive table-upgrade">
-										<table class="table">
-											<thead>
-												<tr>
-													<th></th>
-													<th class="text-center">Basic</th>
-													<th class="text-center">Pro</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td class="text-center"></td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/" class="btn btn-light">Download</a>
-													</td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/pricing" class="btn btn-primary">Upgrade to Pro</a>
-													</td>
-												</tr>
-												<tr>
-													<td>Demo Pages</td>
-													<td class="text-center">15</td>
-													<td class="text-center"><strong>45+</strong></td>
-												</tr>
-												<tr>
-													<td>Plugins</td>
-													<td class="text-center">1</td>
-													<td class="text-center"><strong>10+</strong></td>
-												</tr>
-												<tr>
-													<td>Color Schemes</td>
-													<td class="text-center">1</td>
-													<td class="text-center"><strong>3</strong></td>
-												</tr>
-												<tr>
-													<td>All Bootstrap 5 Components</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Dark Mode 🌙</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Compact Sidebar</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Calendar</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Advanced Forms</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Drag and Drop</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Toast Notifications</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>WYSIWYG Editors</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td>Premium Support</td>
-													<td class="text-center"><span role="img" aria-label="no">❌</span></td>
-													<td class="text-center"><span role="img" aria-label="yes">✔</span></td>
-												</tr>
-												<tr>
-													<td></td>
-													<td class="text-center">Free</td>
-													<td class="text-center">Starting from $59</td>
-												</tr>
-												<tr>
-													<td class="text-center"></td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/" class="btn btn-light">Download</a>
-													</td>
-													<td class="text-center">
-														<a target="_blank" href="https://adminkit.io/pricing" class="btn btn-primary">Upgrade to Pro</a>
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link">Card link</a>
+									<a href="#" class="card-link">Another link</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6">
+							<div class="card">
+								<img class="card-img-top" src="img/photos/unsplash-2.jpg" alt="Unsplash">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Card with image and button</h5>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Card with links</h5>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="card-link">Card link</a>
+									<a href="#" class="card-link">Another link</a>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6">
+							<div class="card">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Card with button</h5>
+								</div>
+								<div class="card-body">
+									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>
 							</div>
 						</div>
 					</div>
+
 				</div>
 			</main>
 

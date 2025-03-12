@@ -23,3 +23,8 @@
 .card-margin {
   gap: 50px;
 }
+
+.custom-align h5 {
+  display: inline;
+  margin-right: 10px;
+}
