@@ -31,6 +31,30 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
 	<link rel="stylesheet" href="card-direction.css">
+	<style>
+		.fill {
+			background: white;
+			margin: 25px;
+		}
+
+		.cus {
+			/* margin: 25px; 	 */
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.cus1 {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+		}
+		.col-12{
+			width: 100%;
+		}
+	</style>
 </head>
 
 <body>
@@ -204,110 +228,161 @@
 				</ul>
 			</div>
 		</nav>
-		<section>
-		<main class="content">
-			<div class="container-fluid p-0">
+		<section style="margin-top: -75px; " >
+			<main class="content">
+				<div class="container-fluid p-0">
 
 
 
-				<main class="content">
-					<div class="container-fluid p-0">
+					<main class="content">
+						<div class="container-fluid p-0">
 
 
-						<div class="row">
-							<div class="col-md-4 col-xl-3" style="width: 700px; margin-left: 240px;">
-								<div class="card mb-3">
-									<div class="card-header">
-										<h5 class="card-title mb-0">Profile Details</h5>
+							<div class="row">
+								<div class="col-12" >
+									<div class="card mb-3">
+										<div class="card-header">
+											<h5 class="card-title mb-0">Profile Details</h5>
+										</div>
+										<div class="card-body text-center">
+											<img src="img/avatars/avatar-4.jpg" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
+
+											<h5><?php echo $name; ?></h5>
+											<table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
+												<tr>
+													<td style="text-align: left;">Date-of-birth: </td>
+													<td style="text-align: left; "><?php echo $dob; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Address:</td>
+													<td style="text-align: left;"><?php echo $address; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Gender:</td>
+													<td style="text-align: left;"><?php echo $gender; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Standard:</td>
+													<td style="text-align: left;"><?php echo $standard; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Roll-No.:</td>
+													<td style="text-align: left;"><?php echo $roll; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Mother Name:</td>
+													<td style="text-align: left;"><?php echo $mother_name; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Mother-Phone-No.:</td>
+													<td style="text-align: left;"><?php echo $mother_phone; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Father Name:</td>
+													<td style="text-align: left;"><?php echo $father_name; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Father-Phone-No.:</td>
+													<td style="text-align: left;"><?php echo $father_phone; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">Blood-Group:</td>
+													<td style="text-align: left;"><?php echo $blood_group; ?></td>
+												</tr>
+												<tr>
+													<td style="text-align: left;">School Name:</td>
+													<td style="text-align: left;"><?php echo $school_name; ?></td>
+												</tr>
+											</table>
+
+										</div>
+
 									</div>
-									<div class="card-body text-center">
-										<img src="img/avatars/avatar-4.jpg" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
-
-										<h5><?php echo $name; ?></h5>
-										<table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
-											<tr>
-												<td style="text-align: left;">Date-of-birth: </td>
-												<td style="text-align: left;"><?php echo $dob; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Address:</td>
-												<td style="text-align: left;"><?php echo $address; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Gender:</td>
-												<td style="text-align: left;"><?php echo $gender; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Standard:</td>
-												<td style="text-align: left;"><?php echo $standard; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Roll-No.:</td>
-												<td style="text-align: left;"><?php echo $roll; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Mother Name:</td>
-												<td style="text-align: left;"><?php echo $mother_name; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Mother-Phone-No.:</td>
-												<td style="text-align: left;"><?php echo $mother_phone; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Father Name:</td>
-												<td style="text-align: left;"><?php echo $father_name; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Father-Phone-No.:</td>
-												<td style="text-align: left;"><?php echo $father_phone; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">Blood-Group:</td>
-												<td style="text-align: left;"><?php echo $blood_group; ?></td>
-											</tr>
-											<tr>
-												<td style="text-align: left;">School Name:</td>
-												<td style="text-align: left;"><?php echo $school_name; ?></td>
-											</tr>
-										</table>
-
-									</div>
-
 								</div>
-							</div>
 
+
+							</div>
 
 						</div>
 
-					</div>
+				</div>
+			</main>
 
-			</div>
-		</main>
-		
 		</section>
-
-		<section>
 			
-		</section>
+		<section>
 
-		<footer class="footer">
-			<div class="container-fluid">
-				<div class="row text-muted">
-					<div class="col-6 text-start">
+			<div class="fill">
+				<div class="cus1 col-md-4 col-xl-3">
+					<div class="cus card flex-fill w-100">
 
-					</div>
-					<div class="col-6 text-end">
-						<p class="mb-0">
-							<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>studentAdmin</strong></a>
-						</p>
+						<div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
+							<div class="card-header">
+								<h5 class="card-title mb-0">Overall Academic Result</h5>
+							</div>
+							<div class="card-body d-flex">
+								<div class="align-self-center w-100">
+									<div class="py-3">
+										<div class="chart chart-xs">
+											<canvas id="chartjs-dashboard-pie"></canvas>
+										</div>
+									</div>
+
+									<table class="table mb-0">
+										<tbody>
+											<tr>
+												<td>PASS</td>
+												<td class="text-end">90%</td>
+											</tr>
+											<tr>
+												<td>FAIL</td>
+												<td class="text-end">10%</td>
+											</tr>
+
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div class="card flex-fill w-100" style="margin: 20px;  ">
+							<div class="card-header">
+
+								<h5 class="card-title mb-0">Admission Graph</h5>
+							</div>
+							<div class="card-body d-flex w-100">
+								<div class="align-self-center chart chart-lg">
+									<canvas id="chartjs-dashboard-bar"></canvas>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</footer>
+
+		</section>
+		<section>
+
+		</section>
+
+<section>
+	<div class="fill">
+	<h5 class="card-title mb-0">Notes</h5>
+
+	</div>
+</section>
+
 	</div>
 	</div>
 
 	<script src="js/app.js"></script>
+	<script>
+        // Auto open the PDF when the page loads
+        window.onload = function() {
+            // Replace 'your-pdf-file.pdf' with the path to your PDF file
+            window.open('your-pdf-file.pdf', '_blank');
+        }
+    </script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
