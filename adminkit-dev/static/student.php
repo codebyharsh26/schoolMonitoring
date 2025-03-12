@@ -45,12 +45,6 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="admin-log-out.php">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign Out</span>
-						</a>
-					</li>
-
 					<li class="sidebar-header">
 						Forms
 					</li>
@@ -97,6 +91,12 @@
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="teacher.php">
 							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Teachers</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="admin-log-out.php">
+							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign Out</span>
 						</a>
 					</li>
 				</ul>

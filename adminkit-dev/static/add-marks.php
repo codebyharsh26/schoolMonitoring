@@ -19,6 +19,138 @@
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--primary-color: #1e2b3a;
+			--secondary-color: #f5f7fa;
+			--accent-color: #3b82f6;
+			--text-color: #333;
+			--border-color: #d1d5db;
+		}
+
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+		}
+
+
+		.form-container {
+			background-color: var(--form-bg);
+			border-radius: 0.5rem;
+			padding: 1.5rem;
+			margin-bottom: 1.5rem;
+			box-shadow: var(--card-shadow);
+		}
+
+		.form-title {
+			font-size: 24px;
+			font-weight: 600;
+			margin-bottom: 15px;
+			color: #1e2b3a;
+		}
+
+		.form-description {
+			color: #6b7280;
+			margin-bottom: 25px;
+		}
+
+		.form-section {
+			background-color: white;
+			border-radius: 8px;
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+
+		.form-section-title {
+			font-size: 18px;
+			font-weight: 600;
+			margin-bottom: 20px;
+			color: #1e2b3a;
+		}
+
+		.form-row {
+			display: flex;
+			flex-wrap: wrap;
+			margin: 0 -10px 20px;
+		}
+
+		.form-group {
+			flex: 1;
+			min-width: 250px;
+			padding: 0 10px;
+			margin-bottom: 15px;
+		}
+
+		.form-label {
+			display: block;
+			margin-bottom: 8px;
+			font-weight: 500;
+		}
+
+		.required::after {
+			content: " *";
+			color: #ef4444;
+		}
+
+		.form-control {
+			width: 100%;
+			padding: 10px 12px;
+			border: 1px solid var(--border-color);
+			border-radius: 6px;
+			background-color: #f9fafb;
+			font-size: 14px;
+		}
+
+		.form-control:focus {
+			outline: none;
+			border-color: var(--accent-color);
+			box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+		}
+
+		.form-actions {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 30px;
+		}
+
+		.btn {
+			padding: 10px 20px;
+			font-size: 14px;
+			font-weight: 500;
+			border-radius: 6px;
+			cursor: pointer;
+			transition: all 0.2s;
+		}
+
+		.btn-primary {
+			background-color: var(--accent-color);
+			color: white;
+			border: none;
+		}
+
+		.btn-primary:hover {
+			background-color: #2563eb;
+		}
+
+		.btn-secondary {
+			background-color: white;
+			color: #4b5563;
+			border: 1px solid #d1d5db;
+			margin-right: 10px;
+		}
+
+		.btn-secondary:hover {
+			background-color: #f9fafb;
+		}
+
+		@media (max-width: 768px) {
+			.form-group {
+				flex: 0 0 100%;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -44,13 +176,6 @@
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="admin-profile.php">
 							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="admin-log-out.php">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign
-								Out</span>
 						</a>
 					</li>
 
@@ -107,10 +232,17 @@
 							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Teachers</span>
 						</a>
 					</li>
+
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="admin-log-out.php">
+							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign
+								Out</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</nav>
-
 
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
@@ -294,74 +426,124 @@
 					</ul>
 				</div>
 			</nav>
-		</div>
-			
-		<!-- <main class="content">
-					<div class="container-fluid p-0">
-						
-						<div class="mb-3">
-							<h1 class="h3 d-inline align-middle">Cards</h1>
-							<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">
-								Get more card examples
-							</a>
-						</div>
-						<div class="row">
-							<div class="col-12 col-md-6">
-							<div class="card">
-								<img class="card-img-top" src="img/photos/unsplash-1.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Card with image and links</h5>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link">Card link</a>
-									<a href="#" class="card-link">Another link</a>
-								</div>
-							</div>
+			<div class="form-container">
+				<h1 class="form-title">Student Marks Entry Form</h1>
+				<p class="form-description">Please complete all required fields to record student's academic
+					performance.</p>
+
+				<div class="form-section">
+					<h2 class="form-section-title">Student Information</h2>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="studentId" class="form-label required">Student ID</label>
+							<input type="text" id="studentId" class="form-control" placeholder="Enter student ID"
+								required>
 						</div>
 
-						<div class="col-12 col-md-6">
-							<div class="card">
-								<img class="card-img-top" src="img/photos/unsplash-2.jpg" alt="Unsplash">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Card with image and button</h5>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="btn btn-primary">Go somewhere</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-12 col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Card with links</h5>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="card-link">Card link</a>
-									<a href="#" class="card-link">Another link</a>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-12 col-md-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title mb-0">Card with button</h5>
-								</div>
-								<div class="card-body">
-									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<a href="#" class="btn btn-primary">Go somewhere</a>
-								</div>
-							</div>
+						<div class="form-group">
+							<label for="studentName" class="form-label required">Full Name</label>
+							<input type="text" id="studentName" class="form-control"
+								placeholder="Enter student's full name" required>
 						</div>
 					</div>
 
+					<div class="form-row">
+						<div class="form-group">
+							<label for="class" class="form-label required">Class</label>
+							<select id="class" class="form-control" required>
+								<option value="">Select</option>
+								<option value="1">Class 1</option>
+								<option value="2">Class 2</option>
+								<option value="3">Class 3</option>
+								<option value="4">Class 4</option>
+								<option value="5">Class 5</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="section" class="form-label required">Section</label>
+							<select id="section" class="form-control" required>
+								<option value="">Select</option>
+								<option value="A">A</option>
+								<option value="B">B</option>
+								<option value="C">C</option>
+							</select>
+						</div>
+
+						<div class="form-group">
+							<label for="term" class="form-label required">Term</label>
+							<select id="term" class="form-control" required>
+								<option value="">Select</option>
+								<option value="1">Term 1</option>
+								<option value="2">Term 2</option>
+								<option value="3">Term 3</option>
+							</select>
+						</div>
+					</div>
 				</div>
-			</main> -->
+
+				<div class="form-section">
+					<h2 class="form-section-title">Subject Marks</h2>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="subject1" class="form-label required">Mathematics</label>
+							<input type="number" id="subject1" class="form-control" min="0" max="100"
+								placeholder="Enter marks out of 100" required>
+						</div>
+
+						<div class="form-group">
+							<label for="subject2" class="form-label required">Science</label>
+							<input type="number" id="subject2" class="form-control" min="0" max="100"
+								placeholder="Enter marks out of 100" required>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="subject3" class="form-label required">English</label>
+							<input type="number" id="subject3" class="form-control" min="0" max="100"
+								placeholder="Enter marks out of 100" required>
+						</div>
+
+						<div class="form-group">
+							<label for="subject4" class="form-label required">Social Studies</label>
+							<input type="number" id="subject4" class="form-control" min="0" max="100"
+								placeholder="Enter marks out of 100" required>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="subject5" class="form-label required">Computer Science</label>
+							<input type="number" id="subject5" class="form-control" min="0" max="100"
+								placeholder="Enter marks out of 100" required>
+						</div>
+
+						<div class="form-group">
+							<label for="totalMarks" class="form-label">Total Marks</label>
+							<input type="number" id="totalMarks" class="form-control" readonly>
+						</div>
+					</div>
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="remarks" class="form-label">Remarks</label>
+							<textarea id="remarks" class="form-control" rows="3"
+								placeholder="Enter teacher's remarks"></textarea>
+						</div>
+					</div>
+				</div>
+
+				<div class="form-actions">
+					<button type="button" class="btn btn-secondary">Cancel</button>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>
+			</div>
+		</div>
 	</div>
 	<script src="js/app.js"></script>
 </body>
+
 </html>
