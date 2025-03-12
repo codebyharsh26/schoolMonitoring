@@ -28,11 +28,7 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="admin-log-out.php">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign Out</span>
-						</a>
-					</li>
+					
 
 					
 
@@ -72,10 +68,17 @@
 							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Activites</span>
 						</a>
 					</li>
-
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="admin-log-out.php">
+							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign Out</span>
+						</a>
+					</li>
 					
 				</ul>
 			</div>
+			<footer>
+			
+			</footer>
 		</nav>
 </body>
 
