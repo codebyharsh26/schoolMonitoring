@@ -22,11 +22,9 @@
 
 <body>
 	<div class="wrapper">
-		<nav id="sidebar" class="sidebar js-sidebar">
+	<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="student.php">
-				<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="admin.php">
 					<span class="align-middle">schoolAdmin</span>
 				</a>
 
@@ -103,10 +101,9 @@
 					</li>
 				</ul>
 			</div>
-				</div>
-			</div>
 		</nav>
-
+			
+		
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
@@ -249,12 +246,12 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
-
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+							
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-              </a>
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
@@ -268,15 +265,14 @@
 					</ul>
 				</div>
 			</nav>
-
 			<!-- <main class="content">
 				<div class="container-fluid p-0">
-
+					
 					<div class="mb-3">
 						<h1 class="h3 d-inline align-middle">Chart.js</h1>
 						<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">
-      Get more chart examples
-  </a>
+							Get more chart examples
+						</a>
 					</div>
 					<div class="row">
 						<div class="col-12 col-lg-6">
@@ -292,7 +288,7 @@
 								</div>
 							</div>
 						</div>
-
+						
 						<div class="col-12 col-lg-6">
 							<div class="card">
 								<div class="card-header">
@@ -306,7 +302,7 @@
 								</div>
 							</div>
 						</div>
-
+						
 						<div class="col-12 col-lg-6">
 							<div class="card">
 								<div class="card-header">
@@ -320,7 +316,7 @@
 								</div>
 							</div>
 						</div>
-
+						
 						<div class="col-12 col-lg-6">
 							<div class="card">
 								<div class="card-header">
@@ -335,40 +331,29 @@
 							</div>
 						</div>
 					</div>
-
+					
 				</div>
 			</main> -->
-
+			
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
 						<div class="col-6 text-start">
-							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a>								&copy;
-							</p>
+
 						</div>
 						<div class="col-6 text-end">
-							<ul class="list-inline">
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Support</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Help Center</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Privacy</a>
-								</li>
-								<li class="list-inline-item">
-									<a class="text-muted" href="https://adminkit.io/" target="_blank">Terms</a>
-								</li>
-							</ul>
+							<p class="mb-0">
+								<a class="text-muted" href="https://adminkit.io/"
+									target="_blank"><strong>schoolAdmin</strong></a>
+							</p>
 						</div>
 					</div>
 				</div>
 			</footer>
 		</div>
 	</div>
-
+	
+</div>
 	<script src="js/app.js"></script>
 
 	<script>
