@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <main role="main">
+    <main role="main" style="margin-top: 3rem;">
         <div class="container">
             <div class="container bg-light">
                 <h1 class="h3 mb-4"><strong>Students</strong> Details</h1>
@@ -90,9 +90,8 @@
                 </div>
             </div>
         </div>
-        </div>
         <!-- Pagination -->
-        <nav aria-label="Page navigation">
+        <nav>
             <ul class="pagination justify-content-center">
                 <?php if ($page > 1): ?>
                     <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
