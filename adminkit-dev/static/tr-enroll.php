@@ -16,6 +16,7 @@
 	<link rel="canonical" href="https://demo-basic.adminkit.io/ui-buttons.html" />
 
 	<title>Teacher-Enrollment</title>
+	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -696,7 +697,35 @@
 	</div>
 
 	<script src="js/app.js"></script>
+	<?php
+	include_once 'connection.php';
 
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$teacher_name = $_POST['teacher_name'];
+		$teacher_phone = $_POST['teacher_phone'];
+		$teacher_email = $_POST['teacher_email'];
+		$teacher_salary = $_POST['teacher_salary'];
+		$teacher_dob = $_POST['teacher_dob'];
+		$teacher_address = $_POST['teacher_address'];
+		$qualification = $_POST['qualification'];
+		$subject = $_POST['subject'];
+		$std = $_POST['std'];
+		$gender = $_POST['gender'];
+		$school_name = $_POST['school_name'];
+		$school_no = $_POST['school_no'];
+
+		$insert_query = "INSERT INTO teacher_1 (teacher_name, teacher_phone, teacher_email, teacher_salary, teacher_dob, teacher_address, qualification, subject, std, gender, school_name, school_no) 
+                        VALUES (NULL,'$teacher_name', '$teacher_phone', '$teacher_email', '$teacher_salary', '$teacher_dob', '$teacher_address', '$qualification', '$subject', '$std', '$gender', '$school_name', '$school_no')";
+		$insert_result = mysqli_query($conn, $insert_query);
+
+		if ($insert_result) {
+			header("Location: teacher.php");
+			exit();
+		} else {
+			echo "Error: " . mysqli_error($conn);
+		}
+	}
+	?>
 </body>
 
 </html>

@@ -15,14 +15,16 @@
 	<link rel="canonical" href="https://demo-basic.adminkit.io/charts-chartjs.html" />
 
 	<title>Student report</title>
+	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/student-list-display.css">
 </head>
 
 <body>
 	<div class="wrapper">
-	<nav id="sidebar" class="sidebar js-sidebar">
+		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="admin.php">
 					<span class="align-middle">schoolAdmin</span>
@@ -102,13 +104,13 @@
 				</ul>
 			</div>
 		</nav>
-			
-		
+
+
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
@@ -248,7 +250,7 @@
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
 								<i class="align-middle" data-feather="settings"></i>
 							</a>
-							
+
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
 								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
 							</a>
@@ -265,76 +267,10 @@
 					</ul>
 				</div>
 			</nav>
-			<!-- <main class="content">
-				<div class="container-fluid p-0">
-					
-					<div class="mb-3">
-						<h1 class="h3 d-inline align-middle">Chart.js</h1>
-						<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">
-							Get more chart examples
-						</a>
-					</div>
-					<div class="row">
-						<div class="col-12 col-lg-6">
-							<div class="card flex-fill w-100">
-								<div class="card-header">
-									<h5 class="card-title">Line Chart</h5>
-									<h6 class="card-subtitle text-muted">A line chart is a way of plotting data points on a line.</h6>
-								</div>
-								<div class="card-body">
-									<div class="chart">
-										<canvas id="chartjs-line"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-12 col-lg-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Bar Chart</h5>
-									<h6 class="card-subtitle text-muted">A bar chart provides a way of showing data values represented as vertical bars.</h6>
-								</div>
-								<div class="card-body">
-									<div class="chart">
-										<canvas id="chartjs-bar"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-12 col-lg-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Doughnut Chart</h5>
-									<h6 class="card-subtitle text-muted">Doughnut charts are excellent at showing the relational proportions between data.</h6>
-								</div>
-								<div class="card-body">
-									<div class="chart chart-sm">
-										<canvas id="chartjs-doughnut"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-						
-						<div class="col-12 col-lg-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Pie Chart</h5>
-									<h6 class="card-subtitle text-muted">Pie charts are excellent at showing the relational proportions between data.</h6>
-								</div>
-								<div class="card-body">
-									<div class="chart chart-sm">
-										<canvas id="chartjs-pie"></canvas>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-				</div>
-			</main> -->
-			
+
+			<?php
+			include_once("student-list-display.php");
+			?>
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
@@ -351,239 +287,291 @@
 				</div>
 			</footer>
 		</div>
-	</div>
-	
-</div>
-	<script src="js/app.js"></script>
+		<script src="js/app.js"></script>
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('.edit-btn').click(function() {
+					$('#edit-id').val($(this).data('id'));
+					$('#edit-full_name').val($(this).data('full_name'));
+					$('#edit-date_of_birth').val($(this).data('date_of_birth'));
+					$('#edit-address').val($(this).data('address'));
+					$('#edit-gender').val($(this).data('gender'));
+					$('#edit-standard').val($(this).data('standard'));
+					$('#edit-roll').val($(this).data('roll'));
+					$('#edit-mother_name').val($(this).data('mother_name'));
+					$('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
+					$('#edit-father_name').val($(this).data('father_name'));
+					$('#edit-father_phone_number').val($(this).data('father_phone_number'));
+					$('#edit-blood_group').val($(this).data('blood_group'));
+					$('#edit-school_name').val($(this).data('school_name'));
+					$('#edit-school_no').val($(this).data('school_no'));
+					$('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
+				});
 
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Line chart
-			new Chart(document.getElementById("chartjs-line"), {
-				type: "line",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "Sales ($)",
-						fill: true,
-						backgroundColor: "transparent",
-						borderColor: window.theme.primary,
-						data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
-					}, {
-						label: "Orders",
-						fill: true,
-						backgroundColor: "transparent",
-						borderColor: "#adb5bd",
-						borderDash: [4, 4],
-						data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
+				$('.view-btn').click(function() {
+					$('#view-full_name').text($(this).data('full_name'));
+					$('#view-date_of_birth').text($(this).data('date_of_birth'));
+					$('#view-address').text($(this).data('address'));
+					$('#view-gender').text($(this).data('gender'));
+					$('#view-standard').text($(this).data('standard'));
+					$('#view-roll').text($(this).data('roll'));
+					$('#view-mother_name').text($(this).data('mother_name'));
+					$('#view-mother_phone_number').text($(this).data('mother_phone_number'));
+					$('#view-father_name').text($(this).data('father_name'));
+					$('#view-father_phone_number').text($(this).data('father_phone_number'));
+					$('#view-blood_group').text($(this).data('blood_group'));
+					$('#view-school_name').text($(this).data('school_name'));
+					$('#view-school_no').text($(this).data('school_no'));
+				});
+			});
+		</script>
+
+		<script>
+			$(document).ready(function() {
+				let deleteUrl = "";
+
+				$(".delete-btn").click(function() {
+					let studentId = $(this).data("id");
+					let page = $(this).data("page");
+
+					deleteUrl = "stu_delete.php?deleteid=" + studentId + "&page=" + page;
+				});
+
+				$("#confirmDeleteBtn").click(function() {
+					window.location.href = deleteUrl;
+				});
+			});
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// Line chart
+				new Chart(document.getElementById("chartjs-line"), {
+					type: "line",
+					data: {
+						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+						datasets: [{
+							label: "Sales ($)",
+							fill: true,
+							backgroundColor: "transparent",
+							borderColor: window.theme.primary,
+							data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
+						}, {
+							label: "Orders",
+							fill: true,
+							backgroundColor: "transparent",
+							borderColor: "#adb5bd",
+							borderDash: [4, 4],
+							data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
+						}]
 					},
-					tooltips: {
-						intersect: false
-					},
-					hover: {
-						intersect: true
-					},
-					plugins: {
-						filler: {
-							propagate: false
+					options: {
+						maintainAspectRatio: false,
+						legend: {
+							display: false
+						},
+						tooltips: {
+							intersect: false
+						},
+						hover: {
+							intersect: true
+						},
+						plugins: {
+							filler: {
+								propagate: false
+							}
+						},
+						scales: {
+							xAxes: [{
+								reverse: true,
+								gridLines: {
+									color: "rgba(0,0,0,0.05)"
+								}
+							}],
+							yAxes: [{
+								ticks: {
+									stepSize: 500
+								},
+								display: true,
+								borderDash: [5, 5],
+								gridLines: {
+									color: "rgba(0,0,0,0)",
+									fontColor: "#fff"
+								}
+							}]
 						}
-					},
-					scales: {
-						xAxes: [{
-							reverse: true,
-							gridLines: {
-								color: "rgba(0,0,0,0.05)"
-							}
-						}],
-						yAxes: [{
-							ticks: {
-								stepSize: 500
-							},
-							display: true,
-							borderDash: [5, 5],
-							gridLines: {
-								color: "rgba(0,0,0,0)",
-								fontColor: "#fff"
-							}
+					}
+				});
+			});
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// Bar chart
+				new Chart(document.getElementById("chartjs-bar"), {
+					type: "bar",
+					data: {
+						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+						datasets: [{
+							label: "Last year",
+							backgroundColor: window.theme.primary,
+							borderColor: window.theme.primary,
+							hoverBackgroundColor: window.theme.primary,
+							hoverBorderColor: window.theme.primary,
+							data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+							barPercentage: .75,
+							categoryPercentage: .5
+						}, {
+							label: "This year",
+							backgroundColor: "#dee2e6",
+							borderColor: "#dee2e6",
+							hoverBackgroundColor: "#dee2e6",
+							hoverBorderColor: "#dee2e6",
+							data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
+							barPercentage: .75,
+							categoryPercentage: .5
 						}]
-					}
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Bar chart
-			new Chart(document.getElementById("chartjs-bar"), {
-				type: "bar",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "Last year",
-						backgroundColor: window.theme.primary,
-						borderColor: window.theme.primary,
-						hoverBackgroundColor: window.theme.primary,
-						hoverBorderColor: window.theme.primary,
-						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}, {
-						label: "This year",
-						backgroundColor: "#dee2e6",
-						borderColor: "#dee2e6",
-						hoverBackgroundColor: "#dee2e6",
-						hoverBorderColor: "#dee2e6",
-						data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
 					},
-					scales: {
-						yAxes: [{
-							gridLines: {
-								display: false
-							},
-							stacked: false,
-							ticks: {
-								stepSize: 20
-							}
-						}],
-						xAxes: [{
-							stacked: false,
-							gridLines: {
-								color: "transparent"
-							}
+					options: {
+						maintainAspectRatio: false,
+						legend: {
+							display: false
+						},
+						scales: {
+							yAxes: [{
+								gridLines: {
+									display: false
+								},
+								stacked: false,
+								ticks: {
+									stepSize: 20
+								}
+							}],
+							xAxes: [{
+								stacked: false,
+								gridLines: {
+									color: "transparent"
+								}
+							}]
+						}
+					}
+				});
+			});
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// Doughnut chart
+				new Chart(document.getElementById("chartjs-doughnut"), {
+					type: "doughnut",
+					data: {
+						labels: ["Social", "Search Engines", "Direct", "Other"],
+						datasets: [{
+							data: [260, 125, 54, 146],
+							backgroundColor: [
+								window.theme.primary,
+								window.theme.success,
+								window.theme.warning,
+								"#dee2e6"
+							],
+							borderColor: "transparent"
 						}]
+					},
+					options: {
+						maintainAspectRatio: false,
+						cutoutPercentage: 65,
+						legend: {
+							display: false
+						}
 					}
-				}
+				});
 			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Doughnut chart
-			new Chart(document.getElementById("chartjs-doughnut"), {
-				type: "doughnut",
-				data: {
-					labels: ["Social", "Search Engines", "Direct", "Other"],
-					datasets: [{
-						data: [260, 125, 54, 146],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.success,
-							window.theme.warning,
-							"#dee2e6"
-						],
-						borderColor: "transparent"
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					cutoutPercentage: 65,
-					legend: {
-						display: false
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// Pie chart
+				new Chart(document.getElementById("chartjs-pie"), {
+					type: "pie",
+					data: {
+						labels: ["Social", "Search Engines", "Direct", "Other"],
+						datasets: [{
+							data: [260, 125, 54, 146],
+							backgroundColor: [
+								window.theme.primary,
+								window.theme.warning,
+								window.theme.danger,
+								"#dee2e6"
+							],
+							borderColor: "transparent"
+						}]
+					},
+					options: {
+						maintainAspectRatio: false,
+						legend: {
+							display: false
+						}
 					}
-				}
+				});
 			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Pie chart
-			new Chart(document.getElementById("chartjs-pie"), {
-				type: "pie",
-				data: {
-					labels: ["Social", "Search Engines", "Direct", "Other"],
-					datasets: [{
-						data: [260, 125, 54, 146],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.warning,
-							window.theme.danger,
-							"#dee2e6"
-						],
-						borderColor: "transparent"
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// Radar chart
+				new Chart(document.getElementById("chartjs-radar"), {
+					type: "radar",
+					data: {
+						labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
+						datasets: [{
+							label: "Model X",
+							backgroundColor: "rgba(0, 123, 255, 0.2)",
+							borderColor: window.theme.primary,
+							pointBackgroundColor: window.theme.primary,
+							pointBorderColor: "#fff",
+							pointHoverBackgroundColor: "#fff",
+							pointHoverBorderColor: window.theme.primary,
+							data: [70, 53, 82, 60, 33]
+						}, {
+							label: "Model S",
+							backgroundColor: "rgba(220, 53, 69, 0.2)",
+							borderColor: window.theme.danger,
+							pointBackgroundColor: window.theme.danger,
+							pointBorderColor: "#fff",
+							pointHoverBackgroundColor: "#fff",
+							pointHoverBorderColor: window.theme.danger,
+							data: [35, 38, 65, 85, 84]
+						}]
+					},
+					options: {
+						maintainAspectRatio: false
 					}
-				}
+				});
 			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Radar chart
-			new Chart(document.getElementById("chartjs-radar"), {
-				type: "radar",
-				data: {
-					labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
-					datasets: [{
-						label: "Model X",
-						backgroundColor: "rgba(0, 123, 255, 0.2)",
-						borderColor: window.theme.primary,
-						pointBackgroundColor: window.theme.primary,
-						pointBorderColor: "#fff",
-						pointHoverBackgroundColor: "#fff",
-						pointHoverBorderColor: window.theme.primary,
-						data: [70, 53, 82, 60, 33]
-					}, {
-						label: "Model S",
-						backgroundColor: "rgba(220, 53, 69, 0.2)",
-						borderColor: window.theme.danger,
-						pointBackgroundColor: window.theme.danger,
-						pointBorderColor: "#fff",
-						pointHoverBackgroundColor: "#fff",
-						pointHoverBorderColor: window.theme.danger,
-						data: [35, 38, 65, 85, 84]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false
-				}
+		</script>
+		<script>
+			document.addEventListener("DOMContentLoaded", function() {
+				// Polar Area chart
+				new Chart(document.getElementById("chartjs-polar-area"), {
+					type: "polarArea",
+					data: {
+						labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
+						datasets: [{
+							label: "Model S",
+							data: [35, 38, 65, 70, 24],
+							backgroundColor: [
+								window.theme.primary,
+								window.theme.success,
+								window.theme.danger,
+								window.theme.warning,
+								window.theme.info
+							]
+						}]
+					},
+					options: {
+						maintainAspectRatio: false
+					}
+				});
 			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Polar Area chart
-			new Chart(document.getElementById("chartjs-polar-area"), {
-				type: "polarArea",
-				data: {
-					labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
-					datasets: [{
-						label: "Model S",
-						data: [35, 38, 65, 70, 24],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.success,
-							window.theme.danger,
-							window.theme.warning,
-							window.theme.info
-						]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false
-				}
-			});
-		});
-	</script>
-
+		</script>
 </body>
 
 </html>

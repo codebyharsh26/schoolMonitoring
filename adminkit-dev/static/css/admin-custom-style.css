@@ -23,3 +23,7 @@
 .card-margin {
   gap: 50px;
 }
+.admin-custom-card-content h1 {
+  margin-left: 1.5rem;
+}
+

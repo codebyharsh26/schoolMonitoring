@@ -4,6 +4,7 @@
 <head>
 	<?php
 	include_once "sidebar.php";
+	include_once "connection.php";
 	?>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,6 +23,7 @@
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
+	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 </head>
 
 <body>
@@ -196,46 +198,33 @@
 						<div class="w-100">
 							<div class="row d-flex flex-nowrap gap-3"> <!-- gap-3 adds spacing -->
 								<div class="col my-card card">
-									<div class="card-body">
+									<div class="admin-custom-card-content card-body">
 										<h5 class="card-title">Total Teachers</h5>
-										<h1 class="mt-1 mb-3">2.382</h1>
-										<div class="mb-0">
-											<span class="text-danger">-3.65%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
+										<h1 class=" mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">55</h1>
 									</div>
 								</div>
 
 								<div class="col my-card card">
-									<div class="card-body">
+									<div class="admin-custom-card-content card-body">
 										<h5 class="card-title">Total Students</h5>
-										<h1 class="mt-1 mb-3">14.212</h1>
-										<div class="mb-0">
-											<span class="text-success">5.25%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
+										<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">269</h1>
+
 									</div>
 								</div>
 
 								<div class="col my-card card">
-									<div class="card-body">
+									<div class="admin-custom-card-content card-body">
 										<h5 class="card-title">Total Admission</h5>
-										<h1 class="mt-1 mb-3">$21.300</h1>
-										<div class="mb-0">
-											<span class="text-success">6.65%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
+										<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">19</h1>
+
 									</div>
 								</div>
 
 								<div class="col my-card card">
-									<div class="card-body">
+									<div class="admin-custom-card-content card-body">
 										<h5 class="card-title">Student Left</h5>
-										<h1 class="mt-1 mb-3">64</h1>
-										<div class="mb-0">
-											<span class="text-danger">-2.25%</span>
-											<span class="text-muted">Since last week</span>
-										</div>
+										<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">10</h1>
+
 									</div>
 								</div>
 							</div>

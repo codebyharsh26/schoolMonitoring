@@ -18,14 +18,14 @@
 	<title>Forms | AdminKit Demo</title>
 
 	<link href="css/app.css" rel="stylesheet">
+	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
 	<?php
 	// include_once "sidebar.php";
 	?>
 
 	<style>
-		<style>
-
 		/* Main Theme Colors and Variables */
 		:root {
 			--primary-color: #3a7dda;
@@ -264,7 +264,6 @@
 			border-top: 1px solid var(--border-color);
 			margin-top: 1.5rem;
 		}
-	</style>
 	</style>
 </head>
 
@@ -541,178 +540,178 @@
 				</div>
 			</nav>
 
-				<div class="wrapper">
-					<div class="main">
-						<main class="content">
-							<div class="container-fluid p-0">
+			<div class="wrapper">
+				<div class="main">
+					<main class="content">
+						<div class="container-fluid p-0">
 
-								<h1>Student Enrollment Form</h1>
-								<p class="form-description">Please complete all required fields to register as a student
-									in our
-									school monitoring system.</p>
+							<h1>Student Enrollment Form</h1>
+							<p class="form-description">Please complete all required fields to register as a student
+								in our
+								school monitoring system.</p>
 
-								<form id="studentEnrollmentForm">
-									<div class="form-section">
-										<h2>Personal Information</h2>
+							<form id="studentEnrollmentForm">
+								<div class="form-section">
+									<h2>Personal Information</h2>
 
-										<div class="student-photo">
-											<div class="photo-placeholder">
-												Student Photo
-											</div>
-											<input type="file" id="studentPhoto" name="studentPhoto" accept="image/*"
-												class="photo-upload">
+									<div class="student-photo">
+										<div class="photo-placeholder">
+											Student Photo
 										</div>
+										<input type="file" id="studentPhoto" name="studentPhoto" accept="image/*"
+											class="photo-upload">
+									</div>
 
-										<div class="form-row">
-											<div class="form-group">
-												<label for="name" class="required">Full Name</label>
-												<input type="text" id="name" name="name" required>
-											</div>
-											<div class="form-group">
-												<label for="roll" class="required">Roll Number</label>
-												<input type="text" id="roll" name="roll" required>
-											</div>
+									<div class="form-row">
+										<div class="form-group">
+											<label for="name" class="required">Full Name</label>
+											<input type="text" id="name" name="name" required>
 										</div>
-
-										<div class="form-row">
-											<div class="form-group">
-												<label for="dob" class="required">Date of Birth</label>
-												<input type="date" id="dob" name="dob" required>
-											</div>
-											<div class="form-group">
-												<label for="gender" class="required">Gender</label>
-												<select id="gender" name="gender" required>
-													<option value="">Select</option>
-													<option value="male">Male</option>
-													<option value="female">Female</option>
-													<option value="nonBinary">Non-binary</option>
-													<option value="preferNotToSay">Prefer not to say</option>
-												</select>
-											</div>
-										</div>
-
-										<div class="form-row">
-											<div class="form-group">
-												<label for="bloodGroup" class="required">Blood Group</label>
-												<select id="bloodGroup" name="bloodGroup" required>
-													<option value="">Select</option>
-													<option value="A+">A+</option>
-													<option value="A-">A-</option>
-													<option value="B+">B+</option>
-													<option value="B-">B-</option>
-													<option value="AB+">AB+</option>
-													<option value="AB-">AB-</option>
-													<option value="O+">O+</option>
-													<option value="O-">O-</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<label for="address" class="required">Residential Address</label>
-												<textarea id="address" name="address" rows="1" required></textarea>
-											</div>
+										<div class="form-group">
+											<label for="roll" class="required">Roll Number</label>
+											<input type="text" id="roll" name="roll" required>
 										</div>
 									</div>
 
-									<div class="form-section">
-										<h2>Parent/Guardian Information</h2>
-										<div class="form-row">
-											<div class="form-group">
-												<label for="fatherName" class="required">Father's Name</label>
-												<input type="text" id="fatherName" name="fatherName" required>
-											</div>
-											<div class="form-group">
-												<label for="fatherPhone" class="required">Father's Phone Number</label>
-												<input type="tel" id="fatherPhone" name="fatherPhone" required>
-											</div>
+									<div class="form-row">
+										<div class="form-group">
+											<label for="dob" class="required">Date of Birth</label>
+											<input type="date" id="dob" name="dob" required>
 										</div>
-
-										<div class="form-row">
-											<div class="form-group">
-												<label for="motherName" class="required">Mother's Name</label>
-												<input type="text" id="motherName" name="motherName" required>
-											</div>
-											<div class="form-group">
-												<label for="motherPhone" class="required">Mother's Phone Number</label>
-												<input type="tel" id="motherPhone" name="motherPhone" required>
-											</div>
+										<div class="form-group">
+											<label for="gender" class="required">Gender</label>
+											<select id="gender" name="gender" required>
+												<option value="">Select</option>
+												<option value="male">Male</option>
+												<option value="female">Female</option>
+												<option value="nonBinary">Non-binary</option>
+												<option value="preferNotToSay">Prefer not to say</option>
+											</select>
 										</div>
 									</div>
 
-									<div class="form-section">
-										<h2>School Information</h2>
-										<div class="form-row">
-											<div class="form-group">
-												<label for="schoolName" class="required">School Name</label>
-												<input type="text" id="schoolName" name="schoolName" required>
-											</div>
-											<div class="form-group">
-												<label for="grade" class="required">Grade/Class</label>
-												<select id="grade" name="grade" required>
-													<option value="">Select</option>
-													<option value="1">1</option>
-													<option value="2">2</option>
-													<option value="3">3</option>
-													<option value="4">4</option>
-													<option value="5">5</option>
-													<option value="6">6</option>
-													<option value="7">7</option>
-													<option value="8">8</option>
-													<option value="9">9</option>
-													<option value="10">10</option>
-													<option value="11">11</option>
-													<option value="12">12</option>
-												</select>
-											</div>
+									<div class="form-row">
+										<div class="form-group">
+											<label for="bloodGroup" class="required">Blood Group</label>
+											<select id="bloodGroup" name="bloodGroup" required>
+												<option value="">Select</option>
+												<option value="A+">A+</option>
+												<option value="A-">A-</option>
+												<option value="B+">B+</option>
+												<option value="B-">B-</option>
+												<option value="AB+">AB+</option>
+												<option value="AB-">AB-</option>
+												<option value="O+">O+</option>
+												<option value="O-">O-</option>
+											</select>
 										</div>
-
-										<div class="form-row">
-											<div class="form-group">
-												<label for="section" class="required">Section</label>
-												<select id="section" name="section" required>
-													<option value="">Select</option>
-													<option value="A">A</option>
-													<option value="B">B</option>
-													<option value="C">C</option>
-													<option value="D">D</option>
-												</select>
-											</div>
-											<div class="form-group">
-												<label for="academicYear" class="required">Academic Year</label>
-												<select id="academicYear" name="academicYear" required>
-													<option value="">Select</option>
-													<option value="2024-2025">2024-2025</option>
-													<option value="2025-2026">2025-2026</option>
-												</select>
-											</div>
+										<div class="form-group">
+											<label for="address" class="required">Residential Address</label>
+											<textarea id="address" name="address" rows="1" required></textarea>
 										</div>
 									</div>
-
-									<div class="form-group">
-										<div class="checkbox-item">
-											<input type="checkbox" id="termsAgreement" name="termsAgreement" required>
-											<label for="termsAgreement" class="required">I confirm that all information
-												provided is
-												accurate and complete</label>
-										</div>
-									</div>
-
-									<div class="btn-container">
-										<button type="button" class="btn btn-secondary" id="resetBtn">Reset
-											Form</button>
-										<button type="submit" class="btn btn-primary" id="submitBtn">Submit
-											Enrollment</button>
-									</div>
-								</form>
-
-								<div class="form-footer">
-									<p>For assistance, please contact the school administration at
-										support@schoolmonitor.edu</p>
 								</div>
-							</div>
-						</main>
 
-					</div>
+								<div class="form-section">
+									<h2>Parent/Guardian Information</h2>
+									<div class="form-row">
+										<div class="form-group">
+											<label for="fatherName" class="required">Father's Name</label>
+											<input type="text" id="fatherName" name="fatherName" required>
+										</div>
+										<div class="form-group">
+											<label for="fatherPhone" class="required">Father's Phone Number</label>
+											<input type="tel" id="fatherPhone" name="fatherPhone" required>
+										</div>
+									</div>
+
+									<div class="form-row">
+										<div class="form-group">
+											<label for="motherName" class="required">Mother's Name</label>
+											<input type="text" id="motherName" name="motherName" required>
+										</div>
+										<div class="form-group">
+											<label for="motherPhone" class="required">Mother's Phone Number</label>
+											<input type="tel" id="motherPhone" name="motherPhone" required>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-section">
+									<h2>School Information</h2>
+									<div class="form-row">
+										<div class="form-group">
+											<label for="schoolName" class="required">School Name</label>
+											<input type="text" id="schoolName" name="schoolName" required>
+										</div>
+										<div class="form-group">
+											<label for="grade" class="required">Grade/Class</label>
+											<select id="grade" name="grade" required>
+												<option value="">Select</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+												<option value="11">11</option>
+												<option value="12">12</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="form-row">
+										<div class="form-group">
+											<label for="section" class="required">Section</label>
+											<select id="section" name="section" required>
+												<option value="">Select</option>
+												<option value="A">A</option>
+												<option value="B">B</option>
+												<option value="C">C</option>
+												<option value="D">D</option>
+											</select>
+										</div>
+										<div class="form-group">
+											<label for="academicYear" class="required">Academic Year</label>
+											<select id="academicYear" name="academicYear" required>
+												<option value="">Select</option>
+												<option value="2024-2025">2024-2025</option>
+												<option value="2025-2026">2025-2026</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<div class="checkbox-item">
+										<input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+										<label for="termsAgreement" class="required">I confirm that all information
+											provided is
+											accurate and complete</label>
+									</div>
+								</div>
+
+								<div class="btn-container">
+									<button type="button" class="btn btn-secondary" id="resetBtn">Reset
+										Form</button>
+									<button type="submit" class="btn btn-primary" id="submitBtn">Submit
+										Enrollment</button>
+								</div>
+							</form>
+
+							<div class="form-footer">
+								<p>For assistance, please contact the school administration at
+									support@schoolmonitor.edu</p>
+							</div>
+						</div>
+					</main>
+
 				</div>
+			</div>
 			</main>
 
 			<footer class="footer">
@@ -734,7 +733,36 @@
 	</div>
 
 	<script src="js/app.js"></script>
+	<?php
+	include_once 'connection.php';
 
+	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$full_name = $_POST['full_name'];
+		$date_of_birth = $_POST['date_of_birth'];
+		$address = $_POST['address'];
+		$gender = $_POST['gender'];
+		$standard = $_POST['standard'];
+		$roll = $_POST['roll'];
+		$mother_name = $_POST['mother_name'];
+		$mother_phone_number = $_POST['mother_phone_number'];
+		$father_name = $_POST['father_name'];
+		$father_phone_number = $_POST['father_phone_number'];
+		$blood_group = $_POST['blood_group'];
+		$school_name = $_POST['school_name'];
+		$school_no = $_POST['school_no'];
+
+		$insert_query = "INSERT INTO student_1 (full_name, date_of_birth, address, gender, standard, roll, mother_name, mother_phone_number, father_name, father_phone_number, blood_group, school_name, school_no) 
+                        VALUES ('$full_name', '$date_of_birth', '$address', '$gender', '$standard', '$roll', '$mother_name', '$mother_phone_number', '$father_name', '$father_phone_number', '$blood_group', '$school_name', '$school_no')";
+		$insert_result = mysqli_query($conn, $insert_query);
+
+		if ($insert_result) {
+			header("Location: student.php");
+			exit();
+		} else {
+			echo "Error: " . mysqli_error($conn);
+		}
+	}
+	?>
 </body>
 
 </html>
