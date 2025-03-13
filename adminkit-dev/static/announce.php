@@ -313,7 +313,7 @@
 						Pages
 					</li>
 
-					<li class="sidebar-item active">
+					<li class="sidebar-item ">
 						<a class="sidebar-link" href="admin.php">
 							<i class="align-middle" data-feather="sliders"></i> <span
 								class="align-middle">Dashboard</span>
@@ -350,7 +350,7 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="announce.php">
 							<i class="align-middle" data-feather="align-left"></i> <span
 								class="align-middle">Anouncement</span>

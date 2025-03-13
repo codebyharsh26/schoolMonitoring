@@ -277,7 +277,7 @@
 						Pages
 					</li>
 
-					<li class="sidebar-item active">
+					<li class="sidebar-item ">
 						<a class="sidebar-link" href="admin.php">
 							<i class="align-middle" data-feather="sliders"></i> <span
 								class="align-middle">Dashboard</span>
@@ -294,7 +294,7 @@
 						Forms
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="tr-enroll.php">
 							<i class="align-middle" data-feather="square"></i> <span class="align-middle">Teacher
 								Enrollment</span>

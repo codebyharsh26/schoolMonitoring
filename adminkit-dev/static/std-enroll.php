@@ -280,7 +280,7 @@
 						Pages
 					</li>
 
-					<li class="sidebar-item active">
+					<li class="sidebar-item ">
 						<a class="sidebar-link" href="admin.php">
 							<i class="align-middle" data-feather="sliders"></i> <span
 								class="align-middle">Dashboard</span>
@@ -304,7 +304,7 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item active">
 						<a class="sidebar-link" href="std-enroll.php">
 							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Student
 								Enrollment</span>

@@ -169,7 +169,11 @@
 						Pages
 					</li>
 
+<<<<<<< HEAD
+					<li class="sidebar-item ">
+=======
 					<li class="sidebar-item">
+>>>>>>> 6cd96a49c8f3e354e1812ee66b1244717a6e9a9f
 						<a class="sidebar-link" href="admin.php">
 							<i class="align-middle" data-feather="sliders"></i> <span
 								class="align-middle">Dashboard</span>
@@ -200,7 +204,11 @@
 						</a>
 					</li>
 
+<<<<<<< HEAD
+					<li class="sidebar-item active ">
+=======
 					<li class="sidebar-item active">
+>>>>>>> 6cd96a49c8f3e354e1812ee66b1244717a6e9a9f
 						<a class="sidebar-link" href="add-marks.php">
 							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Add Marks</span>
 						</a>
