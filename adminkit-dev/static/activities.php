@@ -24,7 +24,7 @@
 
 <body>
 	<div class="wrapper">
-	<nav id="sidebar" class="sidebar js-sidebar">
+		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="admin.php">
 					<span class="align-middle">schoolAdmin</span>
@@ -35,11 +35,8 @@
 						Pages
 					</li>
 
-<<<<<<< HEAD
 					<li class="sidebar-item ">
-=======
 					<li class="sidebar-item">
->>>>>>> 6cd96a49c8f3e354e1812ee66b1244717a6e9a9f
 						<a class="sidebar-link" href="admin.php">
 							<i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
 						</a>
@@ -108,13 +105,13 @@
 				</ul>
 			</div>
 		</nav>
-	
+
 
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
@@ -252,12 +249,12 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-              </a>
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
