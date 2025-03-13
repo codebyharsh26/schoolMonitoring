@@ -393,77 +393,79 @@
 		});
 	</script>
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Pie chart
-			new Chart(document.getElementById("chartjs-dashboard-pie"), {
-				type: "pie",
-				data: {
-					labels: ["Chrome", "Firefox", "IE"],
-					datasets: [{
-						data: [4306, 3801, 1689],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.warning,
-							window.theme.danger
-						],
-						borderWidth: 5
-					}]
+    document.addEventListener("DOMContentLoaded", function() {
+        // Pie chart with only two parts (red and blue)
+        new Chart(document.getElementById("chartjs-dashboard-pie"), {
+            type: "pie",
+            data: {
+                labels: ["Red", "Blue"],
+                datasets: [{
+                    data: [10, 90], // Red is 10% and Blue is 90%
+                    backgroundColor: [
+                        "red", // Color for Red section
+                        "blue" // Color for Blue section
+                    ],
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                responsive: !window.MSInputMethodContext,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false // Hides the legend
+                },
+                cutoutPercentage: 75 // To make it a donut chart
+            }
+        });
+    });
+</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		// Initialize Bar Chart to show admissions growth over the years
+		new Chart(document.getElementById("chartjs-dashboard-bar"), {
+			type: "bar", // The chart type is bar chart
+			data: {
+				labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+				datasets: [{
+					label: "Admissions Growth", // Label for the dataset
+					backgroundColor: window.theme.primary, // Bar color, adjust to theme color if necessary
+					borderColor: window.theme.primary, // Border color of the bars
+					hoverBackgroundColor: window.theme.primary, // Hover color for the bars
+					hoverBorderColor: window.theme.primary, // Hover border color
+					data: [100, 150, 200, 250, 300], // Admissions data showing the growth from 2020 to 2024
+					barPercentage: 0.75, // Controls the width of the bars
+					categoryPercentage: 0.5 // Controls the spacing between bars
+				}]
+			},
+			options: {
+				maintainAspectRatio: false, // Ensures the chart resizes properly
+				legend: {
+					display: false // Hides the legend
 				},
-				options: {
-					responsive: !window.MSInputMethodContext,
-					maintainAspectRatio: false,
-					legend: {
-						display: false
+				scales: {
+					y: {
+						beginAtZero: true, // Ensures the y-axis starts at 0
+						grid: {
+							display: false // Hides the grid lines on the y-axis
+						},
+						ticks: {
+							stepSize: 50 // Defines the step size of y-axis ticks
+						}
 					},
-					cutoutPercentage: 75
-				}
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Bar chart
-			new Chart(document.getElementById("chartjs-dashboard-bar"), {
-				type: "bar",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "This year",
-						backgroundColor: window.theme.primary,
-						borderColor: window.theme.primary,
-						hoverBackgroundColor: window.theme.primary,
-						hoverBorderColor: window.theme.primary,
-						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					scales: {
-						yAxes: [{
-							gridLines: {
-								display: false
-							},
-							stacked: false,
-							ticks: {
-								stepSize: 20
-							}
-						}],
-						xAxes: [{
-							stacked: false,
-							gridLines: {
-								color: "transparent"
-							}
-						}]
+					x: {
+						grid: {
+							color: "transparent" // Makes the grid lines on the x-axis invisible
+						}
 					}
 				}
-			});
+			}
 		});
-	</script>
+	});
+</script>
+
+
+
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
 			var markers = [{
