@@ -15,7 +15,7 @@
 	<link rel="canonical" href="https://demo-basic.adminkit.io/maps-google.html" />
 
 	<title>Teacher report</title>
-	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
+	<!-- <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css"> -->
 
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -23,7 +23,7 @@
 
 <body>
 	<div class="wrapper">
-	<nav id="sidebar" class="sidebar js-sidebar">
+		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="admin.php">
 					<span class="align-middle">schoolAdmin</span>
@@ -107,8 +107,8 @@
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+					<i class="hamburger align-self-center"></i>
+				</a>
 
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
@@ -246,12 +246,12 @@
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                <i class="align-middle" data-feather="settings"></i>
-              </a>
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 
 							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-              </a>
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+							</a>
 							<div class="dropdown-menu dropdown-menu-end">
 								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
 								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
@@ -265,44 +265,8 @@
 					</ul>
 				</div>
 			</nav>
-<!-- 
-			<main class="content">
-				<div class="container-fluid p-0">
-
-					<div class="mb-3">
-						<h1 class="h3 d-inline align-middle">Google Maps</h1>
-						<a class="badge bg-dark text-white ms-2" href="upgrade-to-pro.html">
-      Get more Google Maps examples
-  </a>
-					</div>
-					<div class="row">
-						<div class="col-12 col-lg-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Default Map</h5>
-									<h6 class="card-subtitle text-muted">Displays the default road map view.</h6>
-								</div>
-								<div class="card-body">
-									<div class="content" id="default_map" style="height: 300px;"></div>
-								</div>
-							</div>
-						</div>
-						<div class="col-12 col-lg-6">
-							<div class="card">
-								<div class="card-header">
-									<h5 class="card-title">Hybrid Map</h5>
-									<h6 class="card-subtitle text-muted">Displays a mixture of normal and satellite views.</h6>
-								</div>
-								<div class="card-body">
-									<div class="content" id="hybrid_map" style="height: 300px;"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</main> -->
-
+			<?php
+			include 'teacher-list-display.php'; ?>
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">

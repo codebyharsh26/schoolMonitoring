@@ -1,40 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="teacher.css">
+    <link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/teacher-list-display.css">
     <title>Teacher Details</title>
 </head>
+
 <body>
-    <main role="main">
+    <main role="main" style="margin-top: 3rem;">
         <div class="container">
-                <div class="container bg-light">
+            <div class="container bg-light">
                 <h1 class="h3 mb-4"><strong>Teachers</strong> Details</h1>
 
-                    <div class="row">
-                        <?php
-                        include_once 'connection.php';
+                <div class="row">
+                    <?php
+                    include_once 'connection.php';
 
-                        $limit = 21; // Number of records per page
-                        $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
-                        $offset = ($page - 1) * $limit; // Offset for pagination
+                    $limit = 21; // Number of records per page
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
+                    $offset = ($page - 1) * $limit; // Offset for pagination
 
-                        // Count total records
-                        $total_query = "SELECT COUNT(*) FROM teacher_1 WHERE school_no = 1";
-                        $total_result = mysqli_query($conn, $total_query);
-                        $total_rows = mysqli_fetch_array($total_result)[0];
-                        $total_pages = ceil($total_rows / $limit); // Total pages
+                    // Count total records
+                    $total_query = "SELECT COUNT(*) FROM teacher_1 WHERE school_no = 1";
+                    $total_result = mysqli_query($conn, $total_query);
+                    $total_rows = mysqli_fetch_array($total_result)[0];
+                    $total_pages = ceil($total_rows / $limit); // Total pages
 
-                        // Fetch records for the current page
-                        $select = "SELECT * FROM teacher_1 LIMIT $limit OFFSET $offset";
-                        $result = mysqli_query($conn, $select);
+                    // Fetch records for the current page
+                    $select = "SELECT * FROM teacher_1 LIMIT $limit OFFSET $offset";
+                    $result = mysqli_query($conn, $select);
 
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                echo '<div class="col-md-4">
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-md-4">
                                         <div class="card mb-4 shadow-sm">
                                             <div class="card-body">
                                                 <h5 class="card-title">' . $row['teacher_name'] . '</h5>
@@ -58,7 +60,7 @@
                                                             data-school_no="' . $row['school_no'] . '" 
                                                             data-toggle="modal" 
                                                             data-target="#viewModal">View</button>
-                                                        <button class="btn btn-sm btn-outline-success edit-btn" 
+                                                            <button class="btn btn-sm btn-outline-success edit-btn" 
                                                             data-teacher_id="' . $row['teacher_id'] . '" 
                                                             data-teacher_name="' . $row['teacher_name'] . '" 
                                                             data-teacher_phone="' . $row['teacher_phone'] . '" 
@@ -80,28 +82,27 @@
                                             </div>
                                         </div>
                                     </div>';
-                            }
                         }
-                        ?>
-                    </div>
+                    }
+                    ?>
                 </div>
             </div>
         </div>
         <!-- Pagination -->
         <nav aria-label="Page navigation">
             <ul class="pagination justify-content-center">
-                    <?php if ($page > 1): ?>
-                <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
-                    <?php endif; ?>
-                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                <li class="page-item <?php if ($i == $page) echo 'active'; ?>">
-                    <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                </li>
-                    <?php endfor; ?>
-                    <?php if ($page < $total_pages): ?>
-                <li class="page-item"><a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li>
-                    <?php endif; ?>
-                </ul>
+                <?php if ($page > 1): ?>
+                    <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
+                <?php endif; ?>
+                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                    <li class="page-item <?php if ($i == $page) echo 'active'; ?>">
+                        <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                    </li>
+                <?php endfor; ?>
+                <?php if ($page < $total_pages): ?>
+                    <li class="page-item"><a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li>
+                <?php endif; ?>
+            </ul>
         </nav>
 
         <!-- Edit Modal -->
@@ -205,25 +206,25 @@
         </div>
 
         <!-- Delete Confirmation Modal -->
-<div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="deleteConfirmModalLabel">Confirm Deletion</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                Are you sure you want to delete this teacher?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <a href="#" id="confirmDeleteBtn" class="btn btn-danger">Delete</a>
+        <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleteConfirmModalLabel">Confirm Deletion</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to delete this teacher?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <a href="#" id="confirmDeleteBtn" class="btn btn-danger">Delete</a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -284,4 +285,5 @@
 
     </main>
 </body>
+
 </html>
