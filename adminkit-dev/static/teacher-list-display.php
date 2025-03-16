@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/teacher-list-display.css">
     <title>Teacher Details</title>
 </head>
+<div class="sidebar">
+    <?php
+    include_once("sidebar.php");
+    ?>
+</div>
 
 <body>
     <main role="main" style="margin-top: 3rem;">
