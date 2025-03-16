@@ -3,7 +3,6 @@
 
 <head>
 	<?php
-	include_once "sidebar.php";
 	include_once "connection.php";
 	?>
 	<meta charset="utf-8">
@@ -26,298 +25,305 @@
 	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 </head>
 
+
 <body>
-	<div class="main">
-		<nav class="navbar navbar-expand navbar-light navbar-bg">
-			<a class="sidebar-toggle js-sidebar-toggle">
-				<i class="hamburger align-self-center"></i>
-			</a>
+	<div class="wrapper">
+		<div class="sidebar">
+			<?php
+			include_once("sidebar.php");
+			?>
+		</div>
+		<div class="main">
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
 
-			<div class="navbar-collapse collapse">
-				<ul class="navbar-nav navbar-align">
-					<li class="nav-item dropdown">
-						<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
-							<div class="position-relative">
-								<i class="align-middle" data-feather="bell"></i>
-								<span class="indicator">4</span>
-							</div>
-						</a>
-						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
-							<div class="dropdown-menu-header">
-								4 New Notifications
-							</div>
-							<div class="list-group">
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<i class="text-danger" data-feather="alert-circle"></i>
-										</div>
-										<div class="col-10">
-											<div class="text-dark">Update completed</div>
-											<div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
-											<div class="text-muted small mt-1">30m ago</div>
-										</div>
-									</div>
-								</a>
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<i class="text-warning" data-feather="bell"></i>
-										</div>
-										<div class="col-10">
-											<div class="text-dark">Lorem ipsum</div>
-											<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
-											<div class="text-muted small mt-1">2h ago</div>
-										</div>
-									</div>
-								</a>
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<i class="text-primary" data-feather="home"></i>
-										</div>
-										<div class="col-10">
-											<div class="text-dark">Login from 192.186.1.8</div>
-											<div class="text-muted small mt-1">5h ago</div>
-										</div>
-									</div>
-								</a>
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<i class="text-success" data-feather="user-plus"></i>
-										</div>
-										<div class="col-10">
-											<div class="text-dark">New connection</div>
-											<div class="text-muted small mt-1">Christina accepted your request.</div>
-											<div class="text-muted small mt-1">14h ago</div>
-										</div>
-									</div>
-								</a>
-							</div>
-							<div class="dropdown-menu-footer">
-								<a href="#" class="text-muted">Show all notifications</a>
-							</div>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
-							<div class="position-relative">
-								<i class="align-middle" data-feather="message-square"></i>
-							</div>
-						</a>
-						<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
-							<div class="dropdown-menu-header">
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
 								<div class="position-relative">
-									4 New Messages
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator">4</span>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header">
+									4 New Notifications
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-danger" data-feather="alert-circle"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Update completed</div>
+												<div class="text-muted small mt-1">Restart server 12 to complete the update.</div>
+												<div class="text-muted small mt-1">30m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Lorem ipsum</div>
+												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate hendrerit et.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-primary" data-feather="home"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Login from 192.186.1.8</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-success" data-feather="user-plus"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">New connection</div>
+												<div class="text-muted small mt-1">Christina accepted your request.</div>
+												<div class="text-muted small mt-1">14h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all notifications</a>
 								</div>
 							</div>
-							<div class="list-group">
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
-										</div>
-										<div class="col-10 ps-2">
-											<div class="text-dark">Vanessa Tucker</div>
-											<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
-											<div class="text-muted small mt-1">15m ago</div>
-										</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="message-square"></i>
+								</div>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										4 New Messages
 									</div>
-								</a>
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Vanessa Tucker</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
 										</div>
-										<div class="col-10 ps-2">
-											<div class="text-dark">William Harris</div>
-											<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
-											<div class="text-muted small mt-1">2h ago</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle" alt="William Harris">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">William Harris</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
 										</div>
-									</div>
-								</a>
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle" alt="Christina Mason">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Christina Mason</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
 										</div>
-										<div class="col-10 ps-2">
-											<div class="text-dark">Christina Mason</div>
-											<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.</div>
-											<div class="text-muted small mt-1">4h ago</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Sharon Lessman</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
 										</div>
-									</div>
-								</a>
-								<a href="#" class="list-group-item">
-									<div class="row g-0 align-items-center">
-										<div class="col-2">
-											<img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
-										</div>
-										<div class="col-10 ps-2">
-											<div class="text-dark">Sharon Lessman</div>
-											<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed, posuere ac, mattis non.</div>
-											<div class="text-muted small mt-1">5h ago</div>
-										</div>
-									</div>
-								</a>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all messages</a>
+								</div>
 							</div>
-							<div class="dropdown-menu-footer">
-								<a href="#" class="text-muted">Show all messages</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
+
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Log out</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
+
+			<main class="content">
+				<div class="container-fluid p-0">
+
+					<h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
+					<div class="row">
+						<div class="col-xl-12 d-flex">
+							<div class="w-100">
+								<div class="row d-flex flex-nowrap gap-3"> <!-- gap-3 adds spacing -->
+									<div class="col my-card card">
+										<div class="admin-custom-card-content card-body">
+											<h5 class="card-title">Total Teachers</h5>
+											<h1 class=" mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">55</h1>
+										</div>
+									</div>
+
+									<div class="col my-card card">
+										<div class="admin-custom-card-content card-body">
+											<h5 class="card-title">Total Students</h5>
+											<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">269</h1>
+
+										</div>
+									</div>
+
+									<div class="col my-card card">
+										<div class="admin-custom-card-content card-body">
+											<h5 class="card-title">Total Admission</h5>
+											<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">19</h1>
+
+										</div>
+									</div>
+
+									<div class="col my-card card">
+										<div class="admin-custom-card-content card-body">
+											<h5 class="card-title">Student Left</h5>
+											<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">10</h1>
+
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-							<i class="align-middle" data-feather="settings"></i>
-						</a>
+					</div>
 
-						<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-							<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-						</a>
-						<div class="dropdown-menu dropdown-menu-end">
-							<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-							<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-							<a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" href="#">Log out</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</nav>
+					<div class="row">
+						<div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-3">
+							<div class="card flex-fill w-100">
+								<div class="card-header">
 
-		<main class="content">
-			<div class="container-fluid p-0">
-
-				<h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
-				<div class="row">
-					<div class="col-xl-12 d-flex">
-						<div class="w-100">
-							<div class="row d-flex flex-nowrap gap-3"> <!-- gap-3 adds spacing -->
-								<div class="col my-card card">
-									<div class="admin-custom-card-content card-body">
-										<h5 class="card-title">Total Teachers</h5>
-										<h1 class=" mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">55</h1>
-									</div>
+									<h5 class="card-title mb-0">Admission Graph</h5>
 								</div>
-
-								<div class="col my-card card">
-									<div class="admin-custom-card-content card-body">
-										<h5 class="card-title">Total Students</h5>
-										<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">269</h1>
-
-									</div>
-								</div>
-
-								<div class="col my-card card">
-									<div class="admin-custom-card-content card-body">
-										<h5 class="card-title">Total Admission</h5>
-										<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">19</h1>
-
-									</div>
-								</div>
-
-								<div class="col my-card card">
-									<div class="admin-custom-card-content card-body">
-										<h5 class="card-title">Student Left</h5>
-										<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">10</h1>
-
+								<div class="card-body d-flex w-100">
+									<div class="align-self-center chart chart-lg">
+										<canvas id="chartjs-dashboard-bar"></canvas>
 									</div>
 								</div>
 							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-2">
+							<div class="card flex-fill w-100">
+								<div class="card-header">
+									<h5 class="card-title mb-0">Overall Academic Result</h5>
+								</div>
+								<div class="card-body d-flex">
+									<div class="align-self-center w-100">
+										<div class="py-3">
+											<div class="chart chart-xs">
+												<canvas id="chartjs-dashboard-pie"></canvas>
+											</div>
+										</div>
+
+										<table class="table mb-0">
+											<tbody>
+												<tr>
+													<td>PASS</td>
+													<td class="text-end">90%</td>
+												</tr>
+												<tr>
+													<td>FAIL</td>
+													<td class="text-end">10%</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
+							<div class="card flex-fill">
+								<div class="card-header">
+
+									<h5 class="card-title mb-0">Calendar</h5>
+								</div>
+								<div class="card-body d-flex">
+									<div class="align-self-center w-100">
+										<div class="chart">
+											<div id="datetimepicker-dashboard"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="row">
+
+					</div>
+
+				</div>
+			</main>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+
+						</div>
+						<div class="col-6 text-end">
+							<p class="mb-0">
+								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>schoolAdmin</strong></a>
+							</p>
 						</div>
 					</div>
 				</div>
-
-				<div class="row">
-					<div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-3">
-						<div class="card flex-fill w-100">
-							<div class="card-header">
-
-								<h5 class="card-title mb-0">Admission Graph</h5>
-							</div>
-							<div class="card-body d-flex w-100">
-								<div class="align-self-center chart chart-lg">
-									<canvas id="chartjs-dashboard-bar"></canvas>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-2">
-						<div class="card flex-fill w-100">
-							<div class="card-header">
-								<h5 class="card-title mb-0">Overall Academic Result</h5>
-							</div>
-							<div class="card-body d-flex">
-								<div class="align-self-center w-100">
-									<div class="py-3">
-										<div class="chart chart-xs">
-											<canvas id="chartjs-dashboard-pie"></canvas>
-										</div>
-									</div>
-
-									<table class="table mb-0">
-										<tbody>
-											<tr>
-												<td>PASS</td>
-												<td class="text-end">90%</td>
-											</tr>
-											<tr>
-												<td>FAIL</td>
-												<td class="text-end">10%</td>
-											</tr>
-
-										</tbody>
-									</table>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
-						<div class="card flex-fill">
-							<div class="card-header">
-
-								<h5 class="card-title mb-0">Calendar</h5>
-							</div>
-							<div class="card-body d-flex">
-								<div class="align-self-center w-100">
-									<div class="chart">
-										<div id="datetimepicker-dashboard"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="row">
-
-				</div>
-
-			</div>
-		</main>
-
-		<footer class="footer">
-			<div class="container-fluid">
-				<div class="row text-muted">
-					<div class="col-6 text-start">
-
-					</div>
-					<div class="col-6 text-end">
-						<p class="mb-0">
-							<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>schoolAdmin</strong></a>
-						</p>
-					</div>
-				</div>
-			</div>
-		</footer>
-	</div>
+			</footer>
+		</div>
 	</div>
 
 	<script src="js/app.js"></script>
@@ -393,76 +399,76 @@
 		});
 	</script>
 	<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Pie chart with only two parts (red and blue)
-        new Chart(document.getElementById("chartjs-dashboard-pie"), {
-            type: "pie",
-            data: {
-                labels: ["Red", "Blue"],
-                datasets: [{
-                    data: [10, 90], // Red is 10% and Blue is 90%
-                    backgroundColor: [
-                        "red", // Color for Red section
-                        "blue" // Color for Blue section
-                    ],
-                    borderWidth: 5
-                }]
-            },
-            options: {
-                responsive: !window.MSInputMethodContext,
-                maintainAspectRatio: false,
-                legend: {
-                    display: false // Hides the legend
-                },
-                cutoutPercentage: 75 // To make it a donut chart
-            }
-        });
-    });
-</script>
-
-<script>
-	document.addEventListener("DOMContentLoaded", function() {
-		// Initialize Bar Chart to show admissions growth over the years
-		new Chart(document.getElementById("chartjs-dashboard-bar"), {
-			type: "bar", // The chart type is bar chart
-			data: {
-				labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
-				datasets: [{
-					label: "Admissions Growth", // Label for the dataset
-					backgroundColor: window.theme.primary, // Bar color, adjust to theme color if necessary
-					borderColor: window.theme.primary, // Border color of the bars
-					hoverBackgroundColor: window.theme.primary, // Hover color for the bars
-					hoverBorderColor: window.theme.primary, // Hover border color
-					data: [100, 150, 200, 250, 300], // Admissions data showing the growth from 2020 to 2024
-					barPercentage: 0.75, // Controls the width of the bars
-					categoryPercentage: 0.5 // Controls the spacing between bars
-				}]
-			},
-			options: {
-				maintainAspectRatio: false, // Ensures the chart resizes properly
-				legend: {
-					display: false // Hides the legend
+		document.addEventListener("DOMContentLoaded", function() {
+			// Pie chart with only two parts (red and blue)
+			new Chart(document.getElementById("chartjs-dashboard-pie"), {
+				type: "pie",
+				data: {
+					labels: ["Red", "Blue"],
+					datasets: [{
+						data: [10, 90], // Red is 10% and Blue is 90%
+						backgroundColor: [
+							"red", // Color for Red section
+							"blue" // Color for Blue section
+						],
+						borderWidth: 5
+					}]
 				},
-				scales: {
-					y: {
-						beginAtZero: true, // Ensures the y-axis starts at 0
-						grid: {
-							display: false // Hides the grid lines on the y-axis
-						},
-						ticks: {
-							stepSize: 50 // Defines the step size of y-axis ticks
-						}
+				options: {
+					responsive: !window.MSInputMethodContext,
+					maintainAspectRatio: false,
+					legend: {
+						display: false // Hides the legend
 					},
-					x: {
-						grid: {
-							color: "transparent" // Makes the grid lines on the x-axis invisible
+					cutoutPercentage: 75 // To make it a donut chart
+				}
+			});
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Initialize Bar Chart to show admissions growth over the years
+			new Chart(document.getElementById("chartjs-dashboard-bar"), {
+				type: "bar", // The chart type is bar chart
+				data: {
+					labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+					datasets: [{
+						label: "Admissions Growth", // Label for the dataset
+						backgroundColor: window.theme.primary, // Bar color, adjust to theme color if necessary
+						borderColor: window.theme.primary, // Border color of the bars
+						hoverBackgroundColor: window.theme.primary, // Hover color for the bars
+						hoverBorderColor: window.theme.primary, // Hover border color
+						data: [100, 150, 200, 250, 300], // Admissions data showing the growth from 2020 to 2024
+						barPercentage: 0.75, // Controls the width of the bars
+						categoryPercentage: 0.5 // Controls the spacing between bars
+					}]
+				},
+				options: {
+					maintainAspectRatio: false, // Ensures the chart resizes properly
+					legend: {
+						display: false // Hides the legend
+					},
+					scales: {
+						y: {
+							beginAtZero: true, // Ensures the y-axis starts at 0
+							grid: {
+								display: false // Hides the grid lines on the y-axis
+							},
+							ticks: {
+								stepSize: 50 // Defines the step size of y-axis ticks
+							}
+						},
+						x: {
+							grid: {
+								color: "transparent" // Makes the grid lines on the x-axis invisible
+							}
 						}
 					}
 				}
-			}
+			});
 		});
-	});
-</script>
+	</script>
 
 
 

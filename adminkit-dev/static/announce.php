@@ -31,15 +31,16 @@
 		}
 
 		* {
-			margin: 0;
-			padding: 0;
+			/* margin: 0; */
+			/* padding: 0; */
 			box-sizing: border-box;
-			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+			/* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
 		}
 
-		.main{
+		.main {
 			width: 100%;
 		}
+
 		.form-container {
 			background-color: var(--form-bg);
 			border-radius: 0.5rem;
@@ -302,93 +303,11 @@
 
 <body>
 	<div class="wrapper">
-		<nav id="sidebar" class="sidebar js-sidebar">
-			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="admin.php">
-					<span class="align-middle">schoolAdmin</span>
-				</a>
-
-				<ul class="sidebar-nav">
-					<li class="sidebar-header">
-						Pages
-					</li>
-
-					<li class="sidebar-item ">
-						<a class="sidebar-link" href="admin.php">
-							<i class="align-middle" data-feather="sliders"></i> <span
-								class="align-middle">Dashboard</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="admin-profile.php">
-							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-						</a>
-					</li>
-
-					<li class="sidebar-header">
-						Forms
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="tr-enroll.php">
-							<i class="align-middle" data-feather="square"></i> <span class="align-middle">Teacher
-								Enrollment</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="std-enroll.php">
-							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Student
-								Enrollment</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="add-marks.php">
-							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Add Marks</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="announce.php">
-							<i class="align-middle" data-feather="align-left"></i> <span
-								class="align-middle">Anouncement</span>
-						</a>
-					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="activities.php">
-							<i class="align-middle" data-feather="align-left"></i> <span
-								class="align-middle">Activities</span>
-						</a>
-					</li>
-
-					<li class="sidebar-header">
-						Monitoring
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="student.php">
-							<i class="align-middle" data-feather="bar-chart-2"></i> <span
-								class="align-middle">Students</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="teacher.php">
-							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Teachers</span>
-						</a>
-					</li>
-
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="admin-log-out.php">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign
-								Out</span>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		<div class="sidebar">
+			<?php
+			include_once("sidebar.php");
+			?>
+		</div>
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
@@ -687,103 +606,103 @@
 							</div>
 						</div>
 
-					<div class="form-actions">
-						<button type="button" class="btn btn-secondary">Cancel</button>
-						<button type="button" class="btn btn-preview">Preview</button>
-						<button type="submit" class="btn btn-primary">Publish Announcement</button>
+						<div class="form-actions">
+							<button type="button" class="btn btn-secondary">Cancel</button>
+							<button type="button" class="btn btn-preview">Preview</button>
+							<button type="submit" class="btn btn-primary">Publish Announcement</button>
+						</div>
 					</div>
 				</div>
+
+				<footer class="footer">
+					<div class="container-fluid">
+						<div class="row text-muted">
+							<div class="col-6 text-start">
+
+							</div>
+							<div class="col-6 text-end">
+								<p class="mb-0">
+									<a class="text-muted" href="https://adminkit.io/"
+										target="_blank"><strong>schoolAdmin</strong></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</footer>
 			</div>
-
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-
-						</div>
-						<div class="col-6 text-end">
-							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/"
-									target="_blank"><strong>schoolAdmin</strong></a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</footer>
 		</div>
-	</div>
 
-	<script src="js/app.js"></script>
-	<script>
-		// Priority selector
-		const priorityOptions = document.querySelectorAll('.priority-option');
-		const priorityInput = document.getElementById('priorityLevel');
+		<script src="js/app.js"></script>
+		<script>
+			// Priority selector
+			const priorityOptions = document.querySelectorAll('.priority-option');
+			const priorityInput = document.getElementById('priorityLevel');
 
-		priorityOptions.forEach(option => {
-			option.addEventListener('click', () => {
-				// Remove selected class from all options
-				priorityOptions.forEach(opt => opt.classList.remove('selected'));
-				// Add selected class to clicked option
-				option.classList.add('selected');
-				// Update hidden input value
-				priorityInput.value = option.dataset.priority;
+			priorityOptions.forEach(option => {
+				option.addEventListener('click', () => {
+					// Remove selected class from all options
+					priorityOptions.forEach(opt => opt.classList.remove('selected'));
+					// Add selected class to clicked option
+					option.classList.add('selected');
+					// Update hidden input value
+					priorityInput.value = option.dataset.priority;
+				});
 			});
-		});
 
-		// File upload
-		const fileUpload = document.getElementById('fileUpload');
-		const fileName = document.querySelector('.file-name');
-		const fileList = document.getElementById('fileList');
+			// File upload
+			const fileUpload = document.getElementById('fileUpload');
+			const fileName = document.querySelector('.file-name');
+			const fileList = document.getElementById('fileList');
 
-		fileUpload.addEventListener('change', () => {
-			if (fileUpload.files.length > 0) {
-				if (fileUpload.files.length === 1) {
-					fileName.textContent = fileUpload.files[0].name;
-				} else {
-					fileName.textContent = `${fileUpload.files.length} files selected`;
-				}
+			fileUpload.addEventListener('change', () => {
+				if (fileUpload.files.length > 0) {
+					if (fileUpload.files.length === 1) {
+						fileName.textContent = fileUpload.files[0].name;
+					} else {
+						fileName.textContent = `${fileUpload.files.length} files selected`;
+					}
 
-				// Clear file list
-				fileList.innerHTML = '';
+					// Clear file list
+					fileList.innerHTML = '';
 
-				// Display selected files
-				Array.from(fileUpload.files).forEach(file => {
-					const fileItem = document.createElement('div');
-					fileItem.style.display = 'flex';
-					fileItem.style.alignItems = 'center';
-					fileItem.style.marginTop = '8px';
-					fileItem.innerHTML = `
+					// Display selected files
+					Array.from(fileUpload.files).forEach(file => {
+						const fileItem = document.createElement('div');
+						fileItem.style.display = 'flex';
+						fileItem.style.alignItems = 'center';
+						fileItem.style.marginTop = '8px';
+						fileItem.innerHTML = `
 						<span style="margin-right: 8px; color: #6b7280;">📎</span>
 						<span style="flex: 1;">${file.name}</span>
 						<span style="color: #6b7280; font-size: 12px;">${(file.size / 1024).toFixed(1)} KB</span>
 					`;
-					fileList.appendChild(fileItem);
-				});
-			} else {
-				fileName.textContent = 'No file chosen';
-				fileList.innerHTML = '';
-			}
-		});
+						fileList.appendChild(fileItem);
+					});
+				} else {
+					fileName.textContent = 'No file chosen';
+					fileList.innerHTML = '';
+				}
+			});
 
-		// Rich text editor content to textarea before form submission
-		const form = document.querySelector('.form-container');
-		const editorContent = document.querySelector('.editor-content');
-		const contentTextarea = document.getElementById('announcementContent');
+			// Rich text editor content to textarea before form submission
+			const form = document.querySelector('.form-container');
+			const editorContent = document.querySelector('.editor-content');
+			const contentTextarea = document.getElementById('announcementContent');
 
-		form.addEventListener('submit', () => {
-			contentTextarea.value = editorContent.innerHTML;
-		});
+			form.addEventListener('submit', () => {
+				contentTextarea.value = editorContent.innerHTML;
+			});
 
-		// Set minimum date for start date and end date to today
-		const today = new Date().toISOString().split('T')[0];
-		document.getElementById('startDate').min = today;
-		document.getElementById('endDate').min = today;
+			// Set minimum date for start date and end date to today
+			const today = new Date().toISOString().split('T')[0];
+			document.getElementById('startDate').min = today;
+			document.getElementById('endDate').min = today;
 
-		// Update end date min attribute when start date changes
-		document.getElementById('startDate').addEventListener('change', function () {
-			document.getElementById('endDate').min = this.value;
-		});
-	</script>
+			// Update end date min attribute when start date changes
+			document.getElementById('startDate').addEventListener('change', function() {
+				document.getElementById('endDate').min = this.value;
+			});
+		</script>
 </body>
 
 </html>i
