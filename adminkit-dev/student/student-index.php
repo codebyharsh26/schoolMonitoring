@@ -2,14 +2,7 @@
 <html lang="en">
 
 <head>
-	<?php
-	$con = mysqli_connect("localhost", "root", "", "bnpss");
-	if (mysqli_connect_errno()) {
-		echo "Failed to connect to MySQL: " . mysqli_connect_error();
-		exit();
-	}
-
-	?>
+	
 	<?php
 	include_once "student-sidebar.php";
 	?>
@@ -54,30 +47,68 @@
 		.col-12{
 			width: 100%;
 		}
+		img .img{
+			height: 50%;
+		}
+		body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+        .options {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #file-input {
+            display: none;
+        }
+        label {
+            padding: 8px 16px;
+            background-color: #2196F3;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        label:hover {
+            background-color: #0b7dda;
+        }
+		img{
+			margin: 25px;
+		}
 	</style>
 </head>
 
 <body>
-	<?php
-	$select = "select * from student ";
-	$query = mysqli_query($con, $select);
-	if ($query) {
-		$row = mysqli_fetch_array($query);
-		$id = $row['id'];
-		$name = $row['full_name'];
-		$dob = $row['date_of_birth'];
-		$address = $row['address'];
-		$gender = $row['gender'];
-		$standard = $row['standard'];
-		$roll = $row['roll'];
-		$mother_name = $row['mother_name'];
-		$mother_phone = $row['mother_phone_number'];
-		$father_name = $row['father_name'];
-		$father_phone = $row['father_phone_number'];
-		$blood_group = $row['blood_group'];
-		$school_name = $row['school_name'];
-	}
-	?>
+	
 	<div class="main">
 		<nav class="navbar navbar-expand navbar-light navbar-bg">
 			<a class="sidebar-toggle js-sidebar-toggle">
@@ -362,13 +393,34 @@
 
 		</section>
 		<section>
+			<div class="fill">
+			<h5 class="time card-title mb-0">Time Table</h5>
+			<img src="" alt="" height="500vh" width="98%">
+			
 
+			</div>
 		</section>
 
 <section>
 	<div class="fill">
 	<h5 class="card-title mb-0">Notes</h5>
-
+	<img src="" alt="" height="500vh" width="98%">
+	</div>
+</section>
+<section>
+	<div class="fill">
+	<h5 class="card-title mb-0">Syllabus</h5>
+	<img src="" alt="" height="500vh" width="98%">
+	</div>
+</section><section>
+	<div class="fill">
+	<h5 class="card-title mb-0">Announcement</h5>
+	<img src="" alt="" height="500vh" width="98%">
+	</div>
+</section><section>
+	<div class="fill">
+	<h5 class="card-title mb-0">Activites</h5>
+	<img src="" alt="" height="500vh" width="98%">
 	</div>
 </section>
 
