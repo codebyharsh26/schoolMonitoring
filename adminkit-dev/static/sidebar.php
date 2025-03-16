@@ -40,14 +40,14 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 
 					<li class="sidebar-item <?= ($current_page == 'tr-enroll.php') ? 'active' : '' ?>">
 						<a class="sidebar-link" href="tr-enroll.php">
-							<i class="align-middle" data-feather="square"></i>
+							<i class="align-middle" data-feather="edit-2"></i>
 							<span class="align-middle">Teacher Enrollment</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item <?= ($current_page == 'std-enroll.php') ? 'active' : '' ?>">
 						<a class="sidebar-link" href="std-enroll.php">
-							<i class="align-middle" data-feather="check-square"></i>
+							<i class="align-middle" data-feather="edit-2"></i>
 							<span class="align-middle">Student Enrollment</span>
 						</a>
 					</li>
@@ -61,14 +61,14 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 
 					<li class="sidebar-item <?= ($current_page == 'announce.php') ? 'active' : '' ?>">
 						<a class="sidebar-link" href="announce.php">
-							<i class="align-middle" data-feather="align-left"></i>
+							<i class="align-middle" data-feather="mic"></i>
 							<span class="align-middle">Announcement</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item <?= ($current_page == 'activities.php') ? 'active' : '' ?>">
 						<a class="sidebar-link" href="activities.php">
-							<i class="align-middle" data-feather="align-left"></i>
+							<i class="align-middle" data-feather="activity"></i>
 							<span class="align-middle">Activities</span>
 						</a>
 					</li>
@@ -77,14 +77,14 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 
 					<li class="sidebar-item <?= ($current_page == 'student.php') ? 'active' : '' ?>">
 						<a class="sidebar-link" href="student.php">
-							<i class="align-middle" data-feather="bar-chart-2"></i>
+							<i class="align-middle" data-feather="layers"></i>
 							<span class="align-middle">Students</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item <?= ($current_page == 'teacher.php') ? 'active' : '' ?>">
 						<a class="sidebar-link" href="teacher.php">
-							<i class="align-middle" data-feather="map"></i>
+							<i class="align-middle" data-feather="layers"></i>
 							<span class="align-middle">Teachers</span>
 						</a>
 					</li>
