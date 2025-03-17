@@ -111,7 +111,7 @@
 		}
 		.card{
 			width: 80vh;
-			margin-left: 45vh
+			margin-left: 45vh;
 		}
 		h5 .font{
 			font-size: xx-large;
@@ -120,8 +120,9 @@
 			
 		}
 		td{
-			font-size:x-large ;
+			font-size:x-large;
 		}
+		
 	</style>
 </head>
 
@@ -129,9 +130,7 @@
 	
 	<div class="main">
 	<nav class="navbar navbar-expand navbar-light navbar-bg">
-        <a class="sidebar-toggle js-sidebar-toggle">
-            <i class="hamburger align-self-center"></i>
-        </a>
+       
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
@@ -337,55 +336,55 @@
 											<h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?></h5>
 											<table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
 												<tr>
-													<td style="text-align: left;">Date-of-birth: </td>
+													<td class="bol" style="text-align: left;"><b>Date-of-birth:</b> </td>
 													<td style="text-align: left;"><?php echo $date_of_birth; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Address:</td>
+													<td class="bol" style="text-align: left;"><b>Address:</b></td>
 													<td style="text-align: left;"><?php echo $residential_address; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Gender:</td>
+													<td class="bol" style="text-align: left;"><b>Gender:</b></td>
 													<td style="text-align: left;"><?php echo $gender; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Standard:</td>
+													<td class="bol" style="text-align: left;"><b>Standard:</b></td>
 													<td style="text-align: left;"><?php echo $standard; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Roll-No.:</td>
+													<td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
 													<td style="text-align: left;"><?php echo $roll_number; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Mother Name:</td>
+													<td class="bol" style="text-align: left;"><b>Mother Name:</b></td>
 													<td style="text-align: left;"><?php echo $mother_name; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Mother-Phone-No.:</td>
+													<td class="bol" style="text-align: left;"><b>Mother-Phone-No.:</b></td>
 													<td style="text-align: left;"><?php echo $mother_phone_number; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Father Name:</td>
+													<td class="bol" style="text-align: left;"><b>Father Name:</b></td>
 													<td style="text-align: left;"><?php echo $father_name; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Father-Phone-No.:</td>
+													<td class="bol" style="text-align: left;"><b>Father-Phone-No.:</b></td>
 													<td style="text-align: left;"><?php echo $father_phone_number; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Blood-Group:</td>
+													<td class="bol" style="text-align: left;"><b>Blood-Group:</b></td>
 													<td style="text-align: left;"><?php echo $blood_group; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">School Name:</td>
+													<td class="bol" style="text-align: left;"><b>School Name:</b></td>
 													<td style="text-align: left;"><?php echo $school_name; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">Acedemic Year:</td>
+													<td class="bol" style="text-align: left;"><b>Acedemic Year:</b></td>
 													<td style="text-align: left;"><?php echo $academic_year; ?></td>
 												</tr>
 												<tr>
-													<td style="text-align: left;">School Number:</td>
+													<td class="bol" style="text-align: left;"><b>School Number:</b></td>
 													<td style="text-align: left;"><?php echo $school_number; ?></td>
 												</tr>
 											</table>
@@ -569,6 +568,16 @@
 				}
 			});
 		});
+	</script>
+	<script>
+		function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    if (sidebar.style.display === "none") {
+        sidebar.style.display = "block";
+    } else {
+        sidebar.style.display = "none";
+    }
+}
 	</script>
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

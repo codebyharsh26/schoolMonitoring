@@ -66,9 +66,6 @@
 							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Announcement</span>
 						</a>
 					</li>
-
-					
-
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="student.php">
 							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Activites</span>
