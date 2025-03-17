@@ -6,9 +6,24 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sidebar</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+	<meta name="author" content="AdminKit">
+	<meta name="keywords"
+		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
+	<link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
+
+	<title>School Monitoring System</title>
+
+	<link href="css/app.css" rel="stylesheet">
+	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -52,12 +67,12 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 						</a>
 					</li>
 
-					<!-- <li class="sidebar-item <?= ($current_page == 'add-marks.php') ? 'active' : '' ?>">
-						<a class="sidebar-link" href="add-marks.php">
-							<i class="align-middle" data-feather="grid"></i>
-							<span class="align-middle">Add Marks</span>
+					<li class="sidebar-item <?= ($current_page == 'tr-leave-application-display.php') ? 'active' : '' ?>">
+						<a class="sidebar-link" href="tr-leave-application-display.php">
+							<i class="align-middle" data-feather="bookmark"></i>
+							<span class="align-middle">Leave Application</span>
 						</a>
-					</li> -->
+					</li>
 
 					<li class="sidebar-item <?= ($current_page == 'announce.php') ? 'active' : '' ?>">
 						<a class="sidebar-link" href="announce.php">
@@ -99,6 +114,8 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 			</div>
 		</nav>
 	</div>
+	<script src="js/app.js"></script>
+
 </body>
 
 </html>
