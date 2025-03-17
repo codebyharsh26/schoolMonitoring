@@ -25,6 +25,38 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+<style>
+	/* Make the sidebar fixed */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* Adjust as per your design */
+    height: 100vh; /* Full height */
+    background: #2C3E50; /* Sidebar background */
+    color: white;
+    overflow-y: auto; /* Allow scrolling inside sidebar */
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Ensure sidebar content takes full height */
+.sidebar-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Adjust main content so it doesn't go under the sidebar */
+.wrapper {
+    display: flex;
+}
+
+#main-content {
+    margin-left: 250px; /* Same as sidebar width */
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+</style>
 
 <body>
 	<div class="wrapper">
