@@ -247,7 +247,7 @@
 			new Chart(document.getElementById("chartjs-dashboard-pie"), {
 				type: "pie",
 				data: {
-					labels: ["Red", "Blue"],
+					labels: ["fail", "pass"],
 					datasets: [{
 						data: [10, 90], // Red is 10% and Blue is 90%
 						backgroundColor: [
