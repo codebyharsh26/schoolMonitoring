@@ -5,6 +5,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>sidebar</title>
+	<style>
+		footer{
+			margin-bottom: 2.5rem;
+			margin-left: 2.5rem;
+		}
+	</style>
 </head>
 
 <body>
@@ -12,7 +18,7 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="index.html">
-					<span class="align-middle">schoolAdmin</span>
+					<span class="align-middle">StudentPortal</span>
 				</a>
 
 				<ul class="sidebar-nav">
@@ -68,17 +74,17 @@
 							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Activites</span>
 						</a>
 					</li>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="admin-log-out.php">
-							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign Out</span>
-						</a>
-					</li>
+					
 					
 				</ul>
+				<footer>
+				<li class="sidebar-item">
+							<a class="sidebar-link" href="admin-log-out.php">
+								<i class="align-middle" data-feather="log-in"></i><span class="align-middle">Sign Out</span>
+							</a>
+						</li>
+				</footer>
 			</div>
-			<footer>
-			
-			</footer>
 		</nav>
 </body>
 
