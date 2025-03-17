@@ -15,7 +15,7 @@
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
 
-    <title>Forms | AdminKit Demo</title>
+    <title>School Monitoring System</title>
 
     <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
@@ -218,14 +218,31 @@
             border-top: 1px solid var(--border-color);
             margin-top: 1.5rem;
         }
+
+        .sch-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .sch-name img {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        .sch-name h4 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand navbar-light navbar-bg">
-    <a class="sidebar-toggle js-sidebar-toggle" onclick="toggleSidebar()">
-    <i class="hamburger align-self-center"></i>
-</a>
+        <a class="sidebar-toggle js-sidebar-toggle">
+            <i class="hamburger align-self-center"></i>
+        </a>
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
