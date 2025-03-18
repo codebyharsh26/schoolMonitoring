@@ -185,7 +185,7 @@
 				let studentId = $(this).data("id");
 				let page = $(this).data("page");
 
-				deleteUrl = "stu_delete.php?deleteid=" + studentId + "&page=" + page;
+				deleteUrl = "student.php?deleteid=" + studentId + "&page=" + page;
 			});
 
 			$("#confirmDeleteBtn").click(function() {
