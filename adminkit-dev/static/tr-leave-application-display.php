@@ -32,7 +32,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/adminkit@2.1.0/dist/css/app.css" rel="stylesheet">
 </head>
-
 <body>
     <div class="wrapper">
         <div class="sidebar">
@@ -44,7 +43,6 @@
             <?php
             include_once("navbar.php");
             ?>
-
             <main class="content">
             <div class="container-fluid p-4">
                 <div class="card">
@@ -98,7 +96,6 @@
                 </div>
             </div>
             </main>
-
             <footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
@@ -112,9 +109,7 @@
 			</footer>
         </div>
     </div>
-
     <script src="js/app.js"></script>
-
 </body>
 
 </html>
