@@ -266,195 +266,503 @@
 
 <body>
 	<div class="wrapper">
-		<div class="sidebar">
-			<?php
-			include_once("sidebar.php");
-			?>
-		</div>
+		<nav id="sidebar" class="sidebar js-sidebar">
+			<div class="sidebar-content js-simplebar">
+				<a class="sidebar-brand" href="admin.php">
+					<span class="align-middle">schoolAdmin</span>
+				</a>
+
+				<ul class="sidebar-nav">
+					<li class="sidebar-header">
+						Pages
+					</li>
+
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="admin.php">
+							<i class="align-middle" data-feather="sliders"></i> <span
+								class="align-middle">Dashboard</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="admin-profile.php">
+							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
+						</a>
+					</li>
+
+					<li class="sidebar-header">
+						Forms
+					</li>
+
+					<li class="sidebar-item active">
+						<a class="sidebar-link" href="tr-enroll.php">
+							<i class="align-middle" data-feather="square"></i> <span class="align-middle">Teacher
+								Enrollment</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="std-enroll.php">
+							<i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Student
+								Enrollment</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="add-marks.php">
+							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Add Marks</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="announce.php">
+							<i class="align-middle" data-feather="align-left"></i> <span
+								class="align-middle">Anouncement</span>
+						</a>
+					</li>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="activities.php">
+							<i class="align-middle" data-feather="align-left"></i> <span
+								class="align-middle">Activities</span>
+						</a>
+					</li>
+
+					<li class="sidebar-header">
+						Monitoring
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="student.php">
+							<i class="align-middle" data-feather="bar-chart-2"></i> <span
+								class="align-middle">Students</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="teacher.php">
+							<i class="align-middle" data-feather="map"></i> <span class="align-middle">Teachers</span>
+						</a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="admin-log-out.php">
+							<i class="align-middle" data-feather="log-in"></i> <span class="align-middle">Sign
+								Out</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
 		<div class="main">
-			<?php
-			include_once("navbar.php");
-			?>
+			<nav class="navbar navbar-expand navbar-light navbar-bg">
+				<a class="sidebar-toggle js-sidebar-toggle">
+					<i class="hamburger align-self-center"></i>
+				</a>
 
-			<main class="content">
-				<div class="container-fluid p-0">
-
-					<h1>Teacher Enrollment Form</h1>
-					<p class="form-description">Please complete all required fields to register as a teacher in our
-						school monitoring system.</p>
-
-					<form id="teacherEnrollmentForm">
-						<div class="form-section">
-							<h2>Personal Information</h2>
-							<div class="form-row">
-								<div class="form-group">
-									<label for="name" class="required">Full Name</label>
-									<input type="text" id="name" name="name" required>
+				<div class="navbar-collapse collapse">
+					<ul class="navbar-nav navbar-align">
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="bell"></i>
+									<span class="indicator">4</span>
 								</div>
-								<div class="form-group">
-									<label for="gender" class="required">Gender</label>
-									<select id="gender" name="gender" required>
-										<option value="">Select</option>
-										<option value="male">Male</option>
-										<option value="female">Female</option>
-										<option value="nonBinary">Non-binary</option>
-										<option value="preferNotToSay">Prefer not to say</option>
-									</select>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="alertsDropdown">
+								<div class="dropdown-menu-header">
+									4 New Notifications
 								</div>
-							</div>
-
-							<div class="form-row">
-								<div class="form-group">
-									<label for="dob" class="required">Date of Birth</label>
-									<input type="date" id="dob" name="dob" required>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-danger" data-feather="alert-circle"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Update completed</div>
+												<div class="text-muted small mt-1">Restart server 12 to complete the
+													update.</div>
+												<div class="text-muted small mt-1">30m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-warning" data-feather="bell"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Lorem ipsum</div>
+												<div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
+													hendrerit et.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-primary" data-feather="home"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">Login from 192.186.1.8</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<i class="text-success" data-feather="user-plus"></i>
+											</div>
+											<div class="col-10">
+												<div class="text-dark">New connection</div>
+												<div class="text-muted small mt-1">Christina accepted your request.
+												</div>
+												<div class="text-muted small mt-1">14h ago</div>
+											</div>
+										</div>
+									</a>
 								</div>
-								<div class="form-group">
-									<label for="bloodGroup" class="required">Blood Group</label>
-									<select id="bloodGroup" name="bloodGroup" required>
-										<option value="">Select</option>
-										<option value="A+">A+</option>
-										<option value="A-">A-</option>
-										<option value="B+">B+</option>
-										<option value="B-">B-</option>
-										<option value="AB+">AB+</option>
-										<option value="AB-">AB-</option>
-										<option value="O+">O+</option>
-										<option value="O-">O-</option>
-									</select>
-								</div>
-							</div>
-
-							<div class="form-row">
-								<div class="form-group">
-									<label for="phone" class="required">Phone Number</label>
-									<input type="tel" id="phone" name="phone" required>
-								</div>
-								<div class="form-group">
-									<label for="emergencyNumber" class="required">Emergency Contact Number</label>
-									<input type="tel" id="emergencyNumber" name="emergencyNumber" required>
-								</div>
-							</div>
-							<div class="form-row">
-
-								<div class="form-group">
-									<label for="email" class="required">Email Address</label>
-									<input type="email" id="email" name="email" required>
-								</div>
-
-								<div class="form-group">
-									<label for="address" class="required">Residential Address</label>
-									<textarea id="address" name="address" rows="1" required></textarea>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-section">
-							<h2>Professional Information</h2>
-							<div class="form-row">
-								<div class="form-group">
-									<label for="schoolName" class="required">School Name</label>
-									<input type="text" id="schoolName" name="schoolName" required>
-								</div>
-								<div class="form-group">
-									<label for="salary" class="required">Salary (Monthly)</label>
-									<input type="number" id="salary" name="salary" min="0" required>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all notifications</a>
 								</div>
 							</div>
-
-							<div class="form-group">
-								<label for="qualification" class="required">Qualification</label>
-								<input type="text" id="qualification" name="qualification" required
-									placeholder="e.g., M.Ed., B.Sc., Ph.D.">
-							</div>
-
-							<div class="form-group">
-								<label for="firstLanguage" class="required">First Language (Native)</label>
-								<select id="firstLanguage" name="firstLanguage" required>
-									<option value="">Select</option>
-									<option value="english">English</option>
-									<option value="hindi">Hindi</option>
-									<option value="spanish">Spanish</option>
-									<option value="french">French</option>
-									<option value="mandarin">Gujarati</option>
-									<option value="arabic">Arabic</option>
-									<option value="bengali">Bengali</option>
-									<option value="tamil">Tamil</option>
-									<option value="telugu">Telugu</option>
-									<option value="marathi">Marathi</option>
-									<option value="other">Other</option>
-								</select>
-							</div>
-
-							<div class="form-group">
-								<label for="languageKnown" class="required">Languages Known</label>
-								<div class="language-container" id="languageContainer"></div>
-								<div id="languageInput">
-									<input type="text" id="languageKnown" placeholder="Enter a language">
-									<button type="button" id="addLanguageBtn">Add</button>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown"
+								data-bs-toggle="dropdown">
+								<div class="position-relative">
+									<i class="align-middle" data-feather="message-square"></i>
 								</div>
-								<input type="hidden" id="languagesList" name="languagesList" required>
+							</a>
+							<div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
+								aria-labelledby="messagesDropdown">
+								<div class="dropdown-menu-header">
+									<div class="position-relative">
+										4 New Messages
+									</div>
+								</div>
+								<div class="list-group">
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-5.jpg"
+													class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Vanessa Tucker</div>
+												<div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
+													tortor.</div>
+												<div class="text-muted small mt-1">15m ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-2.jpg"
+													class="avatar img-fluid rounded-circle" alt="William Harris">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">William Harris</div>
+												<div class="text-muted small mt-1">Curabitur ligula sapien euismod
+													vitae.</div>
+												<div class="text-muted small mt-1">2h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-4.jpg"
+													class="avatar img-fluid rounded-circle" alt="Christina Mason">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Christina Mason</div>
+												<div class="text-muted small mt-1">Pellentesque auctor neque nec urna.
+												</div>
+												<div class="text-muted small mt-1">4h ago</div>
+											</div>
+										</div>
+									</a>
+									<a href="#" class="list-group-item">
+										<div class="row g-0 align-items-center">
+											<div class="col-2">
+												<img src="img/avatars/avatar-3.jpg"
+													class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+											</div>
+											<div class="col-10 ps-2">
+												<div class="text-dark">Sharon Lessman</div>
+												<div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
+													posuere ac, mattis non.</div>
+												<div class="text-muted small mt-1">5h ago</div>
+											</div>
+										</div>
+									</a>
+								</div>
+								<div class="dropdown-menu-footer">
+									<a href="#" class="text-muted">Show all messages</a>
+								</div>
 							</div>
-						</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
+								data-bs-toggle="dropdown">
+								<i class="align-middle" data-feather="settings"></i>
+							</a>
 
-						<div class="form-group">
-							<div class="checkbox-item">
-								<input type="checkbox" id="termsAgreement" name="termsAgreement" required>
-								<label for="termsAgreement" class="required">I confirm that all information provided is
-									accurate and complete</label>
+							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#"
+								data-bs-toggle="dropdown">
+								<img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1"
+									alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+							</a>
+							<div class="dropdown-menu dropdown-menu-end">
+								<a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1"
+										data-feather="user"></i> Profile</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1"
+										data-feather="pie-chart"></i> Analytics</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="index.html"><i class="align-middle me-1"
+										data-feather="settings"></i> Settings & Privacy</a>
+								<a class="dropdown-item" href="#"><i class="align-middle me-1"
+										data-feather="help-circle"></i> Help Center</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Log out</a>
 							</div>
-						</div>
+						</li>
+					</ul>
+				</div>
+			</nav>
 
-						<div class="btn-container">
-							<button type="button" class="btn btn-secondary" id="resetBtn">Reset Form</button>
-							<button type="submit" class="btn btn-primary" id="submitBtn">Submit Enrollment</button>
-						</div>
-					</form>
+			<form action="" method="post">
+				<div class="wrapper">
+					<div class="main">
+						<main class="content">
+							<div class="container-fluid p-0">
 
-					<div class="form-footer">
-						<p>For assistance, please contact the IT department at support@schoolmonitor.edu</p>
+								<h1>Teacher Enrollment Form</h1>
+								<p class="form-description">Please complete all required fields to register as a teacher
+									in our
+									school monitoring system.</p>
+
+								<div id="teacherEnrollmentForm">
+									<div class="form-section">
+										<h2>Personal Information</h2>
+
+										<div class="form-row">
+											<div class="form-group">
+												<div class="teacher-photo">
+													<div class="photo-placeholder">
+														Teacher Photo
+													</div>
+													<input type="file" id="teacher_image" name="teacher_image"
+														accept="image/*" class="photo-upload">
+												</div>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="form-group">
+												<label for="full_name" class="required">Full Name</label>
+												<input type="text" id="full_name" name="full_name" required>
+											</div>
+											<div class="form-group">
+												<label for="gender" class="required">Gender</label>
+												<select id="gender" name="gender" required>
+													<option value="">Select</option>
+													<option value="male">Male</option>
+													<option value="female">Female</option>
+													<option value="other">Other</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="form-group">
+												<label for="date_of_birth" class="required">Date of Birth</label>
+												<input type="date" id="date_of_birth" name="date_of_birth" required>
+											</div>
+											<div class="form-group">
+												<label for="blood_group" class="required">Blood Group</label>
+												<select id="blood_group" name="blood_group" required>
+													<option value="">Select</option>
+													<option value="A+">A+</option>
+													<option value="A-">A-</option>
+													<option value="B+">B+</option>
+													<option value="B-">B-</option>
+													<option value="AB+">AB+</option>
+													<option value="AB-">AB-</option>
+													<option value="O+">O+</option>
+													<option value="O-">O-</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="form-group">
+												<label for="phone_number" class="required">Phone
+													Number</label>
+												<input type="tel" id="phone_number" name="phone_number" required>
+											</div>
+											<div class="form-group">
+												<label for="emergency_contact_number" class="required">Emergency Contact
+													Number</label>
+												<input type="tel" id="emergency_contact_number"
+													name="emergency_contact_number" required>
+											</div>
+										</div>
+
+										<div class="form-row">
+											<div class="form-group">
+												<label for="email_address" class="required">Email
+													Address</label>
+												<input type="email" id="email_address" name="email_address" required>
+											</div>
+											<div class="form-group">
+												<label for="residential_address" class="required">Residential
+													Address</label>
+												<textarea id="residential_address" name="residential_address" rows="1"
+													required></textarea>
+											</div>
+										</div>
+									</div>
+
+									<div class="form-section">
+										<h2>Professional Information</h2>
+										<div class="form-row">
+											<div class="form-group">
+												<label for="edit-subject_name" class="required">Subject Name</label>
+												<select id="edit-subject_name" name="subject_name">
+													<option value="">Select</option>
+													<option value="Mathematics">Mathematics</option>
+													<option value="Science">Science</option>
+													<option value="Social Science">Social Science</option>
+													<option value="EVS">EVS</option>
+													<option value="English">English</option>
+													<option value="Gujarati">Gujarati</option>
+													<option value="Hindi">Hindi</option>
+													<option value="Sanskrit">Sanskrit</option>
+													<option value="Computer">Computer</option>
+													<option value="Art & Craft">Art & Craft</option>
+													<option value="Work & Art">Wok & Art</option>
+													<option value="Physical Education & Health">Physical Education &
+														Health</option>
+												</select>
+											</div>
+											<div class="form-group">
+												<label for="edit-standard" class="required">Standard</label>
+												<input type="text" class="form-control" name="standard"
+													id="edit-standard">
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group">
+												<label for="edit-salary_monthly">Teacher Salary(Monthly)</label>
+												<input type="number" class="form-control" min="0" max="10000000"
+													step="0.01" name="salary_monthly" id="edit-salary_monthly">
+											</div>
+											<div class="form-group">
+												<label for="edit-qualification">Qualification</label>
+												<input type="text" class="form-control" name="qualification"
+													id="edit-qualification">
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group">
+												<label for="edit-first_language">First Language</label>
+												<input type="text" class="form-control" name="first_language"
+													id="edit-first_language">
+											</div>
+											<div class="form-group">
+												<label for="edit-language_known">Language Known</label>
+												<input type="text" class="form-control" name="language_known"
+													id="edit-language_known">
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-group">
+												<label for="edit-school_name">School Name</label>
+												<input type="text" class="form-control" name="school_name"
+													id="edit-school_name">
+											</div>
+											<div class="form-group">
+												<label for="edit-school_number">School Number</label>
+												<input type="text" class="form-control" name="school_number"
+													id="edit-school_number">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="checkbox-item">
+											<input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+											<label for="termsAgreement" class="required">I confirm that all information
+												provided is
+												accurate and complete</label>
+										</div>
+									</div>
+
+									<div class="btn-container">
+										<button type="reset" class="btn btn-secondary" id="resetBtn">Reset
+											Form</button>
+										<button type="submit" name="submitBtn" class="btn btn-primary"
+											id="submitBtn">Submit
+											Enrollment</button>
+									</div>
+								</div>
+			</form>
+
+			<div class="form-footer">
+				<p>For assistance, please contact the school administration at
+					support@schoolmonitor.edu</p>
+			</div>
+		</div>
+		</main>
+
+		<footer class="footer">
+			<div class="container-fluid">
+				<div class="row text-muted">
+					<div class="col-6 text-start">
+
 					</div>
-
-					</>
-			</main>
-
-			<footer class="footer">
-				<div class="container-fluid">
-					<div class="row text-muted">
-						<div class="col-6 text-start">
-
-						</div>
-						<div class="col-6 text-end">
-							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/"
-									target="_blank"><strong>schoolAdmin</strong></a>
-							</p>
-						</div>
+					<div class="col-6 text-end">
+						<p class="mb-0">
+							<a class="text-muted" href="https://adminkit.io/"
+								target="_blank"><strong>schoolAdmin</strong></a>
+						</p>
 					</div>
 				</div>
-			</footer>
-		</div>
+			</div>
+		</footer>
+	</div>
 	</div>
 
 	<script src="js/app.js"></script>
 	<?php
 	include_once 'connection.php';
 
-	if ($_SERVER["REQUEST_METHOD"] == "POST") {
-		$teacher_name = $_POST['teacher_name'];
-		$teacher_phone = $_POST['teacher_phone'];
-		$teacher_email = $_POST['teacher_email'];
-		$teacher_salary = $_POST['teacher_salary'];
-		$teacher_dob = $_POST['teacher_dob'];
-		$teacher_address = $_POST['teacher_address'];
-		$qualification = $_POST['qualification'];
-		$subject = $_POST['subject'];
-		$std = $_POST['std'];
+	if (isset($_POST['submitBtn'])) {
+		$teacher_image = $_POST['teacher_image'];
+		$full_name = $_POST['full_name'];
 		$gender = $_POST['gender'];
+		$date_of_birth = $_POST['date_of_birth'];
+		$blood_group = $_POST['blood_group'];
+		$phone_number = $_POST['phone_number'];
+		$emergency_contact_name = $_POST['emergency_contact_name'];
+		$email_address = $_POST['email_address'];
+		$residential_address = $_POST['residential_address'];
+		$subject_name = $_POST['subject_name'];
+		$standard = $_POST['standard'];
+		$salary_monthly = $_POST['salary_monthly'];
+		$qualification = $_POST['qualification'];
+		$first_language = $_POST['first_language'];
+		$language_known = $_POST['language_known'];
 		$school_name = $_POST['school_name'];
-		$school_no = $_POST['school_no'];
+		$school_number = $_POST['school_number'];
 
-		$insert_query = "INSERT INTO teacher_1 (teacher_name, teacher_phone, teacher_email, teacher_salary, teacher_dob, teacher_address, qualification, subject, std, gender, school_name, school_no) 
-                        VALUES (NULL,'$teacher_name', '$teacher_phone', '$teacher_email', '$teacher_salary', '$teacher_dob', '$teacher_address', '$qualification', '$subject', '$std', '$gender', '$school_name', '$school_no')";
+		$insert_query = "INSERT INTO teacher_1 VALUES ('$teacher_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number')";
 		$insert_result = mysqli_query($conn, $insert_query);
 
 		if ($insert_result) {
