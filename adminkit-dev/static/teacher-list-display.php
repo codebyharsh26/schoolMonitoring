@@ -76,7 +76,7 @@
 </div>
 
 <body>
-    <main role="main" style="margin-top: 3rem;">
+    <main class="main" style="margin-top: 3rem;">
         <div class="container">
             <div class="container bg-light">
                 <h1 class="h3 mb-4"><strong>Teachers</strong> Details</h1>
@@ -90,7 +90,7 @@
                     $offset = ($page - 1) * $limit; // Offset for pagination
 
                     // Count total records
-                    $total_query = "SELECT COUNT(*) FROM teacher_1 WHERE school_no = 1";
+                    $total_query = "SELECT COUNT(*) FROM teacher_1 WHERE school_number = 1";
                     $total_result = mysqli_query($conn, $total_query);
                     $total_rows = mysqli_fetch_array($total_result)[0];
                     $total_pages = ceil($total_rows / $limit); // Total pages
@@ -104,45 +104,45 @@
                             echo '<div class="col-md-4">
                                         <div class="card mb-4 shadow-sm">
                                             <div class="card-body">
-                                                <h5 class="card-title">' . $row['teacher_name'] . '</h5>
-                                                <p class="card-text"><b>Subject:</b> ' . $row['subject'] . '</p>
-                                                <p class="card-text"><b>Standard:</b> ' . $row['std'] . '</p>
+                                                <h5 class="card-title">' . $row['full_name'] . '</h5>
+                                                <p class="card-text"><b>Subject:</b> ' . $row['subject_name'] . '</p>
+                                                <p class="card-text"><b>Standard:</b> ' . $row['standard'] . '</p>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="btn-group">
                                                         <button class="btn btn-sm btn-outline-info view-btn" 
-                                                            data-teacher_id="' . $row['teacher_id'] . '" 
-                                                            data-teacher_name="' . $row['teacher_name'] . '" 
-                                                            data-teacher_phone="' . $row['teacher_phone'] . '" 
-                                                            data-teacher_email="' . $row['teacher_email'] . '" 
-                                                            data-teacher_salary="' . $row['teacher_salary'] . '"
-                                                            data-teacher_dob="' . $row['teacher_dob'] . '" 
-                                                            data-teacher_address="' . $row['teacher_address'] . '"  
+                                                            data-teacher_id="' . $row['id'] . '" 
+                                                            data-teacher_name="' . $row['full_name'] . '" 
+                                                            data-teacher_phone="' . $row['phone_number'] . '" 
+                                                            data-teacher_email="' . $row['email_address'] . '" 
+                                                            data-teacher_salary="' . $row['salary_monthly'] . '"
+                                                            data-teacher_dob="' . $row['date_of_birth'] . '" 
+                                                            data-teacher_address="' . $row['residential_address'] . '"  
                                                             data-qualification="' . $row['qualification'] . '" 
-                                                            data-subject="' . $row['subject'] . '" 
-                                                            data-std="' . $row['std'] . '" 
+                                                            data-subject="' . $row['subject_name'] . '" 
+                                                            data-std="' . $row['standard'] . '" 
                                                             data-gender="' . $row['gender'] . '" 
                                                             data-school_name="' . $row['school_name'] . '" 
-                                                            data-school_no="' . $row['school_no'] . '" 
+                                                            data-school_number="' . $row['school_number'] . '" 
                                                             data-toggle="modal" 
                                                             data-target="#viewModal">View</button>
                                                             <button class="btn btn-sm btn-outline-success edit-btn" 
-                                                            data-teacher_id="' . $row['teacher_id'] . '" 
-                                                            data-teacher_name="' . $row['teacher_name'] . '" 
-                                                            data-teacher_phone="' . $row['teacher_phone'] . '" 
-                                                            data-teacher_email="' . $row['teacher_email'] . '" 
-                                                            data-teacher_salary="' . $row['teacher_salary'] . '"
-                                                            data-teacher_dob="' . $row['teacher_dob'] . '" 
-                                                            data-teacher_address="' . $row['teacher_address'] . '"  
+                                                            data-teacher_id="' . $row['id'] . '" 
+                                                            data-teacher_name="' . $row['full_name'] . '" 
+                                                            data-teacher_phone="' . $row['phone_number'] . '" 
+                                                            data-teacher_email="' . $row['email_address'] . '" 
+                                                            data-teacher_salary="' . $row['salary_monthly'] . '"
+                                                            data-teacher_dob="' . $row['date_of_birth'] . '" 
+                                                            data-teacher_address="' . $row['residential_address'] . '"  
                                                             data-qualification="' . $row['qualification'] . '" 
-                                                            data-subject="' . $row['subject'] . '" 
-                                                            data-std="' . $row['std'] . '" 
+                                                            data-subject="' . $row['subject_name'] . '" 
+                                                            data-std="' . $row['standard'] . '" 
                                                             data-gender="' . $row['gender'] . '" 
                                                             data-school_name="' . $row['school_name'] . '" 
-                                                            data-school_no="' . $row['school_no'] . '" 
+                                                            data-school_number="' . $row['school_number'] . '" 
                                                             data-toggle="modal" 
                                                             data-target="#editModal">Edit</button>
-                                                        <a href="#" class="btn btn-sm btn-outline-danger delete-btn" data-toggle="modal" data-target="#deleteConfirmModal" data-teacher_id="' . $row['teacher_id'] . '" data-page="' . $page . '">Delete</a>                                                    </div>
-                                                    <small class="text-muted">ID: ' . $row['teacher_id'] . '</small>
+                                                        <a href="#" class="btn btn-sm btn-outline-danger delete-btn" data-toggle="modal" data-target="#deleteConfirmModal" data-teacher_id="' . $row['id'] . '" data-page="' . $page . '">Delete</a>                                                    </div>
+                                                    <small class="text-muted">ID: ' . $row['id'] . '</small>
                                                 </div>
                                             </div>
                                         </div>

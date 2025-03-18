@@ -1,0 +1,30 @@
+.my-card {
+  width: 20vw;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.1);
+  color: #4e73df;
+  transition: all 0.3s;
+  /* margin: 50px; */
+}
+.my-card:hover {
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+.my-card .card-body {
+  padding: 1.25rem;
+}
+.my-row {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  justify-content: center;
+  gap: 20px; /* Adds space between cards */
+}
+.card-margin {
+  gap: 50px;
+}
+
+.custom-align h5 {
+  display: inline;
+  margin-right: 10px;
+}

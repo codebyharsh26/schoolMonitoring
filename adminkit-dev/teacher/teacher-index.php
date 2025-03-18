@@ -3,12 +3,11 @@
 
 <head>
 	
-	<?php
-	include_once "student-sidebar.php";
+<?php
+	include_once "teacher-sidebar.php";
 	include_once "connection.php";
-	include_once "student-navbar.php";
-
-	?>
+	include_once "teacher-navbar.php";
+?>
 	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -303,7 +302,7 @@
 					<main class="content">
 						<div class="container-fluid p-0">
 <?php
-	$query = "select * from student_1 where id=1";
+	$query = "select * from teacher_1 where id=1";
 	$result = mysqli_query($conn,$query);
 	if ($result) {
 		while ($row = mysqli_fetch_assoc($result)){
@@ -312,15 +311,17 @@
 			$residential_address=$row["residential_address"];
 			$gender=$row["gender"];
 			$standard=$row["standard"];
-			$roll_number=$row["roll_number"];
-			$mother_name=$row["mother_name"];
-			$mother_phone_number=$row["mother_phone_number"];
-			$father_name=$row["father_name"];
-			$father_phone_number=$row["father_phone_number"];
+			$email_address=$row["email_address"];
+			$emergency_contact_number=$row["emergency_contact_number"];
+			$subject_name=$row["subject_name"];
+			$salary_monthly=$row["salary_monthly"];
+			$qualification=$row["qualification"];
 			$blood_group=$row["blood_group"];
 			$school_name=$row["school_name"];
-			$academic_year=$row["academic_year"];
+			$first_language=$row["first_language"];
 			$school_number=$row["school_number"];
+			$language_known=$row["language_known"];
+			$phone_number=$row["phone_number"];
 ?>
 
 							<div class="row">
@@ -352,24 +353,28 @@
 													<td style="text-align: left;"><?php echo $standard; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
-													<td style="text-align: left;"><?php echo $roll_number; ?></td>
+													<td class="bol" style="text-align: left;"><b>Email:</b></td>
+													<td style="text-align: left;"><?php echo $email_address; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Mother Name:</b></td>
-													<td style="text-align: left;"><?php echo $mother_name; ?></td>
+													<td class="bol" style="text-align: left;"><b>Phone Number:</b></td>
+													<td style="text-align: left;"><?php echo $phone_number; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Mother-Phone-No.:</b></td>
-													<td style="text-align: left;"><?php echo $mother_phone_number; ?></td>
+													<td class="bol" style="text-align: left;"><b>Emergency Contact:</b></td>
+													<td style="text-align: left;"><?php echo $emergency_contact_number; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Father Name:</b></td>
-													<td style="text-align: left;"><?php echo $father_name; ?></td>
+													<td class="bol" style="text-align: left;"><b>Subject-Name:</b></td>
+													<td style="text-align: left;"><?php echo $subject_name; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Father-Phone-No.:</b></td>
-													<td style="text-align: left;"><?php echo $father_phone_number; ?></td>
+													<td class="bol" style="text-align: left;"><b>Salary Month:</b></td>
+													<td style="text-align: left;"><?php echo $salary_monthly; ?></td>
+												</tr>
+												<tr>
+													<td class="bol" style="text-align: left;"><b>Qualification:</b></td>
+													<td style="text-align: left;"><?php echo $qualification; ?></td>
 												</tr>
 												<tr>
 													<td class="bol" style="text-align: left;"><b>Blood-Group:</b></td>
@@ -380,12 +385,16 @@
 													<td style="text-align: left;"><?php echo $school_name; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Acedemic Year:</b></td>
-													<td style="text-align: left;"><?php echo $academic_year; ?></td>
+													<td class="bol" style="text-align: left;"><b>First Language:</b></td>
+													<td style="text-align: left;"><?php echo $first_language; ?></td>
 												</tr>
 												<tr>
 													<td class="bol" style="text-align: left;"><b>School Number:</b></td>
 													<td style="text-align: left;"><?php echo $school_number; ?></td>
+												</tr>
+												<tr>
+													<td class="bol" style="text-align: left;"><b>Language-Known:</b></td>
+													<td style="text-align: left;"><?php echo $language_known; ?></td>
 												</tr>
 											</table>
 
@@ -445,7 +454,7 @@
 
 								<h5 class="card-title mb-0">Admission Graph</h5>
 							</div>
-							<div class="card-body d-flex w-100" >
+							<div class="card-body d-flex w-100">
 								<div class="align-self-center chart chart-lg">
 									<canvas id="chartjs-dashboard-bar"></canvas>
 								</div>

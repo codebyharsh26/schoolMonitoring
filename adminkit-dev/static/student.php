@@ -11,17 +11,96 @@
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
 	<link rel="canonical" href="https://demo-basic.adminkit.io/charts-chartjs.html" />
 
 	<title>Student report</title>
-	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 
+	<!-- Custom Style -->
+	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/student-list-display.css">
-</head>
 
+	<!-- Internal Styles to Remove Padding and Margin -->
+	<style>
+		/* Reset margins and padding globally */
+		*,
+		*::before,
+		*::after {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		/* Body, Wrapper, Sidebar, Main */
+		body {
+			margin: 0;
+			padding: 0;
+		}
+
+		.wrapper {
+			margin: 0;
+			padding: 0;
+		}
+
+		.sidebar {
+			margin: 0;
+			padding: 0;
+		}
+
+		.main {
+			margin: 0;
+			padding: 0;
+		}
+
+		.footer {
+			margin: 0;
+			padding: 0;
+		}
+
+		.container-fluid {
+			margin: 0;
+			padding: 0;
+		}
+
+		.text-muted {
+			margin: 0;
+			padding: 0;
+		}
+
+		.text-start, .text-end {
+			margin: 0;
+			padding: 0;
+		}
+
+		/* Navbar adjustments */
+		.navbar {
+			padding: 0 !important;
+		}
+
+		/* Button adjustments */
+		.btn {
+			margin: 0;
+			padding: 0.25rem 0.5rem; /* Adjust this padding as needed */
+		}
+
+		/* Chart container adjustments */
+		.chart-container {
+			padding: 0;
+		}
+
+		/* Table adjustments */
+		.table th, .table td {
+			padding: 0.5rem; /* Adjust padding as needed */
+		}
+
+		/* Modal Dialog adjustments */
+		.modal-content {
+			margin: 0;
+			padding: 0;
+		}
+	</style>
+</head>
 
 <body>
 	<div class="wrapper">
@@ -38,6 +117,7 @@
 			<?php
 			include_once("student-list-display.php");
 			?>
+
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
@@ -46,299 +126,306 @@
 						</div>
 						<div class="col-6 text-end">
 							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/"
-									target="_blank"><strong>schoolAdmin</strong></a>
+								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>schoolAdmin</strong></a>
 							</p>
 						</div>
 					</div>
 				</div>
 			</footer>
 		</div>
-		<script src="js/app.js"></script>
-		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-		<script>
-			$(document).ready(function() {
-				$('.edit-btn').click(function() {
-					$('#edit-id').val($(this).data('id'));
-					$('#edit-full_name').val($(this).data('full_name'));
-					$('#edit-date_of_birth').val($(this).data('date_of_birth'));
-					$('#edit-address').val($(this).data('address'));
-					$('#edit-gender').val($(this).data('gender'));
-					$('#edit-standard').val($(this).data('standard'));
-					$('#edit-roll').val($(this).data('roll'));
-					$('#edit-mother_name').val($(this).data('mother_name'));
-					$('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
-					$('#edit-father_name').val($(this).data('father_name'));
-					$('#edit-father_phone_number').val($(this).data('father_phone_number'));
-					$('#edit-blood_group').val($(this).data('blood_group'));
-					$('#edit-school_name').val($(this).data('school_name'));
-					$('#edit-school_no').val($(this).data('school_no'));
-					$('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
-				});
+	</div>
 
-				$('.view-btn').click(function() {
-					$('#view-full_name').text($(this).data('full_name'));
-					$('#view-date_of_birth').text($(this).data('date_of_birth'));
-					$('#view-address').text($(this).data('address'));
-					$('#view-gender').text($(this).data('gender'));
-					$('#view-standard').text($(this).data('standard'));
-					$('#view-roll').text($(this).data('roll'));
-					$('#view-mother_name').text($(this).data('mother_name'));
-					$('#view-mother_phone_number').text($(this).data('mother_phone_number'));
-					$('#view-father_name').text($(this).data('father_name'));
-					$('#view-father_phone_number').text($(this).data('father_phone_number'));
-					$('#view-blood_group').text($(this).data('blood_group'));
-					$('#view-school_name').text($(this).data('school_name'));
-					$('#view-school_no').text($(this).data('school_no'));
-				});
+	<script src="js/app.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.edit-btn').click(function() {
+				$('#edit-id').val($(this).data('id'));
+				$('#edit-full_name').val($(this).data('full_name'));
+				$('#edit-date_of_birth').val($(this).data('date_of_birth'));
+				$('#edit-address').val($(this).data('address'));
+				$('#edit-gender').val($(this).data('gender'));
+				$('#edit-standard').val($(this).data('standard'));
+				$('#edit-roll').val($(this).data('roll'));
+				$('#edit-mother_name').val($(this).data('mother_name'));
+				$('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
+				$('#edit-father_name').val($(this).data('father_name'));
+				$('#edit-father_phone_number').val($(this).data('father_phone_number'));
+				$('#edit-blood_group').val($(this).data('blood_group'));
+				$('#edit-school_name').val($(this).data('school_name'));
+				$('#edit-school_number').val($(this).data('school_number'));
+				$('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
 			});
-		</script>
 
-		<script>
-			$(document).ready(function() {
-				let deleteUrl = "";
-
-				$(".delete-btn").click(function() {
-					let studentId = $(this).data("id");
-					let page = $(this).data("page");
-
-					deleteUrl = "stu_delete.php?deleteid=" + studentId + "&page=" + page;
-				});
-
-				$("#confirmDeleteBtn").click(function() {
-					window.location.href = deleteUrl;
-				});
+			$('.view-btn').click(function() {
+				$('#view-full_name').text($(this).data('full_name'));
+				$('#view-date_of_birth').text($(this).data('date_of_birth'));
+				$('#view-address').text($(this).data('address'));
+				$('#view-gender').text($(this).data('gender'));
+				$('#view-standard').text($(this).data('standard'));
+				$('#view-roll').text($(this).data('roll'));
+				$('#view-mother_name').text($(this).data('mother_name'));
+				$('#view-mother_phone_number').text($(this).data('mother_phone_number'));
+				$('#view-father_name').text($(this).data('father_name'));
+				$('#view-father_phone_number').text($(this).data('father_phone_number'));
+				$('#view-blood_group').text($(this).data('blood_group'));
+				$('#view-school_name').text($(this).data('school_name'));
+				$('#view-school_number').text($(this).data('school_number'));
 			});
-		</script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				// Line chart
-				new Chart(document.getElementById("chartjs-line"), {
-					type: "line",
-					data: {
-						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-						datasets: [{
-							label: "Sales ($)",
-							fill: true,
-							backgroundColor: "transparent",
-							borderColor: window.theme.primary,
-							data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
-						}, {
-							label: "Orders",
-							fill: true,
-							backgroundColor: "transparent",
-							borderColor: "#adb5bd",
-							borderDash: [4, 4],
-							data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
-						}]
+		});
+	</script>
+
+	<script>
+		$(document).ready(function() {
+			let deleteUrl = "";
+
+			$(".delete-btn").click(function() {
+				let studentId = $(this).data("id");
+				let page = $(this).data("page");
+
+				deleteUrl = "stu_delete.php?deleteid=" + studentId + "&page=" + page;
+			});
+
+			$("#confirmDeleteBtn").click(function() {
+				window.location.href = deleteUrl;
+			});
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Line chart
+			new Chart(document.getElementById("chartjs-line"), {
+				type: "line",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "Sales ($)",
+						fill: true,
+						backgroundColor: "transparent",
+						borderColor: window.theme.primary,
+						data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
+					}, {
+						label: "Orders",
+						fill: true,
+						backgroundColor: "transparent",
+						borderColor: "#adb5bd",
+						borderDash: [4, 4],
+						data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
 					},
-					options: {
-						maintainAspectRatio: false,
-						legend: {
-							display: false
-						},
-						tooltips: {
-							intersect: false
-						},
-						hover: {
-							intersect: true
-						},
-						plugins: {
-							filler: {
-								propagate: false
+					tooltips: {
+						intersect: false
+					},
+					hover: {
+						intersect: true
+					},
+					plugins: {
+						filler: {
+							propagate: false
+						}
+					},
+					scales: {
+						xAxes: [{
+							reverse: true,
+							gridLines: {
+								color: "rgba(0,0,0,0.05)"
 							}
-						},
-						scales: {
-							xAxes: [{
-								reverse: true,
-								gridLines: {
-									color: "rgba(0,0,0,0.05)"
-								}
-							}],
-							yAxes: [{
-								ticks: {
-									stepSize: 500
-								},
-								display: true,
-								borderDash: [5, 5],
-								gridLines: {
-									color: "rgba(0,0,0,0)",
-									fontColor: "#fff"
-								}
-							}]
-						}
-					}
-				});
-			});
-		</script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				// Bar chart
-				new Chart(document.getElementById("chartjs-bar"), {
-					type: "bar",
-					data: {
-						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-						datasets: [{
-							label: "Last year",
-							backgroundColor: window.theme.primary,
-							borderColor: window.theme.primary,
-							hoverBackgroundColor: window.theme.primary,
-							hoverBorderColor: window.theme.primary,
-							data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-							barPercentage: .75,
-							categoryPercentage: .5
-						}, {
-							label: "This year",
-							backgroundColor: "#dee2e6",
-							borderColor: "#dee2e6",
-							hoverBackgroundColor: "#dee2e6",
-							hoverBorderColor: "#dee2e6",
-							data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
-							barPercentage: .75,
-							categoryPercentage: .5
+						}],
+						yAxes: [{
+							ticks: {
+								stepSize: 500
+							},
+							display: true,
+							borderDash: [5, 5],
+							gridLines: {
+								color: "rgba(0,0,0,0)",
+								fontColor: "#fff"
+							}
 						}]
-					},
-					options: {
-						maintainAspectRatio: false,
-						legend: {
-							display: false
-						},
-						scales: {
-							yAxes: [{
-								gridLines: {
-									display: false
-								},
-								stacked: false,
-								ticks: {
-									stepSize: 20
-								}
-							}],
-							xAxes: [{
-								stacked: false,
-								gridLines: {
-									color: "transparent"
-								}
-							}]
-						}
 					}
-				});
+				}
 			});
-		</script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				// Doughnut chart
-				new Chart(document.getElementById("chartjs-doughnut"), {
-					type: "doughnut",
-					data: {
-						labels: ["Social", "Search Engines", "Direct", "Other"],
-						datasets: [{
-							data: [260, 125, 54, 146],
-							backgroundColor: [
-								window.theme.primary,
-								window.theme.success,
-								window.theme.warning,
-								"#dee2e6"
-							],
-							borderColor: "transparent"
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Bar chart
+			new Chart(document.getElementById("chartjs-bar"), {
+				type: "bar",
+				data: {
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					datasets: [{
+						label: "Last year",
+						backgroundColor: window.theme.primary,
+						borderColor: window.theme.primary,
+						hoverBackgroundColor: window.theme.primary,
+						hoverBorderColor: window.theme.primary,
+						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+						barPercentage: .75,
+						categoryPercentage: .5
+					}, {
+						label: "This year",
+						backgroundColor: "#dee2e6",
+						borderColor: "#dee2e6",
+						hoverBackgroundColor: "#dee2e6",
+						hoverBorderColor: "#dee2e6",
+						data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
+						barPercentage: .75,
+						categoryPercentage: .5
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
+					},
+					scales: {
+						yAxes: [{
+							gridLines: {
+								display: false
+							},
+							stacked: false,
+							ticks: {
+								stepSize: 20
+							}
+						}],
+						xAxes: [{
+							stacked: false,
+							gridLines: {
+								color: "transparent"
+							}
 						}]
-					},
-					options: {
-						maintainAspectRatio: false,
-						cutoutPercentage: 65,
-						legend: {
-							display: false
-						}
 					}
-				});
+				}
 			});
-		</script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				// Pie chart
-				new Chart(document.getElementById("chartjs-pie"), {
-					type: "pie",
-					data: {
-						labels: ["Social", "Search Engines", "Direct", "Other"],
-						datasets: [{
-							data: [260, 125, 54, 146],
-							backgroundColor: [
-								window.theme.primary,
-								window.theme.warning,
-								window.theme.danger,
-								"#dee2e6"
-							],
-							borderColor: "transparent"
-						}]
-					},
-					options: {
-						maintainAspectRatio: false,
-						legend: {
-							display: false
-						}
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Doughnut chart
+			new Chart(document.getElementById("chartjs-doughnut"), {
+				type: "doughnut",
+				data: {
+					labels: ["Social", "Search Engines", "Direct", "Other"],
+					datasets: [{
+						data: [260, 125, 54, 146],
+						backgroundColor: [
+							window.theme.primary,
+							window.theme.success,
+							window.theme.warning,
+							"#dee2e6"
+						],
+						borderColor: "transparent"
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					cutoutPercentage: 65,
+					legend: {
+						display: false
 					}
-				});
+				}
 			});
-		</script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				// Radar chart
-				new Chart(document.getElementById("chartjs-radar"), {
-					type: "radar",
-					data: {
-						labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
-						datasets: [{
-							label: "Model X",
-							backgroundColor: "rgba(0, 123, 255, 0.2)",
-							borderColor: window.theme.primary,
-							pointBackgroundColor: window.theme.primary,
-							pointBorderColor: "#fff",
-							pointHoverBackgroundColor: "#fff",
-							pointHoverBorderColor: window.theme.primary,
-							data: [70, 53, 82, 60, 33]
-						}, {
-							label: "Model S",
-							backgroundColor: "rgba(220, 53, 69, 0.2)",
-							borderColor: window.theme.danger,
-							pointBackgroundColor: window.theme.danger,
-							pointBorderColor: "#fff",
-							pointHoverBackgroundColor: "#fff",
-							pointHoverBorderColor: window.theme.danger,
-							data: [35, 38, 65, 85, 84]
-						}]
-					},
-					options: {
-						maintainAspectRatio: false
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Pie chart
+			new Chart(document.getElementById("chartjs-pie"), {
+				type: "pie",
+				data: {
+					labels: ["Social", "Search Engines", "Direct", "Other"],
+					datasets: [{
+						data: [260, 125, 54, 146],
+						backgroundColor: [
+							window.theme.primary,
+							window.theme.warning,
+							window.theme.danger,
+							"#dee2e6"
+						],
+						borderColor: "transparent"
+					}]
+				},
+				options: {
+					maintainAspectRatio: false,
+					legend: {
+						display: false
 					}
-				});
+				}
 			});
-		</script>
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				// Polar Area chart
-				new Chart(document.getElementById("chartjs-polar-area"), {
-					type: "polarArea",
-					data: {
-						labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
-						datasets: [{
-							label: "Model S",
-							data: [35, 38, 65, 70, 24],
-							backgroundColor: [
-								window.theme.primary,
-								window.theme.success,
-								window.theme.danger,
-								window.theme.warning,
-								window.theme.info
-							]
-						}]
-					},
-					options: {
-						maintainAspectRatio: false
-					}
-				});
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Radar chart
+			new Chart(document.getElementById("chartjs-radar"), {
+				type: "radar",
+				data: {
+					labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
+					datasets: [{
+						label: "Model X",
+						backgroundColor: "rgba(0, 123, 255, 0.2)",
+						borderColor: window.theme.primary,
+						pointBackgroundColor: window.theme.primary,
+						pointBorderColor: "#fff",
+						pointHoverBackgroundColor: "#fff",
+						pointHoverBorderColor: window.theme.primary,
+						data: [70, 53, 82, 60, 33]
+					}, {
+						label: "Model S",
+						backgroundColor: "rgba(220, 53, 69, 0.2)",
+						borderColor: window.theme.danger,
+						pointBackgroundColor: window.theme.danger,
+						pointBorderColor: "#fff",
+						pointHoverBackgroundColor: "#fff",
+						pointHoverBorderColor: window.theme.danger,
+						data: [35, 38, 65, 85, 84]
+					}]
+				},
+				options: {
+					maintainAspectRatio: false
+				}
 			});
-		</script>
+		});
+	</script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			// Polar Area chart
+			new Chart(document.getElementById("chartjs-polar-area"), {
+				type: "polarArea",
+				data: {
+					labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
+					datasets: [{
+						label: "Model S",
+						data: [35, 38, 65, 70, 24],
+						backgroundColor: [
+							window.theme.primary,
+							window.theme.success,
+							window.theme.danger,
+							window.theme.warning,
+							window.theme.info
+						]
+					}]
+				},
+				options: {
+					maintainAspectRatio: false
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>
