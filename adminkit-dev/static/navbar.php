@@ -235,14 +235,21 @@
             font-size: 1.25rem;
             font-weight: 500;
         }
+        .logo {
+    width: 150px;
+    height: auto;
+}
+
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand navbar-light navbar-bg">
-        <a class="sidebar-toggle js-sidebar-toggle">
-            <i class="hamburger align-self-center"></i>
-        </a>
+        <div class="sidebar-toggle js-sidebar-toggle">
+            <i class="align-self-center"><img src="logo.png" alt="School Logo" class="logo">
+            </i>
+            <span>School name</span>
+        </div>
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">

@@ -26,4 +26,6 @@
 .admin-custom-card-content h1 {
   margin-left: 1.5rem;
 }
-
+.custom-width{
+  width: 100vw;
+}
