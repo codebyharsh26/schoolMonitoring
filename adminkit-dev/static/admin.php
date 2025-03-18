@@ -315,7 +315,7 @@
 
 
 
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", function() {
 			var markers = [{
 					coords: [31.230391, 121.473701],
@@ -381,11 +381,11 @@
 				map.updateSize();
 			});
 		});
-	</script>
+	</script> -->
 	
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
-			var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+			var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
 			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
 			document.getElementById("datetimepicker-dashboard").flatpickr({
 				inline: true,
