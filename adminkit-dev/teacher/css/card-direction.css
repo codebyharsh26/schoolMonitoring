@@ -23,9 +23,8 @@
 .card-margin {
   gap: 50px;
 }
-.admin-custom-card-content h1 {
-  margin-left: 1.5rem;
-}
-.custom-width{
-  width: 100vw;
+
+.custom-align h5 {
+  display: inline;
+  margin-right: 10px;
 }

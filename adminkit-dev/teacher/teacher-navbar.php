@@ -15,11 +15,12 @@
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
 
-    <title>School Monitoring System</title>
+    <title>Forms | AdminKit Demo</title>
 
     <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
 
     <style>
         /* Main Theme Colors and Variables */
@@ -218,38 +219,12 @@
             border-top: 1px solid var(--border-color);
             margin-top: 1.5rem;
         }
-
-        .sch-name {
-            display: flex;
-            align-items: center;
-        }
-
-        .sch-name img {
-            width: 40px;
-            height: 40px;
-            margin-right: 1rem;
-        }
-
-        .sch-name h4 {
-            margin: 0;
-            font-size: 1.25rem;
-            font-weight: 500;
-        }
-        .logo {
-    width: 150px;
-    height: auto;
-}
-
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand navbar-light navbar-bg">
-        <div class="sidebar-toggle js-sidebar-toggle">
-            <i class="align-self-center"><img src="logo.png" alt="School Logo" class="logo">
-            </i>
-            <span>School name</span>
-        </div>
+    
+
 
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
@@ -412,7 +387,7 @@
                 </li>
             </ul>
         </div>
-    </nav>
+    </>
     <script src="js/app.js"></script>
 </body>
 

@@ -10,7 +10,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
-	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+	<meta name="keywords"
+		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
@@ -57,7 +58,6 @@
 										<div class="admin-custom-card-content card-body">
 											<h5 class="card-title">Total Students</h5>
 											<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">269</h1>
-
 										</div>
 									</div>
 
@@ -65,7 +65,6 @@
 										<div class="admin-custom-card-content card-body">
 											<h5 class="card-title">Total Admission</h5>
 											<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">19</h1>
-
 										</div>
 									</div>
 
@@ -73,7 +72,6 @@
 										<div class="admin-custom-card-content card-body">
 											<h5 class="card-title">Student Left</h5>
 											<h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">10</h1>
-
 										</div>
 									</div>
 								</div>
@@ -82,10 +80,9 @@
 					</div>
 
 					<div class="row">
-						<div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-3">
-							<div class="card flex-fill w-100">
+						<div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-3 order-xxl-3">
+							<div class="card w-100">
 								<div class="card-header">
-
 									<h5 class="card-title mb-0">Admission Graph</h5>
 								</div>
 								<div class="card-body d-flex w-100">
@@ -96,8 +93,8 @@
 							</div>
 						</div>
 
-						<div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-2">
-							<div class="card flex-fill w-100">
+						<div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-2 order-xxl-2">
+							<div class="card w-100">
 								<div class="card-header">
 									<h5 class="card-title mb-0">Overall Academic Result</h5>
 								</div>
@@ -108,7 +105,6 @@
 												<canvas id="chartjs-dashboard-pie"></canvas>
 											</div>
 										</div>
-
 										<table class="table mb-0">
 											<tbody>
 												<tr>
@@ -119,7 +115,6 @@
 													<td>FAIL</td>
 													<td class="text-end">10%</td>
 												</tr>
-
 											</tbody>
 										</table>
 									</div>
@@ -127,10 +122,9 @@
 							</div>
 						</div>
 
-						<div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
-							<div class="card flex-fill">
+						<div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-1 order-xxl-1">
+							<div class="card w-100">
 								<div class="card-header">
-
 									<h5 class="card-title mb-0">Calendar</h5>
 								</div>
 								<div class="card-body d-flex">
@@ -142,13 +136,7 @@
 								</div>
 							</div>
 						</div>
-
 					</div>
-
-					<div class="row">
-
-					</div>
-
 				</div>
 			</main>
 
@@ -158,7 +146,10 @@
 						<div class="col-6 text-start">
 						</div>
 						<div class="col-6 text-end">
-							<p class="mb-0"><strong>schoolAdmin</strong></p>
+							<p class="mb-0">
+								<a class="text-muted" href="https://adminkit.io/"
+									target="_blank"><strong>schoolAdmin</strong></a>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -169,7 +160,7 @@
 	<script src="js/app.js"></script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
+		document.addEventListener("DOMContentLoaded", function () {
 			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
 			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
 			gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
@@ -239,7 +230,7 @@
 		});
 	</script>
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
+		document.addEventListener("DOMContentLoaded", function () {
 			// Pie chart with only two parts (red and blue)
 			new Chart(document.getElementById("chartjs-dashboard-pie"), {
 				type: "pie",
@@ -267,7 +258,7 @@
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
+		document.addEventListener("DOMContentLoaded", function () {
 			// Initialize Bar Chart to show admissions growth over the years
 			new Chart(document.getElementById("chartjs-dashboard-bar"), {
 				type: "bar", // The chart type is bar chart
@@ -379,9 +370,9 @@
 			});
 		});
 	</script> -->
-	
+
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
+		document.addEventListener("DOMContentLoaded", function () {
 			var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
 			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
 			document.getElementById("datetimepicker-dashboard").flatpickr({
