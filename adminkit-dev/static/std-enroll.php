@@ -225,7 +225,7 @@
 
 		<div class="main">
 			<?php include_once("navbar.php"); ?>
-			<form action="" method="post">
+			<form action="std-enroll.php" method="post">
 				<div class="wrapper">
 					<div class="main">
 						<main class="content">
@@ -371,6 +371,12 @@
 												<input type="number" id="school_number" name="school_number" required>
 											</div>
 										</div>
+										<div class="form-row">
+											<div class="form-group">
+												<label for="password" class="required">Password</label>
+												<input type="password" id="password" name="password" required>
+											</div>
+										</div>
 									</div>
 
 									<div class="form-group">
@@ -385,9 +391,8 @@
 									<div class="btn-container">
 										<button type="reset" class="btn btn-secondary" id="resetBtn">Reset
 											Form</button>
-										<button type="submit" name="submitBtn" class="btn btn-primary"
-											id="submitBtn">Submit
-											Enrollment</button>
+										<button type="submit" name="submit" class="btn btn-primary"
+											id="submit">Submit Enrollment</button>
 									</div>
 								</div>
 			</form>
@@ -426,7 +431,7 @@
 	<?php
 	include_once 'connection.php';
 
-	if (isset($_POST['submitBtn'])) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		$student_image = $_POST['student_image'];
 		$full_name = $_POST['full_name'];
 		$roll_number = $_POST['roll_number'];
@@ -442,8 +447,9 @@
 		$academic_year = $_POST['academic_year'];
 		$school_name = $_POST['school_name'];
 		$school_number = $_POST['school_number'];
+		$password = $_POST['password'];
 
-		$insert_query = "INSERT INTO student_1 VALUES ('$student_image', NULL, '$full_name', '$roll_number', '$date_of_birth', '$gender', '$blood_group', '$residential_address', '$father_name', '$father_phone_number', '$mother_name', '$mother_phone_number', '$standard', '$academic_year', '$school_name', '$school_number')";
+		$insert_query = "INSERT INTO student_1 VALUES ('$student_image', NULL, '$full_name', '$roll_number', '$date_of_birth', '$gender', '$blood_group', '$residential_address', '$father_name', '$father_phone_number', '$mother_name', '$mother_phone_number', '$standard', '$academic_year', '$school_name', '$school_number', '$password')";
 		$insert_result = mysqli_query($conn, $insert_query);
 
 		if ($insert_result) {

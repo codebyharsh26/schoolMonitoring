@@ -271,7 +271,7 @@
 			<?php include_once("navbar.php"); ?>
 
 
-			<form action="" method="post">
+			<form action="tr-enroll.php" method="post">
 				<div class="wrapper">
 					<div class="main">
 						<main class="content">
@@ -428,6 +428,12 @@
 													id="edit-school_number">
 											</div>
 										</div>
+										<div class="form-row">
+											<div class="form-group">
+												<label for="password" class="required">Password</label>
+												<input type="password" id="password" name="password" required>
+											</div>
+										</div>
 									</div>
 									<div class="form-group">
 										<div class="checkbox-item">
@@ -495,8 +501,9 @@
 		$language_known = $_POST['language_known'];
 		$school_name = $_POST['school_name'];
 		$school_number = $_POST['school_number'];
+		$password = $_POST['password'];
 
-		$insert_query = "INSERT INTO teacher_1 VALUES ('$teacher_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number')";
+		$insert_query = "INSERT INTO teacher_1 VALUES ('$teacher_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number', '$password')";
 		$insert_result = mysqli_query($conn, $insert_query);
 
 		if ($insert_result) {
