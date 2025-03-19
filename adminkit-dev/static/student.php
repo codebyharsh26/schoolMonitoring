@@ -139,43 +139,6 @@
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
-	<script>
-		$(document).ready(function() {
-			$('.edit-btn').click(function() {
-				$('#edit-id').val($(this).data('id'));
-				$('#edit-full_name').val($(this).data('full_name'));
-				$('#edit-date_of_birth').val($(this).data('date_of_birth'));
-				$('#edit-address').val($(this).data('address'));
-				$('#edit-gender').val($(this).data('gender'));
-				$('#edit-standard').val($(this).data('standard'));
-				$('#edit-roll').val($(this).data('roll'));
-				$('#edit-mother_name').val($(this).data('mother_name'));
-				$('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
-				$('#edit-father_name').val($(this).data('father_name'));
-				$('#edit-father_phone_number').val($(this).data('father_phone_number'));
-				$('#edit-blood_group').val($(this).data('blood_group'));
-				$('#edit-school_name').val($(this).data('school_name'));
-				$('#edit-school_number').val($(this).data('school_number'));
-				$('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
-			});
-
-			$('.view-btn').click(function() {
-				$('#view-full_name').text($(this).data('full_name'));
-				$('#view-date_of_birth').text($(this).data('date_of_birth'));
-				$('#view-address').text($(this).data('address'));
-				$('#view-gender').text($(this).data('gender'));
-				$('#view-standard').text($(this).data('standard'));
-				$('#view-roll').text($(this).data('roll'));
-				$('#view-mother_name').text($(this).data('mother_name'));
-				$('#view-mother_phone_number').text($(this).data('mother_phone_number'));
-				$('#view-father_name').text($(this).data('father_name'));
-				$('#view-father_phone_number').text($(this).data('father_phone_number'));
-				$('#view-blood_group').text($(this).data('blood_group'));
-				$('#view-school_name').text($(this).data('school_name'));
-				$('#view-school_number').text($(this).data('school_number'));
-			});
-		});
-	</script>
 
 	<script>
 		$(document).ready(function() {

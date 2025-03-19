@@ -55,7 +55,7 @@
 
 	<script src="js/app.js"></script>
 
-	<script>
+	<!-- <script>
 		function initMaps() {
 			var defaultMap = {
 				zoom: 14,
@@ -78,7 +78,7 @@
 		}
 	</script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-aWrwgr64q4b3TEZwQ0lkHI4lZK-moM4&callback=initMaps" async defer></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-aWrwgr64q4b3TEZwQ0lkHI4lZK-moM4&callback=initMaps" async defer></script> -->
 
 </body>
 

@@ -19,10 +19,23 @@
 	<link href="css/app.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
+	<style>
+		.card{
+			width: 80vh;
+			margin-left: 45vh;
+		}
+		h5 .font{
+			font-size: xx-large;
+		}
+		td{
+			font-size:x-large;
+		}
+	</style>
 
 </head>
 
 <body>
+	<?php include_once ("connection.php")?>
 	<div class="wrapper">
 		<div class="sidebar">
 			<?php
@@ -47,20 +60,17 @@
 	$result = mysqli_query($conn,$query);
 	if ($result) {
 		while ($row = mysqli_fetch_assoc($result)){
-			$principal_full_name=$row["principal_full_name	"];
+			$principal_full_name=$row["principal_full_name"];
 			$date_of_birth=$row["date_of_birth"];
-			$residential_address=$row["residential_address"];
+			$email=$row["email"];
 			$gender=$row["gender"];
-			$standard=$row["standard"];
-			$roll_number=$row["roll_number"];
-			$mother_name=$row["mother_name"];
-			$mother_phone_number=$row["mother_phone_number"];
-			$father_name=$row["father_name"];
-			$father_phone_number=$row["father_phone_number"];
-			$blood_group=$row["blood_group"];
+			$phone=$row["phone"];
+			$qualification=$row["qualification"];
+			$address=$row["address"];
 			$school_name=$row["school_name"];
-			$academic_year=$row["academic_year"];
-			$school_number=$row["school_number"];
+			$school_no=$row["school_no"];
+			$salary=$row["salary"];
+			
 ?>
 
 							<div class="row">
@@ -73,60 +83,46 @@
 											<div class="car">
 											<img src="img/avatars/avatar-4.jpg" alt="Christina Mason" class="img-fluid rounded-circle mb-2" width="128" height="128" />
 
-											<h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?></h5>
+											<h5 class="font" style="font-size: xx-large;"><?php echo $principal_full_name; ?></h5>
 											<table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
+												
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Principal Name:</b> </td>
-													<td style="text-align: left;"><?php echo $principal_full_name	; ?></td>
-												</tr>
-												<tr>
-													<td class="bol" style="text-align: left;"><b>Address:</b></td>
-													<td style="text-align: left;"><?php echo $residential_address; ?></td>
+													<td class="bol" style="text-align: left;"><b>DOB:</b></td>
+													<td style="text-align: left;"><?php echo $date_of_birth; ?></td>
 												</tr>
 												<tr>
 													<td class="bol" style="text-align: left;"><b>Gender:</b></td>
 													<td style="text-align: left;"><?php echo $gender; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Standard:</b></td>
-													<td style="text-align: left;"><?php echo $standard; ?></td>
+													<td class="bol" style="text-align: left;"><b>Email:</b></td>
+													<td style="text-align: left;"><?php echo $email; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
-													<td style="text-align: left;"><?php echo $roll_number; ?></td>
+													<td class="bol" style="text-align: left;"><b>Phone:</b></td>
+													<td style="text-align: left;"><?php echo $phone; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Mother Name:</b></td>
-													<td style="text-align: left;"><?php echo $mother_name; ?></td>
+													<td class="bol" style="text-align: left;"><b>Qualification:</b></td>
+													<td style="text-align: left;"><?php echo $qualification; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Mother-Phone-No.:</b></td>
-													<td style="text-align: left;"><?php echo $mother_phone_number; ?></td>
-												</tr>
-												<tr>
-													<td class="bol" style="text-align: left;"><b>Father Name:</b></td>
-													<td style="text-align: left;"><?php echo $father_name; ?></td>
-												</tr>
-												<tr>
-													<td class="bol" style="text-align: left;"><b>Father-Phone-No.:</b></td>
-													<td style="text-align: left;"><?php echo $father_phone_number; ?></td>
-												</tr>
-												<tr>
-													<td class="bol" style="text-align: left;"><b>Blood-Group:</b></td>
-													<td style="text-align: left;"><?php echo $blood_group; ?></td>
+													<td class="bol" style="text-align: left;"><b>Address:</b></td>
+													<td style="text-align: left;"><?php echo $address; ?></td>
 												</tr>
 												<tr>
 													<td class="bol" style="text-align: left;"><b>School Name:</b></td>
 													<td style="text-align: left;"><?php echo $school_name; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>Acedemic Year:</b></td>
-													<td style="text-align: left;"><?php echo $academic_year; ?></td>
+													<td class="bol" style="text-align: left;"><b>School-Number:</b></td>
+													<td style="text-align: left;"><?php echo $school_no; ?></td>
 												</tr>
 												<tr>
-													<td class="bol" style="text-align: left;"><b>School Number:</b></td>
-													<td style="text-align: left;"><?php echo $school_number; ?></td>
+													<td class="bol" style="text-align: left;"><b>Salary:</b></td>
+													<td style="text-align: left;"><?php echo $salary; ?></td>
 												</tr>
+												
 											</table>
 
 										</div>
