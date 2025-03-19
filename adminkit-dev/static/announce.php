@@ -329,18 +329,7 @@
 									placeholder="Enter a clear and concise title" required>
 							</div>
 
-							<div class="form-group">
-								<label for="announcementCategory" class="form-label required">Category</label>
-								<select id="announcementCategory" class="form-control" required>
-									<option value="">Select category</option>
-									<option value="academic">Academic</option>
-									<option value="event">Event</option>
-									<option value="holiday">Holiday Notice</option>
-									<option value="exam">Examination</option>
-									<option value="sports">Sports</option>
-									<option value="other">Other</option>
-								</select>
-							</div>
+							
 						</div>
 
 						<div class="form-row">

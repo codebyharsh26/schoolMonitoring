@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/teacher-list-display.css">
     <title>Teacher Details</title>
-    <style>
+    <!-- <style>
         /* Pagination */
         .pagination {
             display: flex;
@@ -67,7 +67,7 @@
             justify-content: flex-end;
             margin-top: 10px;
         }
-    </style>
+    </style> -->
 </head>
 <div class="sidebar">
     <?php
@@ -76,7 +76,7 @@
 </div>
 
 <body>
-    <main class="main" style="margin-top: 3rem;">
+<main role="main" style="margin-top: 3rem;">
         <div class="container">
             <div class="container bg-light">
                 <h1 class="h3 mb-4"><strong>Teachers</strong> Details</h1>
@@ -103,46 +103,55 @@
                         while ($row = mysqli_fetch_assoc($result)) {
                             echo '<div class="col-md-4">
                                         <div class="card mb-4 shadow-sm">
+                                        <img src="' . $row['teacher_image'] . '" alt="Teacher Image" class="card-img-top" style="height: 200px; object-fit: cover">
                                             <div class="card-body">
                                                 <h5 class="card-title">' . $row['full_name'] . '</h5>
-                                                <p class="card-text"><b>Subject:</b> ' . $row['subject_name'] . '</p>
+                                                <p class="card-text"><b>Subject Name:</b> ' . $row['subject_name'] . '</p>
                                                 <p class="card-text"><b>Standard:</b> ' . $row['standard'] . '</p>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <div class="btn-group">
                                                         <button class="btn btn-sm btn-outline-info view-btn" 
-                                                            data-teacher_id="' . $row['id'] . '" 
-                                                            data-teacher_name="' . $row['full_name'] . '" 
-                                                            data-teacher_phone="' . $row['phone_number'] . '" 
-                                                            data-teacher_email="' . $row['email_address'] . '" 
-                                                            data-teacher_salary="' . $row['salary_monthly'] . '"
-                                                            data-teacher_dob="' . $row['date_of_birth'] . '" 
-                                                            data-teacher_address="' . $row['residential_address'] . '"  
+                                                            data-id="' . $row['id'] . '" 
+                                                            data-full_name="' . $row['full_name'] . '" 
+                                                            data-gender="' . $row['gender'] . '"
+                                                            data-date_of_birth="' . $row['date_of_birth'] . '" 
+                                                            data-blood_group="' . $row['blood_group'] . '" 
+                                                            data-phone_number="' . $row['phone_number'] . '" 
+                                                            data-emergency_contact_number="' . $row['emergency_contact_number'] . '" 
+                                                            data-email_address="' . $row['email_address'] . '" 
+                                                            data-residential_address="' . $row['residential_address'] . '" 
+                                                            data-subject_name="' . $row['subject_name'] . '" 
+                                                            data-standard="' . $row['standard'] . '" 
+                                                            data-salary_monthly="' . $row['salary_monthly'] . '"
                                                             data-qualification="' . $row['qualification'] . '" 
-                                                            data-subject="' . $row['subject_name'] . '" 
-                                                            data-std="' . $row['standard'] . '" 
-                                                            data-gender="' . $row['gender'] . '" 
+                                                            data-first_language="' . $row['first_language'] . '" 
+                                                            data-language_known="' . $row['language_known'] . '"
                                                             data-school_name="' . $row['school_name'] . '" 
                                                             data-school_number="' . $row['school_number'] . '" 
                                                             data-toggle="modal" 
                                                             data-target="#viewModal">View</button>
-                                                            <button class="btn btn-sm btn-outline-success edit-btn" 
-                                                            data-teacher_id="' . $row['id'] . '" 
-                                                            data-teacher_name="' . $row['full_name'] . '" 
-                                                            data-teacher_phone="' . $row['phone_number'] . '" 
-                                                            data-teacher_email="' . $row['email_address'] . '" 
-                                                            data-teacher_salary="' . $row['salary_monthly'] . '"
-                                                            data-teacher_dob="' . $row['date_of_birth'] . '" 
-                                                            data-teacher_address="' . $row['residential_address'] . '"  
+                                                            
+                                                        <button class="btn btn-sm btn-outline-success edit-btn" 
+                                                            data-id="' . $row['id'] . '" 
+                                                            data-full_name="' . $row['full_name'] . '" 
+                                                            data-gender="' . $row['gender'] . '"
+                                                            data-date_of_birth="' . $row['date_of_birth'] . '"
+                                                            data-blood_group="' . $row['blood_group'] . '"
+                                                            data-phone_number="' . $row['phone_number'] . '" 
+                                                            data-emergency_contact_number="' . $row['emergency_contact_number'] . '" 
+                                                            data-email_address="' . $row['email_address'] . '" 
+                                                            data-residential_address="' . $row['residential_address'] . '" 
+                                                            data-subject_name="' . $row['subject_name'] . '" 
+                                                            data-standard="' . $row['standard'] . '" 
+                                                            data-salary_monthly="' . $row['salary_monthly'] . '"
                                                             data-qualification="' . $row['qualification'] . '" 
-                                                            data-subject="' . $row['subject_name'] . '" 
-                                                            data-std="' . $row['standard'] . '" 
-                                                            data-gender="' . $row['gender'] . '" 
+                                                            data-first_language="' . $row['first_language'] . '"
+                                                            data-language_known="' . $row['language_known'] . '"
                                                             data-school_name="' . $row['school_name'] . '" 
                                                             data-school_number="' . $row['school_number'] . '" 
                                                             data-toggle="modal" 
                                                             data-target="#editModal">Edit</button>
-                                                        <a href="#" class="btn btn-sm btn-outline-danger delete-btn" data-toggle="modal" data-target="#deleteConfirmModal" data-teacher_id="' . $row['id'] . '" data-page="' . $page . '">Delete</a>                                                    </div>
-                                                    <small class="text-muted">ID: ' . $row['id'] . '</small>
+                                                        <a href="#" class="btn btn-sm btn-outline-danger delete-btn" data-toggle="modal" data-target="#deleteConfirmModal" data-id="' . $row['id'] . '" data-page="' . $page . '">Delete</a>                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -181,44 +190,13 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form action="tea_update.php" method="POST">
-                            <input type="hidden" name="updateid" id="edit-teacher_id">
+                        <form action="teacher-list-update.php" method="POST">
+                            <input type="hidden" name="updateid" id="edit-id">
                             <input type="hidden" name="page" id="edit-page">
+
                             <div class="form-group">
-                                <label for="edit-teacher_name">Teacher Name</label>
-                                <input type="text" class="form-control" name="teacher_name" id="edit-teacher_name">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-teacher-phone">Teacher Phone</label>
-                                <input type="tel" class="form-control" name="teacher_phone" id="edit-teacher_phone">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-teacher-email">Teacher Email</label>
-                                <input type="email" class="form-control" name="teacher_email" id="edit-teacher_email">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-teacher-salary">Teacher Salary</label>
-                                <input type="number" class="form-control" min="0" max="10000000" step="0.01" name="teacher_salary" id="edit-teacher_salary">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-teacher_dob">Teacher DOB</label>
-                                <input type="date" class="form-control" name="teacher_dob" id="edit-teacher_dob">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-teacher_address">Teacher Address</label>
-                                <input type="text" class="form-control" name="teacher_address" id="edit-teacher_address">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-qualification">Qualification</label>
-                                <input type="text" class="form-control" name="qualification" id="edit-qualification">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-subject">Subject</label>
-                                <input type="text" class="form-control" name="subject" id="edit-subject">
-                            </div>
-                            <div class="form-group">
-                                <label for="edit-std">Standard</label>
-                                <input type="text" class="form-control" name="std" id="edit-std">
+                                <label for="edit-full_name">Full Name</label>
+                                <input type="text" class="form-control" name="full_name" id="edit-full_name">
                             </div>
                             <div class="form-group">
                                 <label for="edit-gender">Gender</label>
@@ -228,13 +206,62 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="edit-date_of_birth">Date of Birth</label>
+                                <input type="date" class="form-control" name="date_of_birth" id="edit-date_of_birth">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-blood_group">Blood Group</label>
+                                <input type="text" class="form-control" name="blood_group" id="edit-blood_group">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-phone_number">Phone Number</label>
+                                <input type="tel" class="form-control" name="phone_number" id="edit-phone_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-emergency_contact_number">Emergency Contact Number</label>
+                                <input type="tel" class="form-control" name="emergency_contact_number" id="edit-emergency_contact_number">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-email_address">Email Address</label>
+                                <input type="tel" class="form-control" name="email_address" id="edit-email_address">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-residential_address">Residential Address</label>
+                                <input type="text" class="form-control" name="residential_address" id="edit-residential_address">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-subject_name">Subject Name</label>
+                                <input type="text" class="form-control" name="subject_name" id="edit-subject_name">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-standard">Standard</label>
+                                <input type="text" class="form-control" name="standard" id="edit-standard">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-salary_monthly">Monthly Salary</label>
+                                <input type="number" class="form-control" name="salary_monthly" id="edit-salary_monthly">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-qualification">Qualification</label>
+                                <input type="text" class="form-control" name="qualification" id="edit-qualification">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-first_language">First Language</label>
+                                <input type="text" class="form-control" name="first_language" id="edit-first_language">
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-language_known">Language Known</label>
+                                <input type="text" class="form-control" name="language_known" id="edit-language_known">
+                            </div>
+                            <div class="form-group">
                                 <label for="edit-school_name">School Name</label>
                                 <input type="text" class="form-control" name="school_name" id="edit-school_name">
                             </div>
                             <div class="form-group">
-                                <label for="edit-school_no">School No</label>
-                                <input type="text" class="form-control" name="school_no" id="edit-school_no">
+                                <label for="edit-school_number">School Number</label>
+                                <input type="text" class="form-control" name="school_number" id="edit-school_number">
                             </div>
+                            
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>
@@ -253,18 +280,23 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p><b>Teacher Name:</b> <span id="view-teacher_name"></span></p>
-                        <p><b>Teacher Phone:</b> <span id="view-teacher_phone"></span></p>
-                        <p><b>Teacher Email:</b> <span id="view-teacher_email"></span></p>
-                        <p><b>Teacher Salary:</b> <span id="view-teacher_salary"></span></p>
-                        <p><b>Teacher DOB:</b> <span id="view-teacher_dob"></span></p>
-                        <p><b>Teacher Address:</b> <span id="view-teacher_address"></span></p>
-                        <p><b>Qualification:</b> <span id="view-qualification"></span></p>
-                        <p><b>Subject:</b> <span id="view-subject"></span></p>
-                        <p><b>Standard:</b> <span id="view-std"></span></p>
+                        <p><b>Id:</b> <span id="view-id"></span></p>
+                        <p><b>Full Name:</b> <span id="view-full_name"></span></p>
                         <p><b>Gender:</b> <span id="view-gender"></span></p>
+                        <p><b>Date of Birth:</b> <span id="view-date_of_birth"></span></p>
+                        <p><b>Blood Group:</b> <span id="view-blood_group"></span></p>
+                        <p><b>Phone Number:</b> <span id="view-phone_number"></span></p>
+                        <p><b>Emergency Contact Number:</b> <span id="view-emergency_contact_number"></span></p>
+                        <p><b>Email Address:</b> <span id="view-email_address"></span></p>
+                        <p><b>Residential Address:</b> <span id="view-residential_address"></span></p>
+                        <p><b>Subject Name:</b> <span id="view-subject_name"></span></p>
+                        <p><b>Standard:</b> <span id="view-standard"></span></p>
+                        <p><b>Teacher Salary(Monthly):</b> <span id="view-salary_monthly"></span></p>
+                        <p><b>Qualification:</b> <span id="view-qualification"></span></p>
+                        <p><b>First Language:</b> <span id="view-first_language"></span></p>
+                        <p><b>Language Known:</b> <span id="view-language_known"></span></p>
                         <p><b>School Name:</b> <span id="view-school_name"></span></p>
-                        <p><b>School No:</b> <span id="view-school_no"></span></p>
+                        <p><b>School Number:</b> <span id="view-school_number"></span></p>
                     </div>
                 </div>
             </div>
@@ -285,7 +317,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                        <a href="#" id="confirmDeleteBtn" class="btn btn-danger">Delete</a>
+                        <a href="#" id="confirmDeleteBtn" name="id" class="btn btn-danger">Delete</a>
                     </div>
                 </div>
             </div>
@@ -297,36 +329,44 @@
         <script>
             $(document).ready(function() {
                 $('.edit-btn').click(function() {
-                    $('#edit-teacher_id').val($(this).data('teacher_id'));
-                    $('#edit-teacher_name').val($(this).data('teacher_name'));
-                    $('#edit-teacher_phone').val($(this).data('teacher_phone'));
-                    $('#edit-teacher_email').val($(this).data('teacher_email'));
-                    $('#edit-teacher_salary').val($(this).data('teacher_salary'));
-                    $('#edit-teacher_dob').val($(this).data('teacher_dob'));
-                    $('#edit-teacher_address').val($(this).data('teacher_address'));
-                    $('#edit-qualification').val($(this).data('qualification'));
-                    $('#edit-subject').val($(this).data('subject'));
-                    $('#edit-std').val($(this).data('std'));
+                    $('#edit-id').val($(this).data('id'));
+                    $('#edit-full_name').val($(this).data('full_name'));
                     $('#edit-gender').val($(this).data('gender'));
+                    $('#edit-date_of_birth').val($(this).data('date_of_birth'));
+                    $('#edit-blood_group').val($(this).data('blood_group'));
+                    $('#edit-phone_number').val($(this).data('phone_number'));
+                    $('#edit-emergency_contact_number').val($(this).data('emergency_contact_number'));
+                    $('#edit-email_address').val($(this).data('email_address'));
+                    $('#edit-residential_address').val($(this).data('residential_address'));
+                    $('#edit-subject_name').val($(this).data('subject_name'));
+                    $('#edit-standard').val($(this).data('standard'));
+                    $('#edit-salary_monthly').val($(this).data('salary_monthly'));
+                    $('#edit-qualification').val($(this).data('qualification'));
+                    $('#edit-first_language').val($(this).data('first_language'));
+                    $('#edit-language_known').val($(this).data('language_known'));
                     $('#edit-school_name').val($(this).data('school_name'));
-                    $('#edit-school_no').val($(this).data('school_no'));
+                    $('#edit-school_number').val($(this).data('school_number'));
                     $('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
                 });
 
                 $('.view-btn').click(function() {
-                    $('#view-teacher_id').text($(this).data('teacher_id'));
-                    $('#view-teacher_name').text($(this).data('teacher_name'));
-                    $('#view-teacher_phone').text($(this).data('teacher_phone'));
-                    $('#view-teacher_email').text($(this).data('teacher_email'));
-                    $('#view-teacher_salary').text($(this).data('teacher_salary'));
-                    $('#view-teacher_dob').text($(this).data('teacher_dob'));
-                    $('#view-teacher_address').text($(this).data('teacher_address'));
-                    $('#view-qualification').text($(this).data('qualification'));
-                    $('#view-subject').text($(this).data('subject'));
-                    $('#view-std').text($(this).data('std'));
+                    $('#view-id').text($(this).data('id'));
+                    $('#view-full_name').text($(this).data('full_name'));
                     $('#view-gender').text($(this).data('gender'));
+                    $('#view-date_of_birth').text($(this).data('date_of_birth'));
+                    $('#view-blood_group').text($(this).data('blood_group'));
+                    $('#view-phone_number').text($(this).data('phone_number'));
+                    $('#view-emergency_contact_number').text($(this).data('emergency_contact_number'));
+                    $('#view-email_address').text($(this).data('email_address'));
+                    $('#view-residential_address').text($(this).data('residential_address'));
+                    $('#view-subject_name').text($(this).data('subject_name'));
+                    $('#view-standard').text($(this).data('standard'));
+                    $('#view-salary_monthly').text($(this).data('salary_monthly'));
+                    $('#view-qualification').text($(this).data('qualification'));
+                    $('#view-first_language').text($(this).data('first_language'));
+                    $('#view-language_known').text($(this).data('language_known'));
                     $('#view-school_name').text($(this).data('school_name'));
-                    $('#view-school_no').text($(this).data('school_no'));
+                    $('#view-school_number').text($(this).data('school_number'));
                 });
             });
         </script>
@@ -336,10 +376,10 @@
                 let deleteUrl = "";
 
                 $(".delete-btn").click(function() {
-                    let studentId = $(this).data("teacher_id");
+                    let teacherId = $(this).data("id");
                     let page = $(this).data("page");
 
-                    deleteUrl = "tea_delete.php?deleteid=" + studentId + "&page=" + page;
+                    deleteUrl = "teacher-list-delete.php?deleteid=" + teacherId + "&page=" + page;
                 });
 
                 $("#confirmDeleteBtn").click(function() {
