@@ -29,7 +29,7 @@
 					
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="admin-profile.php">
+						<a class="sidebar-link" href="#profile">
 							<i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
 						</a>
 					</li>
@@ -39,40 +39,40 @@
 					
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="tr-enroll.php">
+						<a class="sidebar-link" href="#progress">
 							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Record and Progress</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="std-enroll.php">
+						<a class="sidebar-link" href="#timetable">
 							<i class="align-middle" data-feather="grid"></i> <span class="align-middle">Time Table</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="add-marks.php">
+						<a class="sidebar-link" href="#notes">
 							<i class="align-middle" data-feather="square"></i> <span class="align-middle">Uploads Notes</span>
 						</a>
 					</li>
 
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="announce.php">
+						<a class="sidebar-link" href="#marks">
 							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Marks Entry</span>
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="activities.php">
+						<a class="sidebar-link" href="#leave">
 							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Leave Application</span>
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="student.php">
+						<a class="sidebar-link" href="#announcement">
 							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Announcement</span>
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="student.php">
+						<a class="sidebar-link" href="#calender">
 							<i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Calender</span>
 						</a>
 					</li>
