@@ -465,7 +465,7 @@
 		}
 	</script>
 
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", function () {
 			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
 			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
@@ -534,8 +534,8 @@
 				}
 			});
 		});
-	</script>
-	<script>
+	</script> -->
+	<!-- <script>
 		function toggleSidebar() {
 			const sidebar = document.getElementById("sidebar");
 			if (sidebar.style.display === "none") {
@@ -544,7 +544,7 @@
 				sidebar.style.display = "none";
 			}
 		}
-	</script>
+	</script> -->
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			// Pie chart

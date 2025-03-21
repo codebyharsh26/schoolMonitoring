@@ -149,7 +149,7 @@
 						</div>
 					</div>
 				</div>
-			</footer>
+			</footer>	
 		</div>
 	</div>
 

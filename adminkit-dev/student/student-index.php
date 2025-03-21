@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-	
-	<?php
-	include_once "student-sidebar.php";
-	include_once "connection.php";
-	include_once "student-navbar.php";
 
+	<?php
+	include_once "connection.php";
 	?>
-	
+    <?php 
+        include_once "student-sidebar.php";
+    ?>
+    
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -333,7 +333,7 @@
 					<main class="content">
 						<div class="container-fluid p-0">
 <?php
-	$query = "select * from student_1 where id=1";
+	$query = "select * from student_1 where id=20";
 	$result = mysqli_query($conn,$query);
 	if ($result) {
 		while ($row = mysqli_fetch_assoc($result)){
@@ -352,6 +352,18 @@
 			$school_name=$row["school_name"];
 			$academic_year=$row["academic_year"];
 			$school_number=$row["school_number"];
+?>
+
+<?php
+	$markquery = "select * from student_marks where marks_id=20";
+	$mresult = mysqli_query($conn,$markquery);
+	if ($mresult) {
+		while ($mrow = mysqli_fetch_assoc($mresult)){
+			$mathematics=$mrow["mathematics"];
+			$gujarati=$mrow["gujarati"];
+			$hindi=$mrow["hindi"];
+			$art_craft=$mrow["art_craft"];
+			$physical_education=$mrow["physical_education"];
 ?>
 
 							<div class="row">
@@ -428,7 +440,8 @@
 
 							</div>
 	<?php 	
-	}}?>
+	}}
+}}?>
 						</div>
 
 				</div>
@@ -457,12 +470,8 @@
 									<table class="table mb-0">
 										<tbody>
 											<tr>
-												<td>PASS</td>
-												<td class="text-end">90%</td>
-											</tr>
-											<tr>
-												<td>FAIL</td>
-												<td class="text-end">10%</td>
+												<td>Percentage</td>
+												<td class="text-end">80%</td>
 											</tr>
 
 										</tbody>
@@ -625,76 +634,10 @@
             window.open('your-pdf-file.pdf', '_blank');
         }
     </script>
-
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
-			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
-			gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
-			gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
-			// Line chart
-			new Chart(document.getElementById("chartjs-dashboard-line"), {
-				type: "line",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "Sales ($)",
-						fill: true,
-						backgroundColor: gradient,
-						borderColor: window.theme.primary,
-						data: [
-							2115,
-							1562,
-							1584,
-							1892,
-							1587,
-							1923,
-							2566,
-							2448,
-							2805,
-							3438,
-							2917,
-							3327
-						]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					tooltips: {
-						intersect: false
-					},
-					hover: {
-						intersect: true
-					},
-					plugins: {
-						filler: {
-							propagate: false
-						}
-					},
-					scales: {
-						xAxes: [{
-							reverse: true,
-							gridLines: {
-								color: "rgba(0,0,0,0.0)"
-							}
-						}],
-						yAxes: [{
-							ticks: {
-								stepSize: 1000
-							},
-							display: true,
-							borderDash: [3, 3],
-							gridLines: {
-								color: "rgba(0,0,0,0.0)"
-							}
-						}]
-					}
-				}
-			});
-		});
+		
+
+		
 	</script>
 	<script>
 		function toggleSidebar() {
@@ -706,158 +649,119 @@
     }
 }
 	</script>
+	<!-- pass-fail graph ------------------------------------------------------------------------------>
+	
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Pie chart
-			new Chart(document.getElementById("chartjs-dashboard-pie"), {
-				type: "pie",
-				data: {
-					labels: ["Chrome", "Firefox", "IE"],
-					datasets: [{
-						data: [4306, 3801, 1689],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.warning,
-							window.theme.danger
-						],
-						borderWidth: 5
-					}]
-				},
-				options: {
-					responsive: !window.MSInputMethodContext,
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					cutoutPercentage: 75
-				}
-			});
-		});
+		let mathematics = <?php echo json_encode($mathematics); ?>;
+		let gujarati = <?php echo json_encode($gujarati); ?>;
+		let hindi = <?php echo json_encode($hindi); ?>;
+		let art_craft = <?php echo json_encode($art_craft); ?>;
+		let physical_education = <?php echo json_encode($physical_education); ?>;
+		
 	</script>
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Bar chart
-			new Chart(document.getElementById("chartjs-dashboard-bar"), {
-				type: "bar",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "This year",
-						backgroundColor: window.theme.primary,
-						borderColor: window.theme.primary,
-						hoverBackgroundColor: window.theme.primary,
-						hoverBorderColor: window.theme.primary,
-						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					scales: {
-						yAxes: [{
-							gridLines: {
-								display: false
-							},
-							stacked: false,
-							ticks: {
-								stepSize: 20
-							}
-						}],
-						xAxes: [{
-							stacked: false,
-							gridLines: {
-								color: "transparent"
-							}
-						}]
-					}
-				}
-			});
-		});
+		document.addEventListener("DOMContentLoaded", function () {
+    let ctx = document.getElementById("chartjs-dashboard-bar").getContext("2d");
+    
+    // Make sure values are numbers, not strings
+    let mathValue = parseFloat(mathematics);
+    let gujaratiValue = parseFloat(gujarati);
+    let hindiValue = parseFloat(hindi);
+    let artValue = parseFloat(art_craft);
+    let peValue = parseFloat(physical_education);
+    
+    new Chart(ctx, {
+        type: "bar",
+        data: {
+            labels: ["Physics", "Gujarati", "Hindi", "Maths", "Art and Craft"],
+            datasets: [{
+                label: "Marks",
+                backgroundColor: "#4285F4",
+                borderColor: "#4285F4",
+                hoverBackgroundColor: "#3367D6",
+                hoverBorderColor: "#3367D6",
+                data: [mathValue, gujaratiValue, hindiValue, artValue, peValue],
+                barPercentage: 0.6,
+                categoryPercentage: 0.5
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    min: 0,
+                    max: 100,
+                    ticks: {
+                        stepSize: 10
+                    },
+                    grid: {
+                        display: true
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+});
+</script>
+<script>
+		document.addEventListener("DOMContentLoaded", function () {
+    // First, get the values outside the Chart constructor
+    let mathematics = <?php echo json_encode($mathematics); ?>;
+    let gujarati = <?php echo json_encode($gujarati); ?>;
+    let hindi = <?php echo json_encode($hindi); ?>;
+    let art_craft = <?php echo json_encode($art_craft); ?>;
+    let physical_education = <?php echo json_encode($physical_education); ?>;
+    
+    // Convert strings to numbers if needed
+    let mathValue = parseFloat(mathematics);
+    let gujaratiValue = parseFloat(gujarati);
+    let hindiValue = parseFloat(hindi);
+    let artValue = parseFloat(art_craft);
+    let peValue = parseFloat(physical_education);
+    
+    // Calculate the percentages
+    let total = ((mathValue + gujaratiValue + hindiValue + artValue + peValue) / 500) * 100;
+    let nmarks = 100 - total;
+    
+    // Now create the chart with the calculated values
+    new Chart(document.getElementById("chartjs-dashboard-pie"), {
+        type: "pie",
+        data: {
+            labels: ["Percentage", "."],
+            datasets: [{
+                data: [total, nmarks],
+                backgroundColor: [
+                    "blue", // Color for Pass section
+                    "lightgrey"   // Color for Fail section
+                ],
+                borderWidth: 5
+            }]
+        },
+        options: {
+            responsive: !window.MSInputMethodContext,
+            maintainAspectRatio: false,
+            legend: {
+                display: false // Hides the legend
+            },
+            cutoutPercentage: 75 // To make it a donut chart
+        }
+    });
+    
+    // Update the percentage display in your table if needed
+    document.querySelector(".table .text-end").textContent = total.toFixed(1) + "%";
+});
 	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var markers = [{
-					coords: [31.230391, 121.473701],
-					name: "Shanghai"
-				},
-				{
-					coords: [28.704060, 77.102493],
-					name: "Delhi"
-				},
-				{
-					coords: [6.524379, 3.379206],
-					name: "Lagos"
-				},
-				{
-					coords: [35.689487, 139.691711],
-					name: "Tokyo"
-				},
-				{
-					coords: [23.129110, 113.264381],
-					name: "Guangzhou"
-				},
-				{
-					coords: [40.7127837, -74.0059413],
-					name: "New York"
-				},
-				{
-					coords: [34.052235, -118.243683],
-					name: "Los Angeles"
-				},
-				{
-					coords: [41.878113, -87.629799],
-					name: "Chicago"
-				},
-				{
-					coords: [51.507351, -0.127758],
-					name: "London"
-				},
-				{
-					coords: [40.416775, -3.703790],
-					name: "Madrid "
-				}
-			];
-			var map = new jsVectorMap({
-				map: "world",
-				selector: "#world_map",
-				zoomButtons: true,
-				markers: markers,
-				markerStyle: {
-					initial: {
-						r: 9,
-						strokeWidth: 7,
-						stokeOpacity: .4,
-						fill: window.theme.primary
-					},
-					hover: {
-						fill: window.theme.primary,
-						stroke: window.theme.primary
-					}
-				},
-				zoomOnScroll: false
-			});
-			window.addEventListener("resize", () => {
-				map.updateSize();
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
-			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-			document.getElementById("datetimepicker-dashboard").flatpickr({
-				inline: true,
-				prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-				nextArrow: "<span title=\"Next month\">&raquo;</span>",
-				defaultDate: defaultDate
-			});
-		});
-	</script>
-
 </body>
-
 </html>
