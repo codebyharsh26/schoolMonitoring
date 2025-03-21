@@ -3,8 +3,8 @@
 
 <head>
 
+
 	<?php
-	include_once "student-sidebar.php";
 	include_once "connection.php";
 	include_once "student-navbar.php";
 
@@ -927,6 +927,8 @@
 			}
 		}
 	</script>
+	<!-- pass-fail graph ------------------------------------------------------------------------------>
+	
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			// Pie chart
@@ -1078,7 +1080,5 @@
 			});
 		});
 	</script>
-
 </body>
-
 </html>

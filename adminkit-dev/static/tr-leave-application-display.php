@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+<?php
+// include '../includes/db_connect.php';
+
+// $sql = "SELECT * FROM leave_applications ORDER BY submitted_at DESC";
+// $result = $conn->query($sql);
+// ?>
     <?php
     include_once "connection.php";
     ?>
@@ -23,8 +29,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/adminkit@2.1.0/dist/css/app.css" rel="stylesheet">
 </head>
-
 <body>
     <div class="wrapper">
         <div class="sidebar">
@@ -36,30 +43,73 @@
             <?php
             include_once("navbar.php");
             ?>
-
             <main class="content">
-
-            </main>
-
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-muted">
-                        <div class="col-6 text-start">
-
-                        </div>
-                        <div class="col-6 text-end">
-                            <p class="mb-0">
-                                <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>schoolAdmin</strong></a>
-                            </p>
-                        </div>
+            <div class="container-fluid p-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Leave Applications</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Teacher</th>
+                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Start</th>
+                                    <th>End</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php while ($row = $result->fetch_assoc()): ?>
+                                    <tr>
+                                        <td><?= $row["id"]; ?></td>
+                                        <td><?= $row["teacher_name"]; ?></td>
+                                        <td><?= $row["teacher_email"]; ?></td>
+                                        <td><?= $row["leave_type"]; ?></td>
+                                        <td><?= $row["start_date"]; ?></td>
+                                        <td><?= $row["end_date"]; ?></td>
+                                        <td>
+                                            <span class="badge bg-<?= ($row["status"] == 'Approved') ? 'success' : (($row["status"] == 'Denied') ? 'danger' : 'warning') ?>">
+                                                <?= $row["status"]; ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <?php if ($row["status"] == 'Pending'): ?>
+                                                <form action="update_status.php" method="POST">
+                                                    <input type="hidden" name="id" value="<?= $row["id"]; ?>">
+                                                    <button type="submit" name="action" value="Approve" class="btn btn-success btn-sm">Approve</button>
+                                                    <button type="submit" name="action" value="Deny" class="btn btn-danger btn-sm">Deny</button>
+                                                </form>
+                                            <?php else: ?>
+                                                <span class="text-muted">Processed</span>
+                                            <?php endif; ?>
+                                        </td>
+                                    </tr>
+                                <?php endwhile; ?>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </footer>
+            </div>
+            </main>
+            <footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+						</div>
+						<div class="col-6 text-end">
+							<p class="mb-0"><strong>schoolAdmin</strong></p>
+						</div>
+					</div>
+				</div>
+			</footer>
         </div>
     </div>
-
     <script src="js/app.js"></script>
-
 </body>
 
 </html>
