@@ -80,7 +80,7 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
                     <div class="row">
                         <div class="col-xl-12 d-flex">
                             <div class="w-100">
-                                <div class="row d-flex flex-nowrap gap-3">
+                                <div class="d-flex flex-nowrap gap-4">
                                     <!-- gap-3 adds spacing -->
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
@@ -212,8 +212,8 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
                     labels: ["Pass", "Fail"],
                     datasets: [{
                         data: [passPercentage, failPercentage],
-                        backgroundColor: ["#4CAF50", "#F44336"], // Green for Pass, Red for Fail
-                        borderWidth: 2
+                        backgroundColor: [" #4d4dff", "#ff3333"], // Green for Pass, Red for Fail
+                        borderWidth: 1
                     }]
                 },
                 options: {
