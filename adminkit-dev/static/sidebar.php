@@ -26,34 +26,120 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <style>
-	/* Make the sidebar fixed */
+/* ============================= */
+/* 📌 Fixed Sidebar Styling      */
+/* ============================= */
+
+/* Sidebar: Fixed & No Resizing */
 #sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px; /* Adjust as per your design */
+    width: 250px !important;  /* Fixed width */
+    min-width: 250px !important;
+    max-width: 250px !important;
     height: 100vh; /* Full height */
-    background: #2C3E50; /* Sidebar background */
+    background: #2C3E50; /* Dark blue background */
     color: white;
-    overflow-y: auto; /* Allow scrolling inside sidebar */
+    overflow: hidden; /* Prevents scrollbar */
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    transition: none !important; /* Disable animations */
 }
 
-/* Ensure sidebar content takes full height */
+/* Sidebar Content: No Scrollbar */
 .sidebar-content {
+    width: 100%;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: hidden; /* Hides scrollbar */
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
 }
 
-/* Adjust main content so it doesn't go under the sidebar */
-.wrapper {
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+.sidebar-content::-webkit-scrollbar {
+    display: none;
+}
+
+/* Sidebar Items - Prevent Expanding */
+.sidebar-item {
+    white-space: nowrap; /* Prevents text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Sidebar Links - Remove Unwanted Styling */
+.sidebar-link {
     display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none !important;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background 0.2s ease-in-out;
 }
 
+/* Active Sidebar Item - Highlighted */
+.sidebar-item.active .sidebar-link {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sidebar Hover Effects */
+.sidebar-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Remove Focus Outline */
+.sidebar-link:focus,
+.sidebar-link:active {
+    text-decoration: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* ============================= */
+/* 📌 Ensure Sidebar Doesn't Resize */
+/* ============================= */
+
+/* Prevent Sidebar Expansion on Click */
+.sidebar-content .sidebar-item {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Fix Sidebar Width on Window Resize */
+@media screen and (max-width: 992px) {
+    #sidebar {
+        width: 250px !important;
+        min-width: 250px !important;
+        max-width: 250px !important;
+    }
+}
+
+/* ============================= */
+/* 📌 Adjust Main Content Area   */
+/* ============================= */
 #main-content {
     margin-left: 250px; /* Same as sidebar width */
     padding: 20px;
     width: calc(100% - 250px);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    #sidebar {
+        width: 0;
+        transition: width 0.3s ease;
+    }
+
+    #sidebar.active {
+        width: 250px;
+    }
+
+    #main-content {
+        margin-left: 0;
+        width: 100%;
+    }
 }
 
 </style>
@@ -146,7 +232,9 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 			</div>
 		</nav>
 	</div>
-	<script src="js/app.js"></script>
+	<script src="js/app.js"> 
+
+	</script>
 
 </body>
 

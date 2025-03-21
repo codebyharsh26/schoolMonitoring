@@ -115,10 +115,18 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
 					<div class="row">
 						<!-- Calendar: Takes 50% Width -->
 						<div class="col-12 col-lg-6 d-flex order-1 order-lg-1">
+						<!-- Calendar: Takes 50% Width -->
+						<div class="col-12 col-lg-6 d-flex order-1 order-lg-1">
 							<div class="card w-100">
 								<div class="card-header">
 									<h5 class="card-title mb-0">Calendar</h5>
+									<h5 class="card-title mb-0">Calendar</h5>
 								</div>
+								<div class="card-body d-flex">
+									<div class="align-self-center w-100">
+										<div class="chart">
+											<div id="datetimepicker-dashboard"></div>
+										</div>
 								<div class="card-body d-flex">
 									<div class="align-self-center w-100">
 										<div class="chart">
@@ -129,6 +137,8 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
 							</div>
 						</div>
 
+						<!-- Academic Result: Takes 25% Width -->
+						<div class="col-12 col-lg-3 d-flex order-2 order-lg-2">
 						<!-- Academic Result: Takes 25% Width -->
 						<div class="col-12 col-lg-3 d-flex order-2 order-lg-2">
 							<div class="card w-100">
@@ -161,10 +171,16 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
 
 						<!-- Admission Graph: Takes 25% Width -->
 						<div class="col-12 col-lg-3 d-flex order-3 order-lg-3">
+						<!-- Admission Graph: Takes 25% Width -->
+						<div class="col-12 col-lg-3 d-flex order-3 order-lg-3">
 							<div class="card w-100">
 								<div class="card-header">
 									<h5 class="card-title mb-0">Admission Graph</h5>
+									<h5 class="card-title mb-0">Admission Graph</h5>
 								</div>
+								<div class="card-body d-flex w-100">
+									<div class="align-self-center chart chart-lg">
+										<canvas id="chartjs-dashboard-bar"></canvas>
 								<div class="card-body d-flex w-100">
 									<div class="align-self-center chart chart-lg">
 										<canvas id="chartjs-dashboard-bar"></canvas>
@@ -173,6 +189,7 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
 							</div>
 						</div>
 					</div>
+
 
 			</main>
 
@@ -183,10 +200,12 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
 						</div>
 						<div class="col-6 text-end">
 							<p class="mb-0"><strong>schoolAdmin</strong></p>
+							<p class="mb-0"><strong>schoolAdmin</strong></p>
 						</div>
 					</div>
 				</div>
 			</footer>
+
 
 		</div>
 	</div>

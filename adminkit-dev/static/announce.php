@@ -422,21 +422,17 @@
 					</div>
 				</div>
 
-				<footer class="footer">
-					<div class="container-fluid">
-						<div class="row text-muted">
-							<div class="col-6 text-start">
-
-							</div>
-							<div class="col-6 text-end">
-								<p class="mb-0">
-									<a class="text-muted" href="https://adminkit.io/"
-										target="_blank"><strong>schoolAdmin</strong></a>
-								</p>
-							</div>
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
+						</div>
+						<div class="col-6 text-end">
+							<p class="mb-0"><strong>schoolAdmin</strong></p>
 						</div>
 					</div>
-				</footer>
+				</div>
+			</footer>
 			</div>
 		</div>
 
