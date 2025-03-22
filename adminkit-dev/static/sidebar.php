@@ -13,17 +13,13 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     <meta name="author" content="AdminKit">
     <meta name="keywords"
         content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
-
-    <title>School Monitoring System</title>
-
     <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>School Monitoring System</title>
 </head>
 <style>
 /* Make the sidebar fixed */
@@ -80,10 +76,6 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     box-shadow: none !important;
 }
 
-/* ============================= */
-/* 📌 Ensure Sidebar Doesn't Resize */
-/* ============================= */
-
 /* Prevent Sidebar Expansion on Click */
 .sidebar-content .sidebar-item {
     width: 100%;
@@ -99,9 +91,6 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     }
 }
 
-/* ============================= */
-/* 📌 Adjust Main Content Area   */
-/* ============================= */
 #main-content {
     margin-left: 250px;
     /* Same as sidebar width */
