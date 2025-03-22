@@ -69,11 +69,11 @@
         }
     </style> -->
 </head>
-<div class="sidebar">
+<!-- <div class="sidebar"> -->
     <?php
-    include_once("sidebar.php");
+    // include_once("sidebar.php");
     ?>
-</div>
+<!-- </div> -->
 
 <body>
 <main role="main" style="margin-top: 3rem;">

@@ -76,6 +76,59 @@
             }
         }    
     ?>
+
+<div class="container mt-5">
+        <?php
+            if (isset($_POST['email'])) {
+                $teacher_email = $_POST['email'];
+            } else {
+                $teacher_email = "rajesh.patel@example.com"; // Default email for testing
+            }
+
+            // Fetch leave history
+            $query = "SELECT * FROM teacher_leave_application WHERE teacher_email = '$teacher_email' ORDER BY id DESC";
+            $result = $conn->query($query);
+        ?>
+        
+        <h2 class="text-center">Leave History of <?php echo $teacher_email; ?></h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Reason</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $row['id'] . "</td>";
+                        echo "<td>" . $row['start_date'] . "</td>";
+                        echo "<td>" . $row['end_date'] . "</td>";
+                        echo "<td>" . $row['reason'] . "</td>";
+                        echo "<td>";
+                        if ($row['status'] == "Approved") {
+                            echo "<span class='badge bg-success'>Approved</span>";
+                        } elseif ($row['status'] == "Rejected") {
+                            echo "<span class='badge bg-danger'>Rejected</span>";
+                        } else {
+                            echo "<span class='badge bg-warning text-dark'>Pending</span>";
+                        }
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='5' class='text-center'>No leave applications found</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 
 </html>

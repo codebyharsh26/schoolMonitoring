@@ -204,15 +204,13 @@
             flex-grow: 1;
             padding: 1rem;
         }
-
-        /* For demo purposes */
-        .navbar {
+          /* For demo purposes */
+	     .navbar {
             background-color: var(--form-bg);
             box-shadow: var(--card-shadow);
             padding: 0.5rem 1rem;
             margin-bottom: 1.5rem;
         }
-
         .footer {
             padding: 1rem;
             background-color: var(--form-bg);
@@ -223,9 +221,6 @@
 </head>
 
 <body>
-    
-
-
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
                 <li class="nav-item dropdown">
@@ -387,7 +382,6 @@
                 </li>
             </ul>
         </div>
-    </>
     <script src="js/app.js"></script>
 </body>
 
