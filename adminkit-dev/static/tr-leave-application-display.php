@@ -1,3 +1,9 @@
+<?php
+include_once "connection.php";
+
+$query = "SELECT * FROM teacher_leave_application ORDER BY id DESC"; 
+$result = $conn->query($query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +14,7 @@
 // $sql = "SELECT * FROM leave_applications ORDER BY submitted_at DESC";
 // $result = $conn->query($sql);
 // ?>
-    <?php
-    include_once "connection.php";
-    ?>
+    
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -53,44 +57,59 @@
                         <table class="table table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>#</th>
-                                    <th>Teacher</th>
+                                    <th>ID</th>
+                                    <th>Name</th>
                                     <th>Email</th>
-                                    <th>Type</th>
-                                    <th>Start</th>
-                                    <th>End</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Reason</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php while ($row = $result->fetch_assoc()): ?>
-                                    <tr>
-                                        <td><?= $row["id"]; ?></td>
-                                        <td><?= $row["teacher_name"]; ?></td>
-                                        <td><?= $row["teacher_email"]; ?></td>
-                                        <td><?= $row["leave_type"]; ?></td>
-                                        <td><?= $row["start_date"]; ?></td>
-                                        <td><?= $row["end_date"]; ?></td>
-                                        <td>
-                                            <span class="badge bg-<?= ($row["status"] == 'Approved') ? 'success' : (($row["status"] == 'Denied') ? 'danger' : 'warning') ?>">
-                                                <?= $row["status"]; ?>
-                                            </span>
-                                        </td>
-                                        <td>
-                                            <?php if ($row["status"] == 'Pending'): ?>
-                                                <form action="update_status.php" method="POST">
-                                                    <input type="hidden" name="id" value="<?= $row["id"]; ?>">
-                                                    <button type="submit" name="action" value="Approve" class="btn btn-success btn-sm">Approve</button>
-                                                    <button type="submit" name="action" value="Deny" class="btn btn-danger btn-sm">Deny</button>
-                                                </form>
-                                            <?php else: ?>
-                                                <span class="text-muted">Processed</span>
-                                            <?php endif; ?>
-                                        </td>
-                                    </tr>
-                                <?php endwhile; ?>
-                            </tbody>
+                <tbody>
+   <?php
+    include_once "connection.php"; // Ensure correct path
+
+    $query = "SELECT * FROM teacher_leave_application";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>
+                    <td>{$row['id']}</td>
+                    <td>{$row['name']}</td>
+                    <td>{$row['teacher_email']}</td>
+                    <td>{$row['start_date']}</td>
+                    <td>{$row['end_date']}</td>
+                    <td>{$row['reason']}</td>
+                    <td>{$row['status']}</td>
+                    <td>";
+                    if (strtolower($row['status']) == "pending") {
+                        // Show active buttons if the leave is pending
+                        echo "<a href='update_leave_status.php?id={$row['id']}&status=Accepted' class='btn btn-success btn-sm'>Approve</a>
+                              <a href='update_leave_status.php?id={$row['id']}&status=Rejected' class='btn btn-danger btn-sm'>Reject</a>";
+                    } else {
+                        // Set disabled styles and show correct button
+                        $disabledStyle = "cursor: not-allowed; opacity: 0.7;";
+        
+                        if (strtolower($row['status']) == "accepted") {
+                            echo "<button class='btn btn-success btn-sm' style='background-color: #28a745; border-color: #28a745; color: white; $disabledStyle' disabled>Approved</button>";
+                        } elseif (strtolower($row['status']) == "rejected") {
+                            echo "<button class='btn btn-danger btn-sm' style='background-color: #dc3545; border-color: #dc3545; color: white; $disabledStyle' disabled>Rejected</button>";
+                        }
+                    }
+        
+                    echo "</td></tr>";
+                }
+            } else {
+                echo "<tr><td colspan='8' class='text-center'>No leave applications found</td></tr>";
+            }
+?>
+</tbody>
+
+            </tbody>
                         </table>
                     </div>
                 </div>
