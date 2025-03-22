@@ -19,7 +19,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <?php
@@ -53,11 +52,10 @@ $pass_percentage = $total_students > 0 ? ($pass_count / $total_students) * 100 :
 $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 : 0;
 ?>
 
-
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper p-0 m-0">
         <div class="sidebar">
             <?php
             include_once("sidebar.php");
@@ -152,72 +150,100 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
                                             </tbody>
                                         </table>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Admission Graph: Takes 25% Width -->
-                        <div class="col-12 col-lg-3 d-flex order-3 order-lg-3">
-                            <div class="card w-100">
-                                <div class="card-header">
-                                    <h5 class="card-title mb-0">Admission Graph</h5>
-                                </div>
-                                <div class="card-body d-flex w-100">
-                                    <div class="align-self-center chart chart-lg">
-                                        <canvas id="chartjs-dashboard-bar"></canvas>
+                                    <div class="chart chart-xs">
+                                        <canvas id="chartjs-dashboard-pie"></canvas>
                                     </div>
                                 </div>
+                                <table class="table mb-0">
+                                    <tbody>
+                                        <tr>
+                                            <td>PASS</td>
+                                            <td class="text-end">
+                                                <?php echo number_format($pass_percentage, 2); ?>%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FAIL</td>
+                                            <td class="text-end">
+                                                <?php echo number_format($fail_percentage, 2); ?>%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
                 </div>
-            </main>
 
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-muted">
-                        <div class="col-6 text-start">
+                <!-- Admission Graph: Takes 25% Width -->
+                <div class="col-12 col-lg-3 d-flex order-3 order-lg-3">
+                    <div class="card w-100">
+                        <div class="card-header">
+                            <h5 class="card-title mb-0">Admission Graph</h5>
                         </div>
-                        <div class="col-6 text-end">
-                            <p class="mb-0"><strong>schoolAdmin</strong></p>
+                        <div class="card-body d-flex w-100">
+                            <div class="align-self-center chart chart-lg">
+                                <canvas id="chartjs-dashboard-bar"></canvas>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </footer>
         </div>
+    </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container-fluid">
+            <div class="row text-muted">
+                <div class="col-6 text-start">
+                </div>
+                <div class="col-6 text-end">
+                    <p class="mb-0"><strong>schoolAdmin</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
     </div>
 
     <script src="js/app.js"></script>
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Fetch pass and fail data from PHP variables
-        var passPercentage = <?php echo $pass_percentage; ?>;
-        var failPercentage = <?php echo $fail_percentage; ?>;
+                // Fetch pass and fail data from PHP variables
+                var passPercentage = <?php echo $pass_percentage; ?>;
+                var failPercentage = <?php echo $fail_percentage; ?>;
 
-        // Ensure the canvas element exists
-        var ctx = document.getElementById("chartjs-dashboard-pie");
-        if (ctx) {
-            new Chart(ctx, {
-                type: "pie",
-                data: {
-                    labels: ["Pass", "Fail"],
-                    datasets: [{
-                        data: [passPercentage, failPercentage],
-                        backgroundColor: [" #4d4dff",
-                        "#ff3333"], // Green for Pass, Red for Fail
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                }
-            });
-        } else {
-            console.error("Pie chart canvas not found.");
-        }
-    });
+                document.addEventListener("DOMContentLoaded", function() {
+                    // Fetch pass and fail data from PHP variables
+                    var passPercentage = <?php echo $pass_percentage; ?>;
+                    var failPercentage = <?php echo $fail_percentage; ?>;
+
+                    // Ensure the canvas element exists
+                    var ctx = document.getElementById("chartjs-dashboard-pie");
+                    if (ctx) {
+                        new Chart(ctx, {
+                            type: "pie",
+                            data: {
+                                labels: ["Pass", "Fail"],
+                                datasets: [{
+                                    data: [passPercentage, failPercentage],
+                                    backgroundColor: ["#4d4dff", "#ff3333"], // Colors
+                                    hoverBackgroundColor: ["#4d4dff",
+                                    "#ff3333"], // Prevents hover color change
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                hover: {
+                                    mode: null // Disable hover effects
+                                }
+                            }
+                        });
+                    } else {
+                        console.error("Pie chart canvas not found.");
+                    }
+                });
     </script>
 
     <script>
