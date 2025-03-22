@@ -60,8 +60,8 @@
 		body {
 			font-family: Arial, sans-serif;
 			margin: 0;
-
-			background-color: #f5f5f5;
+			background-color: #f4f8ff;
+			;
 		}
 
 		.container {
@@ -73,15 +73,122 @@
 			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 		}
 
-		h1 {
-			color: #333;
+		/* upload pdf css */
+		.container-f {
+			width: 100%;
+			margin: auto;
+			padding: 20px;
+			background: white;
+			border-radius: 10px;
+			box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		input,
+		textarea {
+			width: 100%;
+			padding: 10px;
+			margin: 10px 0;
+		}
+
+		.label {
+			font-weight: bold;
+			display: block;
+			margin-bottom: 5px;
+		}
+
+		select {
+			width: 100%;
+			padding: 10px;
+			margin-bottom: 20px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
 		}
 
 		.pdf-container {
+			display: flex;
+			flex-wrap: wrap;
+			/* justify-content: center; */
+			gap: 20px;
+		}
+
+		.pdf-card {
+			width: 474px;
+			background: #222e3c;
+			opacity: 0.85;
+			color: white;
+			padding: 15px;
+			border-radius: 10px;
+			/* text-align: center; */
+			box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.pdf-title {
+			font-size: 18px;
+			font-weight: bold;
+		}
+
+		.pdf-standard {
+			font-size: 14px;
+			margin-top: 5px;
+		}
+
+		.pdf-link {
+			display: inline-block;
+			margin-top: 10px;
+			background: white;
+			color: #222e3c;
+			padding: 8px 15px;
+			border-radius: 5px;
+			text-decoration: none;
+			font-weight: bold;
+		}
+
+		.pdf-link:hover {
+			background: #222e3c;
+			opacity: 0.85;
+			outline: 2px solid white;
+			text-decoration: none;
+			color: white;
+		}
+
+		.pdf {
 			width: 100%;
-			height: 800px;
-			border: 1px solid #ddd;
-			margin-top: 20px;
+			padding: 10px;
+			margin-bottom: 10px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
+			background: #f1f1f1;
+		}
+
+		.upload {
+			background: white;
+			margin-top: 10px;
+			margin-left: 2px;
+			margin-bottom: 3 px;
+			color: #222e3c;
+			outline: 2px solid #222e3c;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		.upload:hover {
+			background: #222e3c;
+			text-decoration: none;
+			color: white;
+		}
+
+		.h2 {
+			color: #222e3c;
+		}
+
+		/* over upload pdf */
+
+		h1 {
+			color: #333;
 		}
 
 		.options {
@@ -108,15 +215,15 @@
 
 		label {
 			padding: 8px 16px;
-			background-color: #2196F3;
+			/* background-color: #2196F3; */
 			color: white;
 			border-radius: 4px;
-			cursor: pointer;
+			/* cursor: pointer; */
 		}
 
-		label:hover {
+		/* label:hover {
 			background-color: #0b7dda;
-		}
+		} */
 
 		img {
 			margin: 25px;
@@ -144,7 +251,6 @@
 			height: 40vh;
 			border-radius: 10px;
 			box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-			;
 			margin-left: 115px;
 			padding: 25px;
 		}
@@ -170,7 +276,6 @@
 			letter-spacing: 3px;
 			opacity: 0.5;
 			margin-bottom: 5vh;
-
 		}
 
 		.card-custom-text {
@@ -318,142 +423,237 @@
 		<section id="progress">
 			<h5 class="custom-student-card">Progress</h5>
 			<div class="fill">
-				<div class="cus1 col-md-4 col-xl-3">
-					<div class="cus card1 flex-fill w-100">
+				<!-- <div class="cus1 col-md-4 col-xl-3"> -->
+				<div class="cus card1 flex-fill w-100">
 
-						<div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
-							<div class="card-header">
-								<h5 class="card-title mb-0">Overall Academic Result</h5>
-							</div>
-							<div class="card-body d-flex">
-								<div class="align-self-center w-100">
-									<div class="py-3">
-										<div class="chart chart-xs">
-											<canvas id="chartjs-dashboard-pie"></canvas>
-										</div>
+					<div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
+						<div class="card-header">
+							<h5 class="card-title mb-0">Overall Academic Result</h5>
+						</div>
+						<div class="card-body d-flex">
+							<div class="align-self-center w-100">
+								<div class="py-3">
+									<div class="chart chart-xs">
+										<canvas id="chartjs-dashboard-pie"></canvas>
 									</div>
-
-									<table class="table mb-0">
-										<tbody>
-											<tr>
-												<td>PASS</td>
-												<td class="text-end">90%</td>
-											</tr>
-											<tr>
-												<td>FAIL</td>
-												<td class="text-end">10%</td>
-											</tr>
-
-										</tbody>
-									</table>
 								</div>
+
+								<table class="table mb-0">
+									<tbody>
+										<tr>
+											<td>PASS</td>
+											<td class="text-end">90%</td>
+										</tr>
+										<tr>
+											<td>FAIL</td>
+											<td class="text-end">10%</td>
+										</tr>
+
+									</tbody>
+								</table>
 							</div>
 						</div>
+					</div>
 
-						<div class="card flex-fill w-100" style="margin: 20px;  ">
-							<div class="card-header">
+					<div class="card flex-fill w-100" style="margin: 20px;  ">
+						<div class="card-header">
 
-								<h5 class="card-title mb-0">Admission Graph</h5>
-							</div>
-							<div class="card-body d-flex w-100">
-								<div class="align-self-center chart chart-lg">
-									<canvas id="chartjs-dashboard-bar"></canvas>
-								</div>
+							<h5 class="card-title mb-0">Admission Graph</h5>
+						</div>
+						<div class="card-body d-flex w-100">
+							<div class="align-self-center chart chart-lg">
+								<canvas id="chartjs-dashboard-bar"></canvas>
 							</div>
 						</div>
 					</div>
 				</div>
+				<!-- </div> -->
 			</div>
 
 		</section>
 		<!-- timetable section -->
 		<section id="timetable">
-			c <div class="fill">
-				<img src="" alt="" height="500vh" width="98%">
-
-
-			</div>
-		</section>
-		<!-- notes section -->
-		<section id="notes">
-			<h5 class="custom-student-card">Notes</h5>
+			<h5 class="custom-student-card">Time Table</h5>
 			<div class="fill">
-				<img src="" alt="" height="500vh" width="98%">
+				<div class="container-f">
+					<h2 class="h2">Upload Time Table</h2>
+					<form action="teacher-index.php" method="POST" enctype="multipart/form-data">
+						<input type="text" name="t_title" placeholder="Enter Title" required>
+						<select name="t_standard" required>
+							<option value="">Select Standard</option>
+							<option value="All">All Standards</option>
+							<option value="1">Standard 1</option>
+							<option value="2">Standard 2</option>
+							<option value="3">Standard 3</option>
+							<option value="4">Standard 4</option>
+							<option value="5">Standard 5</option>
+							<option value="6">Standard 6</option>
+							<option value="7">Standard 7</option>
+							<option value="8">Standard 8</option>
+						</select>
+						<input type="file" class="pdf" name="t_file" accept="application/pdf" required>
+						<button class="upload" type="submit" name="t_upload">Upload</button>
+					</form>
+				</div>
 			</div>
+			<?php
+			if (isset($_POST['t_upload'])) {
+				$t_title = $_POST['t_title'];
+				$t_standard = $_POST['t_standard'];
+				$t_file = $_FILES['t_file'];
+
+				if ($t_file['type'] != 'application/pdf') {
+					echo "<script>alert('Only PDF files are allowed!');</script>";
+					exit;
+				}
+
+				$t_uploadDir = '../shared_timetable/uploads/';
+				if (!is_dir($t_uploadDir))
+					mkdir($t_uploadDir, 0777, true);
+				$t_filePath = $t_uploadDir . basename($t_file['name']);
+
+				if (move_uploaded_file($t_file['tmp_name'], $t_filePath)) {
+					$t_jsonFile = '../shared_timetable/documents.json';
+					$t_data = file_exists($t_jsonFile) ? json_decode(file_get_contents($t_jsonFile), true) : [];
+					$t_data[] = ['title' => $t_title, 'standard' => $t_standard, 'file' => $t_filePath];
+					file_put_contents($t_jsonFile, json_encode($t_data, JSON_PRETTY_PRINT));
+					echo "<script>alert('File uploaded successfully!');</script>";
+				} else {
+					echo "<script>alert('Error uploading file.');</script>";
+				}
+			}
+			?>
 		</section>
-		<!-- marks section -->
-		<section id="marks">
-			<h5 class="custom-student-card">Marks Entry</h5>
-			<div class="fill">
-				<img src="" alt="" height="500vh" width="98%">
+	<!-- notes section -->
+	<section id="notes">
+		<h5 class="custom-student-card">Notes</h5>
+		<div class="fill">
+			<div class="container-f">
+				<h2 class="h2">Upload Pdf</h2>
+				<form action="teacher-index.php" method="POST" enctype="multipart/form-data">
+					<input type="text" name="title" placeholder="Enter PDF Title" required>
+					<select name="standard" required>
+						<option value="">Select Standard</option>
+						<option value="All">All Standards</option>
+						<option value="1">Standard 1</option>
+						<option value="2">Standard 2</option>
+						<option value="3">Standard 3</option>
+						<option value="4">Standard 4</option>
+						<option value="5">Standard 5</option>
+						<option value="6">Standard 6</option>
+						<option value="7">Standard 7</option>
+						<option value="8">Standard 8</option>
+					</select>
+					<input type="file" class="pdf" name="pdf_file" accept="application/pdf" required>
+					<button class="upload" type="submit" name="upload">Upload</button>
+				</form>
 			</div>
-		</section>
-		<!-- leave section -->
-		<section id="leave">
-			<h5 class="custom-student-card">Leave Application</h5>
-			<div class="fill">
-				<img src="" alt="" height="500vh" width="98%">
-			</div>
-		</section>
-		<!-- announcement section -->
-		<section id="announcement">
-			<h5 class=" custom-student-card">Announcement</h5>
-			<div class="fill">
-				<div class="card-group">
-					<div class="card-announce">
-						<div class="card-body">
-							<h1 class="card-custom-text"><b>Announcement-Title</b></h1>
-							<p style="margin-bottom: 50px;"></p>
-						</div>
-						<div class="card-body">
-							<h3 class="card-custom-text">Start-Date:-</h3>
-							<h3 class="card-custom-text">End-Date:-</h3>
-						</div>
-						<div class="card-body">
-							<h2 class="card-custom-text">Announcement-Details</h1>
-								<p></p>
-						</div>
+		</div>
+		<?php
+		if (isset($_POST['upload'])) {
+			$title = $_POST['title'];
+			$standard = $_POST['standard'];
+			$file = $_FILES['pdf_file'];
 
-					</div>
-					<div class="card-announce">
-						<div class="card-body">
-							<h1 class="card-custom-text"><b>Announcement-Title</b></h1>
-							<p style="margin-bottom: 50px;"></p>
-						</div>
-						<div class="card-body">
-							<h3 class="card-custom-text">Start-Date:-</h3>
-							<h3 class="card-custom-text">End-Date:-</h3>
-						</div>
-						<div class="card-body">
-							<h2 class="card-custom-text">Announcement-Details</h2>
-							<p></p>
-						</div>
+			if ($file['type'] != 'application/pdf') {
+				echo "<script>alert('Only PDF files are allowed!');</script>";
+				exit;
+			}
 
-					</div>
-					<div class="card-announce">
-						<div class="card-body">
-							<h1 class="card-custom-text"><b>Announcement-Title</b></h1>
-							<p style="margin-bottom: 50px;"></p>
-						</div>
-						<div class="card-body">
-							<h3 class="card-custom-text">Start-Date:-</h3>
-							<h3 class="card-custom-text">End-Date:-</h3>
-						</div>
-						<div class="card-body">
-							<h2 class="card-custom-text">Announcement-Details</h2>
-							<p></p>
-						</div>
+			$uploadDir = '../shared/uploads/';
+			if (!is_dir($uploadDir))
+				mkdir($uploadDir, 0777, true);
+			$filePath = $uploadDir . basename($file['name']);
 
+			if (move_uploaded_file($file['tmp_name'], $filePath)) {
+				$jsonFile = '../shared/documents.json';
+				$data = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), true) : [];
+				$data[] = ['title' => $title, 'standard' => $standard, 'file' => $filePath];
+				file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT));
+				echo "<script>alert('File uploaded successfully!');</script>";
+			} else {
+				echo "<script>alert('Error uploading file.');</script>";
+			}
+		}
+		?>
+	</section>
+	<!-- marks section -->
+	<section id="marks">
+		<h5 class="custom-student-card">Marks Entry</h5>
+		<div class="fill">
+			<img src="" alt="" height="500vh" width="98%">
+		</div>
+	</section>
+	<!-- leave section -->
+	<section id="leave">
+		<h5 class="custom-student-card">Leave Application</h5>
+		<div class="fill">
+			<img src="" alt="" height="500vh" width="98%">
+		</div>
+	</section>
+	<!-- announcement section -->
+	<section id="announcement">
+		<h5 class=" custom-student-card">Announcement</h5>
+		<div class="fill">
+		<div class="container-f">
+					<h2 class="h2">Available Announcement</h2>
+					<label class="label" for="standardFilter">Filter by Standard:</label>
+					<select id="standardFilter" onchange="filterCards()">
+						<option value="all">All Standards</option>
+						<option value="1">Standard 1</option>
+						<option value="2">Standard 2</option>
+						<option value="3">Standard 3</option>
+						<option value="4">Standard 4</option>
+						<option value="5">Standard 5</option>
+						<option value="6">Standard 6</option>
+						<option value="7">Standard 7</option>
+						<option value="8">Standard 8</option>
+					</select>
+
+					<div class="pdf-container">
+						<?php
+						$jsonFile = '../shared_announce/documents.json';
+						if (file_exists($jsonFile)) {
+							$data = json_decode(file_get_contents($jsonFile), true);
+							foreach ($data as $doc) {
+								echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
+                        <div class='pdf-title'>{$doc['title']}</div>
+                        <div class='pdf-standard'>Standard: {$doc['standard']}</div>
+						<div class='pdf-message'>Message: {$doc['message']}</div>
+                        <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
+                    </div>";
+							}
+						} else {
+							echo "<p>No Announcement available</p>";
+						}
+						?>
 					</div>
 				</div>
-		</section>
-		<!-- calender section -->
-		<section id="calender">
-			<h5 class="custom-student-card">Calender</h5>
-			<div class="fill">
-				<img src="" alt="" height="500vh" width="98%">
-			</div>
-		</section>
+
+				<script>
+					function filterCards() {
+						let standard = document.getElementById('standardFilter').value;
+						let cards = document.querySelectorAll('.pdf-card');
+
+						cards.forEach(card => {
+							let cardStandard = card.getAttribute('data-standard');
+							if (standard === "all" || cardStandard === standard) {
+								card.style.display = "block";
+							} else {
+								card.style.display = "none";
+							}
+						});
+					}
+				</script>
+		</div>
+	</section>
+	<!-- calender section -->
+	<section id="calender">
+		<h5 class="custom-student-card">Calender</h5>
+		<div class="fill">
+			<img src="" alt="" height="500vh" width="98%">
+		</div>
+	</section>
 	</div>
 
 	<script src="js/app.js"></script>
@@ -465,7 +665,7 @@
 		}
 	</script>
 
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", function () {
 			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
 			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
@@ -534,8 +734,8 @@
 				}
 			});
 		});
-	</script>
-	<script>
+	</script> -->
+	<!-- <script>
 		function toggleSidebar() {
 			const sidebar = document.getElementById("sidebar");
 			if (sidebar.style.display === "none") {
@@ -544,7 +744,7 @@
 				sidebar.style.display = "none";
 			}
 		}
-	</script>
+	</script> -->
 	<script>
 		document.addEventListener("DOMContentLoaded", function () {
 			// Pie chart

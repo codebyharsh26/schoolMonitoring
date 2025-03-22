@@ -225,6 +225,67 @@
 			border-color: var(--accent-color);
 		}
 
+		/* announcement css */
+		.anouncement-textarea {
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			width: 100%;
+			padding: 15px;
+			margin: 13px 0 0 0;
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="number"],
+		input[type="date"],
+		textarea,
+		select {
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			width: 100%;
+			padding: 15px;
+			margin: 13px 0;
+		}
+
+		.pdf {
+			width: 100%;
+			padding: 10px;
+			margin: 10px 0;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			font-size: 16px;
+			background: #f1f1f1;
+		}
+
+		.upload {
+			background: white;
+			margin-top: 10px;
+			margin-left: 2px;
+			margin-bottom: 3 px;
+			color: #222e3c;
+			outline: 2px solid #222e3c;
+			border: none;
+			padding: 10px 20px;
+			cursor: pointer;
+			border-radius: 3px;
+			font-weight: bold;
+			text-decoration: none;
+		}
+
+		.upload:hover {
+			background: #222e3c;
+			text-decoration: none;
+			color: white;
+		}
+
+		.h2 {
+			color: #222e3c;
+		}
+
+		/* over upload pdf */
+
+
 		.form-actions {
 			display: flex;
 			justify-content: flex-end;
@@ -320,197 +381,144 @@
 						Complete all required fields.</p>
 
 					<div class="form-section">
-						<h2 class="form-section-title">Announcement Details</h2>
+						<div class="container-f">
+							<h2 class="form-section-title">Announcement Details</h2>
 
-						<div class="form-row">
-							<div class="form-group">
-								<label for="announcementTitle" class="form-label required">Announcement Title</label>
-								<input type="text" id="announcementTitle" class="form-control"
-									placeholder="Enter a clear and concise title" required>
-							</div>
-
-							
-						</div>
-
-						<div class="form-row">
-							<div class="form-group">
-								<label for="startDate" class="form-label required">Start Date</label>
-								<input type="date" id="startDate" class="form-control" required>
-							</div>
-
-							<div class="form-group">
-								<label for="endDate" class="form-label">End Date (if applicable)</label>
-								<input type="date" id="endDate" class="form-control">
-							</div>
-						</div>
-
-						<div class="form-row">
-							<div class="form-group">
-								<label class="form-label required">Announcement Content</label>
-								<div class="rich-editor">
-									<div class="editor-toolbar">
-										<button type="button" class="editor-button"
-											title="Bold"><strong>B</strong></button>
-										<button type="button" class="editor-button" title="Italic"><em>I</em></button>
-										<button type="button" class="editor-button" title="Underline"><u>U</u></button>
-										<button type="button" class="editor-button" title="Bullet List">•</button>
-										<button type="button" class="editor-button" title="Numbered List">1.</button>
-										<button type="button" class="editor-button" title="Insert Link">🔗</button>
-									</div>
-									<div class="editor-content" contenteditable="true"
-										placeholder="Enter announcement details here..."></div>
-								</div>
-								<textarea id="announcementContent" style="display: none;"></textarea>
-							</div>
-						</div>
-
-						<div class="form-row">
-							<div class="form-group">
-								<label class="form-label">Attachments</label>
-								<div class="file-upload">
-									<label for="fileUpload" class="file-upload-button">Choose File</label>
-									<input type="file" id="fileUpload" class="file-upload-input" multiple>
-									<span class="file-name">No file chosen</span>
-								</div>
-								<div id="fileList"></div>
-							</div>
+							<form action="announce.php" method="POST" enctype="multipart/form-data">
+								<input type="text" name="title" placeholder="Enter Announcement Title" required>
+								<select name="standard" required>
+									<option value="">Select Standard</option>
+									<option value="All">All Standards</option>
+									<option value="1">Standard 1</option>
+									<option value="2">Standard 2</option>
+									<option value="3">Standard 3</option>
+									<option value="4">Standard 4</option>
+									<option value="5">Standard 5</option>
+									<option value="6">Standard 6</option>
+									<option value="7">Standard 7</option>
+									<option value="8">Standard 8</option>
+								</select>
+								<textarea name="message" class="anouncement-textarea" id="message"
+									placeholder="Enter Message" required></textarea>
+								<input type="file" class="pdf" name="pdf_file" accept="application/pdf" required>
+								<button class="upload" type="submit" name="upload">Upload</button>
+							</form>
 						</div>
 					</div>
+					<?php
+					if (isset($_POST['upload'])) {
+						$title = $_POST['title'];
+						$standard = $_POST['standard'];
+						$message = $_POST['message'];
+						$file = $_FILES['pdf_file'];
 
-					<div class="form-section">
-						<h2 class="form-section-title">Target Audience</h2>
+						if ($file['type'] != 'application/pdf') {
+							echo "<script>alert('Only PDF files are allowed!');</script>";
+							exit;
+						}
 
-						<div class="form-row">
-							<div class="form-group">
-								<label class="form-label required">Visibility</label>
-								<div class="checkbox-group">
-									<label class="checkbox-label">
-										<input type="checkbox" class="checkbox-input" value="students" checked> Students
-									</label>
-									<label class="checkbox-label">
-										<input type="checkbox" class="checkbox-input" value="teachers" checked> Teachers
-									</label>
-									<label class="checkbox-label">
-										<input type="checkbox" class="checkbox-input" value="parents"> Parents
-									</label>
-									<label class="checkbox-label">
-										<input type="checkbox" class="checkbox-input" value="staff"> Staff
-									</label>
-								</div>
-							</div>
+						$uploadDir = '../shared_announce/uploads/';
+						if (!is_dir($uploadDir))
+							mkdir($uploadDir, 0777, true);
+						$filePath = $uploadDir . basename($file['name']);
 
-							<div class="form-group">
-								<label for="classTarget" class="form-label">Target Classes</label>
-								<select id="classTarget" class="form-control" multiple>
-									<option value="all" selected>All Classes</option>
-									<option value="1">Class 1</option>
-									<option value="2">Class 2</option>
-									<option value="3">Class 3</option>
-									<option value="4">Class 4</option>
-									<option value="5">Class 5</option>
-								</select>
-								<small style="color: #6b7280; display: block; margin-top: 5px;">Hold Ctrl (or Cmd) to
-									select multiple classes</small>
-							</div>
+						if (move_uploaded_file($file['tmp_name'], $filePath)) {
+							$jsonFile = '../shared_announce/documents.json';
+							$data = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), true) : [];
+							$data[] = ['title' => $title, 'standard' => $standard, 'message' => $message, 'file' => $filePath];
+							file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT));
+							echo "<script>alert('Announcement uploaded successfully!');</script>";
+						} else {
+							echo "<script>alert('Error uploading file.');</script>";
+						}
+					}
+					?>
+
+			<footer class="footer">
+				<div class="container-fluid">
+					<div class="row text-muted">
+						<div class="col-6 text-start">
 						</div>
-
-						<div class="form-actions">
-							<button type="button" class="btn btn-secondary">Cancel</button>
-							<button type="button" class="btn btn-preview">Preview</button>
-							<button type="submit" class="btn btn-primary">Publish Announcement</button>
+						<div class="col-6 text-end">
+							<p class="mb-0"><strong>schoolAdmin</strong></p>
 						</div>
 					</div>
 				</div>
-
-				<footer class="footer">
-					<div class="container-fluid">
-						<div class="row text-muted">
-							<div class="col-6 text-start">
-
-							</div>
-							<div class="col-6 text-end">
-								<p class="mb-0">
-									<a class="text-muted" href="https://adminkit.io/"
-										target="_blank"><strong>schoolAdmin</strong></a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</footer>
+			</footer>
 			</div>
 		</div>
 
-		<script src="js/app.js"></script>
-		<script>
-			// Priority selector
-			const priorityOptions = document.querySelectorAll('.priority-option');
-			const priorityInput = document.getElementById('priorityLevel');
+			<script src="js/app.js"></script>
+			<script>
+				// Priority selector
+				const priorityOptions = document.querySelectorAll('.priority-option');
+				const priorityInput = document.getElementById('priorityLevel');
 
-			priorityOptions.forEach(option => {
-				option.addEventListener('click', () => {
-					// Remove selected class from all options
-					priorityOptions.forEach(opt => opt.classList.remove('selected'));
-					// Add selected class to clicked option
-					option.classList.add('selected');
-					// Update hidden input value
-					priorityInput.value = option.dataset.priority;
+				priorityOptions.forEach(option => {
+					option.addEventListener('click', () => {
+						// Remove selected class from all options
+						priorityOptions.forEach(opt => opt.classList.remove('selected'));
+						// Add selected class to clicked option
+						option.classList.add('selected');
+						// Update hidden input value
+						priorityInput.value = option.dataset.priority;
+					});
 				});
-			});
 
-			// File upload
-			const fileUpload = document.getElementById('fileUpload');
-			const fileName = document.querySelector('.file-name');
-			const fileList = document.getElementById('fileList');
+				// File upload
+				const fileUpload = document.getElementById('fileUpload');
+				const fileName = document.querySelector('.file-name');
+				const fileList = document.getElementById('fileList');
 
-			fileUpload.addEventListener('change', () => {
-				if (fileUpload.files.length > 0) {
-					if (fileUpload.files.length === 1) {
-						fileName.textContent = fileUpload.files[0].name;
-					} else {
-						fileName.textContent = `${fileUpload.files.length} files selected`;
-					}
+				fileUpload.addEventListener('change', () => {
+					if (fileUpload.files.length > 0) {
+						if (fileUpload.files.length === 1) {
+							fileName.textContent = fileUpload.files[0].name;
+						} else {
+							fileName.textContent = `${fileUpload.files.length} files selected`;
+						}
 
-					// Clear file list
-					fileList.innerHTML = '';
+						// Clear file list
+						fileList.innerHTML = '';
 
-					// Display selected files
-					Array.from(fileUpload.files).forEach(file => {
-						const fileItem = document.createElement('div');
-						fileItem.style.display = 'flex';
-						fileItem.style.alignItems = 'center';
-						fileItem.style.marginTop = '8px';
-						fileItem.innerHTML = `
+						// Display selected files
+						Array.from(fileUpload.files).forEach(file => {
+							const fileItem = document.createElement('div');
+							fileItem.style.display = 'flex';
+							fileItem.style.alignItems = 'center';
+							fileItem.style.marginTop = '8px';
+							fileItem.innerHTML = `
 						<span style="margin-right: 8px; color: #6b7280;">📎</span>
 						<span style="flex: 1;">${file.name}</span>
 						<span style="color: #6b7280; font-size: 12px;">${(file.size / 1024).toFixed(1)} KB</span>
 					`;
-						fileList.appendChild(fileItem);
-					});
-				} else {
-					fileName.textContent = 'No file chosen';
-					fileList.innerHTML = '';
-				}
-			});
+							fileList.appendChild(fileItem);
+						});
+					} else {
+						fileName.textContent = 'No file chosen';
+						fileList.innerHTML = '';
+					}
+				});
 
-			// Rich text editor content to textarea before form submission
-			const form = document.querySelector('.form-container');
-			const editorContent = document.querySelector('.editor-content');
-			const contentTextarea = document.getElementById('announcementContent');
+				// Rich text editor content to textarea before form submission
+				const form = document.querySelector('.form-container');
+				const editorContent = document.querySelector('.editor-content');
+				const contentTextarea = document.getElementById('announcementContent');
 
-			form.addEventListener('submit', () => {
-				contentTextarea.value = editorContent.innerHTML;
-			});
+				form.addEventListener('submit', () => {
+					contentTextarea.value = editorContent.innerHTML;
+				});
 
-			// Set minimum date for start date and end date to today
-			const today = new Date().toISOString().split('T')[0];
-			document.getElementById('startDate').min = today;
-			document.getElementById('endDate').min = today;
+				// Set minimum date for start date and end date to today
+				const today = new Date().toISOString().split('T')[0];
+				document.getElementById('startDate').min = today;
+				document.getElementById('endDate').min = today;
 
-			// Update end date min attribute when start date changes
-			document.getElementById('startDate').addEventListener('change', function() {
-				document.getElementById('endDate').min = this.value;
-			});
-		</script>
+				// Update end date min attribute when start date changes
+				document.getElementById('startDate').addEventListener('change', function () {
+					document.getElementById('endDate').min = this.value;
+				});
+			</script>
 </body>
 
-</html>i
+</html>
