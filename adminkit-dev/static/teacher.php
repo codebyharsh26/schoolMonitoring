@@ -22,7 +22,7 @@
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper p-0 m-0">
 		<div class="sidebar">
 			<?php
 			include_once("sidebar.php");

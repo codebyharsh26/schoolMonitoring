@@ -430,26 +430,38 @@
                     <main class="content">
                         <div class="container-fluid p-0">
                             <?php
-                            $query = "select * from student_1 where id=1";
-                            $result = mysqli_query($conn, $query);
-                            if ($result) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $student_image = $row["student_image"];
-                                    $full_name = $row["full_name"];
-                                    $date_of_birth = $row["date_of_birth"];
-                                    $residential_address = $row["residential_address"];
-                                    $gender = $row["gender"];
-                                    $standard = $row["standard"];
-                                    $roll_number = $row["roll_number"];
-                                    $mother_name = $row["mother_name"];
-                                    $mother_phone_number = $row["mother_phone_number"];
-                                    $father_name = $row["father_name"];
-                                    $father_phone_number = $row["father_phone_number"];
-                                    $blood_group = $row["blood_group"];
-                                    $school_name = $row["school_name"];
-                                    $academic_year = $row["academic_year"];
-                                    $school_number = $row["school_number"];
-                                    ?>
+							$query = "select * from student_1 where id=7";
+							$result = mysqli_query($conn, $query);
+							if ($result) {
+								while ($row = mysqli_fetch_assoc($result)) {
+									$student_image = $row["student_image"];
+									$full_name = $row["full_name"];
+									$date_of_birth = $row["date_of_birth"];
+									$residential_address = $row["residential_address"];
+									$gender = $row["gender"];
+									$standard = $row["standard"];
+									$roll_number = $row["roll_number"];
+									$mother_name = $row["mother_name"];
+									$mother_phone_number = $row["mother_phone_number"];
+									$father_name = $row["father_name"];
+									$father_phone_number = $row["father_phone_number"];
+									$blood_group = $row["blood_group"];
+									$school_name = $row["school_name"];
+									$academic_year = $row["academic_year"];
+									$school_number = $row["school_number"];
+							?>
+
+                            <?php
+									$mquery = "select * from student_marks where marks_id =7";
+									$mresult = mysqli_query($conn, $mquery);
+									if ($mresult) {
+										while ($mrow = mysqli_fetch_assoc($mresult)) {
+											$mathematics = $mrow["mathematics"];
+											$gujarati = $mrow["gujarati"];
+											$hindi = $mrow["hindi"];
+											$art_craft = $mrow["art_craft"];
+											$physical_education = $mrow["physical_education"];
+									?>
 
                             <div class="row">
                                 <div class="col-12">
@@ -460,12 +472,11 @@
                                         <div class="card-body text-center">
                                             <div class="car">
                                                 <img src="<?php echo $student_image; ?>"
-                                                    class="img-fluid rounded-circle mb-2 " width="300" height="300" />
+                                                    class="img-fluid rounded-circle mb-2" width="128" height="128" />
 
                                                 <h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?>
                                                 </h5>
-                                                <table
-                                                    style="width: 100%; margin-top: 5vh; margin-left: 17vw;font-size: xx-large;">
+                                                <table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
                                                     <tr>
                                                         <td class="bol" style="text-align: left;"><b>Date-of-birth:</b>
                                                         </td>
@@ -541,91 +552,108 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
-                            <?php
-                                }
-                            } ?>
                         </div>
-
                 </div>
-            </main>
+    </div>
 
-        </section>
 
-        <section id="result">
-            <h5 class=" custom-student-card">Result & Progress</h5>
-            <div class="fill">
-                <!-- <div class="cus1 col-md-4 col-xl-3"> -->
-                <div class="cus card1 flex-fill w-100">
+    </div>
+    <?php
+										}
+									}
+								}
+							} ?>
+    </div>
 
-                    <div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Overall Academic Result</h5>
-                        </div>
-                        <div class="card-body d-flex">
-                            <div class="align-self-center w-100">
-                                <div class="py-3">
-                                    <div class="chart chart-xs">
-                                        <canvas id="chartjs-dashboard-pie"></canvas>
-                                    </div>
+    </div>
+    </main>
+
+    </section>
+
+    <section id="result">
+        <h5 class=" custom-student-card">Result & Progress</h5>
+        <div class="fill">
+            <!-- <div class="cus1 col-md-4 col-xl-3"> -->
+            <div class="cus card1 flex-fill w-100">
+
+                <div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
+                    <div class="card-header">
+                        <h5 class="card-title mb-0">Overall Academic Result</h5>
+                    </div>
+                    <div class="card-body d-flex">
+                        <div class="align-self-center w-100">
+                            <div class="py-3">
+                                <div class="chart chart-xs">
+                                    <canvas id="chartjs-dashboard-pie"></canvas>
                                 </div>
-
-                                <table class="table mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>PASS</td>
-                                            <td class="text-end">90%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>FAIL</td>
-                                            <td class="text-end">10%</td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="card flex-fill w-100" style="margin: 20px;  ">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Subject Graph</h5>
+                            <table class="table mb-0">
+                                <tbody>
+                                    <tr>
+                                        <td>PASS</td>
+                                        <td class="text-end">90%</td>
+                                    </tr>
+                                    <tr>
+                                        <td>FAIL</td>
+                                        <td class="text-end">10%</td>
+                                    </tr>
 
-                        </div>
-                        <div class="card-body d-flex w-100">
-                            <div class="align-self-center chart chart-lg">
-                                <canvas id="chartjs-dashboard-bar"></canvas>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
-                <!-- </div> -->
+                <table class="table mb-0">
+                    <tbody>
+                        <tr>
+                            <td>Percentage</td>
+                            <td class="text-end" id="percentageTd"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
+        </div>
+        </div>
 
-        </section>
-        <!-- timetable section -->
-        <section id="timetable">
-            <h5 class="custom-student-card">Time Table</h5>
-            <div class="fill">
-                <div class="container-f">
-                    <h2 class="h2">Available Time Table</h2>
-                    <label class="label" for="standardFilter">Filter by Standard:</label>
-                    <select id="standardFilter" onchange="filterCards()">
-                        <option value="all">All Standards</option>
-                        <option value="1">Standard 1</option>
-                        <option value="2">Standard 2</option>
-                        <option value="3">Standard 3</option>
-                        <option value="4">Standard 4</option>
-                        <option value="5">Standard 5</option>
-                        <option value="6">Standard 6</option>
-                        <option value="7">Standard 7</option>
-                        <option value="8">Standard 8</option>
-                    </select>
+        <div class="card flex-fill w-100" style="margin: 20px;  ">
+            <div class="card-header">
+                <h5 class="card-title mb-0">Subject Graph</h5>
 
-                    <div class="pdf-container">
-                        <?php
+            </div>
+            <div class="card-body d-flex w-100">
+                <div class="align-self-center chart chart-lg">
+                    <canvas id="chartjs-dashboard-bar"></canvas>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- </div> -->
+        </div>
+
+    </section>
+    <!-- timetable section -->
+    <section id="timetable">
+        <h5 class="custom-student-card">Time Table</h5>
+        <div class="fill">
+            <div class="container-f">
+                <h2 class="h2">Available Time Table</h2>
+                <label class="label" for="standardFilter">Filter by Standard:</label>
+                <select id="standardFilter" onchange="filterCards()">
+                    <option value="all">All Standards</option>
+                    <option value="1">Standard 1</option>
+                    <option value="2">Standard 2</option>
+                    <option value="3">Standard 3</option>
+                    <option value="4">Standard 4</option>
+                    <option value="5">Standard 5</option>
+                    <option value="6">Standard 6</option>
+                    <option value="7">Standard 7</option>
+                    <option value="8">Standard 8</option>
+                </select>
+
+                <div class="pdf-container">
+                    <?php
                         $jsonFile = '../shared_timetable/documents.json';
                         if (file_exists($jsonFile)) {
                             $data = json_decode(file_get_contents($jsonFile), true);
@@ -640,47 +668,47 @@
                             echo "<p>No Time Table available</p>";
                         }
                         ?>
-                    </div>
                 </div>
-
-                <script>
-                function filterCards() {
-                    let standard = document.getElementById('standardFilter').value;
-                    let cards = document.querySelectorAll('.pdf-card');
-
-                    cards.forEach(card => {
-                        let cardStandard = card.getAttribute('data-standard');
-                        if (standard === "all" || cardStandard === standard) {
-                            card.style.display = "block";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
-                }
-                </script>
             </div>
-        </section>
-        <!-- notes section -->
-        <section id="notes">
-            <h5 class="custom-student-card">Notes</h5>
-            <div class="fill">
-                <div class="container-f">
-                    <h2 class="h2">Available PDF</h2>
-                    <label class="label" for="standardFilter">Filter by Standard:</label>
-                    <select id="standardFilter" onchange="filterCards()">
-                        <option value="all">All Standards</option>
-                        <option value="1">Standard 1</option>
-                        <option value="2">Standard 2</option>
-                        <option value="3">Standard 3</option>
-                        <option value="4">Standard 4</option>
-                        <option value="5">Standard 5</option>
-                        <option value="6">Standard 6</option>
-                        <option value="7">Standard 7</option>
-                        <option value="8">Standard 8</option>
-                    </select>
 
-                    <div class="pdf-container">
-                        <?php
+            <script>
+            function filterCards() {
+                let standard = document.getElementById('standardFilter').value;
+                let cards = document.querySelectorAll('.pdf-card');
+
+                cards.forEach(card => {
+                    let cardStandard = card.getAttribute('data-standard');
+                    if (standard === "all" || cardStandard === standard) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+            </script>
+        </div>
+    </section>
+    <!-- notes section -->
+    <section id="notes">
+        <h5 class="custom-student-card">Notes</h5>
+        <div class="fill">
+            <div class="container-f">
+                <h2 class="h2">Available PDF</h2>
+                <label class="label" for="standardFilter">Filter by Standard:</label>
+                <select id="standardFilter" onchange="filterCards()">
+                    <option value="all">All Standards</option>
+                    <option value="1">Standard 1</option>
+                    <option value="2">Standard 2</option>
+                    <option value="3">Standard 3</option>
+                    <option value="4">Standard 4</option>
+                    <option value="5">Standard 5</option>
+                    <option value="6">Standard 6</option>
+                    <option value="7">Standard 7</option>
+                    <option value="8">Standard 8</option>
+                </select>
+
+                <div class="pdf-container">
+                    <?php
                         $jsonFile = '../shared/documents.json';
                         if (file_exists($jsonFile)) {
                             $data = json_decode(file_get_contents($jsonFile), true);
@@ -695,55 +723,76 @@
                             echo "<p>No PDFs available</p>";
                         }
                         ?>
-                    </div>
                 </div>
-
-                <script>
-                function filterCards() {
-                    let standard = document.getElementById('standardFilter').value;
-                    let cards = document.querySelectorAll('.pdf-card');
-
-                    cards.forEach(card => {
-                        let cardStandard = card.getAttribute('data-standard');
-                        if (standard === "all" || cardStandard === standard) {
-                            card.style.display = "block";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
-                }
-                </script>
-
             </div>
-        </section>
-        <!-- syllabus section -->
-        <section id="syllabus">
-            <h5 class="custom-student-card">Syllabus</h5>
-            <div class="fill">
-                <img src="" alt="" height="500vh" width="98%">
-            </div>
-        </section>
-        <!-- announcement section -->
-        <section id="announcement">
-            <h5 class=" custom-student-card">Announcement</h5>
-            <div class="fill">
-                <div class="container-f">
-                    <h2 class="h2">Available Announcement</h2>
-                    <label class="label" for="standardFilter">Filter by Standard:</label>
-                    <select id="standardFilter" onchange="filterCards()">
-                        <option value="all">All Standards</option>
-                        <option value="1">Standard 1</option>
-                        <option value="2">Standard 2</option>
-                        <option value="3">Standard 3</option>
-                        <option value="4">Standard 4</option>
-                        <option value="5">Standard 5</option>
-                        <option value="6">Standard 6</option>
-                        <option value="7">Standard 7</option>
-                        <option value="8">Standard 8</option>
-                    </select>
 
-                    <div class="pdf-container">
-                        <?php
+            <script>
+            function filterCards() {
+                let standard = document.getElementById('standardFilter').value;
+                let cards = document.querySelectorAll('.pdf-card');
+
+                cards.forEach(card => {
+                    let cardStandard = card.getAttribute('data-standard');
+                    if (standard === "all" || cardStandard === standard) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+            </script>
+
+        </div>
+    </section>
+    <!-- syllabus section -->
+    <section id="syllabus">
+        <h5 class="custom-student-card">Syllabus</h5>
+        <div class="fill">
+            <img src="" alt="" height="500vh" width="98%">
+        </div>
+    </section>
+    <!-- announcement section -->
+    <section id="announcement">
+        <h5 class=" custom-student-card">Announcement</h5>
+        <div class="fill">
+            <div class="container-f">
+                <h2 class="h2">Available Announcement</h2>
+                <label class="label" for="standardFilter">Filter by Standard:</label>
+                <select id="standardFilter" onchange="filterCards()">
+                    <option value="all">All Standards</option>
+                    <option value="1">Standard 1</option>
+                    <option value="2">Standard 2</option>
+                    <option value="3">Standard 3</option>
+                    <option value="4">Standard 4</option>
+                    <option value="5">Standard 5</option>
+                    <option value="6">Standard 6</option>
+                    <option value="7">Standard 7</option>
+                    <option value="8">Standard 8</option>
+                </select>
+            </div>
+    </section>
+
+    <!-- announcement section -->
+    <section id="announcement">
+        <h5 class=" custom-student-card">Announcement</h5>
+        <div class="fill">
+            <div class="container-f">
+                <h2 class="h2">Available Announcement</h2>
+                <label class="label" for="standardFilter">Filter by Standard:</label>
+                <select id="standardFilter" onchange="filterCards()">
+                    <option value="all">All Standards</option>
+                    <option value="1">Standard 1</option>
+                    <option value="2">Standard 2</option>
+                    <option value="3">Standard 3</option>
+                    <option value="4">Standard 4</option>
+                    <option value="5">Standard 5</option>
+                    <option value="6">Standard 6</option>
+                    <option value="7">Standard 7</option>
+                    <option value="8">Standard 8</option>
+                </select>
+
+                <div class="pdf-container">
+                    <?php
                         $jsonFile = '../shared_announce/documents.json';
                         if (file_exists($jsonFile)) {
                             $data = json_decode(file_get_contents($jsonFile), true);
@@ -759,47 +808,77 @@
                             echo "<p>No Announcement available</p>";
                         }
                         ?>
-                    </div>
                 </div>
+            </div>
 
-                <script>
-                function filterCards() {
-                    let standard = document.getElementById('standardFilter').value;
-                    let cards = document.querySelectorAll('.pdf-card');
+            <script>
+            function filterCards() {
+                let standard = document.getElementById('standardFilter').value;
+                let cards = document.querySelectorAll('.pdf-card');
 
-                    cards.forEach(card => {
-                        let cardStandard = card.getAttribute('data-standard');
-                        if (standard === "all" || cardStandard === standard) {
-                            card.style.display = "block";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
+                cards.forEach(card => {
+                    let cardStandard = card.getAttribute('data-standard');
+                    if (standard === "all" || cardStandard === standard) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+            </script>
+        </div>
+    </section>
+    <!-- activites section -->
+    <section id="activites">
+        <h5 class="custom-student-card">Activites</h5>
+        <div class="fill">
+            <div class="container-f">
+                <h2 class="h2">Available Activities</h2>
+                <label class="label" for="standardFilter">Filter by Standard:</label>
+                <select id="standardFilter" onchange="filterCards()">
+                    <option value="all">All Standards</option>
+                    <option value="1">Standard 1</option>
+                    <option value="2">Standard 2</option>
+                    <option value="3">Standard 3</option>
+                    <option value="4">Standard 4</option>
+                    <option value="5">Standard 5</option>
+                    <option value="6">Standard 6</option>
+                    <option value="7">Standard 7</option>
+                    <option value="8">Standard 8</option>
+                </select>
+                cards.forEach(card => {
+                let cardStandard = card.getAttribute('data-standard');
+                if (standard === "all" || cardStandard === standard) {
+                card.style.display = "block";
+                } else {
+                card.style.display = "none";
+                }
+                });
                 }
                 </script>
             </div>
-        </section>
-        <!-- activites section -->
-        <section id="activites">
-            <h5 class="custom-student-card">Activites</h5>
-            <div class="fill">
-                <div class="container-f">
-                    <h2 class="h2">Available Activities</h2>
-                    <label class="label" for="standardFilter">Filter by Standard:</label>
-                    <select id="standardFilter" onchange="filterCards()">
-                        <option value="all">All Standards</option>
-                        <option value="1">Standard 1</option>
-                        <option value="2">Standard 2</option>
-                        <option value="3">Standard 3</option>
-                        <option value="4">Standard 4</option>
-                        <option value="5">Standard 5</option>
-                        <option value="6">Standard 6</option>
-                        <option value="7">Standard 7</option>
-                        <option value="8">Standard 8</option>
-                    </select>
+    </section>
+    <!-- activites section -->
+    <section id="activites">
+        <h5 class="custom-student-card">Activites</h5>
+        <div class="fill">
+            <div class="container-f">
+                <h2 class="h2">Available Activities</h2>
+                <label class="label" for="standardFilter">Filter by Standard:</label>
+                <select id="standardFilter" onchange="filterCards()">
+                    <option value="all">All Standards</option>
+                    <option value="1">Standard 1</option>
+                    <option value="2">Standard 2</option>
+                    <option value="3">Standard 3</option>
+                    <option value="4">Standard 4</option>
+                    <option value="5">Standard 5</option>
+                    <option value="6">Standard 6</option>
+                    <option value="7">Standard 7</option>
+                    <option value="8">Standard 8</option>
+                </select>
 
-                    <div class="pdf-container">
-                        <?php
+                <div class="pdf-container">
+                    <?php
                         $jsonFile = '../shared_activity/documents.json';
                         if (file_exists($jsonFile)) {
                             $data = json_decode(file_get_contents($jsonFile), true);
@@ -814,29 +893,37 @@
                             echo "<p>No Activities available</p>";
                         }
                         ?>
-                    </div>
                 </div>
-
-                <script>
-                function filterCards() {
-                    let standard = document.getElementById('standardFilter').value;
-                    let cards = document.querySelectorAll('.pdf-card');
-
-                    cards.forEach(card => {
-                        let cardStandard = card.getAttribute('data-standard');
-                        if (standard === "all" || cardStandard === standard) {
-                            card.style.display = "block";
-                        } else {
-                            card.style.display = "none";
-                        }
-                    });
-                }
-                </script>
             </div>
-        </section>
+
+            <script>
+            function filterCards() {
+                let standard = document.getElementById('standardFilter').value;
+                let cards = document.querySelectorAll('.pdf-card');
+
+                cards.forEach(card => {
+                    let cardStandard = card.getAttribute('data-standard');
+                    if (standard === "all" || cardStandard === standard) {
+                        card.style.display = "block";
+                    } else {
+                        card.style.display = "none";
+                    }
+                });
+            }
+            </script>
+        </div>
+    </section>
 
     </div>
 
+    <script src="js/app.js"></script>
+    <script>
+    // Auto open the PDF when the page loads
+    window.onload = function() {
+        // Replace 'your-pdf-file.pdf' with the path to your PDF file
+        window.open('your-pdf-file.pdf', '_blank');
+    }
+    </script>
     <script src="js/app.js"></script>
     <script>
     // Auto open the PDF when the page loads
@@ -1071,6 +1158,195 @@
         });
     });
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
+        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+            nextArrow: "<span title=\"Next month\">&raquo;</span>",
+            defaultDate: defaultDate
+        });
+    });
+    </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
+        var gradient = ctx.createLinearGradient(0, 0, 0, 225);
+        gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
+        gradient.addColorStop(1, "rgba(215, 227, 244, 0)");
+        // Line chart
+        new Chart(document.getElementById("chartjs-dashboard-line"), {
+            type: "line",
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov",
+                    "Dec"
+                ],
+                datasets: [{
+                    label: "Sales ($)",
+                    fill: true,
+                    backgroundColor: gradient,
+                    borderColor: window.theme.primary,
+                    data: [
+                        2115,
+                        1562,
+                        1584,
+                        1892,
+                        1587,
+                        1923,
+                        2566,
+                        2448,
+                        2805,
+                        3438,
+                        2917,
+                        3327
+                    ]
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                tooltips: {
+                    intersect: false
+                },
+                hover: {
+                    intersect: true
+                },
+                plugins: {
+                    filler: {
+                        propagate: false
+                    }
+                },
+                scales: {
+                    xAxes: [{
+                        reverse: true,
+                        gridLines: {
+                            color: "rgba(0,0,0,0.0)"
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            stepSize: 1000
+                        },
+                        display: true,
+                        borderDash: [3, 3],
+                        gridLines: {
+                            color: "rgba(0,0,0,0.0)"
+                        }
+                    }]
+                }
+            }
+        });
+    });
+    </script>
+    <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        if (sidebar.style.display === "none") {
+            sidebar.style.display = "block";
+        } else {
+            sidebar.style.display = "none";
+        }
+    }
+    </script>
+
+    <script>
+    // Convert PHP variables to numbers
+    var mathematics = parseFloat("<?php echo $mathematics; ?>") || 0;
+    var gujarati = parseFloat("<?php echo $gujarati; ?>") || 0;
+    var hindi = parseFloat("<?php echo $hindi; ?>") || 0;
+    var art_craft = parseFloat("<?php echo $art_craft; ?>") || 0;
+    var physical_education = parseFloat("<?php echo $physical_education; ?>") || 0;
+
+    // Correct formula for percentage
+    var total = mathematics + gujarati + hindi + art_craft + physical_education;
+    var percentage = (total / 5); // Assuming average calculation
+    var other = 100 - percentage;
+
+    // Ensure percentage does not exceed 100
+    percentage = Math.min(percentage, 100);
+    other = Math.max(other, 0);
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("percentageTd").innerText = percentage + "%";
+    })
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Pie chart
+        new Chart(document.getElementById("chartjs-dashboard-pie"), {
+            type: "pie",
+            data: {
+                labels: ["Percentage", "."],
+                datasets: [{
+                    data: [percentage, other],
+                    backgroundColor: [
+                        window.theme.primary,
+                        window.theme.warning,
+                    ],
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                responsive: !window.MSInputMethodContext,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 75
+            }
+        });
+    });
+    </script>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Bar chart
+        new Chart(document.getElementById("chartjs-dashboard-bar"), {
+            type: "bar",
+            data: {
+                labels: ["mathematics", "gujarati", "hindi", "art_craft", "physical_education"],
+                datasets: [{
+                    label: "Marks",
+                    backgroundColor: window.theme.primary,
+                    borderColor: window.theme.primary,
+                    hoverBackgroundColor: window.theme.primary,
+                    hoverBorderColor: window.theme.primary,
+                    data: [mathematics, gujarati, hindi, art_craft, physical_education],
+                    barPercentage: .75,
+                    categoryPercentage: .5
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                scales: {
+                    yAxes: [{
+                        gridLines: {
+                            display: false
+                        },
+                        stacked: false,
+                        ticks: {
+                            stepSize: 20
+                        }
+                    }],
+                    xAxes: [{
+                        stacked: false,
+                        gridLines: {
+                            color: "transparent"
+                        }
+                    }]
+                }
+            }
+        });
+    });
+    </script>
+
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
