@@ -67,82 +67,40 @@
             <div class="container mt-4">
                 <div class="custom-card shadow p-5">
                     <h2 class="text-center mb-5 mt-3">Bhavnagar School Enrollment</h2>
-                    <form id="enrollmentForm" action="submit.php" method="POST">
+                    <form id="enrollmentForm" action="schEnroll.php" method="POST">
 
                         <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label">School Number:</label>
+                                <input type="number" class="form-control" name="school_no" required>
+                            </div>
                             <div class="col-md-6">
                                 <label class="form-label">School Name:</label>
                                 <input type="text" class="form-control" name="school_name" required>
                             </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Affiliation Number:</label>
-                                <input type="text" class="form-control" name="affiliation" pattern="\d{6,10}" required>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="mt-3">
-                                <label class="form-label">Board of Education:</label>
-                                <select class="form-select" name="board" required>
-                                    <option value="">Select Board</option>
-                                    <option value="CBSE">CBSE</option>
-                                    <option value="ICSE">ICSE</option>
-                                    <option value="State Board">State Board</option>
-                                    <option value="Other">Other</option>
-                                </select>
-                            </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-6">
-                                <label class="form-label">Principal's Name:</label>
-                                <input type="text" class="form-control" name="principal" required>
+                                <label class="form-label">Email Address:</label>
+                                <input type="email" class="form-control" name="email_address" required>
                             </div>
+
                             <div class="col-md-6">
-                                <label class="form-label">Principal's Number:</label>
-                                <input type="tel" class="form-control" name="contact1" pattern="[6789][0-9]{9}"
+                                <label class="form-label">Standard:</label>
+                                <input type="text" class="form-control" name="standard"
                                     required>
                             </div>
                         </div>
 
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <label class="form-label">School's Primary Contact Number:</label>
-                                <input type="tel" class="form-control" name="contact1" pattern="[6789][0-9]{9}"
-                                    required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">School's Secondary Contact Number:</label>
-                                <input type="tel" class="form-control" name="contact2" pattern="[6789][0-9]{9}">
-                            </div>
-                        </div>
+                        
                         <div class="row">
                             <div class="mt-3">
-                                <label class="form-label">Official Email:</label>
-                                <input type="email" class="form-control" name="email" required>
+                                <label class="form-label">Principal Name:</label>
+                                <input type="text" class="form-control" name="principal_name" required>
                             </div>
                         </div>
 
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <label class="form-label">State:</label>
-                                <input type="text" class="form-control" value="Gujarat" readonly>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">City:</label>
-                                <select class="form-select" name="city" required>
-                                    <option value="">Select City</option>
-                                    <option value="Bhavnagar">Bhavnagar</option>
-                                    <option value="Mahuva">Mahuva</option>
-                                    <option value="Palitana">Palitana</option>
-                                    <option value="Talaja">Talaja</option>
-                                    <option value="Gariadhar">Gariadhar</option>
-                                    <option value="Sihor">Sihor</oMahon>
-                                    <option value="Botad">Botad</option>
-                                    <option value="Vallabhipur">Vallabhipur</option>
-                                    <option value="Umrala">Umrala</option>
-                                    <option value="Ghogha">Ghogha</option>
-                                </select>
-                            </div>
-                        </div>
+                        
 
                         <div class="row">
                             <div class="mt-3">
@@ -151,29 +109,7 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="mt-3">
-                                <label class="form-label">Pincode:</label>
-                                <input type="text" class="form-control" name="pincode" pattern="\d{6}" required>
-                            </div>
-
-                        </div>
-
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Password:</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="password" name="password" required>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Confirm Password:</label>
-                                <div class="input-group">
-                                    <input type="password" class="form-control" id="confirm_password"
-                                        name="confirm_password" required>
-                                </div>
-                            </div>
-                        </div>
+                        
 
                         <div class="mt-3 text-center">
                             <button type="submit" class="btn btn-primary w-100">Enroll School</button>
@@ -185,49 +121,44 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script>
-        // Toggle password visibility
-        // function togglePassword() {
-        // 	let pass = document.getElementById("password");
-        // 	pass.type = (pass.type === "password") ? "text" : "password";
-        // }
 
-        // function toggleConfirmPassword() {
-        // 	let pass = document.getElementById("confirm_password");
-        // 	pass.type = (pass.type === "password") ? "text" : "password";
-        // }
+        <?php
+       
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $school_no = $_POST['school_no'];
+    $school_name = $_POST['school_name'];
+    $email_address = $_POST['email_address'];
+    $standard = $_POST['standard'];
+    $principal_name = $_POST['principal_name'];
+    $address = $_POST['address'];
 
+    // SQL query to insert data into the database
+    $sql = "INSERT INTO school_1 (school_no, school_name, email_address, standard, principal_name, address) 
+            VALUES (?, ?, ?, ?, ?, ?)";
 
-        // Form Validation
-        document.getElementById('enrollmentForm').addEventListener('submit', function(event) {
-            let pincode = document.getElementById('pincode').value;
-            let contact1 = document.getElementById('contact1').value;
-            let contact2 = document.getElementById('contact2').value;
-            let password = document.getElementById('password').value;
-            let confirmPassword = document.getElementById('confirm_password').value;
+    // Prepare the statement
+    if ($stmt = $conn->prepare($sql)) {
+        $stmt->bind_param("isssss", $school_no, $school_name, $email_address, $standard, $principal_name, $address);
+        
+        // Execute the statement
+        if ($stmt->execute()) {
+            echo "<script>alert('School enrolled successfully!'); window.location.href='schEnroll.php';</script>";
+        } else {
+            echo "Error: " . $stmt->error;
+        }
 
-            if (pincode.length !== 6 || isNaN(pincode)) {
-                alert("Enter a valid 6-digit Pincode.");
-                event.preventDefault();
-            }
+        // Close statement
+        $stmt->close();
+    } else {
+        echo "Error preparing statement: " . $conn->error;
+    }
 
-            if (!contact1.match(/^[6789]\d{9}$/)) {
-                alert("Enter a valid 10-digit Primary Contact Number.");
-                event.preventDefault();
-            }
-
-            if (contact2 !== "" && !contact2.match(/^[6789]\d{9}$/)) {
-                alert("Enter a valid 10-digit Secondary Contact Number.");
-                event.preventDefault();
-            }
-
-            if (password !== confirmPassword) {
-                alert("Passwords do not match!");
-                event.preventDefault();
-            }
-        });
-        </script>
-
+    // Close connection
+    $conn->close();
+}
+?>
+        
 </body>
 
 </html>
