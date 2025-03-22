@@ -56,11 +56,11 @@
 						</a>
 					</li>
 
-					<li class="sidebar-item">
+					<!-- <li class="sidebar-item">
 						<a class="sidebar-link" href="#syllabus">
 							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Syllabus</span>
 						</a>
-					</li>
+					</li> -->
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="#announcement">
 							<i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Announcement</span>

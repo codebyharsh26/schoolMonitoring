@@ -457,7 +457,7 @@
 
 						<div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
 							<div class="card-header">
-								<h5 class="card-title mb-0">Overall Academic Result</h5>
+								<h5 class="card-title mb-0">Overall Result</h5>
 							</div>
 							<div class="card-body d-flex">
 								<div class="align-self-center w-100">
@@ -513,12 +513,12 @@
 	</div>
 	</section>
 <!-- syllabus section -->
-<section id="syllabus">
+<!-- <section id="syllabus">
 	<h5 class="custom-student-card">Syllabus</h5>
 	<div class="fill">
 	<img src="" alt="" height="500vh" width="98%">
 	</div>
-</section>
+</section> -->
 <!-- announcement section -->
 <section id="announcement">
 	<h5 class=" custom-student-card">Announcement</h5>
