@@ -29,40 +29,40 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 
 </head>
 <style>
-/* Make the sidebar fixed */
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    /* Adjust as per your design */
-    height: 100vh;
-    /* Full height */
-    background: #2C3E50;
-    /* Sidebar background */
-    color: white;
-    overflow-y: auto;
-    /* Allow scrolling inside sidebar */
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-}
+    /* Make the sidebar fixed */
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        /* Adjust as per your design */
+        height: 100vh;
+        /* Full height */
+        background: #2C3E50;
+        /* Sidebar background */
+        color: white;
+        overflow-y: auto;
+        /* Allow scrolling inside sidebar */
+        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+    }
 
-/* Ensure sidebar content takes full height */
-.sidebar-content {
-    height: 100%;
-    overflow-y: auto;
-}
+    /* Ensure sidebar content takes full height */
+    .sidebar-content {
+        height: 100%;
+        overflow-y: auto;
+    }
 
-/* Adjust main content so it doesn't go under the sidebar */
-.wrapper {
-    display: flex;
-}
+    /* Adjust main content so it doesn't go under the sidebar */
+    .wrapper {
+        display: flex;
+    }
 
-#main-content {
-    margin-left: 250px;
-    /* Same as sidebar width */
-    padding: 20px;
-    width: calc(100% - 250px);
-}
+    #main-content {
+        margin-left: 250px;
+        /* Same as sidebar width */
+        padding: 20px;
+        width: calc(100% - 250px);
+    }
 </style>
 
 <body>
@@ -100,19 +100,19 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
                     </li>
 
                     <!-- <li class="sidebar-item <?= ($current_page == 'std-enroll.php') ? 'active' : '' ?>">
-						<a class="sidebar-link" href="std-enroll.php">
-							<i class="align-middle" data-feather="edit-2"></i>
-							<span class="align-middle">Student Enrollment</span>
-						</a>
-					</li> -->
+                        <a class="sidebar-link" href="std-enroll.php">
+                            <i class="align-middle" data-feather="edit-2"></i>
+                            <span class="align-middle">Student Enrollment</span>
+                        </a>
+                    </li> -->
 
                     <!-- <li
-						class="sidebar-item <?= ($current_page == 'tr-leave-application-display.php') ? 'active' : '' ?>">
-						<a class="sidebar-link" href="tr-leave-application-display.php">
-							<i class="align-middle" data-feather="bookmark"></i>
-							<span class="align-middle">Leave Application</span>
-						</a>
-					</li> -->
+                        class="sidebar-item <?= ($current_page == 'tr-leave-application-display.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="tr-leave-application-display.php">
+                            <i class="align-middle" data-feather="bookmark"></i>
+                            <span class="align-middle">Leave Application</span>
+                        </a>
+                    </li> -->
 
                     <li class="sidebar-item <?= ($current_page == 'BMC-announce.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="BMC-announce.php">
@@ -122,11 +122,11 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
                     </li>
 
                     <!-- <li class="sidebar-item <?= ($current_page == 'activities.php') ? 'active' : '' ?>">
-						<a class="sidebar-link" href="activities.php">
-							<i class="align-middle" data-feather="activity"></i>
-							<span class="align-middle">Activities</span>
-						</a>
-					</li> -->
+                        <a class="sidebar-link" href="activities.php">
+                            <i class="align-middle" data-feather="activity"></i>
+                            <span class="align-middle">Activities</span>
+                        </a>
+                    </li> -->
 
                     <li class="sidebar-header">Monitoring</li>
 
@@ -172,22 +172,22 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    function confirmLogout() {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You will be logged out!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, Sign Out",
-            cancelButtonText: "Cancel"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = 'logout.php'; // Redirect to logout script
-            }
-        });
-    }
+        function confirmLogout() {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You will be logged out!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, Sign Out",
+                cancelButtonText: "Cancel"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'logout.php'; // Redirect to logout script
+                }
+            });
+        }
     </script>
 
 </body>
