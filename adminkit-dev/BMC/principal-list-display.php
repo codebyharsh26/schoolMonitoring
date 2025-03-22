@@ -6,36 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/adminkit-dev/static/css/student-list-display.css">
-    <title>Student Details</title>
+    <link rel="stylesheet" href="/adminkit-dev/static/css/teacher-list-display.css">
+    <title>Principal Details</title>
     <!-- <style>
-        /* General reset for margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Container styling */
-        .container {
-            margin-top: 20px; /* Adjust top margin */
-        }
-
-        .row {
-            margin: 0; /* Ensure no extra margin on rows */
-        }
-
         /* Pagination */
         .pagination {
             display: flex;
             justify-content: center;
             list-style: none;
             padding: 0;
-            margin-top: 20px; /* Adjust pagination margin */
         }
 
         .pagination .page-item.active .page-link {
@@ -52,8 +31,11 @@
         .pagination .page-link {
             padding: 5px 10px;
             text-decoration: none;
+            /* background-color: #007bff; */
             color: #007bff;
+            /* border-radius: 3px; */
         }
+
 
         /* Modal Styling */
         .modal {
@@ -85,33 +67,19 @@
             justify-content: flex-end;
             margin-top: 10px;
         }
-
-        /* Card Styling */
-        .card {
-            margin-bottom: 20px; /* Adjust bottom margin for card */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .card-text {
-            margin-bottom: 10px;
-        }
     </style> -->
 </head>
+<div class="sidebar">
+    <?php
+    include_once("sidebar.php");
+    ?>
+</div>
 
 <body>
-    <main role="main">
+    <main role="main" style="margin-top: 3rem;">
         <div class="container">
             <div class="container bg-light">
-                <h1 class="h3 mb-4"><strong>Students</strong> Details</h1>
+                <h1 class="h3 mb-4"><strong>Principal</strong> Details</h1>
 
                 <!-- Filter Section -->
                 <div class="row mb-4">
@@ -181,22 +149,21 @@
                             </div>
 
                             <?php if (isset($_GET['page'])): ?>
-                            <input type="hidden" name="page" value="<?php echo $_GET['page']; ?>">
+                                <input type="hidden" name="page" value="<?php echo $_GET['page']; ?>">
                             <?php endif; ?>
 
                             <?php if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all'): ?>
-                            <a href="?" class="btn btn-sm btn-outline-danger ml-2">Clear Filter</a>
+                                <a href="?" class="btn btn-sm btn-outline-danger ml-2">Clear Filter</a>
                             <?php endif; ?>
                         </form>
                     </div>
                 </div>
 
-
                 <div class="row">
                     <?php
                     include_once 'connection.php';
 
-                    $limit = 20; // Number of records per page
+                    $limit = 21; // Number of records per page
                     $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
                     $offset = ($page - 1) * $limit; // Offset for pagination
                     
@@ -204,86 +171,88 @@
                     $filter_condition = "";
                     if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all') {
                         $school_filter = mysqli_real_escape_string($conn, $_GET['school_filter']);
-                        $filter_condition = "WHERE school_number = '$school_filter'";
+                        $filter_condition = "WHERE school_no = '$school_filter'";
                     }
 
                     // Count total records with filter applied
-                    $total_query = "SELECT COUNT(*) FROM student_1 $filter_condition";
+                    $total_query = "SELECT COUNT(*) FROM principal_1 $filter_condition";
                     $total_result = mysqli_query($conn, $total_query);
                     $total_rows = mysqli_fetch_array($total_result)[0];
                     $total_pages = ceil($total_rows / $limit); // Total pages
                     
                     // Fetch records for the current page with filter applied
-                    $select = "SELECT * FROM student_1 $filter_condition LIMIT $limit OFFSET $offset";
+                    $select = "SELECT * FROM principal_1 $filter_condition LIMIT $limit OFFSET $offset";
                     $result = mysqli_query($conn, $select);
 
                     if ($result && mysqli_num_rows($result) > 0) {
                         while ($row = mysqli_fetch_assoc($result)) {
+
                             echo '<div class="col-md-4">
                                         <div class="card mb-4 shadow-sm">
-                                            <img src="' . $row['student_image'] . '" alt="Student Image" class="card-img-top" style="height: 200px; object-fit: cover;">
+                                        <img src="' . $row['principal_image'] . '" alt="Principal Image" class="card-img-top" style="height: 200px; object-fit: cover">
                                             <div class="card-body">
-                                                <h5 class="card-title" style="font-weight: bold; font-size: 24px; color: black;">' . $row['full_name'] . '</h5>
-                                                <p class="card-text"><b>Standard:</b> ' . $row['standard'] . '</p>
+                                                <h2 class="card-title" style="font-weight: bold; font-size: 24px; color: black;">' . $row['principal_full_name'] . ' <small class="text-muted" style="font-size: 15px;">' . $row['qualification'] . '</small></h2>
+                                                <p class="card-text"><b>Email:</b> ' . $row['email'] . '</p>
+                                                <p class="card-text"><b>Phone Number:</b> ' . $row['phone'] . '</p>
                                                 <p class="card-text"><b>Gender:</b> ' . $row['gender'] . '</p>
-                                                <p class="card-text"><b>Blood Group:</b> ' . $row['blood_group'] . '</p>
                                                 <p class="card-text"><b>School Name:</b> ' . $row['school_name'] . '</p>
-                                                <p class="card-text"><b>School Number:</b> ' . $row['school_number'] . '</p>
+                                                <p class="card-text"><b>School Number:</b> ' . $row['school_no'] . '</p>
                                             </div>
                                         </div>
                                     </div>';
                         }
                     } else {
                         echo '<div class="col-12 text-center p-5">
-                                <div class="alert alert-info">No students found matching your criteria.</div>
+                                <div class="alert alert-info">No principals found matching your criteria.</div>
                               </div>';
                     }
                     ?>
                 </div>
             </div>
-            <!-- Pagination with filter preservation -->
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
-                    <?php
-                    // Build the query string for pagination links
-                    $query_string = "";
-                    if (isset($_GET['school_filter'])) {
-                        $query_string = "school_filter=" . urlencode($_GET['school_filter']) . "&";
-                    }
+        </div>
+        <!-- Pagination with filter preservation -->
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+                <?php
+                // Build the query string for pagination links
+                $query_string = "";
+                if (isset($_GET['school_filter'])) {
+                    $query_string = "school_filter=" . urlencode($_GET['school_filter']) . "&";
+                }
 
-                    if ($page > 1):
-                        ?>
+                if ($page > 1):
+                    ?>
                     <li class="page-item"><a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $page - 1; ?>">Previous</a></li>
-                    <?php endif; ?>
+                <?php endif; ?>
 
-                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
                     <li class="page-item <?php if ($i == $page)
-                            echo 'active'; ?>">
+                        echo 'active'; ?>">
                         <a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $i; ?>"><?php echo $i; ?></a>
                     </li>
-                    <?php endfor; ?>
+                <?php endfor; ?>
 
-                    <?php if ($page < $total_pages): ?>
+                <?php if ($page < $total_pages): ?>
                     <li class="page-item"><a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $page + 1; ?>">Next</a></li>
-                    <?php endif; ?>
-                </ul>
-            </nav>
+                <?php endif; ?>
+            </ul>
+        </nav>
 
-            <script>
+        <script>
             // Set the selected school in the dropdown when page loads
-            document.addEventListener('DOMContentLoaded', function() {
+            document.addEventListener('DOMContentLoaded', function () {
                 <?php if (isset($_GET['school_filter'])): ?>
-                document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
+                    document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
                 <?php endif; ?>
             });
-            </script>
+        </script>
 
-            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     </main>
 </body>
 
