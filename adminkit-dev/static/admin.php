@@ -78,31 +78,47 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
                             <div class="w-100">
                                 <div class="d-flex flex-nowrap gap-4">
                                     <!-- gap-3 adds spacing -->
+                                    <?php
+                                        $teachers = "SELECT COUNT(*) AS total_teachers FROM teacher_1";
+                                        $result_t = mysqli_query($conn, $teachers);
+                                        $fetch_t = mysqli_fetch_assoc($result_t);
+                                        $total_teachers = $fetch_t['total_teachers'];
+                                    ?>
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Total Teachers</h5>
-                                            <h1 class=" mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">55</h1>
+                                            <h1 class=" mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">
+                                                <?php echo $total_teachers ?>
+                                            </h1>
                                         </div>
                                     </div>
 
+                                    <?php
+                                        $students = "SELECT COUNT(*) AS total_students FROM student_1";
+                                        $result_s = mysqli_query($conn, $students);
+                                        $fetch_s = mysqli_fetch_assoc($result_s);
+                                        $total_students = $fetch_s['total_students'];
+                                    ?>
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Total Students</h5>
-                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">269</h1>
+                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">
+                                                <?php echo $total_students ?>
+                                            </h1>
                                         </div>
                                     </div>
 
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Total Admission</h5>
-                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">19</h1>
+                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">0</h1>
                                         </div>
                                     </div>
 
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Student Left</h5>
-                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">10</h1>
+                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">0</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -192,7 +208,7 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
     </div>
 
     <script src="js/app.js"></script>
-    
+
     <script>
 
     document.addEventListener("DOMContentLoaded", function() {

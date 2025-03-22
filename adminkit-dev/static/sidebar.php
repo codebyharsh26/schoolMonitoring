@@ -26,8 +26,14 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <style>
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
 /* Remove any bottom borders or underlines */
-.sidebar-item, 
+.sidebar-item,
 .sidebar-link {
     border: none !important;
     box-shadow: none !important;
@@ -42,7 +48,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 }
 
 /* Ensure pseudo-elements don't add underline */
-.sidebar-item::after, 
+.sidebar-item::after,
 .sidebar-link::after {
     content: none !important;
     display: none !important;
@@ -52,8 +58,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 .sidebar-item {
     border-bottom: none !important;
 }
-
-    </style>
+</style>
 
 
 <body>
