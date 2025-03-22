@@ -186,22 +186,21 @@
                         </div>
                     </div>
                 </div>
-        </div>
-    </div>
-    </main>
+            </main>
 
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row text-muted">
-                <div class="col-6 text-start">
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                        </div>
+                        <div class="col-6 text-end">
+                            <p class="mb-0"><strong>schoolAdmin</strong></p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 text-end">
-                    <p class="mb-0"><strong>schoolAdmin</strong></p>
-                </div>
-            </div>
+            </footer>
+
         </div>
-    </footer>
-    </div>
     </div>
 
     <script src="js/app.js"></script>
