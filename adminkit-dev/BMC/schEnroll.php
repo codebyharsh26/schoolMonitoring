@@ -24,32 +24,32 @@
     <title>Bhavnagar School Enrollment Form</title>
     <!-- <link rel="stylesheet" href="adminkit-dev/BMC/css/schEnroll-style.css"> -->
     <style>
-    /* Global Styles */
-    * {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
-    }
+        /* Global Styles */
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-        background: #f8f9fa;
-    }
+        body {
+            background: #f8f9fa;
+        }
 
-    .card {
-        max-width: 800px;
-        margin: auto;
-    }
+        .card {
+            max-width: 800px;
+            margin: auto;
+        }
 
-    textarea {
-        height: 80px;
-    }
+        textarea {
+            height: 80px;
+        }
 
-    .custom-card {
+        .custom-card {
 
-        width: 100%;
-        background-color: white;
-        border-radius: 10px;
-    }
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+        }
     </style>
 </head>
 
@@ -57,13 +57,13 @@
     <div class="wrapper">
         <div class="sidebar">
             <?php
-			include_once("sidebar.php");
-			?>
+            include_once("sidebar.php");
+            ?>
         </div>
         <div class="main">
             <?php
-			include_once("navbar.php");
-			?>
+            include_once("navbar.php");
+            ?>
             <div class="container mt-4">
                 <div class="custom-card shadow p-5">
                     <h2 class="text-center mb-5 mt-3">Bhavnagar School Enrollment</h2>
@@ -121,44 +121,49 @@
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Toggle password visibility
+            // function togglePassword() {
+            // 	let pass = document.getElementById("password");
+            // 	pass.type = (pass.type === "password") ? "text" : "password";
+            // }
 
-        <?php
-       
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $school_no = $_POST['school_no'];
-    $school_name = $_POST['school_name'];
-    $email_address = $_POST['email_address'];
-    $standard = $_POST['standard'];
-    $principal_name = $_POST['principal_name'];
-    $address = $_POST['address'];
+            // function toggleConfirmPassword() {
+            // 	let pass = document.getElementById("confirm_password");
+            // 	pass.type = (pass.type === "password") ? "text" : "password";
+            // }
 
-    // SQL query to insert data into the database
-    $sql = "INSERT INTO school_1 (school_no, school_name, email_address, standard, principal_name, address) 
-            VALUES (?, ?, ?, ?, ?, ?)";
 
-    // Prepare the statement
-    if ($stmt = $conn->prepare($sql)) {
-        $stmt->bind_param("isssss", $school_no, $school_name, $email_address, $standard, $principal_name, $address);
-        
-        // Execute the statement
-        if ($stmt->execute()) {
-            echo "<script>alert('School enrolled successfully!'); window.location.href='schEnroll.php';</script>";
-        } else {
-            echo "Error: " . $stmt->error;
-        }
+            // Form Validation
+            document.getElementById('enrollmentForm').addEventListener('submit', function (event) {
+                let pincode = document.getElementById('pincode').value;
+                let contact1 = document.getElementById('contact1').value;
+                let contact2 = document.getElementById('contact2').value;
+                let password = document.getElementById('password').value;
+                let confirmPassword = document.getElementById('confirm_password').value;
 
-        // Close statement
-        $stmt->close();
-    } else {
-        echo "Error preparing statement: " . $conn->error;
-    }
+                if (pincode.length !== 6 || isNaN(pincode)) {
+                    alert("Enter a valid 6-digit Pincode.");
+                    event.preventDefault();
+                }
 
-    // Close connection
-    $conn->close();
-}
-?>
-        
+                if (!contact1.match(/^[6789]\d{9}$/)) {
+                    alert("Enter a valid 10-digit Primary Contact Number.");
+                    event.preventDefault();
+                }
+
+                if (contact2 !== "" && !contact2.match(/^[6789]\d{9}$/)) {
+                    alert("Enter a valid 10-digit Secondary Contact Number.");
+                    event.preventDefault();
+                }
+
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match!");
+                    event.preventDefault();
+                }
+            });
+        </script>
+
 </body>
 
 </html>

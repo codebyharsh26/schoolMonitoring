@@ -37,7 +37,7 @@ $result = $conn->query($query);
     <link href="https://cdn.jsdelivr.net/npm/adminkit@2.1.0/dist/css/app.css" rel="stylesheet">
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper p-0 m-0">
         <div class="sidebar">
             <?php
             include_once("sidebar.php");
