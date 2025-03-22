@@ -19,9 +19,9 @@ if ($conn->connect_error) {
 // Redirect if already logged in
 if (isset($_SESSION['user_id'], $_SESSION['user_type'])) {
     $redirects = [
-        "student" => "/schoolMonitoring/adminkit-dev/student/student-index.php",
-        "teacher" => "../teacher/teacher-index.php",
-        "admin"   => "../static/admin.php"
+        "student" => "student/student-index.php",
+        "teacher" => "teacher-index.php",
+        "admin" => "static/admin.php"
     ];
     if (isset($redirects[$_SESSION['user_type']])) {
         header("Location: " . $redirects[$_SESSION['user_type']]);
@@ -33,13 +33,13 @@ $error_message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $identifier = trim($_POST['identifier']);
-    $password   = $_POST['password'];
-    $user_type  = $_POST['user_type'];
+    $password = $_POST['password'];
+    $user_type = $_POST['user_type'];
 
     $valid_users = [
         "student" => ["table" => "student_1", "column" => "father_phone_number"],
         "teacher" => ["table" => "teacher_1", "column" => ["phone_number", "email_address"]],
-        "admin"   => ["table" => "admin_1", "column" => "username"]
+        "admin" => ["table" => "admin_1", "column" => "username"]
     ];
 
     if (!isset($valid_users[$user_type])) {
@@ -74,9 +74,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_type'] = $user_type;
 
             $redirects = [
-                "student" => "adminkit-dev/student/student-index.php",
-                "teacher" => "adminkit-dev/teacher/teacher-index.php",
-                "admin"   => "adminkit-dev/static/admin.php"
+                "student" => "student/student-index.php",
+                "teacher" => "teacher/teacher-index.php",
+                "admin" => "static/admin.php"
             ];
             header("Location: " . $redirects[$user_type]);
             exit();
@@ -139,7 +139,8 @@ $conn->close();
     }
 
     .login-container {
-        padding: 20px;
+        padding: 30px;
+        /* Increased padding */
         box-sizing: border-box;
         background: white;
         margin: 3rem;
@@ -147,11 +148,14 @@ $conn->close();
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         text-align: center;
         width: 100%;
-        max-width: 25rem;
+        max-width: 30rem;
+        /* Increased max width */
     }
 
     .login-container input {
         width: 100% !important;
+        font-size: 1.1rem;
+        /* Slightly bigger input text */
     }
 
     .form-group {
@@ -161,9 +165,11 @@ $conn->close();
 
     .form-group input {
         width: 100%;
-        padding: 12px;
         border: 1px solid #ccc;
         border-radius: 8px;
+        padding: 14px;
+        /* Bigger input fields */
+        font-size: 1.1rem
     }
 
     .show-hide-btn {
@@ -179,11 +185,14 @@ $conn->close();
     .login-btn {
         background: #4e54c8;
         color: white;
-        padding: 12px 20px;
         border: none;
         border-radius: 8px;
         cursor: pointer;
         width: 100%;
+        padding: 14px 24px;
+        /* Bigger login button */
+        font-size: 1.1rem;
+
     }
 
     .error-message {
@@ -207,7 +216,8 @@ $conn->close();
                 <?= (isset($_POST['user_type']) && $_POST['user_type'] === 'teacher') ? 'selected' : '' ?>>Teacher Login
             </option>
             <option value="admin"
-                <?= (isset($_POST['user_type']) && $_POST['user_type'] === 'admin') ? 'selected' : '' ?>>Admin Login
+                <?= (isset($_POST['user_type']) && $_POST['user_type'] === 'admin') ? 'selected' : '' ?>>
+                Admin Login
             </option>
         </select>
     </div>
