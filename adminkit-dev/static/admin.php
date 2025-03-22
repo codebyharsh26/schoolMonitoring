@@ -19,12 +19,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <title>School Monitoring System</title>
-
     <?php
-    $passing_marks = 45; // Adjust if needed
+$passing_marks = 45; // Adjust if needed
 
     $pass_count = 0;
     $fail_count = 0;
@@ -48,16 +47,17 @@
         }
     }
 
-    // Calculate percentages
-    $total_students = $pass_count + $fail_count;
-    $pass_percentage = $total_students > 0 ? ($pass_count / $total_students) * 100 : 0;
-    $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 : 0;
-    ?>
+// Calculate percentages
+$total_students = $pass_count + $fail_count;
+$pass_percentage = $total_students > 0 ? ($pass_count / $total_students) * 100 : 0;
+$fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 : 0;
+?>
+
 
 </head>
 
 <body>
-    <div class="wrapper m-0 p-0">
+    <div class="wrapper">
         <div class="sidebar">
             <?php
             include_once("sidebar.php");
@@ -189,7 +189,6 @@
 
     <script src="js/app.js"></script>
 
-
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Fetch pass and fail data from PHP variables
@@ -206,8 +205,7 @@
                     datasets: [{
                         data: [passPercentage, failPercentage],
                         backgroundColor: [" #4d4dff",
-                            "#ff3333"
-                        ], // Green for Pass, Red for Fail
+                        "#ff3333"], // Green for Pass, Red for Fail
                         borderWidth: 1
                     }]
                 },
