@@ -24,6 +24,9 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
 </head>
 <style>
 /* Make the sidebar fixed */
@@ -43,9 +46,8 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
 }
 
-/* Sidebar Content: No Scrollbar */
+/* Ensure sidebar content takes full height */
 .sidebar-content {
-    width: 100%;
     height: 100%;
     overflow-y: auto;
 }
@@ -53,55 +55,8 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 /* Adjust main content so it doesn't go under the sidebar */
 .wrapper {
     display: flex;
-    align-items: center;
-    padding: 10px;
-    text-decoration: none !important;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.2s ease-in-out;
 }
 
-/* Active Sidebar Item - Highlighted */
-.sidebar-item.active .sidebar-link {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Sidebar Hover Effects */
-.sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* Remove Focus Outline */
-.sidebar-link:focus,
-.sidebar-link:active {
-    text-decoration: none !important;
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-/* ============================= */
-/* 📌 Ensure Sidebar Doesn't Resize */
-/* ============================= */
-
-/* Prevent Sidebar Expansion on Click */
-.sidebar-content .sidebar-item {
-    width: 100%;
-    max-width: 100%;
-}
-
-/* Fix Sidebar Width on Window Resize */
-@media screen and (max-width: 992px) {
-    #sidebar {
-        width: 250px !important;
-        min-width: 250px !important;
-        max-width: 250px !important;
-    }
-}
-
-/* ============================= */
-/* 📌 Adjust Main Content Area   */
-/* ============================= */
 #main-content {
     margin-left: 250px;
     /* Same as sidebar width */
@@ -114,78 +69,92 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     <div class="wrapper">
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" href="admin.php">
-                    <span class="align-middle">schoolAdmin</span>
+                <a class="sidebar-brand" href="BMC.php">
+                    <span class="align-middle">B.M.C.</span>
                 </a>
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">Pages</li>
 
-                    <li class="sidebar-item <?= ($current_page == 'admin.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="admin.php">
+                    <li class="sidebar-item <?= ($current_page == 'BMC.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="BMC.php">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item <?= ($current_page == 'admin-profile.php') ? 'active' : '' ?>">
+                    <!-- <li class="sidebar-item <?= ($current_page == 'admin-profile.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="admin-profile.php">
                             <i class="align-middle" data-feather="user"></i>
                             <span class="align-middle">Profile</span>
                         </a>
-                    </li>
+                    </li> -->
 
                     <li class="sidebar-header">Forms</li>
 
-                    <li class="sidebar-item <?= ($current_page == 'tr-enroll.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="tr-enroll.php">
+                    <li class="sidebar-item <?= ($current_page == 'schEnroll.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="schEnroll.php">
                             <i class="align-middle" data-feather="edit-2"></i>
-                            <span class="align-middle">Teacher Enrollment</span>
+                            <span class="align-middle">School Enrollment</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item <?= ($current_page == 'std-enroll.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="std-enroll.php">
-                            <i class="align-middle" data-feather="edit-2"></i>
-                            <span class="align-middle">Student Enrollment</span>
-                        </a>
-                    </li>
+                    <!-- <li class="sidebar-item <?= ($current_page == 'std-enroll.php') ? 'active' : '' ?>">
+						<a class="sidebar-link" href="std-enroll.php">
+							<i class="align-middle" data-feather="edit-2"></i>
+							<span class="align-middle">Student Enrollment</span>
+						</a>
+					</li> -->
 
-                    <li
-                        class="sidebar-item <?= ($current_page == 'tr-leave-application-display.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="tr-leave-application-display.php">
-                            <i class="align-middle" data-feather="bookmark"></i>
-                            <span class="align-middle">Leave Application</span>
-                        </a>
-                    </li>
+                    <!-- <li
+						class="sidebar-item <?= ($current_page == 'tr-leave-application-display.php') ? 'active' : '' ?>">
+						<a class="sidebar-link" href="tr-leave-application-display.php">
+							<i class="align-middle" data-feather="bookmark"></i>
+							<span class="align-middle">Leave Application</span>
+						</a>
+					</li> -->
 
-                    <li class="sidebar-item <?= ($current_page == 'announce.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="announce.php">
+                    <li class="sidebar-item <?= ($current_page == 'BMC-announce.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="BMC-announce.php">
                             <i class="align-middle" data-feather="mic"></i>
                             <span class="align-middle">Announcement</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item <?= ($current_page == 'activities.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="activities.php">
-                            <i class="align-middle" data-feather="activity"></i>
-                            <span class="align-middle">Activities</span>
-                        </a>
-                    </li>
+                    <!-- <li class="sidebar-item <?= ($current_page == 'activities.php') ? 'active' : '' ?>">
+						<a class="sidebar-link" href="activities.php">
+							<i class="align-middle" data-feather="activity"></i>
+							<span class="align-middle">Activities</span>
+						</a>
+					</li> -->
 
                     <li class="sidebar-header">Monitoring</li>
 
-                    <li class="sidebar-item <?= ($current_page == 'student.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="student.php">
+                    <li class="sidebar-item <?= ($current_page == 'school-list.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="school-list.php">
                             <i class="align-middle" data-feather="layers"></i>
-                            <span class="align-middle">Students</span>
+                            <span class="align-middle">List of School</span>
                         </a>
                     </li>
 
-                    <li class="sidebar-item <?= ($current_page == 'teacher.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="teacher.php">
+                    <li class="sidebar-item <?= ($current_page == 'principal-list.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="principal-list.php">
                             <i class="align-middle" data-feather="layers"></i>
-                            <span class="align-middle">Teachers</span>
+                            <span class="align-middle">List of Principal</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item <?= ($current_page == 'teacher-list.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="teacher-list.php">
+                            <i class="align-middle" data-feather="layers"></i>
+                            <span class="align-middle">List of Teachers</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item <?= ($current_page == 'student-list.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="student-list.php">
+                            <i class="align-middle" data-feather="layers"></i>
+                            <span class="align-middle">List of Students</span>
                         </a>
                     </li>
 
@@ -215,11 +184,12 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
             cancelButtonText: "Cancel"
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = 'admin-logout.php'; // Redirect to logout script
+                window.location.href = 'logout.php'; // Redirect to logout script
             }
         });
     }
     </script>
+
 </body>
 
 </html>
