@@ -26,89 +26,35 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <style>
-/* Make the sidebar fixed */
-#sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px;
-    /* Adjust as per your design */
-    height: 100vh;
-    /* Full height */
-    background: #2C3E50;
-    /* Sidebar background */
-    color: white;
-    overflow-y: auto;
-    /* Allow scrolling inside sidebar */
-    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Sidebar Content: No Scrollbar */
-.sidebar-content {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-}
-
-/* Adjust main content so it doesn't go under the sidebar */
-.wrapper {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    text-decoration: none !important;
-    color: white;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background 0.2s ease-in-out;
-}
-
-/* Active Sidebar Item - Highlighted */
-.sidebar-item.active .sidebar-link {
-    background: rgba(255, 255, 255, 0.2);
-}
-
-/* Sidebar Hover Effects */
-.sidebar-link:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-/* Remove Focus Outline */
-.sidebar-link:focus,
-.sidebar-link:active {
-    text-decoration: none !important;
-    outline: none !important;
+/* Remove any bottom borders or underlines */
+.sidebar-item, 
+.sidebar-link {
+    border: none !important;
     box-shadow: none !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
-/* ============================= */
-/* 📌 Ensure Sidebar Doesn't Resize */
-/* ============================= */
-
-/* Prevent Sidebar Expansion on Click */
-.sidebar-content .sidebar-item {
-    width: 100%;
-    max-width: 100%;
+/* Remove underline from sidebar links */
+.sidebar-link a {
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
-/* Fix Sidebar Width on Window Resize */
-@media screen and (max-width: 992px) {
-    #sidebar {
-        width: 250px !important;
-        min-width: 250px !important;
-        max-width: 250px !important;
-    }
+/* Ensure pseudo-elements don't add underline */
+.sidebar-item::after, 
+.sidebar-link::after {
+    content: none !important;
+    display: none !important;
 }
 
-/* ============================= */
-/* 📌 Adjust Main Content Area   */
-/* ============================= */
-#main-content {
-    margin-left: 250px;
-    /* Same as sidebar width */
-    padding: 20px;
-    width: calc(100% - 250px);
+/* Remove any border from sidebar items */
+.sidebar-item {
+    border-bottom: none !important;
 }
-</style>
+
+    </style>
+
 
 <body>
     <div class="wrapper">

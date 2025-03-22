@@ -218,7 +218,7 @@
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper p-0 m-0">
 		<div class="sidebar">
 			<div class="sidebar"><?php include_once("sidebar.php"); ?></div>
 		</div>
@@ -226,7 +226,7 @@
 		<div class="main">
 			<?php include_once("navbar.php"); ?>
 			<form action="std-enroll.php" method="post">
-				<div class="wrapper">
+				<div class="wrapper p-0 m-0">
 					<div class="main">
 						<main class="content">
 							<div class="container-fluid p-0">

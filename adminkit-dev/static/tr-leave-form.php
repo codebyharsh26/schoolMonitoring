@@ -120,7 +120,7 @@ body {
 </style>
 <body>
 
-<div class="wrapper">
+<div class="wrapper ">
     <!-- <?php include '../includes/sidebar.php'; ?> -->
     <div class="main">
         <!-- <?php include '../includes/topbar.php'; ?> -->
