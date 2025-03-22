@@ -432,7 +432,7 @@
 					<main class="content">
 						<div class="container-fluid p-0">
 							<?php
-							$query = "select * from student_1 where id=1";
+							$query = "select * from student_1 where id=7";
 							$result = mysqli_query($conn, $query);
 							if ($result) {
 								while ($row = mysqli_fetch_assoc($result)) {
@@ -451,101 +451,115 @@
 									$school_name = $row["school_name"];
 									$academic_year = $row["academic_year"];
 									$school_number = $row["school_number"];
+							?>
+
+									<?php
+									$mquery = "select * from student_marks where marks_id =7";
+									$mresult = mysqli_query($conn, $mquery);
+									if ($mresult) {
+										while ($mrow = mysqli_fetch_assoc($mresult)) {
+											$mathematics = $mrow["mathematics"];
+											$gujarati = $mrow["gujarati"];
+											$hindi = $mrow["hindi"];
+											$art_craft = $mrow["art_craft"];
+											$physical_education = $mrow["physical_education"];
 									?>
 
-									<div class="row">
-										<div class="col-12">
-											<h3 class="custom-student-card1">Profile Details</h3>
-											<div class="card mb-3">
-												<div class="card-header">
-												</div>
-												<div class="card-body text-center">
-													<div class="car">
-														<img src="<?php echo $student_image; ?>"
-															class="img-fluid rounded-circle mb-2" width="128" height="128" />
+											<div class="row">
+												<div class="col-12">
+													<h3 class="custom-student-card1">Profile Details</h3>
+													<div class="card mb-3">
+														<div class="card-header">
+														</div>
+														<div class="card-body text-center">
+															<div class="car">
+																<img src="<?php echo $student_image; ?>"
+																	class="img-fluid rounded-circle mb-2" width="128" height="128" />
 
-														<h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?>
-														</h5>
-														<table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Date-of-birth:</b>
-																</td>
-																<td style="text-align: left;"><?php echo $date_of_birth; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Address:</b></td>
-																<td style="text-align: left;">
-																	<?php echo $residential_address; ?>
-																</td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Gender:</b></td>
-																<td style="text-align: left;"><?php echo $gender; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Standard:</b></td>
-																<td style="text-align: left;"><?php echo $standard; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
-																<td style="text-align: left;"><?php echo $roll_number; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Mother Name:</b>
-																</td>
-																<td style="text-align: left;"><?php echo $mother_name; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;">
-																	<b>Mother-Phone-No.:</b>
-																</td>
-																<td style="text-align: left;">
-																	<?php echo $mother_phone_number; ?>
-																</td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Father Name:</b>
-																</td>
-																<td style="text-align: left;"><?php echo $father_name; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;">
-																	<b>Father-Phone-No.:</b>
-																</td>
-																<td style="text-align: left;">
-																	<?php echo $father_phone_number; ?>
-																</td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Blood-Group:</b>
-																</td>
-																<td style="text-align: left;"><?php echo $blood_group; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>School Name:</b>
-																</td>
-																<td style="text-align: left;"><?php echo $school_name; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>Acedemic Year:</b>
-																</td>
-																<td style="text-align: left;"><?php echo $academic_year; ?></td>
-															</tr>
-															<tr>
-																<td class="bol" style="text-align: left;"><b>School Number:</b>
-																</td>
-																<td style="text-align: left;"><?php echo $school_number; ?></td>
-															</tr>
-														</table>
+																<h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?>
+																</h5>
+																<table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Date-of-birth:</b>
+																		</td>
+																		<td style="text-align: left;"><?php echo $date_of_birth; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Address:</b></td>
+																		<td style="text-align: left;">
+																			<?php echo $residential_address; ?>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Gender:</b></td>
+																		<td style="text-align: left;"><?php echo $gender; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Standard:</b></td>
+																		<td style="text-align: left;"><?php echo $standard; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
+																		<td style="text-align: left;"><?php echo $roll_number; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Mother Name:</b>
+																		</td>
+																		<td style="text-align: left;"><?php echo $mother_name; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;">
+																			<b>Mother-Phone-No.:</b>
+																		</td>
+																		<td style="text-align: left;">
+																			<?php echo $mother_phone_number; ?>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Father Name:</b>
+																		</td>
+																		<td style="text-align: left;"><?php echo $father_name; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;">
+																			<b>Father-Phone-No.:</b>
+																		</td>
+																		<td style="text-align: left;">
+																			<?php echo $father_phone_number; ?>
+																		</td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Blood-Group:</b>
+																		</td>
+																		<td style="text-align: left;"><?php echo $blood_group; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>School Name:</b>
+																		</td>
+																		<td style="text-align: left;"><?php echo $school_name; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>Acedemic Year:</b>
+																		</td>
+																		<td style="text-align: left;"><?php echo $academic_year; ?></td>
+																	</tr>
+																	<tr>
+																		<td class="bol" style="text-align: left;"><b>School Number:</b>
+																		</td>
+																		<td style="text-align: left;"><?php echo $school_number; ?></td>
+																	</tr>
+																</table>
 
+															</div>
+														</div>
 													</div>
 												</div>
+
+
 											</div>
-										</div>
-
-
-									</div>
-									<?php
+							<?php
+										}
+									}
 								}
 							} ?>
 						</div>
@@ -576,14 +590,9 @@
 								<table class="table mb-0">
 									<tbody>
 										<tr>
-											<td>PASS</td>
-											<td class="text-end">90%</td>
+											<td>Percentage</td>
+											<td class="text-end" id="percentageTd"></td>
 										</tr>
-										<tr>
-											<td>FAIL</td>
-											<td class="text-end">10%</td>
-										</tr>
-
 									</tbody>
 								</table>
 							</div>
@@ -717,13 +726,7 @@
 
 			</div>
 		</section>
-		<!-- syllabus section -->
-		<section id="syllabus">
-			<h5 class="custom-student-card">Syllabus</h5>
-			<div class="fill">
-				<img src="" alt="" height="500vh" width="98%">
-			</div>
-		</section>
+		
 		<!-- announcement section -->
 		<section id="announcement">
 			<h5 class=" custom-student-card">Announcement</h5>
@@ -784,7 +787,7 @@
 		<section id="activites">
 			<h5 class="custom-student-card">Activites</h5>
 			<div class="fill">
-			<div class="container-f">
+				<div class="container-f">
 					<h2 class="h2">Available Activities</h2>
 					<label class="label" for="standardFilter">Filter by Standard:</label>
 					<select id="standardFilter" onchange="filterCards()">
@@ -841,14 +844,14 @@
 	<script src="js/app.js"></script>
 	<script>
 		// Auto open the PDF when the page loads
-		window.onload = function () {
+		window.onload = function() {
 			// Replace 'your-pdf-file.pdf' with the path to your PDF file
 			window.open('your-pdf-file.pdf', '_blank');
 		}
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
 			var gradient = ctx.createLinearGradient(0, 0, 0, 225);
 			gradient.addColorStop(0, "rgba(215, 227, 244, 1)");
@@ -927,50 +930,69 @@
 			}
 		}
 	</script>
-	<!-- pass-fail graph ------------------------------------------------------------------------------>
-	
+
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			// Pie chart
-			new Chart(document.getElementById("chartjs-dashboard-pie"), {
-				type: "pie",
-				data: {
-					labels: ["Chrome", "Firefox", "IE"],
-					datasets: [{
-						data: [4306, 3801, 1689],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.warning,
-							window.theme.danger
-						],
-						borderWidth: 5
-					}]
-				},
-				options: {
-					responsive: !window.MSInputMethodContext,
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					cutoutPercentage: 75
-				}
-			});
-		});
-	</script>
+    // Convert PHP variables to numbers
+    var mathematics = parseFloat("<?php echo $mathematics; ?>") || 0;
+    var gujarati = parseFloat("<?php echo $gujarati; ?>") || 0;
+    var hindi = parseFloat("<?php echo $hindi; ?>") || 0;
+    var art_craft = parseFloat("<?php echo $art_craft; ?>") || 0;
+    var physical_education = parseFloat("<?php echo $physical_education; ?>") || 0;
+
+    // Correct formula for percentage
+    var total = mathematics + gujarati + hindi + art_craft + physical_education;
+    var percentage = (total / 5); // Assuming average calculation
+    var other = 100 - percentage;
+
+    // Ensure percentage does not exceed 100
+    percentage = Math.min(percentage, 100);
+    other = Math.max(other, 0);
+	document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("percentageTd").innerText = percentage + "%";})
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Pie chart
+        new Chart(document.getElementById("chartjs-dashboard-pie"), {
+            type: "pie",
+            data: {
+                labels: ["Percentage", "."],
+                datasets: [{
+                    data: [percentage, other],
+                    backgroundColor: [
+                        window.theme.primary,
+                        window.theme.warning,
+                    ],
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                responsive: !window.MSInputMethodContext,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false
+                },
+                cutoutPercentage: 75
+            }
+        });
+    });
+</script>
+
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			// Bar chart
 			new Chart(document.getElementById("chartjs-dashboard-bar"), {
 				type: "bar",
 				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					labels: ["mathematics", "gujarati", "hindi", "art_craft", "physical_education"],
 					datasets: [{
-						label: "This year",
+						label: "Marks",
 						backgroundColor: window.theme.primary,
 						borderColor: window.theme.primary,
 						hoverBackgroundColor: window.theme.primary,
 						hoverBorderColor: window.theme.primary,
-						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
+						data: [mathematics,gujarati,hindi,art_craft,physical_education],
 						barPercentage: .75,
 						categoryPercentage: .5
 					}]
@@ -1001,75 +1023,9 @@
 			});
 		});
 	</script>
+	
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
-			var markers = [{
-				coords: [31.230391, 121.473701],
-				name: "Shanghai"
-			},
-			{
-				coords: [28.704060, 77.102493],
-				name: "Delhi"
-			},
-			{
-				coords: [6.524379, 3.379206],
-				name: "Lagos"
-			},
-			{
-				coords: [35.689487, 139.691711],
-				name: "Tokyo"
-			},
-			{
-				coords: [23.129110, 113.264381],
-				name: "Guangzhou"
-			},
-			{
-				coords: [40.7127837, -74.0059413],
-				name: "New York"
-			},
-			{
-				coords: [34.052235, -118.243683],
-				name: "Los Angeles"
-			},
-			{
-				coords: [41.878113, -87.629799],
-				name: "Chicago"
-			},
-			{
-				coords: [51.507351, -0.127758],
-				name: "London"
-			},
-			{
-				coords: [40.416775, -3.703790],
-				name: "Madrid "
-			}
-			];
-			var map = new jsVectorMap({
-				map: "world",
-				selector: "#world_map",
-				zoomButtons: true,
-				markers: markers,
-				markerStyle: {
-					initial: {
-						r: 9,
-						strokeWidth: 7,
-						stokeOpacity: .4,
-						fill: window.theme.primary
-					},
-					hover: {
-						fill: window.theme.primary,
-						stroke: window.theme.primary
-					}
-				},
-				zoomOnScroll: false
-			});
-			window.addEventListener("resize", () => {
-				map.updateSize();
-			});
-		});
-	</script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
 			var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
 			document.getElementById("datetimepicker-dashboard").flatpickr({
@@ -1081,4 +1037,5 @@
 		});
 	</script>
 </body>
+
 </html>
