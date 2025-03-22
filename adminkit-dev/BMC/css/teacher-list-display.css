@@ -1,0 +1,125 @@
+/* General Styles */
+
+body {
+  /* font-family: "Arial", sans-serif; */
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 20px;
+  clear: both;
+  /* Ensure the heading is not floated */
+}
+
+main {
+  margin-left: 260px;
+  /* Same as the sidebar width */
+  padding: 20px;
+  width: calc(100% - 260px);
+  /* Adjust width to prevent overflow */
+}
+
+/* Ensure the container for the heading and data is properly structured */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  /* Stack elements vertically */
+}
+
+/* Card Styles */
+
+.card {
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  /* Add spacing between cards */
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 14px;
+  color: #555;
+}
+
+.btn-group .btn {
+  margin-right: 5px;
+}
+
+/* Modal Styles */
+
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: #fff;
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.modal-body {
+  font-size: 16px;
+}
+
+/* Form Styles */
+
+.form-control {
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Delete Confirmation */
+
+.modal-footer .btn-danger {
+  background-color: #dc3545;
+  border-radius: 5px;
+}
+
+.modal-footer .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Ensure the row containing student data is properly aligned */
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+  /* Adjust margin to align cards properly */
+}
+
+.col-md-4 {
+  flex: 0 0 33.333333%;
+  /* Ensure each card takes 1/3 of the row */
+  max-width: 33.333333%;
+  padding: 0 15px;
+  /* Add padding for spacing between cards */
+}
