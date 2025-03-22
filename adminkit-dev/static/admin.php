@@ -208,43 +208,44 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-                // Fetch pass and fail data from PHP variables
-                var passPercentage = <?php echo $pass_percentage; ?>;
-                var failPercentage = <?php echo $fail_percentage; ?>;
+        // Fetch pass and fail data from PHP variables
+        var passPercentage = <?php echo $pass_percentage; ?>;
+        var failPercentage = <?php echo $fail_percentage; ?>;
 
-                document.addEventListener("DOMContentLoaded", function() {
-                    // Fetch pass and fail data from PHP variables
-                    var passPercentage = <?php echo $pass_percentage; ?>;
-                    var failPercentage = <?php echo $fail_percentage; ?>;
+        document.addEventListener("DOMContentLoaded", function() {
+            // Fetch pass and fail data from PHP variables
+            var passPercentage = <?php echo $pass_percentage; ?>;
+            var failPercentage = <?php echo $fail_percentage; ?>;
 
-                    // Ensure the canvas element exists
-                    var ctx = document.getElementById("chartjs-dashboard-pie");
-                    if (ctx) {
-                        new Chart(ctx, {
-                            type: "pie",
-                            data: {
-                                labels: ["Pass", "Fail"],
-                                datasets: [{
-                                    data: [passPercentage, failPercentage],
-                                    backgroundColor: ["#4d4dff", "#ff3333"], // Colors
-                                    hoverBackgroundColor: ["#4d4dff",
-                                        "#ff3333"
-                                    ], // Prevents hover color change
-                                    borderWidth: 1
-                                }]
-                            },
-                            options: {
-                                responsive: true,
-                                maintainAspectRatio: false,
-                                hover: {
-                                    mode: null // Disable hover effects
-                                }
-                            }
-                        });
-                    } else {
-                        console.error("Pie chart canvas not found.");
+            // Ensure the canvas element exists
+            var ctx = document.getElementById("chartjs-dashboard-pie");
+            if (ctx) {
+                new Chart(ctx, {
+                    type: "pie",
+                    data: {
+                        labels: ["Pass", "Fail"],
+                        datasets: [{
+                            data: [passPercentage, failPercentage],
+                            backgroundColor: ["#4d4dff", "#ff3333"], // Colors
+                            hoverBackgroundColor: ["#4d4dff",
+                                "#ff3333"
+                            ], // Prevents hover color change
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        hover: {
+                            mode: null // Disable hover effects
+                        }
                     }
                 });
+            } else {
+                console.error("Pie chart canvas not found.");
+            }
+        });
+    })
     </script>
 
     <script>
