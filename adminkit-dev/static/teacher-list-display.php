@@ -3,83 +3,28 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords"
+        content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/ui-typography.html" />
+    <link href="css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/adminkit-dev/static/css/teacher-list-display.css">
     <title>Teacher Details</title>
-    <!-- <style>
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-        }
 
-        .pagination .page-item.active .page-link {
-            border: 1px solid #007bff;
-            color: #007bff;
-            background-color: white;
-            border-radius: 3px;
-        }
-
-        .pagination .page-item {
-            margin: 0 5px;
-        }
-
-        .pagination .page-link {
-            padding: 5px 10px;
-            text-decoration: none;
-            /* background-color: #007bff; */
-            color: #007bff;
-            /* border-radius: 3px; */
-        }
-
-
-        /* Modal Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
-            background: white;
-            padding: 20px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .modal.active {
-            display: block;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-    </style> -->
 </head>
-<!-- <div class="sidebar"> -->
-    <?php
-    // include_once("sidebar.php");
-    ?>
-<!-- </div> -->
 
 <body>
-<main role="main" style="margin-top: 3rem;">
+    <main role="main" class="content p-4">
         <div class="container">
-            <div class="container bg-light">
-                <h1 class="h3 mb-4"><strong>Teachers</strong> Details</h1>
+            <div class="container">
+                <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
+                        style="font-weight:normal">Teachers</strong> List</h1>
 
                 <div class="row">
                     <?php
@@ -180,7 +125,8 @@
         </nav>
 
         <!-- Edit Modal -->
-        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -219,7 +165,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="edit-emergency_contact_number">Emergency Contact Number</label>
-                                <input type="tel" class="form-control" name="emergency_contact_number" id="edit-emergency_contact_number">
+                                <input type="tel" class="form-control" name="emergency_contact_number"
+                                    id="edit-emergency_contact_number">
                             </div>
                             <div class="form-group">
                                 <label for="edit-email_address">Email Address</label>
@@ -227,7 +174,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="edit-residential_address">Residential Address</label>
-                                <input type="text" class="form-control" name="residential_address" id="edit-residential_address">
+                                <input type="text" class="form-control" name="residential_address"
+                                    id="edit-residential_address">
                             </div>
                             <div class="form-group">
                                 <label for="edit-subject_name">Subject Name</label>
@@ -239,7 +187,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="edit-salary_monthly">Monthly Salary</label>
-                                <input type="number" class="form-control" name="salary_monthly" id="edit-salary_monthly">
+                                <input type="number" class="form-control" name="salary_monthly"
+                                    id="edit-salary_monthly">
                             </div>
                             <div class="form-group">
                                 <label for="edit-qualification">Qualification</label>
@@ -261,7 +210,7 @@
                                 <label for="edit-school_number">School Number</label>
                                 <input type="text" class="form-control" name="school_number" id="edit-school_number">
                             </div>
-                            
+
                             <button type="submit" class="btn btn-primary">Update</button>
                         </form>
                     </div>
@@ -270,7 +219,8 @@
         </div>
 
         <!-- View Modal -->
-        <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel" aria-hidden="true">
+        <div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="viewModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -303,7 +253,8 @@
         </div>
 
         <!-- Delete Confirmation Modal -->
-        <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+        <div class="modal fade" id="deleteConfirmModal" tabindex="-1" role="dialog"
+            aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">

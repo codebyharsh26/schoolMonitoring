@@ -9,15 +9,11 @@
     <meta name="author" content="AdminKit">
     <meta name="keywords"
         content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-buttons.html" />
-
     <title>Teacher-Enrollment</title>
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
-
     <link href="css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -282,220 +278,234 @@
                 <main class="content p-4">
                     <div class="container-fluid p-0">
                         <h1 class="h3 mb-3"><strong class="h1">Teacher Enrollment</strong> Form</h1>
-                        <div id="teacherEnrollmentForm">
-                            <div class="form-section">
-                                <h3 class="mb-3">Personal Information</h3>
-                                <div class="form-group">
-                                    <div class="teacher-photo">
-                                        <input type="file" class="pdf" id="teacher_image" name="teacher_image"
-                                            accept="image/*" class="photo-upload">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="full_name" class="required">Full Name</label>
-                                        <input type="text" id="full_name" name="full_name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="gender" class="required">Gender</label>
-                                        <select id="gender" name="gender" required>
-                                            <option value="">Select</option>
-                                            <option value="male">Male</option>
-                                            <option value="female">Female</option>
-                                            <option value="other">Other</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="date_of_birth" class="required">Date of Birth</label>
-                                        <input type="date" id="date_of_birth" name="date_of_birth" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="blood_group" class="required">Blood Group</label>
-                                        <select id="blood_group" name="blood_group" required>
-                                            <option value="">Select</option>
-                                            <option value="A+">A+</option>
-                                            <option value="A-">A-</option>
-                                            <option value="B+">B+</option>
-                                            <option value="B-">B-</option>
-                                            <option value="AB+">AB+</option>
-                                            <option value="AB-">AB-</option>
-                                            <option value="O+">O+</option>
-                                            <option value="O-">O-</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="phone_number" class="required">Phone
-                                            Number</label>
-                                        <input type="tel" id="phone_number" name="phone_number" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="emergency_contact_number" class="required">Emergency Contact
-                                            Number</label>
-                                        <input type="tel" id="emergency_contact_number" name="emergency_contact_number"
-                                            required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="email_address" class="required">Email
-                                            Address</label>
-                                        <input type="email" id="email_address" name="email_address" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="residential_address" class="required">Residential
-                                            Address</label>
-                                        <textarea id="residential_address" name="residential_address" rows="1"
-                                            required></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-section">
-                                <h2>Professional Information</h2>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="edit-subject_name" class="required">Subject Name</label>
-                                        <select id="edit-subject_name" name="subject_name">
-                                            <option value="">Select</option>
-                                            <option value="Mathematics">Mathematics</option>
-                                            <option value="Science">Science</option>
-                                            <option value="Social Science">Social Science</option>
-                                            <option value="EVS">EVS</option>
-                                            <option value="English">English</option>
-                                            <option value="Gujarati">Gujarati</option>
-                                            <option value="Hindi">Hindi</option>
-                                            <option value="Sanskrit">Sanskrit</option>
-                                            <option value="Computer">Computer</option>
-                                            <option value="Art & Craft">Art & Craft</option>
-                                            <option value="Work & Art">Wok & Art</option>
-                                            <option value="Physical Education & Health">Physical Education &
-                                                Health</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="edit-standard" class="required">Standard</label>
-                                        <input type="text" class="form-control" name="standard" id="edit-standard">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="edit-salary_monthly">Teacher Salary(Monthly)</label>
-                                        <input type="number" class="form-control" min="0" max="10000000" step="0.01"
-                                            name="salary_monthly" id="edit-salary_monthly">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="edit-qualification">Qualification</label>
-                                        <input type="text" class="form-control" name="qualification"
-                                            id="edit-qualification">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="edit-first_language">First Language</label>
-                                        <input type="text" class="form-control" name="first_language"
-                                            id="edit-first_language">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="edit-language_known">Language Known</label>
-                                        <input type="text" class="form-control" name="language_known"
-                                            id="edit-language_known">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="edit-school_name">School Name</label>
-                                        <input type="text" class="form-control" name="school_name"
-                                            id="edit-school_name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="edit-school_number">School Number</label>
-                                        <input type="text" class="form-control" name="school_number"
-                                            id="edit-school_number">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" name="school_password"
-                                            required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password"
-                                            name="school_C_password" required>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="form-section">
+                            <h3 class="mb-3">Personal Information</h3>
                             <div class="form-group">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
-                                    <label for="termsAgreement" class="required">I confirm that all information
-                                        provided is
-                                        accurate and complete</label>
+                                <div class="teacher-photo">
+                                    <input type="file" class="pdf" id="teacher_image" name="teacher_image"
+                                        accept="image/*" class="photo-upload">
                                 </div>
                             </div>
-
-                            <div class="btn-container">
-                                <button type="reset" class="btn btn-secondary" id="resetBtn">Reset Form</button>
-                                <button type="submit" name="submitBtn" class="btn btn-primary" id="submitBtn">Submit
-                                    Enrollment</button>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="full_name" class="required">Full Name</label>
+                                    <input type="text" id="full_name" name="full_name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender" class="required">Gender</label>
+                                    <select id="gender" name="gender" required>
+                                        <option value="">Select</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
                             </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="date_of_birth" class="required">Date of Birth</label>
+                                    <input type="date" id="date_of_birth" name="date_of_birth" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="blood_group" class="required">Blood Group</label>
+                                    <select id="blood_group" name="blood_group" required>
+                                        <option value="">Select</option>
+                                        <option value="A+">A+</option>
+                                        <option value="A-">A-</option>
+                                        <option value="B+">B+</option>
+                                        <option value="B-">B-</option>
+                                        <option value="AB+">AB+</option>
+                                        <option value="AB-">AB-</option>
+                                        <option value="O+">O+</option>
+                                        <option value="O-">O-</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone_number" class="required">Phone
+                                        Number</label>
+                                    <input type="tel" id="phone_number" name="phone_number" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="emergency_contact_number" class="required">Emergency Contact
+                                        Number</label>
+                                    <input type="tel" id="emergency_contact_number" name="emergency_contact_number"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email_address" class="required">Email
+                                        Address</label>
+                                    <input type="email" id="email_address" name="email_address" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="residential_address" class="required">Residential
+                                        Address</label>
+                                    <textarea id="residential_address" name="residential_address" rows="1"
+                                        required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <h2>Professional Information</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="edit-subject_name" class="required">Subject Name</label>
+                                    <select id="edit-subject_name" name="subject_name">
+                                        <option value="">Select</option>
+                                        <option value="Mathematics">Mathematics</option>
+                                        <option value="Science">Science</option>
+                                        <option value="Social Science">Social Science</option>
+                                        <option value="EVS">EVS</option>
+                                        <option value="English">English</option>
+                                        <option value="Gujarati">Gujarati</option>
+                                        <option value="Hindi">Hindi</option>
+                                        <option value="Sanskrit">Sanskrit</option>
+                                        <option value="Computer">Computer</option>
+                                        <option value="Art & Craft">Art & Craft</option>
+                                        <option value="Work & Art">Wok & Art</option>
+                                        <option value="Physical Education & Health">Physical Education &
+                                            Health</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-standard" class="required">Standard</label>
+                                    <input type="text" class="form-control" name="standard" id="edit-standard">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="edit-salary_monthly">Teacher Salary(Monthly)</label>
+                                    <input type="number" class="form-control" min="0" max="10000000" step="0.01"
+                                        name="salary_monthly" id="edit-salary_monthly">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-qualification">Qualification</label>
+                                    <input type="text" class="form-control" name="qualification"
+                                        id="edit-qualification">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="edit-first_language">First Language</label>
+                                    <input type="text" class="form-control" name="first_language"
+                                        id="edit-first_language">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-language_known">Language Known</label>
+                                    <input type="text" class="form-control" name="language_known"
+                                        id="edit-language_known">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="edit-school_name">School Name</label>
+                                    <input type="text" class="form-control" name="school_name" id="edit-school_name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="edit-school_number">School Number</label>
+                                    <input type="text" class="form-control" name="school_number"
+                                        id="edit-school_number">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="school_password"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Confirm Password</label>
+                                    <input type="password" class="form-control" id="c_password" name="school_C_password"
+                                        required>
+                                </div>
+                            </div>
+                            <div id="message"></div>
+                        </div>
+                        <div class="form-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                                <label for="termsAgreement" class="required">I confirm that all information
+                                    provided is
+                                    accurate and complete</label>
+                            </div>
+                        </div>
+
+                        <div class="btn-container">
+                            <button type="reset" class="btn btn-secondary" id="resetBtn">Reset Form</button>
+                            <button type="submit" name="submitBtn" class="btn btn-primary" id="submitBtn"
+                                onsubmit="return validatePassword()">Submit
+                                Enrollment</button>
                         </div>
                     </div>
                 </main>
             </form>
             <footer class="footer">
-                <div class="container-fluid">
-                    <div class="row text-muted">
-                        <div class="col-6 text-start">
-                        </div>
-                        <div class="col-6 text-end">
-                            <p class="mb-0"><strong>schoolAdmin</strong></p>
-                        </div>
+                <!-- <div class="container-fluid"> -->
+                <div class="row text-muted">
+                    <div class="col-6 text-start">
+                    </div>
+                    <div class="col-6 text-end">
+                        <p class="mb-0"><strong>schoolAdmin</strong></p>
                     </div>
                 </div>
+                <!-- </div> -->
             </footer>
         </div>
     </div>
 
     <script src="js/app.js"></script>
+    <script>
+    function validatePassword() {
+        let password = document.getElementById("password").value;
+        let confirmPassword = document.getElementById("c_password").value;
+        let message = document.getElementById("message");
+
+        if (password !== c_password) {
+            message.textContent = "Passwords do not match!";
+            return false;
+        } else {
+            message.textContent = "";
+            return true;
+        }
+    }
+    </script>
     <?php
-	include_once 'connection.php';
+    include_once 'connection.php';
 
-	if (isset($_POST['submitBtn'])) {
-		$teacher_image = $_POST['teacher_image'];
-		$full_name = $_POST['full_name'];
-		$gender = $_POST['gender'];
-		$date_of_birth = $_POST['date_of_birth'];
-		$blood_group = $_POST['blood_group'];
-		$phone_number = $_POST['phone_number'];
-		$emergency_contact_name = $_POST['emergency_contact_name'];
-		$email_address = $_POST['email_address'];
-		$residential_address = $_POST['residential_address'];
-		$subject_name = $_POST['subject_name'];
-		$standard = $_POST['standard'];
-		$salary_monthly = $_POST['salary_monthly'];
-		$qualification = $_POST['qualification'];
-		$first_language = $_POST['first_language'];
-		$language_known = $_POST['language_known'];
-		$school_name = $_POST['school_name'];
-		$school_number = $_POST['school_number'];
-		$password = $_POST['password'];
+    if (isset($_POST['submitBtn'])) {
+        $teacher_image = $_POST['teacher_image'];
+        $full_name = $_POST['full_name'];
+        $gender = $_POST['gender'];
+        $date_of_birth = $_POST['date_of_birth'];
+        $blood_group = $_POST['blood_group'];
+        $phone_number = $_POST['phone_number'];
+        $emergency_contact_name = $_POST['emergency_contact_name'];
+        $email_address = $_POST['email_address'];
+        $residential_address = $_POST['residential_address'];
+        $subject_name = $_POST['subject_name'];
+        $standard = $_POST['standard'];
+        $salary_monthly = $_POST['salary_monthly'];
+        $qualification = $_POST['qualification'];
+        $first_language = $_POST['first_language'];
+        $language_known = $_POST['language_known'];
+        $school_name = $_POST['school_name'];
+        $school_number = $_POST['school_number'];
+        $password = $_POST['password'];
 
-		$insert_query = "INSERT INTO teacher_1 VALUES ('$teacher_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number', '$password')";
-		$insert_result = mysqli_query($conn, $insert_query);
+        $insert_query = "INSERT INTO teacher_1 VALUES ('$teacher_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number', '$password')";
+        $insert_result = mysqli_query($conn, $insert_query);
 
-		if ($insert_result) {
-			header("Location: teacher.php");
-			exit();
-		} else {
-			echo "Error: " . mysqli_error($conn);
-		}
-	}
-	?>
+        if ($insert_result) {
+            header("Location: teacher.php");
+            exit();
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
+    }
+    ?>
 </body>
 
 </html>

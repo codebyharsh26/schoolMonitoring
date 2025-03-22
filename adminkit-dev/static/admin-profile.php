@@ -30,33 +30,33 @@
     <div class="wrapper m-0 p-0">
         <div class="sidebar">
             <?php
-			include_once("sidebar.php");
-			?>
+            include_once("sidebar.php");
+            ?>
         </div>
 
         <div class="main">
             <?php
-			include_once("navbar.php");
-			?>
+            include_once("navbar.php");
+            ?>
             <main class="content p-4">
                 <div class="container-fluid p-0">
                     <h1 class="h3 mb-3"><strong class="h1">Profile</strong> Details</h1>
                     <?php
-					$query = "select * from principal_1 where id=1";
-					$result = mysqli_query($conn, $query);
-					if ($result) {
-						while ($row = mysqli_fetch_assoc($result)) {
-							$principal_full_name = $row["principal_full_name"];
-							$date_of_birth = $row["date_of_birth"];
-							$email = $row["email"];
-							$gender = $row["gender"];
-							$phone = $row["phone"];
-							$qualification = $row["qualification"];
-							$address = $row["address"];
-							$school_name = $row["school_name"];
-							$school_no = $row["school_no"];
-							$salary = $row["salary"];
-					?>
+                    $query = "select * from principal_1 where id=1";
+                    $result = mysqli_query($conn, $query);
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $principal_full_name = $row["principal_full_name"];
+                            $date_of_birth = $row["date_of_birth"];
+                            $email = $row["email"];
+                            $gender = $row["gender"];
+                            $phone = $row["phone"];
+                            $qualification = $row["qualification"];
+                            $address = $row["address"];
+                            $school_name = $row["school_name"];
+                            $school_no = $row["school_no"];
+                            $salary = $row["salary"];
+                    ?>
                     <div class="container">
                         <div class="card">
                             <div class="p-7 text-center profile-container">
@@ -113,22 +113,22 @@
                         </div>
                     </div>
                     <?php
-						}
-					} ?>
+                        }
+                    } ?>
             </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row text-muted">
+                        <div class="col-6 text-start">
+                        </div>
+                        <div class="col-6 text-end">
+                            <p class="mb-0"><strong>schoolAdmin</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
-    <footer class="footer">
-        <div class="container-fluid">
-            <div class="row text-muted">
-                <div class="col-6 text-start">
-                </div>
-                <div class="col-6 text-end">
-                    <p class="mb-0"><strong>schoolAdmin</strong></p>
-                </div>
-            </div>
-        </div>
-    </footer>
     <script src="js/app.js"></script>
 </body>
 

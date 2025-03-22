@@ -3,115 +3,29 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords"
+        content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/ui-typography.html" />
+    <link href="css/app.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/adminkit-dev/static/css/student-list-display.css">
+
     <title>Student Details</title>
-    <!-- <style>
-        /* General reset for margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Container styling */
-        .container {
-            margin-top: 20px; /* Adjust top margin */
-        }
-
-        .row {
-            margin: 0; /* Ensure no extra margin on rows */
-        }
-
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin-top: 20px; /* Adjust pagination margin */
-        }
-
-        .pagination .page-item.active .page-link {
-            border: 1px solid #007bff;
-            color: #007bff;
-            background-color: white;
-            border-radius: 3px;
-        }
-
-        .pagination .page-item {
-            margin: 0 5px;
-        }
-
-        .pagination .page-link {
-            padding: 5px 10px;
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        /* Modal Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
-            background: white;
-            padding: 20px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .modal.active {
-            display: block;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-
-        /* Card Styling */
-        .card {
-            margin-bottom: 20px; /* Adjust bottom margin for card */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .card-text {
-            margin-bottom: 10px;
-        }
-    </style> -->
 </head>
 
 <body>
-    <main role="main">
+    <main role="main" class="content p-4">
         <div class="container">
-            <div class="container bg-light">
-                <h1 class="h3 mb-4"><strong>Students</strong> Details</h1>
+            <div class="container">
+                <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
+                        style="font-weight:normal">Students</strong> List</h1>
 
                 <div class="row">
                     <?php
@@ -120,13 +34,13 @@
                     $limit = 20; // Number of records per page
                     $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
                     $offset = ($page - 1) * $limit; // Offset for pagination
-                    
+
                     // Count total records
                     $total_query = "SELECT COUNT(*) FROM student_1 WHERE school_number = 1";
                     $total_result = mysqli_query($conn, $total_query);
                     $total_rows = mysqli_fetch_array($total_result)[0];
                     $total_pages = ceil($total_rows / $limit); // Total pages
-                    
+
                     // Fetch records for the current page
                     $select = "SELECT * FROM student_1 LIMIT $limit OFFSET $offset";
                     $result = mysqli_query($conn, $select);
@@ -197,16 +111,16 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center">
                     <?php if ($page > 1): ?>
-                    <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
+                        <li class="page-item"><a class="page-link" href="?page=<?php echo $page - 1; ?>">Previous</a></li>
                     <?php endif; ?>
                     <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                    <li class="page-item <?php if ($i == $page)
-                            echo 'active'; ?>">
-                        <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    </li>
+                        <li class="page-item <?php if ($i == $page)
+                                                    echo 'active'; ?>">
+                            <a class="page-link" href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
                     <?php endfor; ?>
                     <?php if ($page < $total_pages): ?>
-                    <li class="page-item"><a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li>
+                        <li class="page-item"><a class="page-link" href="?page=<?php echo $page + 1; ?>">Next</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>
@@ -356,61 +270,61 @@
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
             <script>
-            $(document).ready(function() {
-                $('.edit-btn').click(function() {
-                    $('#edit-id').val($(this).data('id'));
-                    $('#edit-full_name').val($(this).data('full_name'));
-                    $('#edit-roll_number').val($(this).data('roll_number'));
-                    $('#edit-date_of_birth').val($(this).data('date_of_birth'));
-                    $('#edit-gender').val($(this).data('gender'));
-                    $('#edit-blood_group').val($(this).data('blood_group'));
-                    $('#edit-residential_address').val($(this).data('residential_address'));
-                    $('#edit-father_name').val($(this).data('father_name'));
-                    $('#edit-father_phone_number').val($(this).data('father_phone_number'));
-                    $('#edit-mother_name').val($(this).data('mother_name'));
-                    $('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
-                    $('#edit-standard').val($(this).data('standard'));
-                    $('#edit-academic_year').val($(this).data('academic_year'));
-                    $('#edit-school_name').val($(this).data('school_name'));
-                    $('#edit-school_number').val($(this).data('school_number'));
-                    $('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
-                });
+                $(document).ready(function() {
+                    $('.edit-btn').click(function() {
+                        $('#edit-id').val($(this).data('id'));
+                        $('#edit-full_name').val($(this).data('full_name'));
+                        $('#edit-roll_number').val($(this).data('roll_number'));
+                        $('#edit-date_of_birth').val($(this).data('date_of_birth'));
+                        $('#edit-gender').val($(this).data('gender'));
+                        $('#edit-blood_group').val($(this).data('blood_group'));
+                        $('#edit-residential_address').val($(this).data('residential_address'));
+                        $('#edit-father_name').val($(this).data('father_name'));
+                        $('#edit-father_phone_number').val($(this).data('father_phone_number'));
+                        $('#edit-mother_name').val($(this).data('mother_name'));
+                        $('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
+                        $('#edit-standard').val($(this).data('standard'));
+                        $('#edit-academic_year').val($(this).data('academic_year'));
+                        $('#edit-school_name').val($(this).data('school_name'));
+                        $('#edit-school_number').val($(this).data('school_number'));
+                        $('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
+                    });
 
-                $('.view-btn').click(function() {
-                    $('#view-id').text($(this).data('id'));
-                    $('#view-full_name').text($(this).data('full_name'));
-                    $('#view-roll_number').text($(this).data('roll_number'));
-                    $('#view-date_of_birth').text($(this).data('date_of_birth'));
-                    $('#view-gender').text($(this).data('gender'));
-                    $('#view-blood_group').text($(this).data('blood_group'));
-                    $('#view-residential_address').text($(this).data('residential_address'));
-                    $('#view-father_name').text($(this).data('father_name'));
-                    $('#view-father_phone_number').text($(this).data('father_phone_number'));
-                    $('#view-mother_name').text($(this).data('mother_name'));
-                    $('#view-mother_phone_number').text($(this).data('mother_phone_number'));
-                    $('#view-standard').text($(this).data('standard'));
-                    $('#view-academic_year').text($(this).data('academic_year'));
-                    $('#view-school_name').text($(this).data('school_name'));
-                    $('#view-school_number').text($(this).data('school_number'));
+                    $('.view-btn').click(function() {
+                        $('#view-id').text($(this).data('id'));
+                        $('#view-full_name').text($(this).data('full_name'));
+                        $('#view-roll_number').text($(this).data('roll_number'));
+                        $('#view-date_of_birth').text($(this).data('date_of_birth'));
+                        $('#view-gender').text($(this).data('gender'));
+                        $('#view-blood_group').text($(this).data('blood_group'));
+                        $('#view-residential_address').text($(this).data('residential_address'));
+                        $('#view-father_name').text($(this).data('father_name'));
+                        $('#view-father_phone_number').text($(this).data('father_phone_number'));
+                        $('#view-mother_name').text($(this).data('mother_name'));
+                        $('#view-mother_phone_number').text($(this).data('mother_phone_number'));
+                        $('#view-standard').text($(this).data('standard'));
+                        $('#view-academic_year').text($(this).data('academic_year'));
+                        $('#view-school_name').text($(this).data('school_name'));
+                        $('#view-school_number').text($(this).data('school_number'));
+                    });
                 });
-            });
             </script>
 
             <script>
-            $(document).ready(function() {
-                let deleteUrl = "";
+                $(document).ready(function() {
+                    let deleteUrl = "";
 
-                $(".delete-btn").click(function() {
-                    let studentId = $(this).data("id");
-                    let page = $(this).data("page");
+                    $(".delete-btn").click(function() {
+                        let studentId = $(this).data("id");
+                        let page = $(this).data("page");
 
-                    deleteUrl = "student-list-delete.php?deleteid=" + studentId + "&page=" + page;
+                        deleteUrl = "student-list-delete.php?deleteid=" + studentId + "&page=" + page;
+                    });
+
+                    $("#confirmDeleteBtn").click(function() {
+                        window.location.href = deleteUrl;
+                    });
                 });
-
-                $("#confirmDeleteBtn").click(function() {
-                    window.location.href = deleteUrl;
-                });
-            });
             </script>
         </div>
     </main>

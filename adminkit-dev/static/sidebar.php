@@ -54,6 +54,8 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 .sidebar-item {
     border-bottom: none !important;
 }
+
+.signout-btn {}
 </style>
 
 
@@ -116,7 +118,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
                     <li class="sidebar-item <?= ($current_page == 'activities.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="activities.php">
                             <i class="align-middle" data-feather="activity"></i>
-                            <span class="align-middle">Activities</span>
+                            <span class="align-middle">Skill Based Activities</span>
                         </a>
                     </li>
 
@@ -136,12 +138,15 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
                         </a>
                     </li>
 
-                    <li class="sidebar-item <?= ($current_page == 'admin-log-out.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="#" onclick="confirmLogout()">
-                            <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
-                            <span class="align-middle">Sign Out</span>
-                        </a>
-                    </li>
+                    <footer class="footer mt-5" style="background-color: transparent; border-top:0; margin-left: 20px;">
+                        <li
+                            class="signout-btn sidebar-item <?= ($current_page == 'admin-log-out.php') ? 'active' : '' ?>">
+                            <a class="sidebar-link" href="#" onclick="confirmLogout()">
+                                <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
+                                <span class="align-middle">Sign Out</span>
+                            </a>
+                        </li>
+                    </footer>
                 </ul>
             </div>
         </nav>

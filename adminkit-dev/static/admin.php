@@ -74,10 +74,10 @@
                                 <div class="d-flex flex-nowrap gap-4">
                                     <!-- gap-3 adds spacing -->
                                     <?php
-                                        $teachers = "SELECT COUNT(*) AS total_teachers FROM teacher_1";
-                                        $result_t = mysqli_query($conn, $teachers);
-                                        $fetch_t = mysqli_fetch_assoc($result_t);
-                                        $total_teachers = $fetch_t['total_teachers'];
+                                    $teachers = "SELECT COUNT(*) AS total_teachers FROM teacher_1";
+                                    $result_t = mysqli_query($conn, $teachers);
+                                    $fetch_t = mysqli_fetch_assoc($result_t);
+                                    $total_teachers = $fetch_t['total_teachers'];
                                     ?>
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
@@ -89,10 +89,10 @@
                                     </div>
 
                                     <?php
-                                        $students = "SELECT COUNT(*) AS total_students FROM student_1";
-                                        $result_s = mysqli_query($conn, $students);
-                                        $fetch_s = mysqli_fetch_assoc($result_s);
-                                        $total_students = $fetch_s['total_students'];
+                                    $students = "SELECT COUNT(*) AS total_students FROM student_1";
+                                    $result_s = mysqli_query($conn, $students);
+                                    $fetch_s = mysqli_fetch_assoc($result_s);
+                                    $total_students = $fetch_s['total_students'];
                                     ?>
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
@@ -166,38 +166,21 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="chart chart-xs">
-                                        <canvas id="chartjs-dashboard-pie"></canvas>
-                                    </div>
                                 </div>
-                                <table class="table mb-0">
-                                    <tbody>
-                                        <tr>
-                                            <td>PASS</td>
-                                            <td class="text-end">
-                                                <?php echo number_format($pass_percentage, 2); ?>%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>FAIL</td>
-                                            <td class="text-end">
-                                                <?php echo number_format($fail_percentage, 2); ?>%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Admission Graph: Takes 25% Width -->
-                <div class="col-12 col-lg-3 d-flex order-3 order-lg-3">
-                    <div class="card w-100">
-                        <div class="card-header">
-                            <h5 class="card-title mb-0">Admission Graph</h5>
-                        </div>
-                        <div class="card-body d-flex w-100">
-                            <div class="align-self-center chart chart-lg">
-                                <canvas id="chartjs-dashboard-bar"></canvas>
+                        <!-- Admission Graph: Takes 25% Width -->
+                        <div class="col-12 col-lg-3 d-flex order-3 order-lg-3">
+                            <div class="card w-100">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Admission Graph</h5>
+                                </div>
+                                <div class="card-body d-flex w-100">
+                                    <div class="align-self-center chart chart-lg">
+                                        <canvas id="chartjs-dashboard-bar"></canvas>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -215,113 +198,113 @@
                     </div>
                 </div>
             </footer>
-
         </div>
     </div>
+
 
     <script src="js/app.js"></script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Fetch pass and fail data from PHP variables
-        var passPercentage = <?php echo $pass_percentage; ?>;
-        var failPercentage = <?php echo $fail_percentage; ?>;
-
         document.addEventListener("DOMContentLoaded", function() {
             // Fetch pass and fail data from PHP variables
             var passPercentage = <?php echo $pass_percentage; ?>;
             var failPercentage = <?php echo $fail_percentage; ?>;
 
-            // Ensure the canvas element exists
-            var ctx = document.getElementById("chartjs-dashboard-pie");
-            if (ctx) {
-                new Chart(ctx, {
-                    type: "pie",
-                    data: {
-                        labels: ["Pass", "Fail"],
-                        datasets: [{
-                            data: [passPercentage, failPercentage],
-                            backgroundColor: ["#4d4dff", "#ff3333"], // Colors
-                            hoverBackgroundColor: ["#4d4dff",
-                                "#ff3333"
-                            ], // Prevents hover color change
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        hover: {
-                            mode: null // Disable hover effects
+            document.addEventListener("DOMContentLoaded", function() {
+                // Fetch pass and fail data from PHP variables
+                var passPercentage = <?php echo $pass_percentage; ?>;
+                var failPercentage = <?php echo $fail_percentage; ?>;
+
+                // Ensure the canvas element exists
+                var ctx = document.getElementById("chartjs-dashboard-pie");
+                if (ctx) {
+                    new Chart(ctx, {
+                        type: "pie",
+                        data: {
+                            labels: ["Pass", "Fail"],
+                            datasets: [{
+                                data: [passPercentage, failPercentage],
+                                backgroundColor: ["#4d4dff", "#ff3333"], // Colors
+                                hoverBackgroundColor: ["#4d4dff",
+                                    "#ff3333"
+                                ], // Prevents hover color change
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            hover: {
+                                mode: null // Disable hover effects
+                            }
                         }
-                    }
-                });
-            } else {
-                console.error("Pie chart canvas not found.");
-            }
-        });
-    })
+                    });
+                } else {
+                    console.error("Pie chart canvas not found.");
+                }
+            });
+        })
     </script>
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Initialize Bar Chart to show admissions growth over the years
-        new Chart(document.getElementById("chartjs-dashboard-bar"), {
-            type: "bar", // The chart type is bar chart
-            data: {
-                labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
-                datasets: [{
-                    label: "Admissions Growth", // Label for the dataset
-                    backgroundColor: window.theme
-                        .primary, // Bar color, adjust to theme color if necessary
-                    borderColor: window.theme.primary, // Border color of the bars
-                    hoverBackgroundColor: window.theme.primary, // Hover color for the bars
-                    hoverBorderColor: window.theme.primary, // Hover border color
-                    data: [100, 150, 200, 250,
-                        300
-                    ], // Admissions data showing the growth from 2020 to 2024
-                    barPercentage: 0.75, // Controls the width of the bars
-                    categoryPercentage: 0.5 // Controls the spacing between bars
-                }]
-            },
-            options: {
-                maintainAspectRatio: false, // Ensures the chart resizes properly
-                legend: {
-                    display: false // Hides the legend
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize Bar Chart to show admissions growth over the years
+            new Chart(document.getElementById("chartjs-dashboard-bar"), {
+                type: "bar", // The chart type is bar chart
+                data: {
+                    labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+                    datasets: [{
+                        label: "Admissions Growth", // Label for the dataset
+                        backgroundColor: window.theme
+                            .primary, // Bar color, adjust to theme color if necessary
+                        borderColor: window.theme.primary, // Border color of the bars
+                        hoverBackgroundColor: window.theme.primary, // Hover color for the bars
+                        hoverBorderColor: window.theme.primary, // Hover border color
+                        data: [100, 150, 200, 250,
+                            300
+                        ], // Admissions data showing the growth from 2020 to 2024
+                        barPercentage: 0.75, // Controls the width of the bars
+                        categoryPercentage: 0.5 // Controls the spacing between bars
+                    }]
                 },
-                scales: {
-                    y: {
-                        beginAtZero: true, // Ensures the y-axis starts at 0
-                        grid: {
-                            display: false // Hides the grid lines on the y-axis
-                        },
-                        ticks: {
-                            stepSize: 50 // Defines the step size of y-axis ticks
-                        }
+                options: {
+                    maintainAspectRatio: false, // Ensures the chart resizes properly
+                    legend: {
+                        display: false // Hides the legend
                     },
-                    x: {
-                        grid: {
-                            color: "transparent" // Makes the grid lines on the x-axis invisible
+                    scales: {
+                        y: {
+                            beginAtZero: true, // Ensures the y-axis starts at 0
+                            grid: {
+                                display: false // Hides the grid lines on the y-axis
+                            },
+                            ticks: {
+                                stepSize: 50 // Defines the step size of y-axis ticks
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: "transparent" // Makes the grid lines on the x-axis invisible
+                            }
                         }
                     }
                 }
-            }
+            });
         });
-    });
     </script>
 
 
     <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
-        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-        document.getElementById("datetimepicker-dashboard").flatpickr({
-            inline: true,
-            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-            nextArrow: "<span title=\"Next month\">&raquo;</span>",
-            defaultDate: defaultDate
+        document.addEventListener("DOMContentLoaded", function() {
+            var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
+            var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+            document.getElementById("datetimepicker-dashboard").flatpickr({
+                inline: true,
+                prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+                nextArrow: "<span title=\"Next month\">&raquo;</span>",
+                defaultDate: defaultDate
+            });
         });
-    });
     </script>
 
 </body>
