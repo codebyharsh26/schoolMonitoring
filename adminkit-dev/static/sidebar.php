@@ -54,10 +54,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 .sidebar-item {
     border-bottom: none !important;
 }
-
-.signout-btn {}
 </style>
-
 
 <body>
     <div class="wrapper">

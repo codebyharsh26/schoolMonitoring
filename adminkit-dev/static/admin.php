@@ -205,106 +205,97 @@
     <script src="js/app.js"></script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Fetch pass and fail data from PHP variables
-            var passPercentage = <?php echo $pass_percentage; ?>;
-            var failPercentage = <?php echo $fail_percentage; ?>;
+    document.addEventListener("DOMContentLoaded", function() {
+        // Fetch pass and fail data from PHP variables
+        var passPercentage = <?php echo $pass_percentage; ?>;
+        var failPercentage = <?php echo $fail_percentage; ?>;
 
-            document.addEventListener("DOMContentLoaded", function() {
-                // Fetch pass and fail data from PHP variables
-                var passPercentage = <?php echo $pass_percentage; ?>;
-                var failPercentage = <?php echo $fail_percentage; ?>;
-
-                // Ensure the canvas element exists
-                var ctx = document.getElementById("chartjs-dashboard-pie");
-                if (ctx) {
-                    new Chart(ctx, {
-                        type: "pie",
-                        data: {
-                            labels: ["Pass", "Fail"],
-                            datasets: [{
-                                data: [passPercentage, failPercentage],
-                                backgroundColor: ["#4d4dff", "#ff3333"], // Colors
-                                hoverBackgroundColor: ["#4d4dff",
-                                    "#ff3333"
-                                ], // Prevents hover color change
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            responsive: true,
-                            maintainAspectRatio: false,
-                            hover: {
-                                mode: null // Disable hover effects
-                            }
-                        }
-                    });
-                } else {
-                    console.error("Pie chart canvas not found.");
-                }
-            });
-        })
-    </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Initialize Bar Chart to show admissions growth over the years
-            new Chart(document.getElementById("chartjs-dashboard-bar"), {
-                type: "bar", // The chart type is bar chart
+        // Ensure the canvas element exists
+        var ctx = document.getElementById("chartjs-dashboard-pie");
+        if (ctx) {
+            new Chart(ctx, {
+                type: "pie",
                 data: {
-                    labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+                    labels: ["Pass", "Fail"],
                     datasets: [{
-                        label: "Admissions Growth", // Label for the dataset
-                        backgroundColor: window.theme
-                            .primary, // Bar color, adjust to theme color if necessary
-                        borderColor: window.theme.primary, // Border color of the bars
-                        hoverBackgroundColor: window.theme.primary, // Hover color for the bars
-                        hoverBorderColor: window.theme.primary, // Hover border color
-                        data: [100, 150, 200, 250,
-                            300
-                        ], // Admissions data showing the growth from 2020 to 2024
-                        barPercentage: 0.75, // Controls the width of the bars
-                        categoryPercentage: 0.5 // Controls the spacing between bars
+                        data: [passPercentage, failPercentage],
+                        backgroundColor: [" #4d4dff",
+                            "#ff3333"
+                        ], // Green for Pass, Red for Fail
+                        borderWidth: 1
                     }]
                 },
                 options: {
-                    maintainAspectRatio: false, // Ensures the chart resizes properly
-                    legend: {
-                        display: false // Hides the legend
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true, // Ensures the y-axis starts at 0
-                            grid: {
-                                display: false // Hides the grid lines on the y-axis
-                            },
-                            ticks: {
-                                stepSize: 50 // Defines the step size of y-axis ticks
-                            }
-                        },
-                        x: {
-                            grid: {
-                                color: "transparent" // Makes the grid lines on the x-axis invisible
-                            }
-                        }
-                    }
+                    responsive: true,
+                    maintainAspectRatio: false,
                 }
             });
-        });
+        } else {
+            console.error("Pie chart canvas not found.");
+        }
+    });
     </script>
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
-            var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-            document.getElementById("datetimepicker-dashboard").flatpickr({
-                inline: true,
-                prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-                nextArrow: "<span title=\"Next month\">&raquo;</span>",
-                defaultDate: defaultDate
-            });
+    document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Bar Chart to show admissions growth over the years
+        new Chart(document.getElementById("chartjs-dashboard-bar"), {
+            type: "bar", // The chart type is bar chart
+            data: {
+                labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+                datasets: [{
+                    label: "Admissions Growth", // Label for the dataset
+                    backgroundColor: window.theme
+                        .primary, // Bar color, adjust to theme color if necessary
+                    borderColor: window.theme.primary, // Border color of the bars
+                    hoverBackgroundColor: window.theme.primary, // Hover color for the bars
+                    hoverBorderColor: window.theme.primary, // Hover border color
+                    data: [100, 150, 200, 250,
+                        300
+                    ], // Admissions data showing the growth from 2020 to 2024
+                    barPercentage: 0.75, // Controls the width of the bars
+                    categoryPercentage: 0.5 // Controls the spacing between bars
+                }]
+            },
+            options: {
+                maintainAspectRatio: false, // Ensures the chart resizes properly
+                legend: {
+                    display: false // Hides the legend
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true, // Ensures the y-axis starts at 0
+                        grid: {
+                            display: false // Hides the grid lines on the y-axis
+                        },
+                        ticks: {
+                            stepSize: 50 // Defines the step size of y-axis ticks
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: "transparent" // Makes the grid lines on the x-axis invisible
+                        }
+                    }
+                }
+            }
         });
+    });
+    </script>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
+        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+            nextArrow: "<span title=\"Next month\">&raquo;</span>",
+            defaultDate: defaultDate
+        });
+    });
     </script>
 
 </body>
