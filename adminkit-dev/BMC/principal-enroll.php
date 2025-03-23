@@ -12,28 +12,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-buttons.html" />
-    <title>Teacher-Enrollment</title>
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <link href="css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Principal Enrollment</title>
     <style>
-    /* Main Theme Colors and Variables */
-    :root {
-        --primary-color: #3a7dda;
-        --secondary-color: #f5f7fb;
-        --text-color: #1e2022;
-        --border-color: #e7eaf0;
-        --success-color: #42ba96;
-        --danger-color: #df4759;
-        --warning-color: #f3b02a;
-        --sidebar-bg: #1b2537;
-        --sidebar-text: #ffffff;
-        --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        --form-bg: #ffffff;
-    }
+        /* Main Theme Colors and Variables */
+        :root {
+            --primary-color: #3a7dda;
+            --secondary-color: #f5f7fb;
+            --text-color: #1e2022;
+            --border-color: #e7eaf0;
+            --success-color: #42ba96;
+            --danger-color: #df4759;
+            --warning-color: #f3b02a;
+            --sidebar-bg: #1b2537;
+            --sidebar-text: #ffffff;
+            --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            --form-bg: #ffffff;
+        }
 
-    /* Base Layout */
-    /* body {
+        /* Base Layout */
+        /* body {
 			background-color: var(--secondary-color);
 			color: var(--text-color);
 			font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -41,231 +41,231 @@
 			margin: 0;
 		} */
 
-    .container-fluid {
-        padding: 1.5rem 2rem;
-    }
-
-    /* Form Header Styling */
-    h1 {
-        font-size: 1.8rem;
-        font-weight: 600;
-        color: var(--text-color);
-        margin-bottom: 0.5rem;
-    }
-
-    .form-description {
-        color: #6c757d;
-        margin-bottom: 2rem;
-    }
-
-    /* Form Sections */
-    .form-section {
-        background-color: var(--form-bg);
-        border-radius: 5px;
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-        box-shadow: var(--card-shadow);
-    }
-
-    h2 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 1.5rem;
-        color: var(--text-color);
-    }
-
-    /* Form Rows and Groups */
-    .form-row {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .form-group {
-        flex: 0 0 calc(50% - 1.5rem);
-        margin: 0 0.75rem 1.25rem;
-    }
-
-    @media (max-width: 768px) {
-        .form-group {
-            flex: 0 0 calc(100% - 1.5rem);
+        .container-fluid {
+            padding: 1.5rem 2rem;
         }
-    }
 
-    /* Labels */
-    label {
-        display: block;
-        font-size: 0.875rem;
-        font-weight: 500;
-        margin-bottom: 0.5rem;
-        color: var(--text-color);
-    }
+        /* Form Header Styling */
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+        }
 
-    label.required:after {
-        content: " *";
-        color: var(--danger-color);
-    }
+        .form-description {
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
 
-    /* Form Controls */
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="number"],
-    input[type="date"],
-    input[type="password"],
-    textarea,
-    select {
-        width: 100%;
-        padding: 0.5rem 0.75rem;
-        font-size: 0.875rem;
-        line-height: 1.5;
-        color: var(--text-color);
-        background-color: rgb(215, 217, 221);
-        background-clip: padding-box;
-        border: 1px solid var(--border-color);
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
+        /* Form Sections */
+        .form-section {
+            background-color: var(--form-bg);
+            border-radius: 5px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--card-shadow);
+        }
 
-    input:focus,
-    textarea:focus,
-    select:focus {
-        border-color: var(--primary-color);
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(58, 125, 218, 0.25);
-    }
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
 
-    textarea {
-        resize: vertical;
-    }
+        /* Form Rows and Groups */
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+        }
 
-    /* Checkboxes */
-    .checkbox-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 1rem;
-    }
+        .form-group {
+            flex: 0 0 calc(50% - 1.5rem);
+            margin: 0 0.75rem 1.25rem;
+        }
 
-    .checkbox-item input[type="checkbox"] {
-        margin-right: 0.75rem;
-        margin-top: 0.25rem;
-    }
+        @media (max-width: 768px) {
+            .form-group {
+                flex: 0 0 calc(100% - 1.5rem);
+            }
+        }
 
-    /* Languages Known Section */
-    .language-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 0.75rem;
-    }
+        /* Labels */
+        label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
 
-    .language-tag {
-        background-color: var(--secondary-color);
-        border-radius: 0.25rem;
-        padding: 0.25rem 0.5rem;
-        font-size: 0.875rem;
-        display: flex;
-        align-items: center;
-    }
+        label.required:after {
+            content: " *";
+            color: var(--danger-color);
+        }
 
-    .language-tag span {
-        margin-right: 0.5rem;
-    }
+        /* Form Controls */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="number"],
+        input[type="date"],
+        input[type="password"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: rgb(215, 217, 221);
+            background-clip: padding-box;
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
 
-    .remove-language {
-        cursor: pointer;
-        color: var(--danger-color);
-        border: none;
-        background: none;
-        font-size: 0.75rem;
-    }
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: var(--primary-color);
+            outline: 0;
+            box-shadow: 0 0 0 0.2rem rgba(58, 125, 218, 0.25);
+        }
 
-    #languageInput {
-        display: flex;
-        margin-bottom: 0.75rem;
-    }
+        textarea {
+            resize: vertical;
+        }
 
-    #languageKnown {
-        flex: 1;
-        margin-right: 0.5rem;
-    }
+        /* Checkboxes */
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
 
-    #addLanguageBtn {
-        padding: 0.5rem 0.75rem;
-        background-color: var(--secondary-color);
-        border: 1px solid var(--border-color);
-        border-radius: 0.25rem;
-        cursor: pointer;
-        font-size: 0.875rem;
-    }
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
 
-    #addLanguageBtn:hover {
-        background-color: #e9ecef;
-    }
+        /* Languages Known Section */
+        .language-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
 
-    /* Buttons */
-    .btn {
-        display: inline-block;
-        font-weight: 500;
-        text-align: center;
-        white-space: nowrap;
-        vertical-align: middle;
-        user-select: none;
-        border: 1px solid transparent;
-        padding: 0.5rem 1rem;
-        font-size: 0.875rem;
-        line-height: 1.5;
-        border-radius: 0.25rem;
-        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-        cursor: pointer;
-    }
+        .language-tag {
+            background-color: var(--secondary-color);
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+        }
 
-    .btn-primary {
-        color: #fff;
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-    }
+        .language-tag span {
+            margin-right: 0.5rem;
+        }
 
-    .btn-primary:hover {
-        background-color: #2e68b8;
-        border-color: #2b61ad;
-    }
+        .remove-language {
+            cursor: pointer;
+            color: var(--danger-color);
+            border: none;
+            background: none;
+            font-size: 0.75rem;
+        }
 
-    .btn-secondary {
-        color: var(--text-color);
-        background-color: var(--secondary-color);
-        border-color: var(--border-color);
-    }
+        #languageInput {
+            display: flex;
+            margin-bottom: 0.75rem;
+        }
 
-    .btn-secondary:hover {
-        background-color: #e2e6ea;
-        border-color: #dae0e5;
-    }
+        #languageKnown {
+            flex: 1;
+            margin-right: 0.5rem;
+        }
 
-    .btn-container {
-        display: flex;
-        justify-content: flex-end;
-        gap: 1rem;
-        margin-top: 1.5rem;
-    }
+        #addLanguageBtn {
+            padding: 0.5rem 0.75rem;
+            background-color: var(--secondary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+        }
 
-    /* Footer */
-    .form-footer {
-        margin-top: 2rem;
-        padding-top: 1rem;
-        border-top: 1px solid var(--border-color);
-        color: #6c757d;
-        font-size: 0.875rem;
-    }
+        #addLanguageBtn:hover {
+            background-color: #e9ecef;
+        }
 
-    .pdf {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background: #f1f1f1;
-    }
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            font-weight: 500;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            border-radius: 0.25rem;
+            transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            color: #fff;
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: #2e68b8;
+            border-color: #2b61ad;
+        }
+
+        .btn-secondary {
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            border-color: var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: #e2e6ea;
+            border-color: #dae0e5;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Footer */
+        .form-footer {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: #6c757d;
+            font-size: 0.875rem;
+        }
+
+        .pdf {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #f1f1f1;
+        }
     </style>
 </head>
 
@@ -274,15 +274,15 @@
         <div class="sidebar"><?php include_once("sidebar.php"); ?></div>
         <div class="main">
             <?php include_once("navbar.php"); ?>
-            <form action="tr-enroll.php" method="post">
+            <form action="principal-enroll.php" method="post">
                 <main class="content p-4">
                     <div class="container-fluid p-0">
-                        <h1 class="h3 mb-3"><strong class="h1">Teacher Enrollment</strong> Form</h1>
+                        <h1 class="h3 mb-3"><strong class="h1">Principal Enrollment</strong> Form</h1>
                         <div class="form-section">
                             <h3 class="mb-3">Personal Information</h3>
                             <div class="form-group">
-                                <div class="teacher-photo">
-                                    <input type="file" class="pdf" id="teacher_image" name="teacher_image"
+                                <div class="principal-photo">
+                                    <input type="file" class="pdf" id="principal_image" name="principal_image"
                                         accept="image/*" class="photo-upload">
                                 </div>
                             </div>
@@ -377,7 +377,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="edit-salary_monthly">Teacher Salary(Monthly)</label>
+                                    <label for="edit-salary_monthly">principal Salary(Monthly)</label>
                                     <input type="number" class="form-control" min="0" max="10000000" step="0.01"
                                         name="salary_monthly" id="edit-salary_monthly">
                                 </div>
@@ -458,25 +458,25 @@
 
     <script src="js/app.js"></script>
     <script>
-    function validatePassword() {
-        let password = document.getElementById("password").value;
-        let confirmPassword = document.getElementById("c_password").value;
-        let message = document.getElementById("message");
+        function validatePassword() {
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("c_password").value;
+            let message = document.getElementById("message");
 
-        if (password !== c_password) {
-            message.textContent = "Passwords do not match!";
-            return false;
-        } else {
-            message.textContent = "";
-            return true;
+            if (password !== c_password) {
+                message.textContent = "Passwords do not match!";
+                return false;
+            } else {
+                message.textContent = "";
+                return true;
+            }
         }
-    }
     </script>
     <?php
     include_once 'connection.php';
 
     if (isset($_POST['submitBtn'])) {
-        $teacher_image = $_POST['teacher_image'];
+        $principal_image = $_POST['principal_image'];
         $full_name = $_POST['full_name'];
         $gender = $_POST['gender'];
         $date_of_birth = $_POST['date_of_birth'];
@@ -495,11 +495,11 @@
         $school_number = $_POST['school_number'];
         $password = $_POST['password'];
 
-        $insert_query = "INSERT INTO teacher_1 VALUES ('$teacher_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number', '$password')";
+        $insert_query = "INSERT INTO principal_1 VALUES ('$principal_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number', '$password')";
         $insert_result = mysqli_query($conn, $insert_query);
 
         if ($insert_result) {
-            header("Location: teacher.php");
+            header("Location: principal.php");
             exit();
         } else {
             echo "Error: " . mysqli_error($conn);

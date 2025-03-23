@@ -8,103 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/student-list-display.css">
     <title>Student Details</title>
-    <!-- <style>
-        /* General reset for margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        /* Container styling */
-        .container {
-            margin-top: 20px; /* Adjust top margin */
-        }
-
-        .row {
-            margin: 0; /* Ensure no extra margin on rows */
-        }
-
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin-top: 20px; /* Adjust pagination margin */
-        }
-
-        .pagination .page-item.active .page-link {
-            border: 1px solid #007bff;
-            color: #007bff;
-            background-color: white;
-            border-radius: 3px;
-        }
-
-        .pagination .page-item {
-            margin: 0 5px;
-        }
-
-        .pagination .page-link {
-            padding: 5px 10px;
-            text-decoration: none;
-            color: #007bff;
-        }
-
-        /* Modal Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
-            background: white;
-            padding: 20px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .modal.active {
-            display: block;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-
-        /* Card Styling */
-        .card {
-            margin-bottom: 20px; /* Adjust bottom margin for card */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .card-body {
-            padding: 15px;
-        }
-
-        .card-title {
-            font-size: 1.25rem;
-            margin-bottom: 10px;
-        }
-
-        .card-text {
-            margin-bottom: 10px;
-        }
-    </style> -->
+    <style>
+    .card {
+        min-height: 16.5rem;
+    }
+    </style>
 </head>
 
 <body>
@@ -199,7 +107,7 @@
                     $limit = 20; // Number of records per page
                     $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
                     $offset = ($page - 1) * $limit; // Offset for pagination
-                    
+
                     // Handle school filter
                     $filter_condition = "";
                     if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all') {
@@ -212,7 +120,7 @@
                     $total_result = mysqli_query($conn, $total_query);
                     $total_rows = mysqli_fetch_array($total_result)[0];
                     $total_pages = ceil($total_rows / $limit); // Total pages
-                    
+
                     // Fetch records for the current page with filter applied
                     $select = "SELECT * FROM student_1 $filter_condition LIMIT $limit OFFSET $offset";
                     $result = mysqli_query($conn, $select);
@@ -252,14 +160,14 @@
                     }
 
                     if ($page > 1):
-                        ?>
+                    ?>
                     <li class="page-item"><a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $page - 1; ?>">Previous</a></li>
                     <?php endif; ?>
 
                     <?php for ($i = 1; $i <= $total_pages; $i++): ?>
                     <li class="page-item <?php if ($i == $page)
-                            echo 'active'; ?>">
+                                                    echo 'active'; ?>">
                         <a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $i; ?>"><?php echo $i; ?></a>
                     </li>

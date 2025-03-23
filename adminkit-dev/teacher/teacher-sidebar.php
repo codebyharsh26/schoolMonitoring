@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sidebar</title>
     <style>
-    footer {
-        margin-bottom: 2.5rem;
-        margin-left: 2.5rem;
-    }
+        footer {
+            margin-bottom: 2.5rem;
+            margin-left: 2.5rem;
+        }
     </style>
 </head>
 
@@ -83,17 +83,18 @@
                                 class="align-middle">Calender</span>
                         </a>
                     </li>
-
+                    <footer class="footer mt-5" style="background-color: transparent; border-top:0; margin-left: 20px;">
+                        <li
+                            class="signout-btn sidebar-item <?= ($current_page == 'admin-log-out.php') ? 'active' : '' ?>">
+                            <a class="sidebar-link" href="#" onclick="confirmLogout()">
+                                <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
+                                <span class="align-middle">Sign Out</span>
+                            </a>
+                        </li>
+                    </footer>
 
                 </ul>
-                <footer>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="#" onclick="confirmLogout()">
-                            <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
-                            <span class="align-middle">Sign Out</span>
-                        </a>
-                    </li>
-                </footer>
+
             </div>
         </nav>
     </div>
@@ -102,22 +103,22 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-    function confirmLogout() {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You will be logged out!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#d33",
-            cancelButtonColor: "#3085d6",
-            confirmButtonText: "Yes, Sign Out",
-            cancelButtonText: "Cancel"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                window.location.href = 'logout.php'; // Redirect to logout script
-            }
-        });
-    }
+        function confirmLogout() {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You will be logged out!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Yes, Sign Out",
+                cancelButtonText: "Cancel"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = 'logout.php'; // Redirect to logout script
+                }
+            });
+        }
     </script>
 </body>
 
