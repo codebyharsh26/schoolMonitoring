@@ -72,12 +72,9 @@
             <?php
             include_once("navbar.php");
             ?>
-
-            <main class="content">
+            <main class="content p-4">
                 <div class="container-fluid p-0">
-
                     <h1 class="h3 mb-3"><strong class="h1">Analytics</strong> Dashboard</h1>
-
                     <div class="row">
                         <div class="col-xl-12 d-flex">
                             <div class="w-100">
@@ -252,8 +249,8 @@
                         borderColor: window.theme.primary, // Border color of the bars
                         hoverBackgroundColor: window.theme.primary, // Hover color for the bars
                         hoverBorderColor: window.theme.primary, // Hover border color
-                        data: [100, 150, 200, 250,
-                            300
+                        data: [9, 33, 57, 69,
+                            80
                         ], // Admissions data showing the growth from 2020 to 2024
                         barPercentage: 0.75, // Controls the width of the bars
                         categoryPercentage: 0.5 // Controls the spacing between bars
