@@ -18,36 +18,35 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
 
     <title>Student Details</title>
+
 </head>
 
 <body>
     <main role="main" class="content p-4">
         <div class="container">
-            <div class="container">
-                <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
-                        style="font-weight:normal">Students</strong> List</h1>
+            <!-- <div class="container"> -->
+            <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
+                    style="font-weight:normal">Students</strong> List</h1>
+            <div class="row">
+                <?php
+                include_once 'connection.php';
+                $limit = 20; // Number of records per page
+                $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
+                $offset = ($page - 1) * $limit; // Offset for pagination
 
-                <div class="row">
-                    <?php
-                    include_once 'connection.php';
+                // Count total records
+                $total_query = "SELECT COUNT(*) FROM student_1 WHERE school_number = 1";
+                $total_result = mysqli_query($conn, $total_query);
+                $total_rows = mysqli_fetch_array($total_result)[0];
+                $total_pages = ceil($total_rows / $limit); // Total pages
 
-                    $limit = 20; // Number of records per page
-                    $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
-                    $offset = ($page - 1) * $limit; // Offset for pagination
+                // Fetch records for the current page
+                $select = "SELECT * FROM student_1 LIMIT $limit OFFSET $offset";
+                $result = mysqli_query($conn, $select);
 
-                    // Count total records
-                    $total_query = "SELECT COUNT(*) FROM student_1 WHERE school_number = 1";
-                    $total_result = mysqli_query($conn, $total_query);
-                    $total_rows = mysqli_fetch_array($total_result)[0];
-                    $total_pages = ceil($total_rows / $limit); // Total pages
-
-                    // Fetch records for the current page
-                    $select = "SELECT * FROM student_1 LIMIT $limit OFFSET $offset";
-                    $result = mysqli_query($conn, $select);
-
-                    if ($result) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-md-4">
+                if ($result) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="col-md-4">
                                         <div class="card mb-4 shadow-sm">
                                             <img src="' . $row['student_image'] . '" alt="Student Image" class="card-img-top" style="height: 200px; object-fit: cover;">
                                             <div class="card-body">
@@ -98,15 +97,15 @@
                                             </div>
                                         </div>
                                     </div>';
-                        }
                     }
-                    // // File Upload Handling
-                    // $target_dir = "uploads/";
-                    // $target_file = $target_dir . basename($_FILES["student_image"]["name"]);
-                    // move_uploaded_file($_FILES["student_image"]["tmp_name"], $target_file);
-                    ?>
-                </div>
+                }
+                // // File Upload Handling
+                // $target_dir = "uploads/";
+                // $target_file = $target_dir . basename($_FILES["student_image"]["name"]);
+                // move_uploaded_file($_FILES["student_image"]["tmp_name"], $target_file);
+                ?>
             </div>
+            <!-- </div> -->
             <!-- Pagination -->
             <nav aria-label="Page navigation">
                 <ul class="pagination justify-content-center">
@@ -265,69 +264,67 @@
                     </div>
                 </div>
             </div>
-
-
-            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-            <script>
-                $(document).ready(function() {
-                    $('.edit-btn').click(function() {
-                        $('#edit-id').val($(this).data('id'));
-                        $('#edit-full_name').val($(this).data('full_name'));
-                        $('#edit-roll_number').val($(this).data('roll_number'));
-                        $('#edit-date_of_birth').val($(this).data('date_of_birth'));
-                        $('#edit-gender').val($(this).data('gender'));
-                        $('#edit-blood_group').val($(this).data('blood_group'));
-                        $('#edit-residential_address').val($(this).data('residential_address'));
-                        $('#edit-father_name').val($(this).data('father_name'));
-                        $('#edit-father_phone_number').val($(this).data('father_phone_number'));
-                        $('#edit-mother_name').val($(this).data('mother_name'));
-                        $('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
-                        $('#edit-standard').val($(this).data('standard'));
-                        $('#edit-academic_year').val($(this).data('academic_year'));
-                        $('#edit-school_name').val($(this).data('school_name'));
-                        $('#edit-school_number').val($(this).data('school_number'));
-                        $('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
-                    });
-
-                    $('.view-btn').click(function() {
-                        $('#view-id').text($(this).data('id'));
-                        $('#view-full_name').text($(this).data('full_name'));
-                        $('#view-roll_number').text($(this).data('roll_number'));
-                        $('#view-date_of_birth').text($(this).data('date_of_birth'));
-                        $('#view-gender').text($(this).data('gender'));
-                        $('#view-blood_group').text($(this).data('blood_group'));
-                        $('#view-residential_address').text($(this).data('residential_address'));
-                        $('#view-father_name').text($(this).data('father_name'));
-                        $('#view-father_phone_number').text($(this).data('father_phone_number'));
-                        $('#view-mother_name').text($(this).data('mother_name'));
-                        $('#view-mother_phone_number').text($(this).data('mother_phone_number'));
-                        $('#view-standard').text($(this).data('standard'));
-                        $('#view-academic_year').text($(this).data('academic_year'));
-                        $('#view-school_name').text($(this).data('school_name'));
-                        $('#view-school_number').text($(this).data('school_number'));
-                    });
-                });
-            </script>
-
-            <script>
-                $(document).ready(function() {
-                    let deleteUrl = "";
-
-                    $(".delete-btn").click(function() {
-                        let studentId = $(this).data("id");
-                        let page = $(this).data("page");
-
-                        deleteUrl = "student-list-delete.php?deleteid=" + studentId + "&page=" + page;
-                    });
-
-                    $("#confirmDeleteBtn").click(function() {
-                        window.location.href = deleteUrl;
-                    });
-                });
-            </script>
         </div>
     </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.edit-btn').click(function() {
+                $('#edit-id').val($(this).data('id'));
+                $('#edit-full_name').val($(this).data('full_name'));
+                $('#edit-roll_number').val($(this).data('roll_number'));
+                $('#edit-date_of_birth').val($(this).data('date_of_birth'));
+                $('#edit-gender').val($(this).data('gender'));
+                $('#edit-blood_group').val($(this).data('blood_group'));
+                $('#edit-residential_address').val($(this).data('residential_address'));
+                $('#edit-father_name').val($(this).data('father_name'));
+                $('#edit-father_phone_number').val($(this).data('father_phone_number'));
+                $('#edit-mother_name').val($(this).data('mother_name'));
+                $('#edit-mother_phone_number').val($(this).data('mother_phone_number'));
+                $('#edit-standard').val($(this).data('standard'));
+                $('#edit-academic_year').val($(this).data('academic_year'));
+                $('#edit-school_name').val($(this).data('school_name'));
+                $('#edit-school_number').val($(this).data('school_number'));
+                $('#edit-page').val(new URLSearchParams(window.location.search).get('page') || 1);
+            });
+
+            $('.view-btn').click(function() {
+                $('#view-id').text($(this).data('id'));
+                $('#view-full_name').text($(this).data('full_name'));
+                $('#view-roll_number').text($(this).data('roll_number'));
+                $('#view-date_of_birth').text($(this).data('date_of_birth'));
+                $('#view-gender').text($(this).data('gender'));
+                $('#view-blood_group').text($(this).data('blood_group'));
+                $('#view-residential_address').text($(this).data('residential_address'));
+                $('#view-father_name').text($(this).data('father_name'));
+                $('#view-father_phone_number').text($(this).data('father_phone_number'));
+                $('#view-mother_name').text($(this).data('mother_name'));
+                $('#view-mother_phone_number').text($(this).data('mother_phone_number'));
+                $('#view-standard').text($(this).data('standard'));
+                $('#view-academic_year').text($(this).data('academic_year'));
+                $('#view-school_name').text($(this).data('school_name'));
+                $('#view-school_number').text($(this).data('school_number'));
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function() {
+            let deleteUrl = "";
+
+            $(".delete-btn").click(function() {
+                let studentId = $(this).data("id");
+                let page = $(this).data("page");
+
+                deleteUrl = "student-list-delete.php?deleteid=" + studentId + "&page=" + page;
+            });
+
+            $("#confirmDeleteBtn").click(function() {
+                window.location.href = deleteUrl;
+            });
+        });
+    </script>
 </body>
 
 </html>

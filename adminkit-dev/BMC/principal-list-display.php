@@ -8,66 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/teacher-list-display.css">
     <title>Principal Details</title>
-    <!-- <style>
-        /* Pagination */
-        .pagination {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            padding: 0;
+    <style>
+        .card {
+            min-height: 16.5rem;
         }
-
-        .pagination .page-item.active .page-link {
-            border: 1px solid #007bff;
-            color: #007bff;
-            background-color: white;
-            border-radius: 3px;
-        }
-
-        .pagination .page-item {
-            margin: 0 5px;
-        }
-
-        .pagination .page-link {
-            padding: 5px 10px;
-            text-decoration: none;
-            /* background-color: #007bff; */
-            color: #007bff;
-            /* border-radius: 3px; */
-        }
-
-
-        /* Modal Styling */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
-            background: white;
-            padding: 20px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-
-        .modal.active {
-            display: block;
-        }
-
-        .modal-header {
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-
-        .modal-footer {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-        }
-    </style> -->
+    </style>
 </head>
 <div class="sidebar">
     <?php
@@ -78,7 +23,7 @@
 <body>
     <main role="main" style="margin-top: 3rem;">
         <div class="container">
-            <div class="container bg-light">
+            <div class="container">
                 <h1 class="h3 mb-4"><strong>Principal</strong> Details</h1>
 
                 <!-- Filter Section -->
@@ -166,7 +111,7 @@
                     $limit = 21; // Number of records per page
                     $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
                     $offset = ($page - 1) * $limit; // Offset for pagination
-                    
+
                     // Handle school filter
                     $filter_condition = "";
                     if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all') {
@@ -179,7 +124,7 @@
                     $total_result = mysqli_query($conn, $total_query);
                     $total_rows = mysqli_fetch_array($total_result)[0];
                     $total_pages = ceil($total_rows / $limit); // Total pages
-                    
+
                     // Fetch records for the current page with filter applied
                     $select = "SELECT * FROM principal_1 $filter_condition LIMIT $limit OFFSET $offset";
                     $result = mysqli_query($conn, $select);
@@ -221,14 +166,14 @@
                 }
 
                 if ($page > 1):
-                    ?>
+                ?>
                     <li class="page-item"><a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $page - 1; ?>">Previous</a></li>
                 <?php endif; ?>
 
                 <?php for ($i = 1; $i <= $total_pages; $i++): ?>
                     <li class="page-item <?php if ($i == $page)
-                        echo 'active'; ?>">
+                                                echo 'active'; ?>">
                         <a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $i; ?>"><?php echo $i; ?></a>
                     </li>
@@ -243,7 +188,7 @@
 
         <script>
             // Set the selected school in the dropdown when page loads
-            document.addEventListener('DOMContentLoaded', function () {
+            document.addEventListener('DOMContentLoaded', function() {
                 <?php if (isset($_GET['school_filter'])): ?>
                     document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
                 <?php endif; ?>

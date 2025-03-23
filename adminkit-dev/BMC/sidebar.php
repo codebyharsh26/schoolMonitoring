@@ -99,12 +99,12 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
                         </a>
                     </li>
 
-                    <!-- <li class="sidebar-item <?= ($current_page == 'std-enroll.php') ? 'active' : '' ?>">
-                        <a class="sidebar-link" href="std-enroll.php">
+                    <li class="sidebar-item <?= ($current_page == 'principal-enroll.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="principal-enroll.php">
                             <i class="align-middle" data-feather="edit-2"></i>
-                            <span class="align-middle">Student Enrollment</span>
+                            <span class="align-middle">Principal Enrollment</span>
                         </a>
-                    </li> -->
+                    </li>
 
                     <!-- <li
                         class="sidebar-item <?= ($current_page == 'tr-leave-application-display.php') ? 'active' : '' ?>">

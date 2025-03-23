@@ -237,14 +237,12 @@
 						<h1 class="h3 mb-3"><strong class="h1">Student Enrollment</strong> Form</h1>
 						<div class="form-section">
 							<h3 class="mb-3">Personal Information</h3>
-							<!-- <div class="form-row"> -->
 							<div class="form-group">
 								<div class="student-photo">
 									<input type="file" class="pdf" id="student_image" name="student_image"
 										accept="image/*" class="photo-upload">
 								</div>
 							</div>
-							<!-- </div> -->
 
 							<div class="form-row">
 								<div class="form-group">
