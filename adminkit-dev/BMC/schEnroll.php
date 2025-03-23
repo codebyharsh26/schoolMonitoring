@@ -45,7 +45,7 @@
         }
 
         .custom-card {
-
+            padding: 2rem;
             width: 100%;
             background-color: white;
             border-radius: 10px;
@@ -64,60 +64,57 @@
             <?php
             include_once("navbar.php");
             ?>
-            <div class="container mt-4">
-                <div class="custom-card shadow p-5">
-                    <h2 class="text-center mb-5 mt-3">Bhavnagar School Enrollment</h2>
-                    <form id="enrollmentForm" action="schEnroll.php" method="POST">
+            <form id="enrollmentForm" action="schEnroll.php" method="POST">
+                <div class="container-fluid p-0">
+                    <main class="container p-4">
+                        <h1 class="h3 mb-3"><strong class="h1">School Enrollment</strong> Form</h1>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="form-label">School Number:</label>
-                                <input type="number" class="form-control" name="school_no" required>
+                        <div class="custom-card">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="form-label">School Name:</label>
+                                    <input type="text" class="form-control" name="school_name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">School Number:</label>
+                                    <input type="number" class="form-control" name="school_no" required>
+                                </div>
                             </div>
-                            <div class="col-md-6">
-                                <label class="form-label">School Name:</label>
-                                <input type="text" class="form-control" name="school_name" required>
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Principal Name:</label>
+                                    <input type="text" class="form-control" name="principal_name" required>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Standard:</label>
+                                    <input type="text" class="form-control" name="standard" required>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="mt-3">
+                                    <label class="form-label">Email Address:</label>
+                                    <input type="email" class="form-control" name="email_address" required>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="mt-3">
+                                    <label class="form-label">School Address:</label>
+                                    <textarea class="form-control" name="address" required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="mt-3 text-center">
+                                <button type="submit" class="btn btn-primary w-100">Enroll School</button>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Email Address:</label>
-                                <input type="email" class="form-control" name="email_address" required>
-                            </div>
+                    </main>
 
-                            <div class="col-md-6">
-                                <label class="form-label">Standard:</label>
-                                <input type="text" class="form-control" name="standard"
-                                    required>
-                            </div>
-                        </div>
-
-                        
-                        <div class="row">
-                            <div class="mt-3">
-                                <label class="form-label">Principal Name:</label>
-                                <input type="text" class="form-control" name="principal_name" required>
-                            </div>
-                        </div>
-
-                        
-
-                        <div class="row">
-                            <div class="mt-3">
-                                <label class="form-label">School Address:</label>
-                                <textarea class="form-control" name="address" required></textarea>
-                            </div>
-                        </div>
-
-                        
-
-                        <div class="mt-3 text-center">
-                            <button type="submit" class="btn btn-primary w-100">Enroll School</button>
-                        </div>
-
-                    </form>
                 </div>
-            </div>
+            </form>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -135,7 +132,7 @@
 
 
             // Form Validation
-            document.getElementById('enrollmentForm').addEventListener('submit', function (event) {
+            document.getElementById('enrollmentForm').addEventListener('submit', function(event) {
                 let pincode = document.getElementById('pincode').value;
                 let contact1 = document.getElementById('contact1').value;
                 let contact2 = document.getElementById('contact2').value;

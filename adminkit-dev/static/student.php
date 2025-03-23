@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
-	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+	<meta name="keywords"
+		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
@@ -38,50 +39,11 @@
 			padding: 0;
 		}
 
-		.wrapper {
-			margin: 0;
-			padding: 0;
-		}
-
-		.sidebar {
-			margin: 0;
-			padding: 0;
-		}
-
-		.main {
-			margin: 0;
-			padding: 0;
-		}
-
-		.footer {
-			margin: 0;
-			padding: 0;
-		}
-
-		.container-fluid {
-			margin: 0;
-			padding: 0;
-		}
-
-		.text-muted {
-			margin: 0;
-			padding: 0;
-		}
-
-		.text-start, .text-end {
-			margin: 0;
-			padding: 0;
-		}
-
-		/* Navbar adjustments */
-		.navbar {
-			padding: 0 !important;
-		}
-
 		/* Button adjustments */
 		.btn {
 			margin: 0;
-			padding: 0.25rem 0.5rem; /* Adjust this padding as needed */
+			padding: 0.25rem 0.5rem;
+			/* Adjust this padding as needed */
 		}
 
 		/* Chart container adjustments */
@@ -90,8 +52,10 @@
 		}
 
 		/* Table adjustments */
-		.table th, .table td {
-			padding: 0.5rem; /* Adjust padding as needed */
+		.table th,
+		.table td {
+			padding: 0.5rem;
+			/* Adjust padding as needed */
 		}
 
 		/* Modal Dialog adjustments */
@@ -113,11 +77,9 @@
 			<?php
 			include_once("navbar.php");
 			?>
-
 			<?php
 			include_once("student-list-display.php");
 			?>
-
 			<footer class="footer">
 				<div class="container-fluid">
 					<div class="row text-muted">
@@ -160,13 +122,17 @@
 			new Chart(document.getElementById("chartjs-line"), {
 				type: "line",
 				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov",
+						"Dec"
+					],
 					datasets: [{
 						label: "Sales ($)",
 						fill: true,
 						backgroundColor: "transparent",
 						borderColor: window.theme.primary,
-						data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
+						data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917,
+							3327
+						]
 					}, {
 						label: "Orders",
 						fill: true,
@@ -222,7 +188,9 @@
 			new Chart(document.getElementById("chartjs-bar"), {
 				type: "bar",
 				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov",
+						"Dec"
+					],
 					datasets: [{
 						label: "Last year",
 						backgroundColor: window.theme.primary,
