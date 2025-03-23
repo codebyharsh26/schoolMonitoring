@@ -3,8 +3,8 @@
 
 <head>
     <?php
-    include_once "connection.php";
-    ?>
+	include_once "connection.php";
+	?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,62 +12,71 @@
     <meta name="author" content="AdminKit">
     <meta name="keywords"
         content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
+
+    <title>School Monitoring System</title>
+
     <link href="css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <?php
-    $passing_marks = 45; // Adjust if needed
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    $pass_count = 0;
-    $fail_count = 0;
+	<?php
+$passing_marks = 45; // Adjust if needed
 
-    // Fetch student marks from the database
-    $sql = "SELECT mathematics, gujarati, hindi, art_craft, physical_education FROM student_marks";
-    $result = $conn->query($sql);
+$pass_count = 0;
+$fail_count = 0;
 
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            // Check if student passed all subjects
-            if (
-                $row['mathematics'] >= $passing_marks && $row['gujarati'] >= $passing_marks &&
-                $row['hindi'] >= $passing_marks && $row['art_craft'] >= $passing_marks &&
-                $row['physical_education'] >= $passing_marks
-            ) {
-                $pass_count++;
-            } else {
-                $fail_count++;
-            }
+// Fetch student marks from the database
+$sql = "SELECT mathematics, gujarati, hindi, art_craft, physical_education FROM student_marks";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        // Check if student passed all subjects
+        if ($row['mathematics'] >= $passing_marks && $row['gujarati'] >= $passing_marks && 
+            $row['hindi'] >= $passing_marks && $row['art_craft'] >= $passing_marks && 
+            $row['physical_education'] >= $passing_marks) {
+            $pass_count++;
+        } else {
+            $fail_count++;
         }
     }
+}
 
-    // Calculate percentages
-    $total_students = $pass_count + $fail_count;
-    $pass_percentage = $total_students > 0 ? ($pass_count / $total_students) * 100 : 0;
-    $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 : 0;
-    ?>
+// Calculate percentages
+$total_students = $pass_count + $fail_count;
+$pass_percentage = $total_students > 0 ? ($pass_count / $total_students) * 100 : 0;
+$fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 : 0;
+?>
+
 
 </head>
 
+
+
 <body>
-    <div class="wrapper p-0 m-0">
+    <div class="wrapper">
         <div class="sidebar">
             <?php
-            include_once("sidebar.php");
-            ?>
+			include_once("sidebar.php");
+			?>
         </div>
         <div class="main">
             <?php
-            include_once("navbar.php");
-            ?>
-            <main class="content p-4">
+			include_once("navbar.php");
+			?>
+
+            <main class="content">
                 <div class="container-fluid p-0">
-                    <h1 class="h3 mb-3"><strong class="h1">Analytics</strong> Dashboard</h1>
+
+                    <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
                     <div class="row">
                         <div class="col-xl-12 d-flex">
                             <div class="w-100">
@@ -82,9 +91,7 @@
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Total Teachers</h5>
-                                            <h1 class=" mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">
-                                                <?php echo $total_teachers ?>
-                                            </h1>
+                                            <h1 class=" mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">55</h1>
                                         </div>
                                     </div>
 
@@ -97,23 +104,21 @@
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Total Students</h5>
-                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">
-                                                <?php echo $total_students ?>
-                                            </h1>
+                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">269</h1>
                                         </div>
                                     </div>
 
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Total Admission</h5>
-                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">0</h1>
+                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">19</h1>
                                         </div>
                                     </div>
 
                                     <div class="col my-card card">
                                         <div class="admin-custom-card-content card-body">
                                             <h5 class="card-title">Student Left</h5>
-                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">0</h1>
+                                            <h1 class="mt-1 mb-3" style="font-size: 3rem; margin-left: 0.8rem;">10</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -201,6 +206,7 @@
 
 
     <script src="js/app.js"></script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
