@@ -67,7 +67,7 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper p-0 m-0">
         <div class="sidebar">
             <?php
             include_once("sidebar.php");
@@ -90,8 +90,7 @@
                         </div>
                         <div class="col-6 text-end">
                             <p class="mb-0">
-                                <a class="text-muted" href="https://adminkit.io/"
-                                    target="_blank"><strong>schoolAdmin</strong></a>
+                                <strong>schoolAdmin</strong>
                             </p>
                         </div>
                     </div>

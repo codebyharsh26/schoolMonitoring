@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="/adminkit-dev/static/css/teacher-list-display.css">
     <title>Teacher Details</title>
     <style>
-        .card {
-            min-height: 16.5rem;
-        }
+    .card {
+        min-height: 16.5rem;
+    }
     </style>
 </head>
 <div class="sidebar">
@@ -21,11 +21,11 @@
 </div>
 
 <body>
-    <main role="main" style="margin-top: 3rem;">
+    <main role="main" class="content p-4">
         <div class="container">
-            <div class="container bg-light">
-                <h1 class="h3 mb-4"><strong>Teachers</strong> Details</h1>
-
+            <div class="container">
+                <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
+                        style="font-weight:normal">Teachers</strong> List</h1>
                 <!-- Filter Section -->
                 <div class="row mb-4">
                     <div class="col-md-6">
@@ -94,11 +94,11 @@
                             </div>
 
                             <?php if (isset($_GET['page'])): ?>
-                                <input type="hidden" name="page" value="<?php echo $_GET['page']; ?>">
+                            <input type="hidden" name="page" value="<?php echo $_GET['page']; ?>">
                             <?php endif; ?>
 
                             <?php if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all'): ?>
-                                <a href="?" class="btn btn-sm btn-outline-danger ml-2">Clear Filter</a>
+                            <a href="?" class="btn btn-sm btn-outline-danger ml-2">Clear Filter</a>
                             <?php endif; ?>
                         </form>
                     </div>
@@ -154,51 +154,51 @@
                     ?>
                 </div>
             </div>
-        </div>
-        <!-- Pagination with filter preservation -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                <?php
-                // Build the query string for pagination links
-                $query_string = "";
-                if (isset($_GET['school_filter'])) {
-                    $query_string = "school_filter=" . urlencode($_GET['school_filter']) . "&";
-                }
+            <!-- Pagination with filter preservation -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <?php
+                    // Build the query string for pagination links
+                    $query_string = "";
+                    if (isset($_GET['school_filter'])) {
+                        $query_string = "school_filter=" . urlencode($_GET['school_filter']) . "&";
+                    }
 
-                if ($page > 1):
-                ?>
+                    if ($page > 1):
+                    ?>
                     <li class="page-item"><a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $page - 1; ?>">Previous</a></li>
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
                     <li class="page-item <?php if ($i == $page)
-                                                echo 'active'; ?>">
+                                                    echo 'active'; ?>">
                         <a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $i; ?>"><?php echo $i; ?></a>
                     </li>
-                <?php endfor; ?>
+                    <?php endfor; ?>
 
-                <?php if ($page < $total_pages): ?>
+                    <?php if ($page < $total_pages): ?>
                     <li class="page-item"><a class="page-link"
                             href="?<?php echo $query_string; ?>page=<?php echo $page + 1; ?>">Next</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
-
-        <script>
-            // Set the selected school in the dropdown when page loads
-            document.addEventListener('DOMContentLoaded', function() {
-                <?php if (isset($_GET['school_filter'])): ?>
-                    document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
-                <?php endif; ?>
-            });
-        </script>
-
-
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+        </div>
     </main>
+
+    <script>
+    // Set the selected school in the dropdown when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        <?php if (isset($_GET['school_filter'])): ?>
+        document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
+        <?php endif; ?>
+    });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

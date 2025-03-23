@@ -39,47 +39,6 @@
 			padding: 0;
 		}
 
-		.wrapper {
-			margin: 0;
-			padding: 0;
-		}
-
-		.sidebar {
-			margin: 0;
-			padding: 0;
-		}
-
-		.main {
-			margin: 0;
-			padding: 0;
-		}
-
-		.footer {
-			margin: 0;
-			padding: 0;
-		}
-
-		.container-fluid {
-			margin: 0;
-			padding: 0;
-		}
-
-		.text-muted {
-			margin: 0;
-			padding: 0;
-		}
-
-		.text-start,
-		.text-end {
-			margin: 0;
-			padding: 0;
-		}
-
-		/* Navbar adjustments */
-		.navbar {
-			padding: 0 !important;
-		}
-
 		/* Button adjustments */
 		.btn {
 			margin: 0;
@@ -108,7 +67,7 @@
 </head>
 
 <body>
-	<div class="wrapper">
+	<div class="wrapper p-0 m-0">
 		<div class="sidebar">
 			<?php
 			include_once("sidebar.php");
@@ -131,8 +90,7 @@
 						</div>
 						<div class="col-6 text-end">
 							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/"
-									target="_blank"><strong>schoolAdmin</strong></a>
+								<strong>schoolAdmin</strong>
 							</p>
 						</div>
 					</div>
@@ -147,24 +105,24 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"></script>
 
 	<script>
-		$(document).ready(function () {
+		$(document).ready(function() {
 			let deleteUrl = "";
 
-			$(".delete-btn").click(function () {
+			$(".delete-btn").click(function() {
 				let studentId = $(this).data("id");
 				let page = $(this).data("page");
 
 				deleteUrl = "student.php?deleteid=" + studentId + "&page=" + page;
 			});
 
-			$("#confirmDeleteBtn").click(function () {
+			$("#confirmDeleteBtn").click(function() {
 				window.location.href = deleteUrl;
 			});
 		});
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			// Line chart
 			new Chart(document.getElementById("chartjs-line"), {
 				type: "line",
@@ -230,7 +188,7 @@
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			// Bar chart
 			new Chart(document.getElementById("chartjs-bar"), {
 				type: "bar",
@@ -286,7 +244,7 @@
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			// Doughnut chart
 			new Chart(document.getElementById("chartjs-doughnut"), {
 				type: "doughnut",
@@ -315,7 +273,7 @@
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			// Pie chart
 			new Chart(document.getElementById("chartjs-pie"), {
 				type: "pie",
@@ -343,7 +301,7 @@
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			// Radar chart
 			new Chart(document.getElementById("chartjs-radar"), {
 				type: "radar",
@@ -377,7 +335,7 @@
 	</script>
 
 	<script>
-		document.addEventListener("DOMContentLoaded", function () {
+		document.addEventListener("DOMContentLoaded", function() {
 			// Polar Area chart
 			new Chart(document.getElementById("chartjs-polar-area"), {
 				type: "polarArea",
