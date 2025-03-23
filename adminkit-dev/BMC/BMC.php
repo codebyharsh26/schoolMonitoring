@@ -113,7 +113,7 @@
                         </div>
 
                         <!-- Academic Result: Takes 25% Width -->
-                        <div class="col-12 col-lg-3 d-flex order-2 order-lg-2">
+                        <div class="col-12 col-md-6 col-lg-4 col-xxl-3 d-flex order-2 order-xxl-2">
                             <div class="card w-100">
                                 <div class="card-header">
                                     <h5 class="card-title mb-0">Overall Academic Result</h5>
@@ -129,13 +129,11 @@
                                             <tbody>
                                                 <tr>
                                                     <td>PASS</td>
-                                                    <td class="text-end">
-                                                        <?php echo number_format($pass_percentage, 2); ?>%</td>
+                                                    <td class="text-end">90%</td>
                                                 </tr>
                                                 <tr>
                                                     <td>FAIL</td>
-                                                    <td class="text-end">
-                                                        <?php echo number_format($fail_percentage, 2); ?>%</td>
+                                                    <td class="text-end">10%</td>
                                                 </tr>
                                             </tbody>
                                         </table>
@@ -180,104 +178,92 @@
     </div>
 
     <script src="js/app.js"></script>
-
-
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var passPercentage = <?php echo $pass_percentage; ?>;
-            var failPercentage = <?php echo $fail_percentage; ?>;
-
-            var ctx = document.getElementById("chartjs-dashboard-pie");
-
-            if (ctx) {
-
-                if (window.myPieChart) {
-                    window.myPieChart.destroy();
-                }
-
-                window.myPieChart = new Chart(ctx, {
-                    type: "doughnut",
-                    data: {
-                        labels: ["Pass", "Fail"],
-                        datasets: [{
-                            data: [passPercentage, failPercentage],
-                            backgroundColor: ["#4d4dff", "#ff3333"], // Blue for Pass, Red for Fail
-                            hoverBackgroundColor: ["#4d4dff",
-                                "#ff3333"
-                            ], // Prevent hover color change
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        cutout: 75
-                    }
-                });
-            } else {
-                console.error("Pie chart canvas not found.");
+    document.addEventListener("DOMContentLoaded", function() {
+        // Pie chart with only two parts (red and blue)
+        new Chart(document.getElementById("chartjs-dashboard-pie"), {
+            type: "pie",
+            data: {
+                labels: ["fail", "pass"],
+                datasets: [{
+                    data: [10, 90], // Red is 10% and Blue is 90%
+                    backgroundColor: [
+                        "red", // Color for Red section
+                        "blue" // Color for Blue section
+                    ],
+                    borderWidth: 5
+                }]
+            },
+            options: {
+                responsive: !window.MSInputMethodContext,
+                maintainAspectRatio: false,
+                legend: {
+                    display: false // Hides the legend
+                },
+                cutoutPercentage: 75 // To make it a donut chart
             }
         });
+    });
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Initialize Bar Chart to show admissions growth over the years
-            new Chart(document.getElementById("chartjs-dashboard-bar"), {
-                type: "bar", // The chart type is bar chart
-                data: {
-                    labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
-                    datasets: [{
-                        label: "Admissions Growth", // Label for the dataset
-                        backgroundColor: window.theme
-                            .primary, // Bar color, adjust to theme color if necessary
-                        borderColor: window.theme.primary, // Border color of the bars
-                        hoverBackgroundColor: window.theme.primary, // Hover color for the bars
-                        hoverBorderColor: window.theme.primary, // Hover border color
-                        data: [9, 33, 57, 69,
-                            80
-                        ], // Admissions data showing the growth from 2020 to 2024
-                        barPercentage: 0.75, // Controls the width of the bars
-                        categoryPercentage: 0.5 // Controls the spacing between bars
-                    }]
+    document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Bar Chart to show admissions growth over the years
+        new Chart(document.getElementById("chartjs-dashboard-bar"), {
+            type: "bar", // The chart type is bar chart
+            data: {
+                labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+                datasets: [{
+                    label: "Admissions Growth", // Label for the dataset
+                    backgroundColor: window.theme
+                        .primary, // Bar color, adjust to theme color if necessary
+                    borderColor: window.theme.primary, // Border color of the bars
+                    hoverBackgroundColor: window.theme.primary, // Hover color for the bars
+                    hoverBorderColor: window.theme.primary, // Hover border color
+                    data: [9, 33, 57, 69,
+                        80
+                    ], // Admissions data showing the growth from 2020 to 2024
+                    barPercentage: 0.75, // Controls the width of the bars
+                    categoryPercentage: 0.5 // Controls the spacing between bars
+                }]
+            },
+            options: {
+                maintainAspectRatio: false, // Ensures the chart resizes properly
+                legend: {
+                    display: false // Hides the legend
                 },
-                options: {
-                    maintainAspectRatio: false, // Ensures the chart resizes properly
-                    legend: {
-                        display: false // Hides the legend
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true, // Ensures the y-axis starts at 0
-                            grid: {
-                                display: false // Hides the grid lines on the y-axis
-                            },
-                            ticks: {
-                                stepSize: 50 // Defines the step size of y-axis ticks
-                            }
+                scales: {
+                    y: {
+                        beginAtZero: true, // Ensures the y-axis starts at 0
+                        grid: {
+                            display: false // Hides the grid lines on the y-axis
                         },
-                        x: {
-                            grid: {
-                                color: "transparent" // Makes the grid lines on the x-axis invisible
-                            }
+                        ticks: {
+                            stepSize: 50 // Defines the step size of y-axis ticks
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: "transparent" // Makes the grid lines on the x-axis invisible
                         }
                     }
                 }
-            });
+            }
         });
+    });
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
-            var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-            document.getElementById("datetimepicker-dashboard").flatpickr({
-                inline: true,
-                prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-                nextArrow: "<span title=\"Next month\">&raquo;</span>",
-                defaultDate: defaultDate
-            });
+    document.addEventListener("DOMContentLoaded", function() {
+        var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
+        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+            nextArrow: "<span title=\"Next month\">&raquo;</span>",
+            defaultDate: defaultDate
         });
+    });
     </script>
 
 </body>
