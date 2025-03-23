@@ -72,11 +72,9 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
             <?php
 			include_once("navbar.php");
 			?>
-
-            <main class="content">
+            <main class="content p-4">
                 <div class="container-fluid p-0">
-
-                    <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
+                    <h1 class="h3 mb-3"><strong class="h1" >Analytics</strong> Dashboard</h1>
                     <div class="row">
                         <div class="col-xl-12 d-flex">
                             <div class="w-100">
@@ -238,50 +236,51 @@ $fail_percentage = $total_students > 0 ? ($fail_count / $total_students) * 100 :
 
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Initialize Bar Chart to show admissions growth over the years
-            new Chart(document.getElementById("chartjs-dashboard-bar"), {
-                type: "bar", // The chart type is bar chart
-                data: {
-                    labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
-                    datasets: [{
-                        label: "Admissions Growth", // Label for the dataset
-                        backgroundColor: window.theme
-                            .primary, // Bar color, adjust to theme color if necessary
-                        borderColor: window.theme.primary, // Border color of the bars
-                        hoverBackgroundColor: window.theme.primary, // Hover color for the bars
-                        hoverBorderColor: window.theme.primary, // Hover border color
-                        data: [100, 150, 200, 250,
-                            300
-                        ], // Admissions data showing the growth from 2020 to 2024
-                        barPercentage: 0.75, // Controls the width of the bars
-                        categoryPercentage: 0.5 // Controls the spacing between bars
-                    }]
+       
+    document.addEventListener("DOMContentLoaded", function() {
+        // Initialize Bar Chart to show admissions growth over the years
+        new Chart(document.getElementById("chartjs-dashboard-bar"), {
+            type: "bar", // The chart type is bar chart
+            data: {
+                labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+                datasets: [{
+                    label: "Admissions Growth", // Label for the dataset
+                    backgroundColor: window.theme
+                    .primary, // Bar color, adjust to theme color if necessary
+                    borderColor: window.theme.primary, // Border color of the bars
+                    hoverBackgroundColor: window.theme.primary, // Hover color for the bars
+                    hoverBorderColor: window.theme.primary, // Hover border color
+                    data: [9, 33, 57,69 ,
+                    80], // Admissions data showing the growth from 2020 to 2024
+                    barPercentage: 0.75, // Controls the width of the bars
+                    categoryPercentage: 0.5 // Controls the spacing between bars
+                }]
+            },
+            options: {
+                maintainAspectRatio: false, // Ensures the chart resizes properly
+                legend: {
+                    display: false // Hides the legend
                 },
-                options: {
-                    maintainAspectRatio: false, // Ensures the chart resizes properly
-                    legend: {
-                        display: false // Hides the legend
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: true, // Ensures the y-axis starts at 0
-                            grid: {
-                                display: false // Hides the grid lines on the y-axis
-                            },
-                            ticks: {
-                                stepSize: 50 // Defines the step size of y-axis ticks
-                            }
+                scales: {
+                    y: {
+                        beginAtZero: true, // Ensures the y-axis starts at 0
+                        grid: {
+                            display: false // Hides the grid lines on the y-axis
                         },
-                        x: {
-                            grid: {
-                                color: "transparent" // Makes the grid lines on the x-axis invisible
-                            }
+                        ticks: {
+                            stepSize: 50 // Defines the step size of y-axis ticks
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: "transparent" // Makes the grid lines on the x-axis invisible
                         }
                     }
                 }
-            });
+            }
         });
+    });
+    
     </script>
 
 
