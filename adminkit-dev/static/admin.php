@@ -204,46 +204,27 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Initialize Bar Chart to show admissions growth over the years
-            new Chart(document.getElementById("chartjs-dashboard-bar"), {
-                type: "bar", // The chart type is bar chart
+            // Pie chart with only two parts (red and blue)
+            new Chart(document.getElementById("chartjs-dashboard-pie"), {
+                type: "pie",
                 data: {
-                    labels: ["2020", "2021", "2022", "2023", "2024"], // Labels representing years
+                    labels: ["fail", "pass"],
                     datasets: [{
-                        label: "Admissions Growth", // Label for the dataset
-                        backgroundColor: window.theme
-                            .primary, // Bar color, adjust to theme color if necessary
-                        borderColor: window.theme.primary, // Border color of the bars
-                        hoverBackgroundColor: window.theme.primary, // Hover color for the bars
-                        hoverBorderColor: window.theme.primary, // Hover border color
-                        data: [9, 33, 57, 69,
-                            80
-                        ], // Admissions data showing the growth from 2020 to 2024
-                        barPercentage: 0.75, // Controls the width of the bars
-                        categoryPercentage: 0.5 // Controls the spacing between bars
+                        data: [10, 90], // Red is 10% and Blue is 90%
+                        backgroundColor: [
+                            "red", // Color for Red section
+                            "blue" // Color for Blue section
+                        ],
+                        borderWidth: 5
                     }]
                 },
                 options: {
-                    maintainAspectRatio: false, // Ensures the chart resizes properly
+                    responsive: !window.MSInputMethodContext,
+                    maintainAspectRatio: false,
                     legend: {
                         display: false // Hides the legend
                     },
-                    scales: {
-                        y: {
-                            beginAtZero: true, // Ensures the y-axis starts at 0
-                            grid: {
-                                display: false // Hides the grid lines on the y-axis
-                            },
-                            ticks: {
-                                stepSize: 50 // Defines the step size of y-axis ticks
-                            }
-                        },
-                        x: {
-                            grid: {
-                                color: "transparent" // Makes the grid lines on the x-axis invisible
-                            }
-                        }
-                    }
+                    cutoutPercentage: 75 // To make it a donut chart
                 }
             });
         });
