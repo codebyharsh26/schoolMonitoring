@@ -2,13 +2,8 @@
 <html lang="en">
 
 <head>
-
-
     <?php
     include_once "connection.php";
-    include_once "student-navbar.php";
-    
-
     ?>
 
     <meta charset="utf-8">
@@ -30,648 +25,482 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/schoolMonitoring/adminouncdev/static/css/card-direction.css"> -->
     <style>
-    .fill {
-        background: white;
-        margin: 25px;
-    }
+        .fill {
+            background: white;
+            margin: 25px;
+        }
 
-    .cus {
-        /* margin: 25px; 	 */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+        .cus {
+            /* margin: 25px; 	 */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .cus1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-    }
+        .cus1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
 
-    .col-12 {
-        width: 100%;
-        padding: auto 20vw;
-    }
+        .col-12 {
+            width: 100%;
+            padding: auto 20vw;
+        }
 
-    img .img {
-        height: 50%;
-    }
+        img .img {
+            height: 50%;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
 
-        background-color: #f4f8ff;
-    }
+            background-color: #f4f8ff;
+        }
 
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    /* view pdf */
-    .container-f {
-        width: 100%;
-        margin: 50px auto;
-        padding: 20px;
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-        /* text-align: center; */
-    }
+        /* view pdf */
+        .container-f {
+            width: 100%;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            /* text-align: center; */
+        }
 
-    .h2 {
-        color: #222e3c;
-    }
+        .h2 {
+            color: #222e3c;
+        }
 
-    .label {
-        font-weight: bold;
-        display: block;
-        margin-bottom: 5px;
-    }
+        .label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
 
-    select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 
-    .pdf-container {
-        display: flex;
-        flex-wrap: wrap;
-        /* justify-content: center; */
-        gap: 20px;
-    }
+        .pdf-container {
+            display: flex;
+            flex-wrap: wrap;
+            /* justify-content: center; */
+            gap: 20px;
+        }
 
-    .pdf-card {
-        width: 474px;
-        background: #222e3c;
-        opacity: 0.85;
-        color: white;
-        padding: 15px;
-        border-radius: 10px;
-        /* text-align: center; */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        .pdf-card {
+            width: 474px;
+            background: #222e3c;
+            opacity: 0.85;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            /* text-align: center; */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    .pdf-title {
-        font-size: 18px;
-        font-weight: bold;
-    }
+        .pdf-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    .pdf-standard {
-        font-size: 14px;
-        margin-top: 5px;
-    }
+        .pdf-standard {
+            font-size: 14px;
+            margin-top: 5px;
+        }
 
-    .pdf-link {
-        display: inline-block;
-        margin-top: 10px;
-        background: white;
-        color: #222e3c;
-        padding: 8px 15px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-    }
+        .pdf-link {
+            display: inline-block;
+            margin-top: 10px;
+            background: white;
+            color: #222e3c;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .pdf-link:hover {
-        background: #222e3c;
-        opacity: 0.85;
-        outline: 2px solid white;
-        text-decoration: none;
-        color: white;
-    }
+        .pdf-link:hover {
+            background: #222e3c;
+            opacity: 0.85;
+            outline: 2px solid white;
+            text-decoration: none;
+            color: white;
+        }
 
-    /* over view pdf */
+        /* over view pdf */
 
-    .no-pdf-msg {
-        margin-top: 20px;
-        font-size: 16px;
-        color: red;
-        font-weight: bold;
-    }
+        .no-pdf-msg {
+            margin-top: 20px;
+            font-size: 16px;
+            color: red;
+            font-weight: bold;
+        }
 
-    h1 {
-        color: #333;
-    }
+        h1 {
+            color: #333;
+        }
 
-    .options {
-        margin-bottom: 20px;
-    }
+        .options {
+            margin-bottom: 20px;
+        }
 
-    button {
-        padding: 8px 16px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-right: 10px;
-    }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
 
-    button:hover {
-        background-color: #45a049;
-    }
+        button:hover {
+            background-color: #45a049;
+        }
 
-    #file-input {
-        display: none;
-    }
+        #file-input {
+            display: none;
+        }
 
-    label {
-        padding: 8px 16px;
-        /* background-color: #2196F3; */
-        color: black;
-        border-radius: 4px;
-        /* cursor: pointer; */
-    }
+        label {
+            padding: 8px 16px;
+            /* background-color: #2196F3; */
+            color: black;
+            border-radius: 4px;
+            /* cursor: pointer; */
+        }
 
-    /* label:hover {
+        /* label:hover {
             background-color: #0b7dda;
         } */
 
-    img {
-        margin: 25px;
-    }
+        img {
+            margin: 25px;
+        }
 
-    .card {
-        width: 100%;
-        /* margin-left: 45vh; */
-    }
+        .card {
+            width: 100%;
+            /* margin-left: 45vh; */
+        }
 
-    h5 .font {
-        font-size: xx-large;
-    }
+        h5 .font {
+            font-size: xx-large;
+        }
 
+        .td {
+            font-size: x-large;
+        }
 
+        .card-announce {
+            margin: 1020px;
+            width: 20vw;
+            height: 40vh;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-left: 115px;
+            padding: 25px;
+        }
 
-    . td {
-        font-size: x-large;
-    }
+        .card-announce h5,
+        h3 {
+            margin: 15px;
+        }
 
-    .card-announce {
-        margin: 1020px;
-        width: 20vw;
-        height: 40vh;
-        border-radius: 10px;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        margin-left: 115px;
-        padding: 25px;
-    }
+        .custom-student-card {
+            font-size: 40px;
+            margin-top: 40px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            opacity: 0.5;
+            margin-left: 6vw;
 
-    .card-announce h5,
-    h3 {
-        margin: 15px;
-    }
+        }
 
-    .custom-student-card {
-        font-size: 40px;
-        margin-top: 40px;
-        font-weight: 600;
-        letter-spacing: 3px;
-        opacity: 0.5;
-        margin-left: 6vw;
+        .custom-student-card1 {
+            font-size: 40px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            opacity: 0.5;
+            margin-bottom: 5vh;
+        }
 
-    }
-
-    .custom-student-card1 {
-        font-size: 40px;
-        font-weight: 600;
-        letter-spacing: 3px;
-        opacity: 0.5;
-        margin-bottom: 5vh;
-    }
-
-    .card-custom-text {
-        margin: 15px;
-        letter-spacing: 2px;
-    }
+        .card-custom-text {
+            margin: 15px;
+            letter-spacing: 2px;
+        }
     </style>
 </head>
 
 <body>
     <div class="main">
-        <nav class="navbar navbar-expand navbar-light navbar-bg">
-            <div class="navbar-collapse collapse">
-                <ul class="navbar-nav navbar-align">
-                    <li class="nav-item dropdown">
-                        <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
-                            <div class="position-relative">
-                                <i class="align-middle" data-feather="bell"></i>
-                                <!-- <span class="indicator">4</span> -->
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
-                            aria-labelledby="alertsDropdown">
-                            <div class="dropdown-menu-header">
-                                4 New Notifications
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-danger" data-feather="alert-circle"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">Update completed</div>
-                                            <div class="text-muted small mt-1">Restart server 12 to complete the
-                                                update.</div>
-                                            <div class="text-muted small mt-1">30m ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-warning" data-feather="bell"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">Lorem ipsum</div>
-                                            <div class="text-muted small mt-1">Aliquam ex eros, imperdiet vulputate
-                                                hendrerit et.</div>
-                                            <div class="text-muted small mt-1">2h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-primary" data-feather="home"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">Login from 192.186.1.8</div>
-                                            <div class="text-muted small mt-1">5h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <i class="text-success" data-feather="user-plus"></i>
-                                        </div>
-                                        <div class="col-10">
-                                            <div class="text-dark">New connection</div>
-                                            <div class="text-muted small mt-1">Christina accepted your request.
-                                            </div>
-                                            <div class="text-muted small mt-1">14h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="dropdown-menu-footer">
-                                <a href="#" class="text-muted">Show all notifications</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
-                            <div class="position-relative">
-                                <i class="align-middle" data-feather="message-square"></i>
-                            </div>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
-                            aria-labelledby="messagesDropdown">
-                            <div class="dropdown-menu-header">
-                                <div class="position-relative">
-                                    4 New Messages
-                                </div>
-                            </div>
-                            <div class="list-group">
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle"
-                                                alt="Vanessa Tucker">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">Vanessa Tucker</div>
-                                            <div class="text-muted small mt-1">Nam pretium turpis et arcu. Duis arcu
-                                                tortor.</div>
-                                            <div class="text-muted small mt-1">15m ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle"
-                                                alt="William Harris">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">William Harris</div>
-                                            <div class="text-muted small mt-1">Curabitur ligula sapien euismod
-                                                vitae.</div>
-                                            <div class="text-muted small mt-1">2h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle"
-                                                alt="Christina Mason">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">Christina Mason</div>
-                                            <div class="text-muted small mt-1">Pellentesque auctor neque nec urna.
-                                            </div>
-                                            <div class="text-muted small mt-1">4h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="#" class="list-group-item">
-                                    <div class="row g-0 align-items-center">
-                                        <div class="col-2">
-                                            <img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle"
-                                                alt="Sharon Lessman">
-                                        </div>
-                                        <div class="col-10 ps-2">
-                                            <div class="text-dark">Sharon Lessman</div>
-                                            <div class="text-muted small mt-1">Aenean tellus metus, bibendum sed,
-                                                posuere ac, mattis non.</div>
-                                            <div class="text-muted small mt-1">5h ago</div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="dropdown-menu-footer">
-                                <a href="#" class="text-muted">Show all messages</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown dont-click">
-                        <!-- <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
-                            data-bs-toggle="dropdown">
-                            <i class="align-middle" data-feather="settings"></i>
-                        </a> -->
 
-                        <a class="nav-link d-none d-sm-inline-block" href="#">
-                            <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1"
-                                alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
         <section style="margin-top: -75px; " id="profile">
             <main class="content">
                 <div class="container-fluid p-0">
-
-
-
                     <main class="content">
                         <div class="container-fluid p-0">
                             <?php
-							$query = "select * from student_1 where id=7";
-							$result = mysqli_query($conn, $query);
-							if ($result) {
-								while ($row = mysqli_fetch_assoc($result)) {
-									$student_image = $row["student_image"];
-									$full_name = $row["full_name"];
-									$date_of_birth = $row["date_of_birth"];
-									$residential_address = $row["residential_address"];
-									$gender = $row["gender"];
-									$standard = $row["standard"];
-									$roll_number = $row["roll_number"];
-									$mother_name = $row["mother_name"];
-									$mother_phone_number = $row["mother_phone_number"];
-									$father_name = $row["father_name"];
-									$father_phone_number = $row["father_phone_number"];
-									$blood_group = $row["blood_group"];
-									$school_name = $row["school_name"];
-									$academic_year = $row["academic_year"];
-									$school_number = $row["school_number"];
-							?>
+                            $query = "select * from student_1 where id=7";
+                            $result = mysqli_query($conn, $query);
+                            if ($result) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $student_image = $row["student_image"];
+                                    $full_name = $row["full_name"];
+                                    $date_of_birth = $row["date_of_birth"];
+                                    $residential_address = $row["residential_address"];
+                                    $gender = $row["gender"];
+                                    $standard = $row["standard"];
+                                    $roll_number = $row["roll_number"];
+                                    $mother_name = $row["mother_name"];
+                                    $mother_phone_number = $row["mother_phone_number"];
+                                    $father_name = $row["father_name"];
+                                    $father_phone_number = $row["father_phone_number"];
+                                    $blood_group = $row["blood_group"];
+                                    $school_name = $row["school_name"];
+                                    $academic_year = $row["academic_year"];
+                                    $school_number = $row["school_number"];
+                            ?>
 
-                            <?php
-									$mquery = "select * from student_marks where marks_id =7";
-									$mresult = mysqli_query($conn, $mquery);
-									if ($mresult) {
-										while ($mrow = mysqli_fetch_assoc($mresult)) {
-											$mathematics = $mrow["mathematics"];
-											$gujarati = $mrow["gujarati"];
-											$hindi = $mrow["hindi"];
-											$art_craft = $mrow["art_craft"];
-											$physical_education = $mrow["physical_education"];
-									?>
+                                    <?php
+                                    $mquery = "select * from student_marks where marks_id =7";
+                                    $mresult = mysqli_query($conn, $mquery);
+                                    if ($mresult) {
+                                        while ($mrow = mysqli_fetch_assoc($mresult)) {
+                                            $mathematics = $mrow["mathematics"];
+                                            $gujarati = $mrow["gujarati"];
+                                            $hindi = $mrow["hindi"];
+                                            $art_craft = $mrow["art_craft"];
+                                            $physical_education = $mrow["physical_education"];
+                                    ?>
 
-                            <div class="row">
-                                <div class="col-12">
-                                    <h3 class="custom-student-card1">Profile Details</h3>
-                                    <div class="card mb-3">
-                                        <div class="card-header">
-                                        </div>
-                                        <div class="card-body text-center">
-                                            <div class="car">
-                                                <img src="<?php echo $student_image; ?>"
-                                                    class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h3 class="custom-student-card1">Profile Details</h3>
+                                                    <div class="card mb-3">
+                                                        <div class="card-header">
+                                                        </div>
+                                                        <div class="card-body text-center">
+                                                            <div class="car">
+                                                                <img src="<?php echo $student_image; ?>"
+                                                                    class="img-fluid rounded-circle mb-2" width="128" height="128" />
 
-                                                <h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?>
-                                                </h5>
-                                                <table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Date-of-birth:</b>
-                                                        </td>
-                                                        <td style="text-align: left;"><?php echo $date_of_birth; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Address:</b></td>
-                                                        <td style="text-align: left;">
-                                                            <?php echo $residential_address; ?>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Gender:</b></td>
-                                                        <td style="text-align: left;"><?php echo $gender; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Standard:</b></td>
-                                                        <td style="text-align: left;"><?php echo $standard; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
-                                                        <td style="text-align: left;"><?php echo $roll_number; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Mother Name:</b>
-                                                        </td>
-                                                        <td style="text-align: left;"><?php echo $mother_name; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;">
-                                                            <b>Mother-Phone-No.:</b>
-                                                        </td>
-                                                        <td style="text-align: left;">
-                                                            <?php echo $mother_phone_number; ?>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Father Name:</b>
-                                                        </td>
-                                                        <td style="text-align: left;"><?php echo $father_name; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;">
-                                                            <b>Father-Phone-No.:</b>
-                                                        </td>
-                                                        <td style="text-align: left;">
-                                                            <?php echo $father_phone_number; ?>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Blood-Group:</b>
-                                                        </td>
-                                                        <td style="text-align: left;"><?php echo $blood_group; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>School Name:</b>
-                                                        </td>
-                                                        <td style="text-align: left;"><?php echo $school_name; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>Acedemic Year:</b>
-                                                        </td>
-                                                        <td style="text-align: left;"><?php echo $academic_year; ?></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="bol" style="text-align: left;"><b>School Number:</b>
-                                                        </td>
-                                                        <td style="text-align: left;"><?php echo $school_number; ?></td>
-                                                    </tr>
-                                                </table>
+                                                                <h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?>
+                                                                </h5>
+                                                                <table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Date-of-birth:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;"><?php echo $date_of_birth; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Address:</b></td>
+                                                                        <td style="text-align: left;">
+                                                                            <?php echo $residential_address; ?>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Gender:</b></td>
+                                                                        <td style="text-align: left;"><?php echo $gender; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Standard:</b></td>
+                                                                        <td style="text-align: left;"><?php echo $standard; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
+                                                                        <td style="text-align: left;"><?php echo $roll_number; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Mother Name:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;"><?php echo $mother_name; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;">
+                                                                            <b>Mother-Phone-No.:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;">
+                                                                            <?php echo $mother_phone_number; ?>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Father Name:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;"><?php echo $father_name; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;">
+                                                                            <b>Father-Phone-No.:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;">
+                                                                            <?php echo $father_phone_number; ?>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Blood-Group:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;"><?php echo $blood_group; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>School Name:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;"><?php echo $school_name; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>Acedemic Year:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;"><?php echo $academic_year; ?></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="bol" style="text-align: left;"><b>School Number:</b>
+                                                                        </td>
+                                                                        <td style="text-align: left;"><?php echo $school_number; ?></td>
+                                                                    </tr>
+                                                                </table>
 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                 </div>
     </div>
 
 
     </div>
-    <?php
-										}
-									}
-								}
-							} ?>
-    </div>
+<?php
+                                        }
+                                    }
+                                }
+                            } ?>
+</div>
 
-    </div>
-    </main>
+</div>
+</main>
 
-    </section>
+</section>
 
-    <section id="result">
-        <h5 class=" custom-student-card">Result & Progress</h5>
-        <div class="fill">
-            <!-- <div class="cus1 col-md-4 col-xl-3"> -->
-            <div class="cus card1 flex-fill w-100">
+<section id="result">
+    <h5 class=" custom-student-card">Result & Progress</h5>
+    <div class="fill">
+        <!-- <div class="cus1 col-md-4 col-xl-3"> -->
+        <div class="cus card1 flex-fill w-100">
 
-                <div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
-                    <div class="card-header">
-                        <h5 class="card-title mb-0">Overall Academic Result</h5>
-                    </div>
-                    <div class="card-body d-flex">
-                        <div class="align-self-center w-100">
-                            <div class="py-3">
-                                <div class="chart chart-xs">
-                                    <canvas id="chartjs-dashboard-pie"></canvas>
-                                </div>
+            <div class="card flex-fill w-100" style="height: 60vh; margin: 20px; ">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Overall Academic Result</h5>
+                </div>
+                <div class="card-body d-flex">
+                    <div class="align-self-center w-100">
+                        <div class="py-3">
+                            <div class="chart chart-xs">
+                                <canvas id="chartjs-dashboard-pie"></canvas>
                             </div>
-
-                            <table class="table mb-0">
-                                <tbody>
-                                    <tr>
-                                        <td>PASS</td>
-                                        <td class="text-end">90%</td>
-                                    </tr>
-                                    <tr>
-                                        <td>FAIL</td>
-                                        <td class="text-end">10%</td>
-                                    </tr>
-
-                                </tbody>
-                            </table>
                         </div>
+
+                        <table class="table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td>PASS</td>
+                                    <td class="text-end">90%</td>
+                                </tr>
+                                <tr>
+                                    <td>FAIL</td>
+                                    <td class="text-end">10%</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-                <table class="table mb-0">
-                    <tbody>
-                        <tr>
-                            <td>Percentage</td>
-                            <td class="text-end" id="percentageTd"></td>
-                        </tr>
-                    </tbody>
-                </table>
+            </div>
+            <table class="table mb-0">
+                <tbody>
+                    <tr>
+                        <td>Percentage</td>
+                        <td class="text-end" id="percentageTd"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+
+    <div class="card flex-fill w-100" style="margin: 20px;  ">
+        <div class="card-header">
+            <h5 class="card-title mb-0">Subject Graph</h5>
+
+        </div>
+        <div class="card-body d-flex w-100">
+            <div class="align-self-center chart chart-lg">
+                <canvas id="chartjs-dashboard-bar"></canvas>
             </div>
         </div>
-        </div>
+    </div>
+    </div>
+    <!-- </div> -->
+    </div>
 
-        <div class="card flex-fill w-100" style="margin: 20px;  ">
-            <div class="card-header">
-                <h5 class="card-title mb-0">Subject Graph</h5>
+</section>
+<!-- timetable section -->
+<section id="timetable">
+    <h5 class="custom-student-card">Time Table</h5>
+    <div class="fill">
+        <div class="container-f">
+            <h2 class="h2">Available Time Table</h2>
+            <label class="label" for="standardFilter">Filter by Standard:</label>
+            <select id="standardFilter" onchange="filterCards()">
+                <option value="all">All Standards</option>
+                <option value="1">Standard 1</option>
+                <option value="2">Standard 2</option>
+                <option value="3">Standard 3</option>
+                <option value="4">Standard 4</option>
+                <option value="5">Standard 5</option>
+                <option value="6">Standard 6</option>
+                <option value="7">Standard 7</option>
+                <option value="8">Standard 8</option>
+            </select>
 
-            </div>
-            <div class="card-body d-flex w-100">
-                <div class="align-self-center chart chart-lg">
-                    <canvas id="chartjs-dashboard-bar"></canvas>
-                </div>
-            </div>
-        </div>
-        </div>
-        <!-- </div> -->
-        </div>
-
-    </section>
-    <!-- timetable section -->
-    <section id="timetable">
-        <h5 class="custom-student-card">Time Table</h5>
-        <div class="fill">
-            <div class="container-f">
-                <h2 class="h2">Available Time Table</h2>
-                <label class="label" for="standardFilter">Filter by Standard:</label>
-                <select id="standardFilter" onchange="filterCards()">
-                    <option value="all">All Standards</option>
-                    <option value="1">Standard 1</option>
-                    <option value="2">Standard 2</option>
-                    <option value="3">Standard 3</option>
-                    <option value="4">Standard 4</option>
-                    <option value="5">Standard 5</option>
-                    <option value="6">Standard 6</option>
-                    <option value="7">Standard 7</option>
-                    <option value="8">Standard 8</option>
-                </select>
-
-                <div class="pdf-container">
-                    <?php
-                        $jsonFile = '../shared_timetable/documents.json';
-                        if (file_exists($jsonFile)) {
-                            $data = json_decode(file_get_contents($jsonFile), true);
-                            foreach ($data as $doc) {
-                                echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
+            <div class="pdf-container">
+                <?php
+                $jsonFile = '../shared_timetable/documents.json';
+                if (file_exists($jsonFile)) {
+                    $data = json_decode(file_get_contents($jsonFile), true);
+                    foreach ($data as $doc) {
+                        echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
                         <div class='pdf-title'>{$doc['title']}</div>
                         <div class='pdf-standard'>Standard: {$doc['standard']}</div>
                         <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
                     </div>";
-                            }
-                        } else {
-                            echo "<p>No Time Table available</p>";
-                        }
-                        ?>
-                </div>
+                    }
+                } else {
+                    echo "<p>No Time Table available</p>";
+                }
+                ?>
             </div>
+        </div>
 
-            <script>
+        <script>
             function filterCards() {
                 let standard = document.getElementById('standardFilter').value;
                 let cards = document.querySelectorAll('.pdf-card');
@@ -685,48 +514,48 @@
                     }
                 });
             }
-            </script>
-        </div>
-    </section>
-    <!-- notes section -->
-    <section id="notes">
-        <h5 class="custom-student-card">Notes</h5>
-        <div class="fill">
-            <div class="container-f">
-                <h2 class="h2">Available PDF</h2>
-                <label class="label" for="standardFilter">Filter by Standard:</label>
-                <select id="standardFilter" onchange="filterCards()">
-                    <option value="all">All Standards</option>
-                    <option value="1">Standard 1</option>
-                    <option value="2">Standard 2</option>
-                    <option value="3">Standard 3</option>
-                    <option value="4">Standard 4</option>
-                    <option value="5">Standard 5</option>
-                    <option value="6">Standard 6</option>
-                    <option value="7">Standard 7</option>
-                    <option value="8">Standard 8</option>
-                </select>
+        </script>
+    </div>
+</section>
+<!-- notes section -->
+<section id="notes">
+    <h5 class="custom-student-card">Notes</h5>
+    <div class="fill">
+        <div class="container-f">
+            <h2 class="h2">Available PDF</h2>
+            <label class="label" for="standardFilter">Filter by Standard:</label>
+            <select id="standardFilter" onchange="filterCards()">
+                <option value="all">All Standards</option>
+                <option value="1">Standard 1</option>
+                <option value="2">Standard 2</option>
+                <option value="3">Standard 3</option>
+                <option value="4">Standard 4</option>
+                <option value="5">Standard 5</option>
+                <option value="6">Standard 6</option>
+                <option value="7">Standard 7</option>
+                <option value="8">Standard 8</option>
+            </select>
 
-                <div class="pdf-container">
-                    <?php
-                        $jsonFile = '../shared/documents.json';
-                        if (file_exists($jsonFile)) {
-                            $data = json_decode(file_get_contents($jsonFile), true);
-                            foreach ($data as $doc) {
-                                echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
+            <div class="pdf-container">
+                <?php
+                $jsonFile = '../shared/documents.json';
+                if (file_exists($jsonFile)) {
+                    $data = json_decode(file_get_contents($jsonFile), true);
+                    foreach ($data as $doc) {
+                        echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
                         <div class='pdf-title'>{$doc['title']}</div>
                         <div class='pdf-standard'>Standard: {$doc['standard']}</div>
                         <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
                     </div>";
-                            }
-                        } else {
-                            echo "<p>No PDFs available</p>";
-                        }
-                        ?>
-                </div>
+                    }
+                } else {
+                    echo "<p>No PDFs available</p>";
+                }
+                ?>
             </div>
+        </div>
 
-            <script>
+        <script>
             function filterCards() {
                 let standard = document.getElementById('standardFilter').value;
                 let cards = document.querySelectorAll('.pdf-card');
@@ -740,78 +569,78 @@
                     }
                 });
             }
-            </script>
+        </script>
 
+    </div>
+</section>
+<!-- syllabus section -->
+<section id="syllabus">
+    <h5 class="custom-student-card">Syllabus</h5>
+    <div class="fill">
+        <img src="" alt="" height="500vh" width="98%">
+    </div>
+</section>
+<!-- announcement section -->
+<section id="announcement">
+    <h5 class=" custom-student-card">Announcement</h5>
+    <div class="fill">
+        <div class="container-f">
+            <h2 class="h2">Available Announcement</h2>
+            <label class="label" for="standardFilter">Filter by Standard:</label>
+            <select id="standardFilter" onchange="filterCards()">
+                <option value="all">All Standards</option>
+                <option value="1">Standard 1</option>
+                <option value="2">Standard 2</option>
+                <option value="3">Standard 3</option>
+                <option value="4">Standard 4</option>
+                <option value="5">Standard 5</option>
+                <option value="6">Standard 6</option>
+                <option value="7">Standard 7</option>
+                <option value="8">Standard 8</option>
+            </select>
         </div>
-    </section>
-    <!-- syllabus section -->
-    <section id="syllabus">
-        <h5 class="custom-student-card">Syllabus</h5>
-        <div class="fill">
-            <img src="" alt="" height="500vh" width="98%">
-        </div>
-    </section>
-    <!-- announcement section -->
-    <section id="announcement">
-        <h5 class=" custom-student-card">Announcement</h5>
-        <div class="fill">
-            <div class="container-f">
-                <h2 class="h2">Available Announcement</h2>
-                <label class="label" for="standardFilter">Filter by Standard:</label>
-                <select id="standardFilter" onchange="filterCards()">
-                    <option value="all">All Standards</option>
-                    <option value="1">Standard 1</option>
-                    <option value="2">Standard 2</option>
-                    <option value="3">Standard 3</option>
-                    <option value="4">Standard 4</option>
-                    <option value="5">Standard 5</option>
-                    <option value="6">Standard 6</option>
-                    <option value="7">Standard 7</option>
-                    <option value="8">Standard 8</option>
-                </select>
-            </div>
-    </section>
+</section>
 
-    <!-- announcement section -->
-    <section id="announcement">
-        <h5 class=" custom-student-card">Announcement</h5>
-        <div class="fill">
-            <div class="container-f">
-                <h2 class="h2">Available Announcement</h2>
-                <label class="label" for="standardFilter">Filter by Standard:</label>
-                <select id="standardFilter" onchange="filterCards()">
-                    <option value="all">All Standards</option>
-                    <option value="1">Standard 1</option>
-                    <option value="2">Standard 2</option>
-                    <option value="3">Standard 3</option>
-                    <option value="4">Standard 4</option>
-                    <option value="5">Standard 5</option>
-                    <option value="6">Standard 6</option>
-                    <option value="7">Standard 7</option>
-                    <option value="8">Standard 8</option>
-                </select>
+<!-- announcement section -->
+<section id="announcement">
+    <h5 class=" custom-student-card">Announcement</h5>
+    <div class="fill">
+        <div class="container-f">
+            <h2 class="h2">Available Announcement</h2>
+            <label class="label" for="standardFilter">Filter by Standard:</label>
+            <select id="standardFilter" onchange="filterCards()">
+                <option value="all">All Standards</option>
+                <option value="1">Standard 1</option>
+                <option value="2">Standard 2</option>
+                <option value="3">Standard 3</option>
+                <option value="4">Standard 4</option>
+                <option value="5">Standard 5</option>
+                <option value="6">Standard 6</option>
+                <option value="7">Standard 7</option>
+                <option value="8">Standard 8</option>
+            </select>
 
-                <div class="pdf-container">
-                    <?php
-                        $jsonFile = '../shared_announce/documents.json';
-                        if (file_exists($jsonFile)) {
-                            $data = json_decode(file_get_contents($jsonFile), true);
-                            foreach ($data as $doc) {
-                                echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
+            <div class="pdf-container">
+                <?php
+                $jsonFile = '../shared_announce/documents.json';
+                if (file_exists($jsonFile)) {
+                    $data = json_decode(file_get_contents($jsonFile), true);
+                    foreach ($data as $doc) {
+                        echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
                         <div class='pdf-title'>{$doc['title']}</div>
                         <div class='pdf-standard'>Standard: {$doc['standard']}</div>
 						<div class='pdf-message'>Message: {$doc['message']}</div>
                         <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
                     </div>";
-                            }
-                        } else {
-                            echo "<p>No Announcement available</p>";
-                        }
-                        ?>
-                </div>
+                    }
+                } else {
+                    echo "<p>No Announcement available</p>";
+                }
+                ?>
             </div>
+        </div>
 
-            <script>
+        <script>
             function filterCards() {
                 let standard = document.getElementById('standardFilter').value;
                 let cards = document.querySelectorAll('.pdf-card');
@@ -825,78 +654,78 @@
                     }
                 });
             }
+        </script>
+    </div>
+</section>
+<!-- activites section -->
+<section id="activites">
+    <h5 class="custom-student-card">Activites</h5>
+    <div class="fill">
+        <div class="container-f">
+            <h2 class="h2">Available Activities</h2>
+            <label class="label" for="standardFilter">Filter by Standard:</label>
+            <select id="standardFilter" onchange="filterCards()">
+                <option value="all">All Standards</option>
+                <option value="1">Standard 1</option>
+                <option value="2">Standard 2</option>
+                <option value="3">Standard 3</option>
+                <option value="4">Standard 4</option>
+                <option value="5">Standard 5</option>
+                <option value="6">Standard 6</option>
+                <option value="7">Standard 7</option>
+                <option value="8">Standard 8</option>
+            </select>
+            cards.forEach(card => {
+            let cardStandard = card.getAttribute('data-standard');
+            if (standard === "all" || cardStandard === standard) {
+            card.style.display = "block";
+            } else {
+            card.style.display = "none";
+            }
+            });
+            }
             </script>
         </div>
-    </section>
-    <!-- activites section -->
-    <section id="activites">
-        <h5 class="custom-student-card">Activites</h5>
-        <div class="fill">
-            <div class="container-f">
-                <h2 class="h2">Available Activities</h2>
-                <label class="label" for="standardFilter">Filter by Standard:</label>
-                <select id="standardFilter" onchange="filterCards()">
-                    <option value="all">All Standards</option>
-                    <option value="1">Standard 1</option>
-                    <option value="2">Standard 2</option>
-                    <option value="3">Standard 3</option>
-                    <option value="4">Standard 4</option>
-                    <option value="5">Standard 5</option>
-                    <option value="6">Standard 6</option>
-                    <option value="7">Standard 7</option>
-                    <option value="8">Standard 8</option>
-                </select>
-                cards.forEach(card => {
-                let cardStandard = card.getAttribute('data-standard');
-                if (standard === "all" || cardStandard === standard) {
-                card.style.display = "block";
-                } else {
-                card.style.display = "none";
-                }
-                });
-                }
-                </script>
-            </div>
-    </section>
-    <!-- activites section -->
-    <section id="activites">
-        <h5 class="custom-student-card">Activites</h5>
-        <div class="fill">
-            <div class="container-f">
-                <h2 class="h2">Available Activities</h2>
-                <label class="label" for="standardFilter">Filter by Standard:</label>
-                <select id="standardFilter" onchange="filterCards()">
-                    <option value="all">All Standards</option>
-                    <option value="1">Standard 1</option>
-                    <option value="2">Standard 2</option>
-                    <option value="3">Standard 3</option>
-                    <option value="4">Standard 4</option>
-                    <option value="5">Standard 5</option>
-                    <option value="6">Standard 6</option>
-                    <option value="7">Standard 7</option>
-                    <option value="8">Standard 8</option>
-                </select>
+</section>
+<!-- activites section -->
+<section id="activites">
+    <h5 class="custom-student-card">Activites</h5>
+    <div class="fill">
+        <div class="container-f">
+            <h2 class="h2">Available Activities</h2>
+            <label class="label" for="standardFilter">Filter by Standard:</label>
+            <select id="standardFilter" onchange="filterCards()">
+                <option value="all">All Standards</option>
+                <option value="1">Standard 1</option>
+                <option value="2">Standard 2</option>
+                <option value="3">Standard 3</option>
+                <option value="4">Standard 4</option>
+                <option value="5">Standard 5</option>
+                <option value="6">Standard 6</option>
+                <option value="7">Standard 7</option>
+                <option value="8">Standard 8</option>
+            </select>
 
-                <div class="pdf-container">
-                    <?php
-                        $jsonFile = '../shared_activity/documents.json';
-                        if (file_exists($jsonFile)) {
-                            $data = json_decode(file_get_contents($jsonFile), true);
-                            foreach ($data as $doc) {
-                                echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
+            <div class="pdf-container">
+                <?php
+                $jsonFile = '../shared_activity/documents.json';
+                if (file_exists($jsonFile)) {
+                    $data = json_decode(file_get_contents($jsonFile), true);
+                    foreach ($data as $doc) {
+                        echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
                         <div class='pdf-title'>{$doc['title']}</div>
                         <div class='pdf-standard'>Standard: {$doc['standard']}</div>
                         <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
                     </div>";
-                            }
-                        } else {
-                            echo "<p>No Activities available</p>";
-                        }
-                        ?>
-                </div>
+                    }
+                } else {
+                    echo "<p>No Activities available</p>";
+                }
+                ?>
             </div>
+        </div>
 
-            <script>
+        <script>
             function filterCards() {
                 let standard = document.getElementById('standardFilter').value;
                 let cards = document.querySelectorAll('.pdf-card');
@@ -910,30 +739,30 @@
                     }
                 });
             }
-            </script>
-        </div>
-    </section>
-
+        </script>
     </div>
+</section>
 
-    <script src="js/app.js"></script>
-    <script>
+</div>
+
+<script src="js/app.js"></script>
+<script>
     // Auto open the PDF when the page loads
     window.onload = function() {
         // Replace 'your-pdf-file.pdf' with the path to your PDF file
         window.open('your-pdf-file.pdf', '_blank');
     }
-    </script>
-    <script src="js/app.js"></script>
-    <script>
+</script>
+<script src="js/app.js"></script>
+<script>
     // Auto open the PDF when the page loads
     window.onload = function() {
         // Replace 'your-pdf-file.pdf' with the path to your PDF file
         window.open('your-pdf-file.pdf', '_blank');
     }
-    </script>
+</script>
 
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
         var gradient = ctx.createLinearGradient(0, 0, 0, 225);
@@ -1004,8 +833,8 @@
             }
         });
     });
-    </script>
-    <script>
+</script>
+<script>
     function toggleSidebar() {
         const sidebar = document.getElementById("sidebar");
         if (sidebar.style.display === "none") {
@@ -1014,10 +843,10 @@
             sidebar.style.display = "none";
         }
     }
-    </script>
-    <!-- pass-fail graph ------------------------------------------------------------------------------>
+</script>
+<!-- pass-fail graph ------------------------------------------------------------------------------>
 
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         // Pie chart
         new Chart(document.getElementById("chartjs-dashboard-pie"), {
@@ -1044,8 +873,8 @@
             }
         });
     });
-    </script>
-    <script>
+</script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         // Bar chart
         new Chart(document.getElementById("chartjs-dashboard-bar"), {
@@ -1090,8 +919,8 @@
             }
         });
     });
-    </script>
-    <script>
+</script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         var markers = [{
                 coords: [31.230391, 121.473701],
@@ -1157,8 +986,8 @@
             map.updateSize();
         });
     });
-    </script>
-    <script>
+</script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
         var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
@@ -1169,8 +998,8 @@
             defaultDate: defaultDate
         });
     });
-    </script>
-    <script>
+</script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         var ctx = document.getElementById("chartjs-dashboard-line").getContext("2d");
         var gradient = ctx.createLinearGradient(0, 0, 0, 225);
@@ -1241,8 +1070,8 @@
             }
         });
     });
-    </script>
-    <script>
+</script>
+<script>
     function toggleSidebar() {
         const sidebar = document.getElementById("sidebar");
         if (sidebar.style.display === "none") {
@@ -1251,9 +1080,9 @@
             sidebar.style.display = "none";
         }
     }
-    </script>
+</script>
 
-    <script>
+<script>
     // Convert PHP variables to numbers
     var mathematics = parseFloat("<?php echo $mathematics; ?>") || 0;
     var gujarati = parseFloat("<?php echo $gujarati; ?>") || 0;
@@ -1272,9 +1101,9 @@
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("percentageTd").innerText = percentage + "%";
     })
-    </script>
+</script>
 
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         // Pie chart
         new Chart(document.getElementById("chartjs-dashboard-pie"), {
@@ -1300,9 +1129,9 @@
             }
         });
     });
-    </script>
+</script>
 
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         // Bar chart
         new Chart(document.getElementById("chartjs-dashboard-bar"), {
@@ -1345,9 +1174,9 @@
             }
         });
     });
-    </script>
+</script>
 
-    <script>
+<script>
     document.addEventListener("DOMContentLoaded", function() {
         var date = new Date(Date.now() - 5 * 24 * 60 * 60 * 1000);
         var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
@@ -1358,7 +1187,7 @@
             defaultDate: defaultDate
         });
     });
-    </script>
+</script>
 </body>
 
 </html>

@@ -1,21 +1,61 @@
+<?php
+$current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sidebar</title>
-    <style>
-    /* footer {
-        margin-bottom: 2.5rem;
-        margin-left: 2.5rem;
-    } */
-    .custom-margin{
-        margin-top: 15rem;
-        margin-left: 2.5rem;
-    }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
+    <meta name="author" content="AdminKit">
+    <meta name="keywords"
+        content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
+    <link href="css/app.css" rel="stylesheet">
+    <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>School Monitoring System</title>
 </head>
+<style>
+    .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+
+    }
+
+    /* Remove any bottom borders or underlines */
+    .sidebar-item,
+    .sidebar-link {
+        border: none !important;
+        box-shadow: none !important;
+        text-decoration: none !important;
+        border-bottom: none !important;
+    }
+
+    /* Remove underline from sidebar links */
+    .sidebar-link a {
+        text-decoration: none !important;
+        border-bottom: none !important;
+    }
+
+    /* Ensure pseudo-elements don't add underline */
+    .sidebar-item::after,
+    .sidebar-link::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    /* Remove any border from sidebar items */
+    .sidebar-item {
+        border-bottom: none !important;
+    }
+</style>
 
 <body>
     <div class="wrapper">
@@ -76,7 +116,7 @@
                                 class="align-middle">Announcement</span>
                         </a>
                     </li>
-                    
+
                     <footer class="custom-margin">
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="#" onclick="confirmLogout()">
@@ -90,7 +130,6 @@
         </nav>
     </div>
     <script src="js/app.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
@@ -106,7 +145,7 @@
                 cancelButtonText: "Cancel"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    window.location.href = 'logout.php'; // Redirect to logout script
+                    window.location.href = 'admin-logout.php'; // Redirect to logout script
                 }
             });
         }
