@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sidebar</title>
     <style>
-    footer {
+    /* footer {
         margin-bottom: 2.5rem;
+        margin-left: 2.5rem;
+    } */
+    .custom-margin{
+        margin-top: 15rem;
         margin-left: 2.5rem;
     }
     </style>
@@ -26,22 +30,9 @@
                         Pages
                     </li>
 
-
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#profile">
                             <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-                        </a>
-                    </li>
-
-
-
-
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="#progress">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Record
-                                and Progress</span>
                         </a>
                     </li>
 
@@ -71,29 +62,30 @@
                                 Application</span>
                         </a>
                     </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="#leave-history">
+                            <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Leave
+                                History</span>
+                        </a>
+                    </li>
+
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#announcement">
                             <i class="align-middle" data-feather="bar-chart-2"></i> <span
                                 class="align-middle">Announcement</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="#calender">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span
-                                class="align-middle">Calender</span>
-                        </a>
-                    </li>
-
-
+                    
+                    <footer class="custom-margin">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="#" onclick="confirmLogout()">
+                                <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
+                                <span class="align-middle">Sign Out</span>
+                            </a>
+                        </li>
+                    </footer>
                 </ul>
-                <footer>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="#" onclick="confirmLogout()">
-                            <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
-                            <span class="align-middle">Sign Out</span>
-                        </a>
-                    </li>
-                </footer>
             </div>
         </nav>
     </div>
