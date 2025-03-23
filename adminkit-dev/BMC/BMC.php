@@ -26,6 +26,33 @@
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 </head>
 
+<style>
+    
+    *{
+        
+    }
+    /* Increase space between sidebar items */
+    .sidebar-nav li {
+        margin-bottom: 10px;
+        font-size: 15px; /* Increase text size */
+        font-weight: bold; /* Make text bold */
+        /* Adjust the spacing */
+    }
+
+    /* Align Sign Out at the bottom */
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .sidebar-nav {
+        flex-grow: 1;
+        /* Pushes content up, moving the footer to the bottom */
+    }
+
+
+</style>
 
 <body>
     <div class="wrapper">

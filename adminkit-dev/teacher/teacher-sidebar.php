@@ -5,11 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sidebar</title>
-    <style>
-        footer {
-            margin-bottom: 2.5rem;
-            margin-left: 2.5rem;
-        }
+    <style style=>
+    footer {
+        margin-bottom: 1.5rem;
+        /* margin-left: 2.5rem; */
+    }
+
+    /* Increase space between sidebar items */
+    .sidebar-nav li {
+        margin-bottom: 15px;
+        font-size: 15px; /* Increase text size */
+        font-weight: bold; /* Make text bold */
+        /* Adjust the spacing */
+    }
+
+    /* Align Sign Out at the bottom */
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .sidebar-nav {
+        flex-grow: 1;
+        /* Pushes content up, moving the footer to the bottom */
+    }
+
+    .footer {
+        margin-top: auto;
+        padding: 15px;
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 90%;
+        padding-left: 15px;
+    }
     </style>
 </head>
 
@@ -77,21 +107,18 @@
                                 class="align-middle">Announcement</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="#calender">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span
-                                class="align-middle">Calender</span>
-                        </a>
-                    </li>
-                    <footer class="footer mt-5" style="background-color: transparent; border-top:0; margin-left: 20px;">
+
+                    <footer class="footer mt-auto"
+                        style="background-color: transparent; border-top: 0; padding: 10px; position: absolute; bottom: 5px; width: 100%; margin-left: 0.01rem; ">
                         <li
                             class="signout-btn sidebar-item <?= ($current_page == 'admin-log-out.php') ? 'active' : '' ?>">
                             <a class="sidebar-link" href="#" onclick="confirmLogout()">
-                                <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
+                                <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"></i>
                                 <span class="align-middle">Sign Out</span>
                             </a>
                         </li>
                     </footer>
+
 
                 </ul>
 
@@ -103,22 +130,22 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        function confirmLogout() {
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You will be logged out!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Yes, Sign Out",
-                cancelButtonText: "Cancel"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = 'logout.php'; // Redirect to logout script
-                }
-            });
-        }
+    function confirmLogout() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You will be logged out!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, Sign Out",
+            cancelButtonText: "Cancel"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'logout.php'; // Redirect to logout script
+            }
+        });
+    }
     </script>
 </body>
 

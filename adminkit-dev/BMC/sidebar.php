@@ -29,40 +29,39 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 
 </head>
 <style>
-    /* Make the sidebar fixed */
-    #sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px;
-        /* Adjust as per your design */
-        height: 100vh;
-        /* Full height */
-        background: #2C3E50;
-        /* Sidebar background */
-        color: white;
-        overflow-y: auto;
-        /* Allow scrolling inside sidebar */
-        box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-    }
+.sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
 
-    /* Ensure sidebar content takes full height */
-    .sidebar-content {
-        height: 100%;
-        overflow-y: auto;
-    }
+}
 
-    /* Adjust main content so it doesn't go under the sidebar */
-    .wrapper {
-        display: flex;
-    }
+/* Remove any bottom borders or underlines */
+.sidebar-item,
+.sidebar-link {
+    border: none !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
 
-    #main-content {
-        margin-left: 250px;
-        /* Same as sidebar width */
-        padding: 20px;
-        width: calc(100% - 250px);
-    }
+/* Remove underline from sidebar links */
+.sidebar-link a {
+    text-decoration: none !important;
+    border-bottom: none !important;
+}
+
+/* Ensure pseudo-elements don't add underline */
+.sidebar-item::after,
+.sidebar-link::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* Remove any border from sidebar items */
+.sidebar-item {
+    border-bottom: none !important;
+}
 </style>
 
 <body>
@@ -175,22 +174,22 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
-        function confirmLogout() {
-            Swal.fire({
-                title: "Are you sure?",
-                text: "You will be logged out!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#d33",
-                cancelButtonColor: "#3085d6",
-                confirmButtonText: "Yes, Sign Out",
-                cancelButtonText: "Cancel"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = 'logout.php'; // Redirect to logout script
-                }
-            });
-        }
+    function confirmLogout() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You will be logged out!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Yes, Sign Out",
+            cancelButtonText: "Cancel"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'logout.php'; // Redirect to logout script
+            }
+        });
+    }
     </script>
 
 </body>
