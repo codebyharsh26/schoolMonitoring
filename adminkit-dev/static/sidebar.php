@@ -26,6 +26,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     position: sticky;
     top: 0;
     height: 100vh;
+
 }
 
 /* Remove any bottom borders or underlines */
