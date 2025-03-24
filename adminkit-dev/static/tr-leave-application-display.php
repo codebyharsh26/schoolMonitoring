@@ -72,7 +72,7 @@ $result = $conn->query($query);
    <?php
     include_once "connection.php"; // Ensure correct path
 
-    $query = "SELECT * FROM teacher_leave_application";
+    $query = "SELECT * FROM teacher_leave_application order by id DESC";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {

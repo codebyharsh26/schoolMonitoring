@@ -23,11 +23,11 @@
 
 
 <body>
-    <main role="main" style="margin-top: 3rem;">
+    <main role="main" class="content p-4">
         <div class="container">
             <div class="container">
-                <h1 class="h3 mb-4"><strong>Principal</strong> Details</h1>
-
+                <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
+                        style="font-weight:normal">Principals</strong> List</h1>
                 <!-- Filter Section -->
                 <div class="row mb-4">
                     <div class="col-md-6">
@@ -156,51 +156,51 @@
                     ?>
                 </div>
             </div>
+            <!-- Pagination with filter preservation -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    <?php
+                    // Build the query string for pagination links
+                    $query_string = "";
+                    if (isset($_GET['school_filter'])) {
+                        $query_string = "school_filter=" . urlencode($_GET['school_filter']) . "&";
+                    }
+
+                    if ($page > 1):
+                    ?>
+                        <li class="page-item"><a class="page-link"
+                                href="?<?php echo $query_string; ?>page=<?php echo $page - 1; ?>">Previous</a></li>
+                    <?php endif; ?>
+
+                    <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                        <li class="page-item <?php if ($i == $page)
+                                                    echo 'active'; ?>">
+                            <a class="page-link"
+                                href="?<?php echo $query_string; ?>page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        </li>
+                    <?php endfor; ?>
+
+                    <?php if ($page < $total_pages): ?>
+                        <li class="page-item"><a class="page-link"
+                                href="?<?php echo $query_string; ?>page=<?php echo $page + 1; ?>">Next</a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
         </div>
-        <!-- Pagination with filter preservation -->
-        <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-center">
-                <?php
-                // Build the query string for pagination links
-                $query_string = "";
-                if (isset($_GET['school_filter'])) {
-                    $query_string = "school_filter=" . urlencode($_GET['school_filter']) . "&";
-                }
-
-                if ($page > 1):
-                ?>
-                    <li class="page-item"><a class="page-link"
-                            href="?<?php echo $query_string; ?>page=<?php echo $page - 1; ?>">Previous</a></li>
-                <?php endif; ?>
-
-                <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-                    <li class="page-item <?php if ($i == $page)
-                                                echo 'active'; ?>">
-                        <a class="page-link"
-                            href="?<?php echo $query_string; ?>page=<?php echo $i; ?>"><?php echo $i; ?></a>
-                    </li>
-                <?php endfor; ?>
-
-                <?php if ($page < $total_pages): ?>
-                    <li class="page-item"><a class="page-link"
-                            href="?<?php echo $query_string; ?>page=<?php echo $page + 1; ?>">Next</a></li>
-                <?php endif; ?>
-            </ul>
-        </nav>
-
-        <script>
-            // Set the selected school in the dropdown when page loads
-            document.addEventListener('DOMContentLoaded', function() {
-                <?php if (isset($_GET['school_filter'])): ?>
-                    document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
-                <?php endif; ?>
-            });
-        </script>
-
-
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
     </main>
+
+    <script>
+        // Set the selected school in the dropdown when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            <?php if (isset($_GET['school_filter'])): ?>
+                document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
+            <?php endif; ?>
+        });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

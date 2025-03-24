@@ -16,11 +16,11 @@
 </head>
 
 <body>
-    <main role="main">
+    <main role="main" class="content p4">
         <div class="container">
-            <div class="container bg-light">
-                <h1 class="h3 mb-4"><strong>Students</strong> Details</h1>
-
+            <div class="container">
+                <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
+                        style="font-weight:normal">Students</strong> List</h1>
                 <!-- Filter Section -->
                 <div class="row mb-4">
                     <div class="col-md-6">
@@ -98,36 +98,37 @@
                         </form>
                     </div>
                 </div>
+            </div>
 
 
-                <div class="row">
-                    <?php
-                    include_once 'connection.php';
+            <div class="row">
+                <?php
+                include_once 'connection.php';
 
-                    $limit = 20; // Number of records per page
-                    $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
-                    $offset = ($page - 1) * $limit; // Offset for pagination
+                $limit = 20; // Number of records per page
+                $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
+                $offset = ($page - 1) * $limit; // Offset for pagination
 
-                    // Handle school filter
-                    $filter_condition = "";
-                    if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all') {
-                        $school_filter = mysqli_real_escape_string($conn, $_GET['school_filter']);
-                        $filter_condition = "WHERE school_number = '$school_filter'";
-                    }
+                // Handle school filter
+                $filter_condition = "";
+                if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all') {
+                    $school_filter = mysqli_real_escape_string($conn, $_GET['school_filter']);
+                    $filter_condition = "WHERE school_number = '$school_filter'";
+                }
 
-                    // Count total records with filter applied
-                    $total_query = "SELECT COUNT(*) FROM student_1 $filter_condition";
-                    $total_result = mysqli_query($conn, $total_query);
-                    $total_rows = mysqli_fetch_array($total_result)[0];
-                    $total_pages = ceil($total_rows / $limit); // Total pages
+                // Count total records with filter applied
+                $total_query = "SELECT COUNT(*) FROM student_1 $filter_condition";
+                $total_result = mysqli_query($conn, $total_query);
+                $total_rows = mysqli_fetch_array($total_result)[0];
+                $total_pages = ceil($total_rows / $limit); // Total pages
 
-                    // Fetch records for the current page with filter applied
-                    $select = "SELECT * FROM student_1 $filter_condition LIMIT $limit OFFSET $offset";
-                    $result = mysqli_query($conn, $select);
+                // Fetch records for the current page with filter applied
+                $select = "SELECT * FROM student_1 $filter_condition LIMIT $limit OFFSET $offset";
+                $result = mysqli_query($conn, $select);
 
-                    if ($result && mysqli_num_rows($result) > 0) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<div class="col-md-4">
+                if ($result && mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="col-md-4">
                                         <div class="card mb-4 shadow-sm">
                                             <img src="' . $row['student_image'] . '" alt="Student Image" class="card-img-top" style="height: 200px; object-fit: cover;">
                                             <div class="card-body">
@@ -140,14 +141,13 @@
                                             </div>
                                         </div>
                                     </div>';
-                        }
-                    } else {
-                        echo '<div class="col-12 text-center p-5">
+                    }
+                } else {
+                    echo '<div class="col-12 text-center p-5">
                                 <div class="alert alert-info">No students found matching your criteria.</div>
                               </div>';
-                    }
-                    ?>
-                </div>
+                }
+                ?>
             </div>
             <!-- Pagination with filter preservation -->
             <nav aria-label="Page navigation">
@@ -179,20 +179,21 @@
                     <?php endif; ?>
                 </ul>
             </nav>
-
-            <script>
-            // Set the selected school in the dropdown when page loads
-            document.addEventListener('DOMContentLoaded', function() {
-                <?php if (isset($_GET['school_filter'])): ?>
-                document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
-                <?php endif; ?>
-            });
-            </script>
-
-            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
         </div>
     </main>
+
+    <script>
+    // Set the selected school in the dropdown when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        <?php if (isset($_GET['school_filter'])): ?>
+        document.getElementById('schoolFilter').value = '<?php echo $_GET['school_filter']; ?>';
+        <?php endif; ?>
+    });
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    </div>
 </body>
 
 </html>

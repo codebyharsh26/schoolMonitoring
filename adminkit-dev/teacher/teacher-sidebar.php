@@ -1,3 +1,7 @@
+<?php
+$current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -97,6 +101,14 @@ font-size:19.4px;
                                 Application</span>
                         </a>
                     </li>
+
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="#leave-history">
+                            <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Leave
+                                History</span>
+                        </a>
+                    </li>
+
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#announcement">
                             <i class="align-middle" data-feather="bar-chart-2"></i> <span
@@ -118,7 +130,6 @@ font-size:19.4px;
         </nav>
     </div>
     <script src="js/app.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>

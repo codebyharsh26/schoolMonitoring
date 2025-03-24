@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <?php
-	include_once "connection.php";
-	?>
+    include_once "connection.php";
+    ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,21 +22,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-
-
 <body>
-    <div class="wrapper">
+    <div class="wrapper p-0 m-0">
         <div class="sidebar">
             <?php
-			include_once("sidebar.php");
-			?>
+            include_once("sidebar.php");
+            ?>
         </div>
         <div class="main">
             <?php
-			include_once("navbar.php");
-			?>
-            <main class="content p-4">
+            include_once("navbar.php");
+            ?>
+            <main role="main" class="content p-4">
                 <div class="container-fluid p-0">
+                    <h1 class="h3 mb-3"><strong class="h1">Analytics</strong> Dashboard</h1>
                     <h1 class="h3 mb-3"><strong class="h1">Analytics</strong> Dashboard</h1>
                     <div class="row">
                         <div class="col-xl-12 d-flex">
@@ -249,9 +248,13 @@
                     label: "Admissions Growth", // Label for the dataset
                     backgroundColor: window.theme
                         .primary, // Bar color, adjust to theme color if necessary
+                        .primary, // Bar color, adjust to theme color if necessary
                     borderColor: window.theme.primary, // Border color of the bars
                     hoverBackgroundColor: window.theme.primary, // Hover color for the bars
                     hoverBorderColor: window.theme.primary, // Hover border color
+                    data: [9, 33, 57, 69,
+                        80
+                    ], // Admissions data showing the growth from 2020 to 2024
                     data: [9, 33, 57, 69,
                         80
                     ], // Admissions data showing the growth from 2020 to 2024
@@ -287,6 +290,16 @@
 
 
     <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
+        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+        document.getElementById("datetimepicker-dashboard").flatpickr({
+            inline: true,
+            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
+            nextArrow: "<span title=\"Next month\">&raquo;</span>",
+            defaultDate: defaultDate
+        });
+    });
     document.addEventListener("DOMContentLoaded", function() {
         var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
         var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();

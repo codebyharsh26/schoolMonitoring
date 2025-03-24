@@ -7,13 +7,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="AdminKit">
-	<meta name="keywords" content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
+	<meta name="keywords"
+		content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 	<link rel="canonical" href="https://demo-basic.adminkit.io/charts-chartjs.html" />
 
-	<title>Student report</title>
+	<title>School report</title>
 
 	<!-- Custom Style -->
 	<link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
@@ -38,50 +39,11 @@
 			padding: 0;
 		}
 
-		.wrapper {
-			margin: 0;
-			padding: 0;
-		}
-
-		.sidebar {
-			margin: 0;
-			padding: 0;
-		}
-
-		.main {
-			margin: 0;
-			padding: 0;
-		}
-
-		.footer {
-			margin: 0;
-			padding: 0;
-		}
-
-		.container-fluid {
-			margin: 0;
-			padding: 0;
-		}
-
-		.text-muted {
-			margin: 0;
-			padding: 0;
-		}
-
-		.text-start, .text-end {
-			margin: 0;
-			padding: 0;
-		}
-
-		/* Navbar adjustments */
-		.navbar {
-			padding: 0 !important;
-		}
-
 		/* Button adjustments */
 		.btn {
 			margin: 0;
-			padding: 0.25rem 0.5rem; /* Adjust this padding as needed */
+			padding: 0.25rem 0.5rem;
+			/* Adjust this padding as needed */
 		}
 
 		/* Chart container adjustments */
@@ -90,8 +52,10 @@
 		}
 
 		/* Table adjustments */
-		.table th, .table td {
-			padding: 0.5rem; /* Adjust padding as needed */
+		.table th,
+		.table td {
+			padding: 0.5rem;
+			/* Adjust padding as needed */
 		}
 
 		/* Modal Dialog adjustments */
@@ -99,16 +63,6 @@
 			margin: 0;
 			padding: 0;
 		}
-		.sidebar-nav li {
-        font-size: 12px;
-        font-weight: 500;
-    }
-	.align-middle{
-        font-size:14px;
-    }
-	.align-middle-cstm{
-        font-size:19.4px;
-    }
 	</style>
 </head>
 
@@ -125,7 +79,7 @@
 			?>
 
 			<?php
-			include_once("student-list-display.php");
+			include_once("school-list-display.php");
 			?>
 
 			<footer class="footer">
@@ -136,7 +90,7 @@
 						</div>
 						<div class="col-6 text-end">
 							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>schoolAdmin</strong></a>
+								<strong>schoolAdmin</strong>
 							</p>
 						</div>
 					</div>
@@ -166,239 +120,6 @@
 			});
 		});
 	</script>
-
-	<!-- <script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Line chart
-			new Chart(document.getElementById("chartjs-line"), {
-				type: "line",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "Sales ($)",
-						fill: true,
-						backgroundColor: "transparent",
-						borderColor: window.theme.primary,
-						data: [2115, 1562, 1584, 1892, 1487, 2223, 2966, 2448, 2905, 3838, 2917, 3327]
-					}, {
-						label: "Orders",
-						fill: true,
-						backgroundColor: "transparent",
-						borderColor: "#adb5bd",
-						borderDash: [4, 4],
-						data: [958, 724, 629, 883, 915, 1214, 1476, 1212, 1554, 2128, 1466, 1827]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					tooltips: {
-						intersect: false
-					},
-					hover: {
-						intersect: true
-					},
-					plugins: {
-						filler: {
-							propagate: false
-						}
-					},
-					scales: {
-						xAxes: [{
-							reverse: true,
-							gridLines: {
-								color: "rgba(0,0,0,0.05)"
-							}
-						}],
-						yAxes: [{
-							ticks: {
-								stepSize: 500
-							},
-							display: true,
-							borderDash: [5, 5],
-							gridLines: {
-								color: "rgba(0,0,0,0)",
-								fontColor: "#fff"
-							}
-						}]
-					}
-				}
-			});
-		});
-	</script> -->
-
-	<!-- <script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Bar chart
-			new Chart(document.getElementById("chartjs-bar"), {
-				type: "bar",
-				data: {
-					labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-					datasets: [{
-						label: "Last year",
-						backgroundColor: window.theme.primary,
-						borderColor: window.theme.primary,
-						hoverBackgroundColor: window.theme.primary,
-						hoverBorderColor: window.theme.primary,
-						data: [54, 67, 41, 55, 62, 45, 55, 73, 60, 76, 48, 79],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}, {
-						label: "This year",
-						backgroundColor: "#dee2e6",
-						borderColor: "#dee2e6",
-						hoverBackgroundColor: "#dee2e6",
-						hoverBorderColor: "#dee2e6",
-						data: [69, 66, 24, 48, 52, 51, 44, 53, 62, 79, 51, 68],
-						barPercentage: .75,
-						categoryPercentage: .5
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					},
-					scales: {
-						yAxes: [{
-							gridLines: {
-								display: false
-							},
-							stacked: false,
-							ticks: {
-								stepSize: 20
-							}
-						}],
-						xAxes: [{
-							stacked: false,
-							gridLines: {
-								color: "transparent"
-							}
-						}]
-					}
-				}
-			});
-		});
-	</script> -->
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Doughnut chart
-			new Chart(document.getElementById("chartjs-doughnut"), {
-				type: "doughnut",
-				data: {
-					labels: ["Social", "Search Engines", "Direct", "Other"],
-					datasets: [{
-						data: [260, 125, 54, 146],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.success,
-							window.theme.warning,
-							"#dee2e6"
-						],
-						borderColor: "transparent"
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					cutoutPercentage: 65,
-					legend: {
-						display: false
-					}
-				}
-			});
-		});
-	</script>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Pie chart
-			new Chart(document.getElementById("chartjs-pie"), {
-				type: "pie",
-				data: {
-					labels: ["Social", "Search Engines", "Direct", "Other"],
-					datasets: [{
-						data: [260, 125, 54, 146],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.warning,
-							window.theme.danger,
-							"#dee2e6"
-						],
-						borderColor: "transparent"
-					}]
-				},
-				options: {
-					maintainAspectRatio: false,
-					legend: {
-						display: false
-					}
-				}
-			});
-		});
-	</script>
-
-	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Radar chart
-			new Chart(document.getElementById("chartjs-radar"), {
-				type: "radar",
-				data: {
-					labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
-					datasets: [{
-						label: "Model X",
-						backgroundColor: "rgba(0, 123, 255, 0.2)",
-						borderColor: window.theme.primary,
-						pointBackgroundColor: window.theme.primary,
-						pointBorderColor: "#fff",
-						pointHoverBackgroundColor: "#fff",
-						pointHoverBorderColor: window.theme.primary,
-						data: [70, 53, 82, 60, 33]
-					}, {
-						label: "Model S",
-						backgroundColor: "rgba(220, 53, 69, 0.2)",
-						borderColor: window.theme.danger,
-						pointBackgroundColor: window.theme.danger,
-						pointBorderColor: "#fff",
-						pointHoverBackgroundColor: "#fff",
-						pointHoverBorderColor: window.theme.danger,
-						data: [35, 38, 65, 85, 84]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false
-				}
-			});
-		});
-	</script>
-
-	<!-- <script>
-		document.addEventListener("DOMContentLoaded", function() {
-			// Polar Area chart
-			new Chart(document.getElementById("chartjs-polar-area"), {
-				type: "polarArea",
-				data: {
-					labels: ["Speed", "Reliability", "Comfort", "Safety", "Efficiency"],
-					datasets: [{
-						label: "Model S",
-						data: [35, 38, 65, 70, 24],
-						backgroundColor: [
-							window.theme.primary,
-							window.theme.success,
-							window.theme.danger,
-							window.theme.warning,
-							window.theme.info
-						]
-					}]
-				},
-				options: {
-					maintainAspectRatio: false
-				}
-			});
-		});
-	</script> -->
 </body>
 
 </html>
