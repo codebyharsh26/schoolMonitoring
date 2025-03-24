@@ -5,10 +5,7 @@
 
 
     <?php
-    include_once "connection.php";
-    include_once "student-navbar.php";
-    
-
+        include_once "connection.php";
     ?>
 
     <meta charset="utf-8">
@@ -251,14 +248,20 @@
     }
 
     .card-custom-text {
-        margin: 15px;
+        /* margin: 15px; */
         letter-spacing: 2px;
     }
     </style>
 </head>
 
 <body>
+    <div class="wraper p-0 m-0">
     <div class="main">
+        <div class="sidebar">
+                    <?php
+                    include_once("student-sidebar.php");
+                    ?>
+                </div>
         <nav class="navbar navbar-expand navbar-light navbar-bg">
             <div class="navbar-collapse collapse">
                 <ul class="navbar-nav navbar-align">
@@ -846,6 +849,7 @@
                     <option value="7">Standard 7</option>
                     <option value="8">Standard 8</option>
                 </select>
+                <script>
                 cards.forEach(card => {
                 let cardStandard = card.getAttribute('data-standard');
                 if (standard === "all" || cardStandard === standard) {
@@ -854,7 +858,6 @@
                 card.style.display = "none";
                 }
                 });
-                }
                 </script>
             </div>
     </section>
@@ -914,6 +917,7 @@
         </div>
     </section>
 
+    </div>
     </div>
 
     <script src="js/app.js"></script>

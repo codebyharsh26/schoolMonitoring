@@ -22,11 +22,7 @@
         }
     </style>
 </head>
-<div class="sidebar">
-    <?php
-    include_once("sidebar.php");
-    ?>
-</div>
+
 
 <body>
     <main role="main" class="content p-4">

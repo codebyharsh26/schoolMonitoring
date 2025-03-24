@@ -104,6 +104,10 @@
             margin: 0;
             padding: 0;
         }
+        .sidebar-nav li {
+        font-size: 12px;
+        font-weight: 500;
+    }
     </style>
 </head>
 

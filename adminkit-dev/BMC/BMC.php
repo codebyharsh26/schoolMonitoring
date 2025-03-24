@@ -32,12 +32,7 @@
         
     }
     /* Increase space between sidebar items */
-    .sidebar-nav li {
-        margin-bottom: 10px;
-        font-size: 15px; /* Increase text size */
-        font-weight: bold; /* Make text bold */
-        /* Adjust the spacing */
-    }
+    
 
     /* Align Sign Out at the bottom */
     .sidebar-content {
@@ -190,13 +185,9 @@
                 <div class="container-fluid">
                     <div class="row text-muted">
                         <div class="col-6 text-start">
-
                         </div>
                         <div class="col-6 text-end">
-                            <p class="mb-0">
-                                <a class="text-muted" href="https://adminkit.io/"
-                                    target="_blank"><strong>schoolAdmin</strong></a>
-                            </p>
+                            <p class="mb-0"><strong>schoolAdmin</strong></p>
                         </div>
                     </div>
                 </div>

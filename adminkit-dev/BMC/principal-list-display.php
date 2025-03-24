@@ -12,13 +12,15 @@
         .card {
             min-height: 16.5rem;
         }
+        .align-middle{
+        font-size:14px;
+    }
+    .align-middle-cstm{
+        font-size:19.4px;
+    }
     </style>
 </head>
-<div class="sidebar">
-    <?php
-    include_once("sidebar.php");
-    ?>
-</div>
+
 
 <body>
     <main role="main" style="margin-top: 3rem;">

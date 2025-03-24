@@ -99,6 +99,16 @@
 			margin: 0;
 			padding: 0;
 		}
+		.sidebar-nav li {
+        font-size: 12px;
+        font-weight: 500;
+    }
+	.align-middle{
+        font-size:14px;
+    }
+	.align-middle-cstm{
+        font-size:19.4px;
+    }
 	</style>
 </head>
 
@@ -157,7 +167,7 @@
 		});
 	</script>
 
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", function() {
 			// Line chart
 			new Chart(document.getElementById("chartjs-line"), {
@@ -217,9 +227,9 @@
 				}
 			});
 		});
-	</script>
+	</script> -->
 
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", function() {
 			// Bar chart
 			new Chart(document.getElementById("chartjs-bar"), {
@@ -271,7 +281,7 @@
 				}
 			});
 		});
-	</script>
+	</script> -->
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
@@ -364,7 +374,7 @@
 		});
 	</script>
 
-	<script>
+	<!-- <script>
 		document.addEventListener("DOMContentLoaded", function() {
 			// Polar Area chart
 			new Chart(document.getElementById("chartjs-polar-area"), {
@@ -388,7 +398,7 @@
 				}
 			});
 		});
-	</script>
+	</script> -->
 </body>
 
 </html>

@@ -40,6 +40,13 @@
         width: 90%;
         padding-left: 15px;
     }
+    .align-middle{
+        font-size:14px;
+        margin:
+    }
+    .align-middle-cstm{
+font-size:19.4px;
+    }
     </style>
 </head>
 
@@ -48,47 +55,36 @@
         <nav id="sidebar" class="sidebar js-sidebar">
             <div class="sidebar-content js-simplebar">
                 <a class="sidebar-brand" href="teacher-index.php">
-                    <span class="align-middle">TeacherPortal</span>
+                    <span class="align-middle-cstm">TeacherPortal</span>
                 </a>
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">
                         Pages
                     </li>
-
-
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#profile">
                             <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
                         </a>
                     </li>
-
-
-
-
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#progress">
                             <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Record
                                 and Progress</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#timetable">
                             <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Time
                                 Table</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#notes">
                             <i class="align-middle" data-feather="square"></i> <span class="align-middle">Uploads
                                 Notes</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#marks">
                             <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Marks
@@ -108,20 +104,16 @@
                         </a>
                     </li>
 
-                    <footer class="footer mt-auto"
-                        style="background-color: transparent; border-top: 0; padding: 10px; position: absolute; bottom: 5px; width: 100%; margin-left: 0.01rem; ">
+                    <footer class="footer mt-5" style="background-color: transparent; border-top:0; margin-left: 20px;">
                         <li
                             class="signout-btn sidebar-item <?= ($current_page == 'admin-log-out.php') ? 'active' : '' ?>">
                             <a class="sidebar-link" href="#" onclick="confirmLogout()">
-                                <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"></i>
+                                <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
                                 <span class="align-middle">Sign Out</span>
                             </a>
                         </li>
                     </footer>
-
-
                 </ul>
-
             </div>
         </nav>
     </div>

@@ -24,32 +24,55 @@
     <title>Bhavnagar School Enrollment Form</title>
     <!-- <link rel="stylesheet" href="adminkit-dev/BMC/css/schEnroll-style.css"> -->
     <style>
-        /* Global Styles */
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+    /* Global Styles */
+    * {
+        padding: 0;
+        margin: 0;
+        /* box-sizing: border-box; */
+    }
 
-        body {
-            background: #f8f9fa;
-        }
+    body {
+        background: #f8f9fa;
+    }
 
-        .card {
-            max-width: 800px;
-            margin: auto;
-        }
+    .card {
+        max-width: 800px;
+        margin: auto;
+    }
 
-        textarea {
-            height: 80px;
-        }
+    textarea {
+        height: 80px;
+    }
 
-        .custom-card {
-            padding: 2rem;
-            width: 100%;
-            background-color: white;
-            border-radius: 10px;
-        }
+    .custom-card {
+        padding: 1rem;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+    }
+
+    .sidebar-nav li {
+        font-size: 12px;
+        font-weight: 500;
+    }
+
+    /* Align Sign Out at the bottom */
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .sidebar-nav {
+        flex-grow: 1;
+        /* Pushes content up, moving the footer to the bottom */
+    }
+    .align-middle{
+        font-size:14px;
+    }
+    .align-middle-cstm{
+        font-size:19.4px;
+    }
     </style>
 </head>
 
@@ -112,53 +135,63 @@
                             </div>
                         </div>
                     </main>
-
+                    <footer class="footer">
+                            <div class="container-fluid">
+                                <div class="row text-muted">
+                                    <div class="col-6 text-start">
+                                    </div>
+                                    <div class="col-6 text-end">
+                                        <p class="mb-0"><strong>schoolAdmin</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </footer>
                 </div>
             </form>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
         <script>
-            // Toggle password visibility
-            // function togglePassword() {
-            // 	let pass = document.getElementById("password");
-            // 	pass.type = (pass.type === "password") ? "text" : "password";
-            // }
+        // Toggle password visibility
+        // function togglePassword() {
+        // 	let pass = document.getElementById("password");
+        // 	pass.type = (pass.type === "password") ? "text" : "password";
+        // }
 
-            // function toggleConfirmPassword() {
-            // 	let pass = document.getElementById("confirm_password");
-            // 	pass.type = (pass.type === "password") ? "text" : "password";
-            // }
+        // function toggleConfirmPassword() {
+        // 	let pass = document.getElementById("confirm_password");
+        // 	pass.type = (pass.type === "password") ? "text" : "password";
+        // }
 
 
-            // Form Validation
-            document.getElementById('enrollmentForm').addEventListener('submit', function(event) {
-                let pincode = document.getElementById('pincode').value;
-                let contact1 = document.getElementById('contact1').value;
-                let contact2 = document.getElementById('contact2').value;
-                let password = document.getElementById('password').value;
-                let confirmPassword = document.getElementById('confirm_password').value;
+        // Form Validation
+        document.getElementById('enrollmentForm').addEventListener('submit', function(event) {
+            let pincode = document.getElementById('pincode').value;
+            let contact1 = document.getElementById('contact1').value;
+            let contact2 = document.getElementById('contact2').value;
+            let password = document.getElementById('password').value;
+            let confirmPassword = document.getElementById('confirm_password').value;
 
-                if (pincode.length !== 6 || isNaN(pincode)) {
-                    alert("Enter a valid 6-digit Pincode.");
-                    event.preventDefault();
-                }
+            if (pincode.length !== 6 || isNaN(pincode)) {
+                alert("Enter a valid 6-digit Pincode.");
+                event.preventDefault();
+            }
 
-                if (!contact1.match(/^[6789]\d{9}$/)) {
-                    alert("Enter a valid 10-digit Primary Contact Number.");
-                    event.preventDefault();
-                }
+            if (!contact1.match(/^[6789]\d{9}$/)) {
+                alert("Enter a valid 10-digit Primary Contact Number.");
+                event.preventDefault();
+            }
 
-                if (contact2 !== "" && !contact2.match(/^[6789]\d{9}$/)) {
-                    alert("Enter a valid 10-digit Secondary Contact Number.");
-                    event.preventDefault();
-                }
+            if (contact2 !== "" && !contact2.match(/^[6789]\d{9}$/)) {
+                alert("Enter a valid 10-digit Secondary Contact Number.");
+                event.preventDefault();
+            }
 
-                if (password !== confirmPassword) {
-                    alert("Passwords do not match!");
-                    event.preventDefault();
-                }
-            });
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                event.preventDefault();
+            }
+        });
         </script>
 
 </body>
