@@ -70,20 +70,20 @@ $teacher_history = $_SESSION["teacher_history"];
         margin: 25px;
     }
 
-    .cus {
-        /* margin: 25px; 	 */
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
+        .cus {
+            /* margin: 25px; 	 */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
 
-    .cus1 {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        width: 100%;
-    }
+        .cus1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+        }
 
     .col-9 {
         width: 100%;
@@ -91,25 +91,25 @@ $teacher_history = $_SESSION["teacher_history"];
 
     }
 
-    img .img {
-        height: 50%;
-    }
+        img .img {
+            height: 50%;
+        }
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background-color: #f4f8ff;
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f8ff;
 
-    }
+        }
 
-    .container {
-        max-width: 1000px;
-        margin: 0 auto;
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
 
     /* upload pdf css */
     .container-f {
@@ -121,12 +121,12 @@ $teacher_history = $_SESSION["teacher_history"];
         box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     }
 
-    input,
-    textarea {
-        width: 100%;
-        padding: 10px;
-        margin: 10px 0;
-    }
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
 
     .label {
         font-weight: semi-bold;
@@ -134,13 +134,13 @@ $teacher_history = $_SESSION["teacher_history"];
         margin-bottom: 5px;
     }
 
-    select {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
 
     .pdf-container {
         display: flex;
@@ -158,112 +158,112 @@ $teacher_history = $_SESSION["teacher_history"];
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .pdf-title {
-        font-size: 18px;
-        font-weight: bold;
-    }
+        .pdf-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
 
-    .pdf-standard {
-        font-size: 14px;
-        margin-top: 5px;
-    }
+        .pdf-standard {
+            font-size: 14px;
+            margin-top: 5px;
+        }
 
-    .pdf-link {
-        display: inline-block;
-        margin-top: 10px;
-        background: white;
-        color: #222e3c;
-        padding: 8px 15px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: bold;
-    }
+        .pdf-link {
+            display: inline-block;
+            margin-top: 10px;
+            background: white;
+            color: #222e3c;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-    .pdf-link:hover {
-        background: #222e3c;
-        opacity: 0.85;
-        outline: 2px solid white;
-        text-decoration: none;
-        color: white;
-    }
+        .pdf-link:hover {
+            background: #222e3c;
+            opacity: 0.85;
+            outline: 2px solid white;
+            text-decoration: none;
+            color: white;
+        }
 
-    .pdf {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background: #f1f1f1;
-    }
+        .pdf {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #f1f1f1;
+        }
 
-    .upload {
-        background: white;
-        margin-top: 10px;
-        margin-left: 2px;
-        margin-bottom: 3 px;
-        color: #222e3c;
-        outline: 2px solid #222e3c;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        font-weight: bold;
-        text-decoration: none;
-    }
+        .upload {
+            background: white;
+            margin-top: 10px;
+            margin-left: 2px;
+            margin-bottom: 3 px;
+            color: #222e3c;
+            outline: 2px solid #222e3c;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+        }
 
-    .upload:hover {
-        background: #222e3c;
-        text-decoration: none;
-        color: white;
-    }
+        .upload:hover {
+            background: #222e3c;
+            text-decoration: none;
+            color: white;
+        }
 
-    .h2 {
-        color: #222e3c;
-    }
+        .h2 {
+            color: #222e3c;
+        }
 
-    /* over upload pdf */
+        /* over upload pdf */
 
-    h1 {
-        color: #333;
-    }
+        h1 {
+            color: #333;
+        }
 
-    .options {
-        margin-bottom: 20px;
-    }
+        .options {
+            margin-bottom: 20px;
+        }
 
-    button {
-        padding: 8px 16px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        margin-right: 10px;
-    }
+        button {
+            padding: 8px 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
 
-    button:hover {
-        background-color: #45a049;
-    }
+        button:hover {
+            background-color: #45a049;
+        }
 
      #file-input {
          display: none;
  }
 
-    label {
-        padding: 8px 16px;
-        /* background-color: #2196F3; */
-        color: white;
-        border-radius: 4px;
-        /* cursor: pointer; */
-    }
+        label {
+            padding: 8px 16px;
+            /* background-color: #2196F3; */
+            color: white;
+            border-radius: 4px;
+            /* cursor: pointer; */
+        }
 
-    /* label:hover {
+        /* label:hover {
 			background-color: #0b7dda;
 		} */
 
-    img {
-        margin: 25px;
-    }
+        img {
+            margin: 25px;
+        }
 
     .card {
         width: 78vw;
@@ -278,9 +278,9 @@ $teacher_history = $_SESSION["teacher_history"];
         /* align-items:center; */
     }
 
-    h5 .font {
-        font-size: xx-large;
-    }
+        h5 .font {
+            font-size: xx-large;
+        }
 
     .car {
         display: flex;
@@ -290,30 +290,30 @@ $teacher_history = $_SESSION["teacher_history"];
         font-size: x-large;
     }
 
-    .card-announce {
-        margin: 1020px;
-        width: 20vw;
-        height: 40vh;
-        border-radius: 10px;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        margin-left: 115px;
-        padding: 25px;
-    }
+        .card-announce {
+            margin: 1020px;
+            width: 20vw;
+            height: 40vh;
+            border-radius: 10px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin-left: 115px;
+            padding: 25px;
+        }
 
-    .card-announce h5,
-    h3 {
-        margin: 15px;
-    }
+        .card-announce h5,
+        h3 {
+            margin: 15px;
+        }
 
-    .custom-student-card {
-        font-size: 40px;
-        margin-top: 40px;
-        font-weight: 600;
-        letter-spacing: 3px;
-        opacity: 0.5;
-        margin-left: 2vw;
+        .custom-student-card {
+            font-size: 40px;
+            margin-top: 40px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            opacity: 0.5;
+            margin-left: 2vw;
 
-    }
+        }
 
     .custom-student-card1 {
         font-size: 40px;
@@ -418,6 +418,7 @@ $teacher_history = $_SESSION["teacher_history"];
             transition: background-color 0.3s;
             width: 8vw;
         } */
+
 
 
 
@@ -536,6 +537,9 @@ $teacher_history = $_SESSION["teacher_history"];
 
 <body>
     <div class="wrapper p-0 m-0">
+        <div class="sidebar">
+            <?php include_once "teacher-sidebar.php"; ?>
+        </div>
         <div class="sidebar">
             <?php include_once "teacher-sidebar.php"; ?>
         </div>
@@ -674,6 +678,7 @@ $teacher_history = $_SESSION["teacher_history"];
                 </main>
             </section>
 
+
             <!-- timetable section -->
             <section id="timetable">
                 <h1 class="h3 mb-3 ml"><strong class="h1">Time</strong> Table </h1>
@@ -700,32 +705,32 @@ $teacher_history = $_SESSION["teacher_history"];
                     </div>
                 </div>
                 <?php
-			if (isset($_POST['t_upload'])) {
-				$t_title = $_POST['t_title'];
-				$t_standard = $_POST['t_standard'];
-				$t_file = $_FILES['t_file'];
-				
-				if ($t_file['type'] != 'application/pdf') {
-					echo "<script>alert('Only PDF files are allowed!');</script>";
-					exit;
-				}
-				
-				$t_uploadDir = '../shared_timetable/uploads/';
-				if (!is_dir($t_uploadDir))
-				mkdir($t_uploadDir, 0777, true);
-			$t_filePath = $t_uploadDir . basename($t_file['name']);
-			
-			if (move_uploaded_file($t_file['tmp_name'], $t_filePath)) {
-				$t_jsonFile = '../shared_timetable/documents.json';
-				$t_data = file_exists($t_jsonFile) ? json_decode(file_get_contents($t_jsonFile), true) : [];
-				$t_data[] = ['title' => $t_title, 'standard' => $t_standard, 'file' => $t_filePath];
-					file_put_contents($t_jsonFile, json_encode($t_data, JSON_PRETTY_PRINT));
-					echo "<script>alert('File uploaded successfully!');</script>";
-				} else {
-					echo "<script>alert('Error uploading file.');</script>";
-				}
-			}
-			?>
+                if (isset($_POST['t_upload'])) {
+                    $t_title = $_POST['t_title'];
+                    $t_standard = $_POST['t_standard'];
+                    $t_file = $_FILES['t_file'];
+
+                    if ($t_file['type'] != 'application/pdf') {
+                        echo "<script>alert('Only PDF files are allowed!');</script>";
+                        exit;
+                    }
+
+                    $t_uploadDir = '../shared_timetable/uploads/';
+                    if (!is_dir($t_uploadDir))
+                        mkdir($t_uploadDir, 0777, true);
+                    $t_filePath = $t_uploadDir . basename($t_file['name']);
+
+                    if (move_uploaded_file($t_file['tmp_name'], $t_filePath)) {
+                        $t_jsonFile = '../shared_timetable/documents.json';
+                        $t_data = file_exists($t_jsonFile) ? json_decode(file_get_contents($t_jsonFile), true) : [];
+                        $t_data[] = ['title' => $t_title, 'standard' => $t_standard, 'file' => $t_filePath];
+                        file_put_contents($t_jsonFile, json_encode($t_data, JSON_PRETTY_PRINT));
+                        echo "<script>alert('File uploaded successfully!');</script>";
+                    } else {
+                        echo "<script>alert('Error uploading file.');</script>";
+                    }
+                }
+                ?>
             </section>
             <!-- notes section -->
             <section id="notes">
@@ -753,32 +758,32 @@ $teacher_history = $_SESSION["teacher_history"];
                     </div>
                 </div>
                 <?php
-		if (isset($_POST['upload'])) {
-			$title = $_POST['title'];
-			$standard = $_POST['standard'];
-			$file = $_FILES['pdf_file'];
-			
-			if ($file['type'] != 'application/pdf') {
-				echo "<script>alert('Only PDF files are allowed!');</script>";
-				exit;
-			}
+                if (isset($_POST['upload'])) {
+                    $title = $_POST['title'];
+                    $standard = $_POST['standard'];
+                    $file = $_FILES['pdf_file'];
 
-			$uploadDir = '../shared/uploads/';
-			if (!is_dir($uploadDir))
-			mkdir($uploadDir, 0777, true);
-		$filePath = $uploadDir . basename($file['name']);
-		
-		if (move_uploaded_file($file['tmp_name'], $filePath)) {
-			$jsonFile = '../shared/documents.json';
-			$data = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), true) : [];
-			$data[] = ['title' => $title, 'standard' => $standard, 'file' => $filePath];
-			file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT));
-			echo "<script>alert('File uploaded successfully!');</script>";
-		} else {
-			echo "<script>alert('Error uploading file.');</script>";
-			}
-		}
-		?>
+                    if ($file['type'] != 'application/pdf') {
+                        echo "<script>alert('Only PDF files are allowed!');</script>";
+                        exit;
+                    }
+
+                    $uploadDir = '../shared/uploads/';
+                    if (!is_dir($uploadDir))
+                        mkdir($uploadDir, 0777, true);
+                    $filePath = $uploadDir . basename($file['name']);
+
+                    if (move_uploaded_file($file['tmp_name'], $filePath)) {
+                        $jsonFile = '../shared/documents.json';
+                        $data = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), true) : [];
+                        $data[] = ['title' => $title, 'standard' => $standard, 'file' => $filePath];
+                        file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT));
+                        echo "<script>alert('File uploaded successfully!');</script>";
+                    } else {
+                        echo "<script>alert('Error uploading file.');</script>";
+                    }
+                }
+                ?>
             </section>
             <!-- marks section -->
             <section id="marks">
@@ -899,46 +904,46 @@ $teacher_history = $_SESSION["teacher_history"];
                         <?php
                 include_once 'connection.php'; // Include database connection
 
-                if (isset($_POST['submitBtn'])) {
-                    // Get form data
-                    $student_name = mysqli_real_escape_string($conn, $_POST['student_name']);
-                    $roll_number = mysqli_real_escape_string($conn, $_POST['roll_number']);
-                    $class = mysqli_real_escape_string($conn, $_POST['class']);
-                    $mathematics = !empty($_POST['mathematics']) ? mysqli_real_escape_string($conn, $_POST['mathematics']) : 0;
-                    $gujarati = !empty($_POST['gujarati']) ? mysqli_real_escape_string($conn, $_POST['gujarati']) : 0;
-                    $hindi = !empty($_POST['hindi']) ? mysqli_real_escape_string($conn, $_POST['hindi']) : 0;
-                    $art_craft = !empty($_POST['art_craft']) ? mysqli_real_escape_string($conn, $_POST['art_craft']) : 0;
-                    $physical_education = !empty($_POST['physical_education']) ? mysqli_real_escape_string($conn, $_POST['physical_education']) : 0;
-                    $teacher_comments = mysqli_real_escape_string($conn, $_POST['teacher_comments']);
-                    
-                    // Current timestamp for created_at and updated_at
-                    $current_time = date('Y-m-d H:i:s');
-                    
-                    // Check if required fields are filled
-                    if(empty($student_name) || empty($roll_number) || empty($class)) {
-                        header("Location: add-marks.php?error=1");
-                        exit();
-                    }
-                    
-                    // Insert into database
-                    $insert_query = "INSERT INTO student_marks (student_name, roll_number, class, mathematics, gujarati, hindi, art_craft, physical_education, teacher_comments, created_at, updated_at) 
-                    VALUES ('$student_name', '$roll_number', '$class', '$mathematics', '$gujarati', '$hindi', '$art_craft', '$physical_education', '$teacher_comments', '$current_time', '$current_time')";
-                    
-                    $insert_result = mysqli_query($conn, $insert_query);
+                            if (isset($_POST['submitBtn'])) {
+                                // Get form data
+                                $student_name = mysqli_real_escape_string($conn, $_POST['student_name']);
+                                $roll_number = mysqli_real_escape_string($conn, $_POST['roll_number']);
+                                $class = mysqli_real_escape_string($conn, $_POST['class']);
+                                $mathematics = !empty($_POST['mathematics']) ? mysqli_real_escape_string($conn, $_POST['mathematics']) : 0;
+                                $gujarati = !empty($_POST['gujarati']) ? mysqli_real_escape_string($conn, $_POST['gujarati']) : 0;
+                                $hindi = !empty($_POST['hindi']) ? mysqli_real_escape_string($conn, $_POST['hindi']) : 0;
+                                $art_craft = !empty($_POST['art_craft']) ? mysqli_real_escape_string($conn, $_POST['art_craft']) : 0;
+                                $physical_education = !empty($_POST['physical_education']) ? mysqli_real_escape_string($conn, $_POST['physical_education']) : 0;
+                                $teacher_comments = mysqli_real_escape_string($conn, $_POST['teacher_comments']);
 
-                    // if ($insert_result) {
-                    //     header("Location: add-marks.php?success=1");
-                    //     exit();
-                    // } else {
-                    //     header("Location: add-marks.php?error=1");
-                    //     exit();
-                    // }
-                }
-                
-                // Get recently added marks
-                $recent_marks_query = "SELECT * FROM student_marks ORDER BY created_at DESC LIMIT 10";
-                $recent_marks_result = mysqli_query($conn, $recent_marks_query);
-                ?>
+                                // Current timestamp for created_at and updated_at
+                                $current_time = date('Y-m-d H:i:s');
+
+                                // Check if required fields are filled
+                                if (empty($student_name) || empty($roll_number) || empty($class)) {
+                                    header("Location: add-marks.php?error=1");
+                                    exit();
+                                }
+
+                                // Insert into database
+                                $insert_query = "INSERT INTO student_marks (student_name, roll_number, class, mathematics, gujarati, hindi, art_craft, physical_education, teacher_comments, created_at, updated_at) 
+                    VALUES ('$student_name', '$roll_number', '$class', '$mathematics', '$gujarati', '$hindi', '$art_craft', '$physical_education', '$teacher_comments', '$current_time', '$current_time')";
+
+                                $insert_result = mysqli_query($conn, $insert_query);
+
+                                // if ($insert_result) {
+                                //     header("Location: add-marks.php?success=1");
+                                //     exit();
+                                // } else {
+                                //     header("Location: add-marks.php?error=1");
+                                //     exit();
+                                // }
+                            }
+
+                            // Get recently added marks
+                            $recent_marks_query = "SELECT * FROM student_marks ORDER BY created_at DESC LIMIT 10";
+                            $recent_marks_result = mysqli_query($conn, $recent_marks_query);
+                            ?>
 
 
                     </div>
@@ -1051,7 +1056,15 @@ $teacher_history = $_SESSION["teacher_history"];
                                     <label class="form-label">Email:</label>
                                     <input type="email" name="email" class="form-control" required>
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Email:</label>
+                                    <input type="email" name="email" class="form-control" required>
+                                </div>
 
+                                <div class="mb-3">
+                                    <label class="form-label">From Date:</label>
+                                    <input type="date" name="startdate" class="form-control" required>
+                                </div>
                                 <div class="mb-3">
                                     <label class="form-label">From Date:</label>
                                     <input type="date" name="startdate" class="form-control" required>
@@ -1061,12 +1074,24 @@ $teacher_history = $_SESSION["teacher_history"];
                                     <label class="form-label">To Date</label>
                                     <input type="date" name="enddate" class="form-control" required>
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">To Date</label>
+                                    <input type="date" name="enddate" class="form-control" required>
+                                </div>
 
                                 <div class="mb-3">
                                     <label class="form-label">Reason:</label>
                                     <textarea name="reason" class="form-control" rows="3" required></textarea>
                                 </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Reason:</label>
+                                    <textarea name="reason" class="form-control" rows="3" required></textarea>
+                                </div>
 
+                                <button type="submit" class="upload ">Submit Application</button>
+                            </form>
+                        </div>
+                    </div>
                                 <button type="submit" class="upload ">Submit Application</button>
                             </form>
                         </div>
@@ -1191,38 +1216,38 @@ $teacher_history = $_SESSION["teacher_history"];
 
                         <div class="pdf-container mb-3">
                             <?php
-						$jsonFile = '../shared_announce/documents.json';
-						if (file_exists($jsonFile)) {
-							$data = json_decode(file_get_contents($jsonFile), true);
-							foreach ($data as $doc) {
-								echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
+                            $jsonFile = '../shared_announce/documents.json';
+                            if (file_exists($jsonFile)) {
+                                $data = json_decode(file_get_contents($jsonFile), true);
+                                foreach ($data as $doc) {
+                                    echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
 								<div class='pdf-title'>{$doc['title']}</div>
 								<div class='pdf-standard'>Standard: {$doc['standard']}</div>
 								<div class='pdf-message'>Message: {$doc['message']}</div>
                         <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
                     </div>";
-				}
-						} else {
-							echo "<p>No Announcement available</p>";
-						}
-						?>
+                                }
+                            } else {
+                                echo "<p>No Announcement available</p>";
+                            }
+                            ?>
                         </div>
                     </div>
 
                     <script>
-                    function filterCards() {
-                        let standard = document.getElementById('standardFilter').value;
-                        let cards = document.querySelectorAll('.pdf-card');
+                        function filterCards() {
+                            let standard = document.getElementById('standardFilter').value;
+                            let cards = document.querySelectorAll('.pdf-card');
 
-                        cards.forEach(card => {
-                            let cardStandard = card.getAttribute('data-standard');
-                            if (standard === "all" || cardStandard === standard) {
-                                card.style.display = "block";
-                            } else {
-                                card.style.display = "none";
-                            }
-                        });
-                    }
+                            cards.forEach(card => {
+                                let cardStandard = card.getAttribute('data-standard');
+                                if (standard === "all" || cardStandard === standard) {
+                                    card.style.display = "block";
+                                } else {
+                                    card.style.display = "none";
+                                }
+                            });
+                        }
                     </script>
                 </div>
             </section>

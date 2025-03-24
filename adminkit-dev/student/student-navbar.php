@@ -31,12 +31,11 @@ if ($student_id) {
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
 
-    <title>Forms | AdminKit Demo</title>
+    <title>School Monitoring System</title>
 
     <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
 
     <style>
         /* Main Theme Colors and Variables */
@@ -220,23 +219,76 @@ if ($student_id) {
             flex-grow: 1;
             padding: 1rem;
         }
-          /* For demo purposes */
-	     .navbar {
+
+        /* For demo purposes */
+        .navbar {
             background-color: var(--form-bg);
             box-shadow: var(--card-shadow);
             padding: 0.5rem 1rem;
             margin-bottom: 1.5rem;
         }
+
         .footer {
             padding: 1rem;
             background-color: var(--form-bg);
             border-top: 1px solid var(--border-color);
             margin-top: 1.5rem;
         }
+
+        .sch-name {
+            display: flex;
+            align-items: center;
+        }
+
+        .sch-name img {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+        }
+
+        .sch-name h4 {
+            margin: 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .logo {
+            margin: 0;
+            width: 150px;
+            height: auto;
+        }
+
+        .custom-navbar {
+            display: flex;
+            padding: 10px;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .custom-sch-font {
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0.6;
+        }
     </style>
 </head>
 
 <body>
+    <?php include_once("connection.php") ?>
+    <?php
+    $query = "select * from principal_1 where id=1";
+    $result = mysqli_query($conn, $query);
+    if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            $school_name = $row["school_name"];
+    ?>
+            <nav class="navbar navbar-expand navbar-light navbar-bg">
+                <div class="custom-navbar">
+                    <div><img src="logo.png" alt="School Logo" class="logo"></div>
+                    <div class="custom-sch-font"><?php echo $school_name; ?></div>
+                </div>
+        <?php }
+    } ?>
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
                 <li class="nav-item dropdown">
@@ -246,8 +298,7 @@ if ($student_id) {
                             <!-- <span class="indicator">4</span> -->
                         </div>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0"
-                        aria-labelledby="alertsDropdown">
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="alertsDropdown">
                         <div class="dropdown-menu-header">
                             4 New Notifications
                         </div>
@@ -309,8 +360,7 @@ if ($student_id) {
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown"
-                        data-bs-toggle="dropdown">
+                    <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
                         <div class="position-relative">
                             <i class="align-middle" data-feather="message-square"></i>
                         </div>
@@ -326,8 +376,8 @@ if ($student_id) {
                             <a href="#" class="list-group-item">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-2">
-                                        <img src="img/avatars/avatar-5.jpg"
-                                            class="avatar img-fluid rounded-circle" alt="Vanessa Tucker">
+                                        <img src="img/avatars/avatar-5.jpg" class="avatar img-fluid rounded-circle"
+                                            alt="Vanessa Tucker">
                                     </div>
                                     <div class="col-10 ps-2">
                                         <div class="text-dark">Vanessa Tucker</div>
@@ -340,8 +390,8 @@ if ($student_id) {
                             <a href="#" class="list-group-item">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-2">
-                                        <img src="img/avatars/avatar-2.jpg"
-                                            class="avatar img-fluid rounded-circle" alt="William Harris">
+                                        <img src="img/avatars/avatar-2.jpg" class="avatar img-fluid rounded-circle"
+                                            alt="William Harris">
                                     </div>
                                     <div class="col-10 ps-2">
                                         <div class="text-dark">William Harris</div>
@@ -354,8 +404,8 @@ if ($student_id) {
                             <a href="#" class="list-group-item">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-2">
-                                        <img src="img/avatars/avatar-4.jpg"
-                                            class="avatar img-fluid rounded-circle" alt="Christina Mason">
+                                        <img src="img/avatars/avatar-4.jpg" class="avatar img-fluid rounded-circle"
+                                            alt="Christina Mason">
                                     </div>
                                     <div class="col-10 ps-2">
                                         <div class="text-dark">Christina Mason</div>
@@ -368,8 +418,8 @@ if ($student_id) {
                             <a href="#" class="list-group-item">
                                 <div class="row g-0 align-items-center">
                                     <div class="col-2">
-                                        <img src="img/avatars/avatar-3.jpg"
-                                            class="avatar img-fluid rounded-circle" alt="Sharon Lessman">
+                                        <img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded-circle"
+                                            alt="Sharon Lessman">
                                     </div>
                                     <div class="col-10 ps-2">
                                         <div class="text-dark">Sharon Lessman</div>
@@ -398,7 +448,8 @@ if ($student_id) {
                 </li>
             </ul>
         </div>
-    <script src="js/app.js"></script>
+            </nav>
+            <script src="js/app.js"></script>
 </body>
 
 </html>

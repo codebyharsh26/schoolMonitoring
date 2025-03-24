@@ -33,6 +33,7 @@ if ($teacher_id) {
     <link rel="canonical" href="https://demo-basic.adminkit.io/ui-forms.html" />
 
     <title>School Monitoring System</title>
+    <title>School Monitoring System</title>
 
     <link href="css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">

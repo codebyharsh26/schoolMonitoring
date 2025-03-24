@@ -63,6 +63,16 @@
 			margin: 0;
 			padding: 0;
 		}
+		.sidebar-nav li {
+        font-size: 12px;
+        font-weight: 500;
+    }
+	.align-middle{
+        font-size:14px;
+    }
+	.align-middle-cstm{
+        font-size:19.4px;
+    }
 	</style>
 </head>
 

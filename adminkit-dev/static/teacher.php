@@ -21,6 +21,52 @@
     <link href="css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+<style>
+    /* Global Styles */
+    * {
+            padding: 0;
+            margin: 0;
+            /* box-sizing: border-box; */
+        }
+
+        body {
+            background: #f8f9fa;
+        }
+
+        .card {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        .custom-card {
+            padding: 1rem;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        .sidebar-nav li {
+        /* margin-bottom: 10px; */
+        font-size: 15px; /* Increase text size */
+        font-weight: bold; /* Make text bold */
+        /* Adjust the spacing */
+    }
+
+    /* Align Sign Out at the bottom */
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .sidebar-nav {
+        flex-grow: 1;
+        /* Pushes content up, moving the footer to the bottom */
+    }
+</style>
 
 <body>
     <div class="wrapper p-0 m-0">

@@ -26,10 +26,8 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     position: sticky;
     top: 0;
     height: 100vh;
-
 }
 
-/* Remove any bottom borders or underlines */
 .sidebar-item,
 .sidebar-link {
     border: none !important;
@@ -38,20 +36,17 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
     border-bottom: none !important;
 }
 
-/* Remove underline from sidebar links */
 .sidebar-link a {
     text-decoration: none !important;
     border-bottom: none !important;
 }
 
-/* Ensure pseudo-elements don't add underline */
 .sidebar-item::after,
 .sidebar-link::after {
     content: none !important;
     display: none !important;
 }
 
-/* Remove any border from sidebar items */
 .sidebar-item {
     border-bottom: none !important;
 }
@@ -67,37 +62,31 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 
                 <ul class="sidebar-nav">
                     <li class="sidebar-header">Pages</li>
-
                     <li class="sidebar-item <?= ($current_page == 'admin.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="admin.php">
                             <i class="align-middle" data-feather="sliders"></i>
                             <span class="align-middle">Dashboard</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item <?= ($current_page == 'admin-profile.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="admin-profile.php">
                             <i class="align-middle" data-feather="user"></i>
                             <span class="align-middle">Profile</span>
                         </a>
                     </li>
-
                     <li class="sidebar-header">Forms</li>
-
                     <li class="sidebar-item <?= ($current_page == 'tr-enroll.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="tr-enroll.php">
                             <i class="align-middle" data-feather="edit-2"></i>
                             <span class="align-middle">Teacher Enrollment</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item <?= ($current_page == 'std-enroll.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="std-enroll.php">
                             <i class="align-middle" data-feather="edit-2"></i>
                             <span class="align-middle">Student Enrollment</span>
                         </a>
                     </li>
-
                     <li
                         class="sidebar-item <?= ($current_page == 'tr-leave-application-display.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="tr-leave-application-display.php">
@@ -105,33 +94,28 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
                             <span class="align-middle">Leave Application</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item <?= ($current_page == 'announce.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="announce.php">
                             <i class="align-middle" data-feather="mic"></i>
                             <span class="align-middle">Announcement</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item <?= ($current_page == 'activities.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="activities.php">
                             <i class="align-middle" data-feather="activity"></i>
                             <span class="align-middle">Skill Based Activities</span>
                         </a>
                     </li>
-
                     <li class="sidebar-header">Monitoring</li>
-
                     <li class="sidebar-item <?= ($current_page == 'student.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="student.php">
-                            <i class="align-middle" data-feather="layers"></i>
+                            <i class="align-middle" data-feather="users"></i>
                             <span class="align-middle">Students</span>
                         </a>
                     </li>
-
                     <li class="sidebar-item <?= ($current_page == 'teacher.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="teacher.php">
-                            <i class="align-middle" data-feather="layers"></i>
+                            <i class="align-middle" data-feather="users"></i>
                             <span class="align-middle">Teachers</span>
                         </a>
                     </li>

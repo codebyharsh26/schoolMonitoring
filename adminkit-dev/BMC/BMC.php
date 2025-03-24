@@ -26,6 +26,28 @@
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
 </head>
 
+<style>
+    
+    *{
+        
+    }
+    /* Increase space between sidebar items */
+    
+
+    /* Align Sign Out at the bottom */
+    .sidebar-content {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .sidebar-nav {
+        flex-grow: 1;
+        /* Pushes content up, moving the footer to the bottom */
+    }
+
+
+</style>
 
 <body>
     <div class="wrapper p-0 m-0">
@@ -164,13 +186,9 @@
                 <div class="container-fluid">
                     <div class="row text-muted">
                         <div class="col-6 text-start">
-
                         </div>
                         <div class="col-6 text-end">
-                            <p class="mb-0">
-                                <a class="text-muted" href="https://adminkit.io/"
-                                    target="_blank"><strong>schoolAdmin</strong></a>
-                            </p>
+                            <p class="mb-0"><strong>schoolAdmin</strong></p>
                         </div>
                     </div>
                 </div>
