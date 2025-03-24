@@ -79,7 +79,7 @@
 			?>
 
 			<?php
-			include_once("school-list-display.php");
+			include_once("student-list-display.php");
 			?>
 
 			<footer class="footer">

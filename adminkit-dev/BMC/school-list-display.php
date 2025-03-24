@@ -30,7 +30,7 @@
 
 <body>
     <main role="main" class="content p-4">
-        <div class="container">
+        <div class="container m-0 p-0">
             <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1" style="font-weight:normal">School</strong>
                 List</h1>
             <!-- Filter Section -->

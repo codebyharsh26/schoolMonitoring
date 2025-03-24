@@ -136,9 +136,16 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
                         </a>
                     </li>
 
+                    <li class="sidebar-item <?= ($current_page == 'BMC-announce-display.php') ? 'active' : '' ?>">
+                        <a class="sidebar-link" href="BMC-announce-display.php">
+                            <i class="align-middle" data-feather="layers"></i>
+                            <span class="align-middle">Check announcement</span>
+                        </a>
+                    </li>
+
                     <footer class="footer mt-5" style="background-color: transparent; border-top:0; margin-left: 20px;">
                         <li
-                            class="signout-btn sidebar-item <?= ($current_page == 'admin-log-out.php') ? 'active' : '' ?>">
+                            class="signout-btn sidebar-item <?= ($current_page == 'logout.php') ? 'active' : '' ?>">
                             <a class="sidebar-link" href="#" onclick="confirmLogout()">
                                 <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
                                 <span class="align-middle">Sign Out</span>
@@ -165,7 +172,7 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
             cancelButtonText: "Cancel"
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = 'admin-logout.php'; // Redirect to logout script
+                window.location.href = 'logout.php'; // Redirect to logout script
             }
         });
     }

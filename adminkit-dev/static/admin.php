@@ -1,6 +1,26 @@
+<?php
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION["admin_logged_in"]) || $_SESSION["admin_logged_in"] !== true) {
+    header("Location: admin.php"); // Redirect to login page if not logged in
+    exit;
+}
+
+include_once "connection.php"; 
+
+// Fetch admin details (optional)
+$admin_email = $_SESSION["admin_id"];
+$query = "SELECT * FROM principal_1 WHERE email = ?";
+$stmt = mysqli_prepare($conn, $query);
+mysqli_stmt_bind_param($stmt, "s", $admin_email);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$admin_data = mysqli_fetch_assoc($result);
+mysqli_stmt_close($stmt);
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <?php
     include_once "connection.php";

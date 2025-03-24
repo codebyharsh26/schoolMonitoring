@@ -261,7 +261,7 @@
     <nav class="navbar navbar-expand navbar-light navbar-bg">
         <div class="custom-navbar">
             <div><img src="logo.png" alt="School Logo" class="logo"></div>
-            <div class="custom-sch-font">Bhavnagar Mulsipal Corporation. [B.M.C.]</div>
+            <div class="custom-sch-font">Bhavnagar Municipal Corporation. [B.M.C.]</div>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="navbar-nav navbar-align">
@@ -410,10 +410,6 @@
                     </div>
                 </li>
                 <li class="nav-item dropdown dont-click">
-                    <!-- <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#"
-                            data-bs-toggle="dropdown">
-                            <i class="align-middle" data-feather="settings"></i>
-                        </a> -->
 
                     <a class="nav-link d-none d-sm-inline-block" href="#">
                         <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" />

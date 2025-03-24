@@ -22,8 +22,8 @@
 
 <body>
     <main role="main" class="content p-4">
-        <div class="container">
-            <div class="container">
+        <div class="container p-0 m-0">
+            <div class="container p-0">
                 <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
                         style="font-weight:normal">Principals</strong> List</h1>
                 <!-- Filter Section -->

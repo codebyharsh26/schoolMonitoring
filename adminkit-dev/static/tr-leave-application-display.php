@@ -47,11 +47,11 @@ $result = $conn->query($query);
             <?php
             include_once("navbar.php");
             ?>
-            <main class="content">
-            <div class="container-fluid p-4">
+            <main class="content p-4">
+                <div class="container-fluid">
+                <h1 class="h3 mb-3"><strong class="h1">Leave Application</strong> Form</h1>
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Leave Applications</h3>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped table-hover">

@@ -237,7 +237,7 @@
 						<h1 class="h3 mb-3"><strong class="h1">Student Enrollment</strong> Form</h1>
 						<div class="form-section">
 							<h3 class="mb-3">Personal Information</h3>
-							<div class="form-group">
+							<div style="margin: 0 0 1.25">
 								<div class="student-photo">
 									<input type="file" class="pdf" id="student_image" name="student_image"
 										accept="image/*" class="photo-upload">

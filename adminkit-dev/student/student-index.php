@@ -1,16 +1,21 @@
+<?php
+session_start();
+if (!isset($_SESSION["logged_in"])) {
+    header("Location: slogin.php");
+    exit;
+}
+include_once "connection.php";
+$fpn = $_SESSION["student_id"];
+// Fetch teacher leave history if not already stored in session
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-
     <?php
     include_once "connection.php";
     include_once "student-navbar.php";
-    
-
     ?>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -430,7 +435,7 @@
                     <main class="content">
                         <div class="container-fluid p-0">
                             <?php
-							$query = "select * from student_1 where id=7";
+							$query = "select * from student_1 where father_phone_number = $student_id";
 							$result = mysqli_query($conn, $query);
 							if ($result) {
 								while ($row = mysqli_fetch_assoc($result)) {
@@ -846,6 +851,7 @@
                     <option value="7">Standard 7</option>
                     <option value="8">Standard 8</option>
                 </select>
+                <script>
                 cards.forEach(card => {
                 let cardStandard = card.getAttribute('data-standard');
                 if (standard === "all" || cardStandard === standard) {
@@ -854,7 +860,6 @@
                 card.style.display = "none";
                 }
                 });
-                }
                 </script>
             </div>
     </section>

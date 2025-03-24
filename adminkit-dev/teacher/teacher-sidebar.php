@@ -45,34 +45,34 @@
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#notes">
-                            <i class="align-middle" data-feather="square"></i> <span class="align-middle">Uploads
+                            <i class="align-middle" data-feather="edit"></i> <span class="align-middle">Uploads
                                 Notes</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#marks">
-                            <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Marks
+                            <i class="align-middle" data-feather="clipboard"></i> <span class="align-middle">Marks
                                 Entry</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#leave">
-                            <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Leave
+                            <i class="align-middle" data-feather="mail"></i> <span class="align-middle">Leave
                                 Application</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#leave-history">
-                            <i class="align-middle" data-feather="align-left"></i> <span class="align-middle">Leave
+                            <i class="align-middle" data-feather="bookmark"></i> <span class="align-middle">Leave
                                 History</span>
                         </a>
                     </li>
 
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#announcement">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span
+                            <i class="align-middle" data-feather="mic"></i> <span
                                 class="align-middle">Announcement</span>
                         </a>
                     </li>

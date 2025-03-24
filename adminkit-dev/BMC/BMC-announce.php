@@ -373,7 +373,8 @@
 			<?php
 			include_once("navbar.php");
 			?>
-
+			
+			<form action="BMC-announce.php" method="POST" enctype="multipart/form-data">
 			<main class="content p-4">
 				<div class="container-fluid p-0">
 					<h1 class="h3 mb-3"><strong class="h1">Announcement</strong> Form</h1>
@@ -382,17 +383,64 @@
 							<h2 class="form-section-title">Announcement Details</h2>
 
 							<input type="text" name="title" placeholder="Enter Announcement Title" required>
-							<select name="standard" required>
-								<option value="">Select Standard</option>
-								<option value="All">All Standards</option>
-								<option value="1">Standard 1</option>
-								<option value="2">Standard 2</option>
-								<option value="3">Standard 3</option>
-								<option value="4">Standard 4</option>
-								<option value="5">Standard 5</option>
-								<option value="6">Standard 6</option>
-								<option value="7">Standard 7</option>
-								<option value="8">Standard 8</option>
+							<select name="school_no" required>
+								<option value="">Select Schools</option>
+								<option value="all">All Schools</option>
+                                <option value="1">1 - Brahmmasi Vashishth Primary School</option>
+                                <option value="2">2 - Brahmmasi Vashishth Primary School</option>
+                                <option value="3">3 - Chanakya Primary School</option>
+                                <option value="4">4 - Chanakya Primary School</option>
+                                <option value="5">5 - Shri Shaheed Bachubhai Virjibhai Primary School</option>
+                                <option value="7">7 - Shri Ambika Primary School</option>
+                                <option value="8">8 - Shri Vir Savarkar Primary School</option>
+                                <option value="10">10 - Shri Anandvihar Primary School</option>
+                                <option value="11">11 - Shri Bhuta Rugnath Primary School</option>
+                                <option value="12">12 - Shri Bhuta Rugnath Primary School</option>
+                                <option value="13">13 - Shri Lalkrishna Advani Primary School</option>
+                                <option value="14">14 - Shri Jalarambapa Primary School</option>
+                                <option value="15">15 - Shri Jalarambapa Primary School</option>
+                                <option value="18">18 - Mathuriya Bhanji Abji Primary School</option>
+                                <option value="19">19 - Mathuriya Bhanji Abji Primary School</option>
+                                <option value="20">20 - Shri Rabindranath Tagore Primary School</option>
+                                <option value="22">22 - Shri Swami Vivekanand Primary School</option>
+                                <option value="24">24 - Shri Subhashchandra Bose Primary School</option>
+                                <option value="25">25 - Shri A.V. School Primary School</option>
+                                <option value="28">28 - Shri Santkanvaram Primary School</option>
+                                <option value="30">30 - Madhavray Sadhashiv Golwalkar Primary School</option>
+                                <option value="31">31 - Shri Nanimajirajba Primary School</option>
+                                <option value="33">33 - Shri Nanimajirajba Primary School (Urdu)</option>
+                                <option value="36">36 - Dr. C.V. Raman Primary School</option>
+                                <option value="37">37 - Shri Moti Majirajba Primary School</option>
+                                <option value="38">38 - Shri Atal Bihari Vajpayee Primary School</option>
+                                <option value="40">40 - Chhatrapati Shivaji Primary School</option>
+                                <option value="42">42 - Shri Shaheed Bhagat Singh Primary School</option>
+                                <option value="44">44 - Shri Maharana Pratap Primary School</option>
+                                <option value="45">45 - Shri Maharana Pratap Primary School</option>
+                                <option value="47">47 - Shri Lalbahadur Shastri Primary School</option>
+                                <option value="48">48 - Shri Kasturba Mohandas Gandhi Primary School</option>
+                                <option value="49">49 - Jhansi Ki Rani Laxmibai Primary School</option>
+                                <option value="50">50 - Dr. Abdul Kalam Primary School</option>
+                                <option value="51">51 - Dr. Abdul Kalam Primary School</option>
+                                <option value="52">52 - Jhansi Ki Rani Laxmibai Primary School</option>
+                                <option value="53">53 - Shri Pramukh Swami Maharaj Primary School</option>
+                                <option value="54">54 - Sant Shri Mastaram Bapa Primary School</option>
+                                <option value="55">55 - Gautam Buddha Primary School</option>
+                                <option value="58">58 - Shri Sar Takhtsinghji Primary School</option>
+                                <option value="59">59 - Sardar Patel Primary School (Girls)</option>
+                                <option value="60">60 - Sardar Patel Primary School (Boys)</option>
+                                <option value="62">62 - Shri Mahatma Gandhi Primary School</option>
+                                <option value="63">63 - Shri Mahatma Gandhi Primary School</option>
+                                <option value="65">65 - Shri Gaurishankar Primary School</option>
+                                <option value="67">67 - Shri Chandramouli Primary School</option>
+                                <option value="68">68 - Shri Krishnapara Primary School</option>
+                                <option value="69">69 - Pandit Dindayal Upadhyaya Sanskrit Dham</option>
+                                <option value="70">70 - Pandit Dindayal Upadhyaya Sanskrit Dham</option>
+                                <option value="72">72 - Dr. Hedgewar Primary School</option>
+                                <option value="73">73 - Sardar Singh Rana Primary School</option>
+                                <option value="76">76 - Sardar Vallabhbhai Patel Primary School</option>
+                                <option value="80">80 - Dr. Bhimrao Ambedkar Primary School</option>
+                                <option value="81">81 - Maharaja Krishnakumarsinhji Primary School</option>
+                                <option value="83">83 - Shri Maruti Yogaksham Primary School</option>
 							</select>
 							<textarea name="message" class="anouncement-textarea" id="message"
 								placeholder="Enter Message" required></textarea>
@@ -402,79 +450,38 @@
 					</div>
 				</div>
 			</main>
+			</form>
 		</div>
+		<?php
+			if (isset($_POST['upload'])) {
+				$title = $_POST['title'];
+				$school_no = $_POST['school_no'];
+				$message = $_POST['message'];
+				$file = $_FILES['pdf_file'];
+
+				if ($file['type'] != 'application/pdf') {
+					echo "<script>alert('Only PDF files are allowed!');</script>";
+					exit;
+				}
+
+				$uploadDir = '../BMC_announce/uploads/';
+				if (!is_dir($uploadDir))
+					mkdir($uploadDir, 0777, true);
+				$filePath = $uploadDir . basename($file['name']);
+
+				if (move_uploaded_file($file['tmp_name'], $filePath)) {
+					$jsonFile = '../BMC_announce/documents.json';
+					$data = file_exists($jsonFile) ? json_decode(file_get_contents($jsonFile), true) : [];
+					$data[] = ['title' => $title, 'school_no' => $school_no, 'message' => $message, 'file' => $filePath];
+					file_put_contents($jsonFile, json_encode($data, JSON_PRETTY_PRINT));
+					echo "<script>alert('Announcement uploaded successfully!');</script>";
+				} else {
+					echo "<script>alert('Error uploading file.');</script>";
+				}
+			}
+			?>
 
 		<script src="js/app.js"></script>
-		<script>
-			// Priority selector
-			const priorityOptions = document.querySelectorAll('.priority-option');
-			const priorityInput = document.getElementById('priorityLevel');
-
-			priorityOptions.forEach(option => {
-				option.addEventListener('click', () => {
-					// Remove selected class from all options
-					priorityOptions.forEach(opt => opt.classList.remove('selected'));
-					// Add selected class to clicked option
-					option.classList.add('selected');
-					// Update hidden input value
-					priorityInput.value = option.dataset.priority;
-				});
-			});
-
-			// File upload
-			const fileUpload = document.getElementById('fileUpload');
-			const fileName = document.querySelector('.file-name');
-			const fileList = document.getElementById('fileList');
-
-			fileUpload.addEventListener('change', () => {
-				if (fileUpload.files.length > 0) {
-					if (fileUpload.files.length === 1) {
-						fileName.textContent = fileUpload.files[0].name;
-					} else {
-						fileName.textContent = `${fileUpload.files.length} files selected`;
-					}
-
-					// Clear file list
-					fileList.innerHTML = '';
-
-					// Display selected files
-					Array.from(fileUpload.files).forEach(file => {
-						const fileItem = document.createElement('div');
-						fileItem.style.display = 'flex';
-						fileItem.style.alignItems = 'center';
-						fileItem.style.marginTop = '8px';
-						fileItem.innerHTML = `
-						<span style="margin-right: 8px; color: #6b7280;">📎</span>
-						<span style="flex: 1;">${file.name}</span>
-						<span style="color: #6b7280; font-size: 12px;">${(file.size / 1024).toFixed(1)} KB</span>
-					`;
-						fileList.appendChild(fileItem);
-					});
-				} else {
-					fileName.textContent = 'No file chosen';
-					fileList.innerHTML = '';
-				}
-			});
-
-			// Rich text editor content to textarea before form submission
-			const form = document.querySelector('.form-container');
-			const editorContent = document.querySelector('.editor-content');
-			const contentTextarea = document.getElementById('announcementContent');
-
-			form.addEventListener('submit', () => {
-				contentTextarea.value = editorContent.innerHTML;
-			});
-
-			// Set minimum date for start date and end date to today
-			const today = new Date().toISOString().split('T')[0];
-			document.getElementById('startDate').min = today;
-			document.getElementById('endDate').min = today;
-
-			// Update end date min attribute when start date changes
-			document.getElementById('startDate').addEventListener('change', function() {
-				document.getElementById('endDate').min = this.value;
-			});
-		</script>
 </body>
 
-</html>i
+</html>

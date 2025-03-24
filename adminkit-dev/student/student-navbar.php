@@ -1,3 +1,19 @@
+<?php
+include_once("connection.php"); // Ensure database connection is included
+
+// Assuming teacher ID is stored in session after login
+$student_id = $_SESSION['student_id'] ?? null;
+$student_name = "Unknown Teacher"; // Default value
+
+if ($student_id) {
+    $query = "SELECT full_name FROM student_1 WHERE father_phone_number = '$student_id'";
+    $result = mysqli_query($conn, $query);
+
+    if ($row = mysqli_fetch_assoc($result)) {
+        $student_name = $row['full_name'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -377,7 +393,7 @@
 
                     <a class="nav-link d-none d-sm-inline-block" href="#">
                         <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1"
-                            alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                            alt="Charles Hall" /> <span class="text-dark"><?php echo $student_name; ?></span>
                     </a>
                 </li>
             </ul>

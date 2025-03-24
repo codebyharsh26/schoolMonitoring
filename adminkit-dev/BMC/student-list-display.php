@@ -6,19 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/adminkit-dev/static/css/student-list-display.css">
-    <title>Student Details</title>
+    <link rel="stylesheet" href="/adminkit-dev/static/css/teacher-list-display.css">
+    <title>Teacher Details</title>
     <style>
     .card {
         min-height: 16.5rem;
     }
     </style>
 </head>
+<!-- <div class="sidebar"> -->
+    <?php
+    include_once("sidebar.php");
+    ?>
+<!-- </div> -->
 
 <body>
-    <main role="main" class="content p4">
-        <div class="container">
-            <div class="container">
+    <main role="main" class="content p-4">
+        <div class="container p-0 m-0">
+            <div class="container p-0">
                 <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
                         style="font-weight:normal">Students</strong> List</h1>
                 <!-- Filter Section -->
@@ -98,39 +103,37 @@
                         </form>
                     </div>
                 </div>
-            </div>
 
+                <div class="row">
+                    <?php
+                    include_once 'connection.php';
 
-            <div class="row">
-                <?php
-                include_once 'connection.php';
+                    $limit = 21; // Number of records per page
+                    $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
+                    $offset = ($page - 1) * $limit; // Offset for pagination
 
-                $limit = 20; // Number of records per page
-                $page = isset($_GET['page']) ? $_GET['page'] : 1; // Current page
-                $offset = ($page - 1) * $limit; // Offset for pagination
+                    // Handle school filter
+                    $filter_condition = "";
+                    if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all') {
+                        $school_filter = mysqli_real_escape_string($conn, $_GET['school_filter']);
+                        $filter_condition = "WHERE school_number = '$school_filter'";
+                    }
 
-                // Handle school filter
-                $filter_condition = "";
-                if (isset($_GET['school_filter']) && $_GET['school_filter'] != 'all') {
-                    $school_filter = mysqli_real_escape_string($conn, $_GET['school_filter']);
-                    $filter_condition = "WHERE school_number = '$school_filter'";
-                }
+                    // Count total records with filter applied
+                    $total_query = "SELECT COUNT(*) FROM student_1 $filter_condition";
+                    $total_result = mysqli_query($conn, $total_query);
+                    $total_rows = mysqli_fetch_array($total_result)[0];
+                    $total_pages = ceil($total_rows / $limit); // Total pages
 
-                // Count total records with filter applied
-                $total_query = "SELECT COUNT(*) FROM student_1 $filter_condition";
-                $total_result = mysqli_query($conn, $total_query);
-                $total_rows = mysqli_fetch_array($total_result)[0];
-                $total_pages = ceil($total_rows / $limit); // Total pages
+                    // Fetch records for the current page with filter applied
+                    $select = "SELECT * FROM student_1 $filter_condition LIMIT $limit OFFSET $offset";
+                    $result = mysqli_query($conn, $select);
 
-                // Fetch records for the current page with filter applied
-                $select = "SELECT * FROM student_1 $filter_condition LIMIT $limit OFFSET $offset";
-                $result = mysqli_query($conn, $select);
-
-                if ($result && mysqli_num_rows($result) > 0) {
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<div class="col-md-4">
+                    if ($result && mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo '<div class="col-md-4">
                                         <div class="card mb-4 shadow-sm">
-                                            <img src="' . $row['student_image'] . '" alt="Student Image" class="card-img-top" style="height: 200px; object-fit: cover;">
+                                        <img src="' . $row['student_image'] . '" alt="Student Image" class="card-img-top" style="height: 200px; object-fit: cover">
                                             <div class="card-body">
                                                 <h5 class="card-title" style="font-weight: bold; font-size: 24px; color: black;">' . $row['full_name'] . '</h5>
                                                 <p class="card-text"><b>Standard:</b> ' . $row['standard'] . '</p>
@@ -141,13 +144,14 @@
                                             </div>
                                         </div>
                                     </div>';
-                    }
-                } else {
-                    echo '<div class="col-12 text-center p-5">
+                        }
+                    } else {
+                        echo '<div class="col-12 text-center p-5">
                                 <div class="alert alert-info">No students found matching your criteria.</div>
-                              </div>';
-                }
-                ?>
+                            </div>';
+                    }
+                    ?>
+                </div>
             </div>
             <!-- Pagination with filter preservation -->
             <nav aria-label="Page navigation">
@@ -191,9 +195,9 @@
     });
     </script>
 
+
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
-    </div>
 </body>
 
 </html>
