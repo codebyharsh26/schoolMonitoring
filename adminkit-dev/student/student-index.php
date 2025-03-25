@@ -29,7 +29,7 @@ $fpn = $_SESSION["student_id"];
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
 
-    <title>School Monitoring System</title>
+    <title>Student Portal</title>
 
     <link href="css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -313,7 +313,7 @@ $fpn = $_SESSION["student_id"];
                             ?>
 
                         <?php
-                                    $mquery = "select * from student_marks where marks_id =7";
+                                    $mquery = "select * from student_marks where marks_id = 1";
                                     $mresult = mysqli_query($conn, $mquery);
                                     if ($mresult) {
                                         while ($mrow = mysqli_fetch_assoc($mresult)) {
@@ -696,36 +696,6 @@ $fpn = $_SESSION["student_id"];
     }
     </script>
     <!-- pass-fail graph ------------------------------------------------------------------------------>
-
-    <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        // Pie chart
-        new Chart(document.getElementById("chartjs-dashboard-pie"), {
-            type: "pie",
-            data: {
-                labels: ["Chrome", "Firefox", "IE"],
-                datasets: [{
-                    data: [4306, 3801, 1689],
-                    backgroundColor: [
-                        window.theme.primary,
-                        window.theme.warning,
-                        window.theme.danger
-                    ],
-                    borderWidth: 5
-                }]
-            },
-            options: {
-                responsive: !window.MSInputMethodContext,
-                maintainAspectRatio: false,
-                legend: {
-                    display: false
-                },
-                cutoutPercentage: 75
-            }
-        });
-    });
-    </script>
-
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {

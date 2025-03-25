@@ -1093,33 +1093,17 @@ select:focus {
                                             <label class="form-label">Email:</label>
                                             <input type="email" name="email" class="form-control" required>
                                         </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">Email:</label>
-                                            <input type="email" name="email" class="form-control" required>
-                                        </div>
-
+                                        
                                         <div class="mb-3">
                                             <label class="form-label">From Date:</label>
                                             <input type="date" name="startdate" class="form-control" required>
                                         </div>
-                                        <div class="mb-3">
-                                            <label class="form-label">From Date:</label>
-                                            <input type="date" name="startdate" class="form-control" required>
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label">To Date</label>
-                                            <input type="date" name="enddate" class="form-control" required>
-                                        </div>
+                                        
                                         <div class="mb-3">
                                             <label class="form-label">To Date</label>
                                             <input type="date" name="enddate" class="form-control" required>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label">Reason:</label>
-                                            <textarea name="reason" class="form-control" rows="3" required></textarea>
-                                        </div>
                                         <div class="mb-3">
                                             <label class="form-label">Reason:</label>
                                             <textarea name="reason" class="form-control" rows="3" required></textarea>
