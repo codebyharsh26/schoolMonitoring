@@ -2,37 +2,37 @@
 session_start();
 include_once "connection.php"; 
 
-if (isset($_SESSION["logged_in"])) {
-    header("Location: student-index.php"); // Redirect to student dashboard
+if (isset($_SESSION["admin_logged_in"])) {
+    header("Location: BMC.php"); // Redirect to admin dashboard
     exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $phone = trim($_POST['father_phone_number']);
+    $email = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    // Validate phone number format (10 digits)
-    if (!preg_match("/^[0-9]{10}$/", $phone)) {
-        echo "<div class='alert alert-danger'>Invalid phone number. Please enter a valid 10-digit number.</div>";
+    // Validate email format
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<div class='alert alert-danger'>Invalid email format. Please enter a valid email.</div>";
         exit;
     }
 
-    // Query student_1 table for login using father's phone number
-    $query = "SELECT * FROM student_1 WHERE father_phone_number = ?";
+    // Query admin table for login
+    $query = "SELECT * FROM admin_bmc WHERE email_address = ?";
     $stmt = mysqli_prepare($conn, $query);
-    mysqli_stmt_bind_param($stmt, "s", $phone);
+    mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
     if ($result && mysqli_num_rows($result) > 0) {
-        $student_data = mysqli_fetch_assoc($result);
+        $admin_data = mysqli_fetch_assoc($result);
 
         // Directly compare the plain text password (NOT RECOMMENDED for production)
-        if ($password === $student_data["password"]) {
-            $_SESSION["student_id"] = $student_data["father_phone_number"];
-            $_SESSION["logged_in"] = true;
+        if ($password === $admin_data["password"]) {
+            $_SESSION["admin_id"] = $admin_data["email"];
+            $_SESSION["admin_logged_in"] = true;
 
-            header("Location: student-index.php"); // Redirect after successful login
+            header("Location: BMC.php"); // Redirect after successful login
             exit;
         } else {
             echo "<div class='alert alert-danger'>Incorrect password. Try again.</div>";
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-    <title>Student Login</title>
+    <title>BMC Login</title>
     <style>
         form {
             max-width: 600px;
@@ -75,11 +75,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
+
 <form method="post" class="mt-5">
-    <h1 class="text-info text-center"><b>Student Login</b></h1><br>
+    <h1 class="text-info text-center"><b>BMC Login</b></h1><br>
     
     <div class="form-group">
-        <input type="text" name="father_phone_number" class="form-control" placeholder="Enter 10-digit mobile number" required>
+        <input type="email" name="email" class="form-control" placeholder="Enter email address" required>
     </div>
     
     <div class="form-group password-container">

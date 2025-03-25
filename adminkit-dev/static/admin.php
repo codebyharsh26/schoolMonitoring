@@ -174,9 +174,8 @@ mysqli_stmt_close($stmt);
 
             <footer class="footer">
                 <div class="container-fluid">
-                    <div class="row text-muted">
-
-                        <div class="col-6 text-end">
+                    <div class="text-muted">
+                        <div class="text-end">
                             <p class="mb-0">
                                 
                                 <strong>schoolAdmin</strong>

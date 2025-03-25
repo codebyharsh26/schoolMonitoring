@@ -71,12 +71,12 @@ font-size:19.4px;
                             <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
                         </a>
                     </li>
-                    <li class="sidebar-item">
+                    <!-- <li class="sidebar-item">
                         <a class="sidebar-link" href="#progress">
                             <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Record
                                 and Progress</span>
                         </a>
-                    </li>
+                    </li> -->
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#timetable">
                             <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Time

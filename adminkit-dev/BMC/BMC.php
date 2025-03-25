@@ -1,3 +1,24 @@
+<?php
+session_start();
+
+// Check if admin is logged in
+if (!isset($_SESSION["admin_logged_in"]) || $_SESSION["admin_logged_in"] !== true) {
+    header("Location: blogin.php"); // Redirect to login page if not logged in
+    exit;
+}
+
+include_once "connection.php"; 
+
+// Fetch admin details (optional)
+$admin_email = $_SESSION["admin_id"];
+$query = "SELECT * FROM admin_bmc WHERE email_address = ?";
+$stmt = mysqli_prepare($conn, $query);
+mysqli_stmt_bind_param($stmt, "s", $admin_email);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$admin_data = mysqli_fetch_assoc($result);
+mysqli_stmt_close($stmt);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,8 +38,8 @@
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-
-    <title>School Monitoring System</title>
+    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <title>BMC Portal</title>
 
     <link href="css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
