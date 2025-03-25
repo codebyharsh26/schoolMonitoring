@@ -24,7 +24,6 @@
         <div class="container">
             <h1 class="h3 mb-3" style="font-weight:normal"><strong class="h1"
                     style="font-weight:normal">Teachers</strong> List</h1>
-
             <div class="row">
                 <?php
                 include_once 'connection.php';

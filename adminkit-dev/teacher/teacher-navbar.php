@@ -6,11 +6,12 @@ $teacher_id = $_SESSION['teacher_id'] ?? null;
 $teacher_name = "Unknown Teacher"; // Default value
 
 if ($teacher_id) {
-    $query = "SELECT full_name FROM teacher_1 WHERE email_address = '$teacher_id'";
+    $query = "SELECT * FROM teacher_1 WHERE email_address = '$teacher_id'";
     $result = mysqli_query($conn, $query);
 
     if ($row = mysqli_fetch_assoc($result)) {
         $teacher_name = $row['full_name'];
+        $teacher_image = $row['teacher_image'];
     }
 }
 ?>
@@ -288,7 +289,6 @@ if ($teacher_id) {
         </div>
         <?php }
     } ?>
-
         <ul class="navbar-nav navbar-align">
             <li class="nav-item dropdown">
                 <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
@@ -436,7 +436,7 @@ if ($teacher_id) {
             <li class="nav-item dropdown dont-click">
 
                 <a class="nav-link d-none d-sm-inline-block" href="#">
-                    <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span
+                    <img src="<?php echo $teacher_image; ?>" class="avatar img-fluid rounded me-1" /> <span
                         class="text-dark"><?php echo $teacher_name; ?></span>
                 </a>
             </li>

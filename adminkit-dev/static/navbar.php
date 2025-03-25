@@ -3,7 +3,7 @@ include_once("connection.php"); // Ensure database connection is included
 
 // Assuming teacher ID is stored in session after login
 $admin_id = $_SESSION['admin_id'] ?? null;
-$admin_name = "Unknown Teacher"; // Default value
+$admin_name = ""; // Default value
 
 if ($admin_id) {
     $query = "SELECT principal_full_name FROM principal_1 WHERE email = '$admin_id'";
@@ -292,6 +292,7 @@ if ($admin_id) {
     if ($result) {
         while ($row = mysqli_fetch_assoc($result)) {
             $school_name = $row["school_name"];
+            $p_image = $row["principal_image"];
     ?>
     <nav class="navbar navbar-expand navbar-light navbar-bg">
         <div class="custom-navbar">
@@ -421,7 +422,7 @@ if ($admin_id) {
                         </a> -->
 
                     <a class="nav-link d-none d-sm-inline-block" href="#">
-                        <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" />
+                        <img src="<?php echo $p_image; ?>" class="avatar img-fluid rounded me-1" alt="Charles Hall" />
                         <span class="text-dark"><?php echo $admin_name; ?></span>
                     </a>
                 </li>

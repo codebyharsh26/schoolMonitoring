@@ -566,6 +566,7 @@ select:focus {
 					$result = mysqli_query($conn, $query);
 					if ($result) {
 						while ($row = mysqli_fetch_assoc($result)) {
+							$teacher_image = $row["teacher_image"];
 							$full_name = $row["full_name"];
 							$date_of_birth = $row["date_of_birth"];
 							$residential_address = $row["residential_address"];
@@ -588,8 +589,8 @@ select:focus {
                                     <div class="cstm-card">
                                         <div class="custom-profile mb-3">
                                             <div class="card-body text-center">
-                                                <img src="img/avatars/avatar-4.jpg" alt="Christina Mason"
-                                                    class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                                                <img src="<?php echo $teacher_image;?>" alt="teacher"
+                                                    class="img-fluid rounded mb-2" width="128" height="128" />
                                                 <h5 class="font" style="font-size: 2rem;"><?php echo $full_name; ?></h5>
                                                 <div class="car gap-7 mb-4">
                                                     <div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once "connection.php";
 
 $query = "SELECT * FROM teacher_leave_application ORDER BY id DESC"; 
