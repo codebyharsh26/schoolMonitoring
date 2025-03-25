@@ -412,8 +412,7 @@
                 <li class="nav-item dropdown dont-click">
 
                     <a class="nav-link d-none d-sm-inline-block" href="#">
-                        <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" />
-                        <span class="text-dark">Bhavnagar Mulcipal Corporation</span>
+                        <span class="text-dark">Bhavnagar Municipal Corporation</span>
                     </a>
                 </li>
             </ul>

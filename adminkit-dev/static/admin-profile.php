@@ -26,7 +26,9 @@
 </head>
 
 <body>
-    <?php include_once("connection.php") ?>
+    <?php
+    session_start();
+    include_once("connection.php") ?>
     <div class="wrapper m-0 p-0">
         <div class="sidebar">
             <?php
