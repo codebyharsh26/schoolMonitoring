@@ -226,6 +226,7 @@ if ($student_id) {
             box-shadow: var(--card-shadow);
             padding: 0.5rem 1rem;
             margin-bottom: 1.5rem;
+            margin-left: 17vw;
         }
 
         .footer {
