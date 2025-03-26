@@ -122,8 +122,8 @@ $current_page = basename($_SERVER['PHP_SELF']); // Get the current file name
 
                     <li class="sidebar-item <?= ($current_page == 'BMC-announce-display.php') ? 'active' : '' ?>">
                         <a class="sidebar-link" href="BMC-announce-display.php">
-                            <i class="align-middle" data-feather="layers"></i>
-                            <span class="align-middle">Check announcement</span>
+                            <i class="align-middle" data-feather="message-square"></i>
+                            <span class="align-middle">Check Announcement</span>
                         </a>
                     </li>
 

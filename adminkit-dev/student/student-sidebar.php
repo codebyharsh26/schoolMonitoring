@@ -17,7 +17,9 @@
 font-size:19.4px;
     }
     .mt{
-        margin-top:15.5rem;
+        margin-top: 15.5rem;
+        margin-left: 2.3rem;
+
     }
     </style>
 </head>
@@ -40,9 +42,13 @@ font-size:19.4px;
                         </a>
                     </li>
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="#mark-sheet">
+                            <i class="align-middle-cstm" data-feather="clipboard"></i> <span class="align-middle">Result</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="#result">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Result
-                                and Progress</span>
+                            <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Progress Graph</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -58,7 +64,7 @@ font-size:19.4px;
                     </li>
                     <li class="sidebar-item">
                         <a class="sidebar-link" href="#announcement">
-                            <i class="align-middle" data-feather="align-left"></i> <span
+                            <i class="align-middle" data-feather="mic"></i> <span
                                 class="align-middle">Announcement</span>
                         </a>
                     </li>
@@ -69,14 +75,14 @@ font-size:19.4px;
                         </a>
                     </li>
 
-                    <footer class="footer mt" style="background-color: transparent; border-top:0; margin-left: 20px;">
+                    <footer class="mt" >
                         <li class="signout-btn sidebar-item <?= ($current_page == 'admin-log-out.php') ? 'active' : '' ?>">
                             <a class="sidebar-link" href="#" onclick="confirmLogout()">
                                 <i class="align-middle fas fa-sign-out-alt" data-feather="log-in"> </i>
                                 <span class="align-middle">Sign Out</span>
                             </a>
                         </li>
-                    </footer>
+                    </footer>
                 </ul>
             </div>
         </nav>

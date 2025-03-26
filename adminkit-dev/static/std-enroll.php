@@ -365,12 +365,12 @@
 							<div class="form-row">
 								<div class="form-group">
 									<label for="password">Password</label>
-									<input type="password" class="form-control" id="password" name="school_password"
+									<input type="password" class="form-control" id="password" name="password"
 										required>
 								</div>
 								<div class="form-group">
 									<label for="password">Confirm Password</label>
-									<input type="password" class="form-control" id="c_password" name="school_C_password"
+									<input type="password" class="form-control" id="c_password" name="c_password"
 										required>
 								</div>
 							</div>
@@ -450,13 +450,6 @@
 
 		$insert_query = "INSERT INTO student_1 VALUES ('$student_image', NULL, '$full_name', '$roll_number', '$date_of_birth', '$gender', '$blood_group', '$residential_address', '$father_name', '$father_phone_number', '$mother_name', '$mother_phone_number', '$standard', '$academic_year', '$school_name', '$school_number', '$password')";
 		$insert_result = mysqli_query($conn, $insert_query);
-
-		if ($insert_result) {
-			header("Location: student.php");
-			exit();
-		} else {
-			echo "Error: " . mysqli_error($conn);
-		}
 	}
 	?>
 </body>

@@ -21,6 +21,7 @@ mysqli_stmt_close($stmt);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <?php
     include_once "connection.php";
@@ -41,6 +42,16 @@ mysqli_stmt_close($stmt);
     <link rel="stylesheet" href="/schoolMonitoring/adminkit-dev/static/css/card-direction.css">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+    .past-date {
+        color: #d3d3d3 !important;
+        /* Light gray color */
+        opacity: 0.8;
+        /* Make it slightly faded */
+        pointer-events: none;
+        /* Disable clicking */
+    }
+    </style>
 </head>
 
 <body>
@@ -177,7 +188,6 @@ mysqli_stmt_close($stmt);
                     <div class="text-muted">
                         <div class="text-end">
                             <p class="mb-0">
-                                
                                 <strong>schoolAdmin</strong>
                             </p>
                         </div>
@@ -215,21 +225,21 @@ mysqli_stmt_close($stmt);
     $fail_percentage = ($total_students > 0) ? ($fail_count / $total_students) * 100 : 0;
 ?>
 
-<span id="pass"></span>
-<span id="fail"></span>
+    <span id="pass"></span>
+    <span id="fail"></span>
 
-<script>
+    <script>
     var passPercentage = <?php echo number_format($pass_percentage, 2); ?>;
     var failPercentage = <?php echo number_format($fail_percentage, 2); ?>;
 
     // Display values in table
     document.getElementById("pass").innerHTML = passPercentage + "%";
     document.getElementById("fail").innerHTML = failPercentage + "%";
-</script>
+    </script>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<script>
+    <script>
     document.addEventListener("DOMContentLoaded", function() {
         new Chart(document.getElementById("chartjs-dashboard-pie"), {
             type: "pie",
@@ -253,65 +263,73 @@ mysqli_stmt_close($stmt);
             }
         });
     });
-</script>
+    </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    new Chart(document.getElementById("chartjs-dashboard-bar"), {
-        type: "bar",
-        data: {
-            labels: ["2020", "2021", "2022", "2023", "2024"],
-            datasets: [{
-                label: "Admissions Growth",
-                backgroundColor: "blue",
-                borderColor: "blue",
-                hoverBackgroundColor: "blue",
-                hoverBorderColor: "blue",
-                data: [9, 33, 57, 69, 80],
-                barPercentage: 0.75,
-                categoryPercentage: 0.5
-            }]
-        },
-        options: {
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { display: true }
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        new Chart(document.getElementById("chartjs-dashboard-bar"), {
+            type: "bar",
+            data: {
+                labels: ["2020", "2021", "2022", "2023", "2024"],
+                datasets: [{
+                    label: "Admissions Growth",
+                    backgroundColor: "blue",
+                    borderColor: "blue",
+                    hoverBackgroundColor: "blue",
+                    hoverBorderColor: "blue",
+                    data: [9, 33, 57, 69, 80],
+                    barPercentage: 0.75,
+                    categoryPercentage: 0.5
+                }]
             },
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    grid: { display: false },
-                    ticks: { stepSize: 10 }
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true
+                    }
                 },
-                x: {
-                    grid: { color: "transparent" }
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            display: false
+                        },
+                        ticks: {
+                            stepSize: 10
+                        }
+                    },
+                    x: {
+                        grid: {
+                            color: "transparent"
+                        }
+                    }
                 }
             }
-        }
+        });
     });
-});
-</script>
+    </script>
 
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
-        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
+        var today = new Date();
+        today.setHours(0, 0, 0, 0); // Reset time to avoid time-related mismatches
+
         document.getElementById("datetimepicker-dashboard").flatpickr({
             inline: true,
             prevArrow: "<span title=\"Previous month\">&laquo;</span>",
             nextArrow: "<span title=\"Next month\">&raquo;</span>",
-            defaultDate: defaultDate
-        });
-    });
-    document.addEventListener("DOMContentLoaded", function() {
-        var date = new Date(Date.now() - 0 * 24 * 60 * 60 * 1000);
-        var defaultDate = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate();
-        document.getElementById("datetimepicker-dashboard").flatpickr({
-            inline: true,
-            prevArrow: "<span title=\"Previous month\">&laquo;</span>",
-            nextArrow: "<span title=\"Next month\">&raquo;</span>",
-            defaultDate: defaultDate
+            defaultDate: today, // Ensure the default date is today
+            onDayCreate: function(dObj, dStr, fp, dayElem) {
+                let date = dayElem.dateObj;
+                date.setHours(0, 0, 0, 0); // Normalize date for proper comparison
+
+                // Apply the past-date class **only if the date is before today**
+                if (date < today) {
+                    dayElem.classList.add("past-date");
+                }
+            }
         });
     });
     </script>

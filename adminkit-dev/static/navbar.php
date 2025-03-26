@@ -1,7 +1,6 @@
 <?php
 include_once("connection.php"); // Ensure database connection is included
 
-// Assuming teacher ID is stored in session after login
 $admin_id = $_SESSION['admin_id'] ?? null;
 $admin_name = ""; // Default value
 
@@ -353,7 +352,7 @@ if ($admin_id) {
 
                                 if (newNotifications.length > 0) {
                                     notificationCount.textContent = newNotifications.length;
-                                    notificationHeader.textContent = '${newNotifications.length} New Notifications';
+                                    notificationHeader.textContent = `${newNotifications.length} New Notifications`;
 
                                     // Display only unviewed notifications
                                     newNotifications.forEach(notification => {

@@ -10,5 +10,59 @@
         "standard": "All",
         "message": "All students and teachers are hereby informed that the school will remain closed tomorrow (March 22, 2025) due to [reason: public holiday, festival, weather conditions, etc.].\r\n\r\nPlease take note of this and plan accordingly.\r\nFor any urgent queries, feel free to contact the school administration.",
         "file": "..\/shared_announce\/uploads\/Standard_2_Timetable.pdf"
+    },
+    {
+        "title": "Swayam",
+        "standard": "All",
+        "message": "HOLIDAY",
+        "file": "..\/shared_announce\/uploads\/Practicals_IPWCT.pdf"
+    },
+    {
+        "title": "Holiday",
+        "standard": "All",
+        "message": "holiday",
+        "file": "..\/shared_announce\/uploads\/Practicals_IPWCT.pdf"
+    },
+    {
+        "title": "Hackathon",
+        "standard": "All",
+        "message": "hhhh",
+        "file": "..\/shared_announce\/uploads\/IPWCT_Practical_List.pdf"
+    },
+    {
+        "title": "Devam",
+        "standard": "All",
+        "message": "hyy",
+        "file": "..\/shared_announce\/uploads\/IPWCT_Practical_List.pdf"
+    },
+    {
+        "title": "Match",
+        "standard": "All",
+        "message": "hhhh",
+        "file": "..\/shared_announce\/uploads\/IPWCT_Practical_List.pdf"
+    },
+    {
+        "title": "hmm",
+        "standard": "All",
+        "message": "hh",
+        "file": "..\/shared_announce\/uploads\/Practicals_IPWCT.pdf"
+    },
+    {
+        "title": "Meet",
+        "standard": "All",
+        "message": "hh",
+        "file": "..\/shared_announce\/uploads\/Practicals_IPWCT.pdf"
+    },
+    {
+        "title": "h",
+        "standard": "All",
+        "message": "h",
+        "file": "..\/shared_announce\/uploads\/IPWCT_Practical_List.pdf"
+    },
+    {
+        "title": "exam 6",
+        "standard": "6",
+        "message": "hhhh",
+        "file": "..\/shared_announce\/uploads\/ASSIGNMENT-3__COVER PAGE_FORMAT.pdf"
     }
 ]

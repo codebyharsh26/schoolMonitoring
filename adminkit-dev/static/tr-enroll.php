@@ -284,7 +284,7 @@
                             <div class="form-group">
                                 <div class="teacher-photo">
                                     <input type="file" class="pdf" id="teacher_image" name="teacher_image"
-                                        accept="image/*" class="photo-upload">
+                                        accept="image/*" class="photo-upload" required>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -378,48 +378,48 @@
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="edit-salary_monthly">Teacher Salary(Monthly)</label>
+                                    <label for="edit-salary_monthly" class="required">Teacher Salary(Monthly)</label>
                                     <input type="number" class="form-control" min="0" max="10000000" step="0.01"
                                         name="salary_monthly" id="edit-salary_monthly">
                                 </div>
                                 <div class="form-group">
-                                    <label for="edit-qualification">Qualification</label>
+                                    <label for="edit-qualification" class="required">Qualification</label>
                                     <input type="text" class="form-control" name="qualification"
                                         id="edit-qualification">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="edit-first_language">First Language</label>
+                                    <label for="edit-first_language" class="required">First Language</label>
                                     <input type="text" class="form-control" name="first_language"
                                         id="edit-first_language">
                                 </div>
                                 <div class="form-group">
-                                    <label for="edit-language_known">Language Known</label>
+                                    <label for="edit-language_known" class="required">Language Known</label>
                                     <input type="text" class="form-control" name="language_known"
                                         id="edit-language_known">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="edit-school_name">School Name</label>
+                                    <label for="edit-school_name" class="required">School Name</label>
                                     <input type="text" class="form-control" name="school_name" id="edit-school_name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="edit-school_number">School Number</label>
+                                    <label for="edit-school_number" class="required">School Number</label>
                                     <input type="text" class="form-control" name="school_number"
                                         id="edit-school_number">
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" class="form-control" id="password" name="school_password"
+                                    <label for="password" class="required">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password"
                                         required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Confirm Password</label>
-                                    <input type="password" class="form-control" id="c_password" name="school_C_password"
+                                    <label for="password" class="required">Confirm Password</label>
+                                    <input type="password" class="form-control" id="c_password" name="C_password"
                                         required>
                                 </div>
                             </div>
@@ -427,7 +427,7 @@
                         </div>
                         <div class="form-group">
                             <div class="checkbox-item">
-                                <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                                <input type="checkbox" id="termsAgreement" name="termsAgreement" class="required" required>
                                 <label for="termsAgreement" class="required">I confirm that all information
                                     provided is
                                     accurate and complete</label>
@@ -464,7 +464,7 @@
         let confirmPassword = document.getElementById("c_password").value;
         let message = document.getElementById("message");
 
-        if (password !== c_password) {
+        if (password !== confirmPassword) {
             message.textContent = "Passwords do not match!";
             return false;
         } else {
@@ -483,7 +483,7 @@
         $date_of_birth = $_POST['date_of_birth'];
         $blood_group = $_POST['blood_group'];
         $phone_number = $_POST['phone_number'];
-        $emergency_contact_name = $_POST['emergency_contact_name'];
+        $emergency_contact_number = $_POST['emergency_contact_number'];
         $email_address = $_POST['email_address'];
         $residential_address = $_POST['residential_address'];
         $subject_name = $_POST['subject_name'];
@@ -498,13 +498,6 @@
 
         $insert_query = "INSERT INTO teacher_1 VALUES ('$teacher_image', NULL, '$full_name', '$gender', '$date_of_birth', '$blood_group', '$phone_number', '$emergency_contact_number', '$email_address', '$residential_address', '$subject_name', '$standard', '$salary_monthly', '$qualification', '$first_language', '$language_known', '$school_name', '$school_number', '$password')";
         $insert_result = mysqli_query($conn, $insert_query);
-
-        if ($insert_result) {
-            header("Location: teacher.php");
-            exit();
-        } else {
-            echo "Error: " . mysqli_error($conn);
-        }
     }
     ?>
 </body>

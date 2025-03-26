@@ -333,6 +333,12 @@
                                     <input type="email" id="email" name="email" required>
                                 </div>
                                 <div class="form-group">
+                                    <label for="password" class="required">Password</label>
+                                    <input type="password" id="password" name="password" required>
+                                </div>
+                            </div>
+                            <div>
+                            <div class="form-group">
                                     <label for="phone" class="required">Phone Number</label>
                                     <input type="tel" id="phone" name="phone" required>
                                 </div>
@@ -430,6 +436,7 @@
         $principal_full_name = $_POST['principal_full_name'];
         $date_of_birth = $_POST['date_of_birth'];
         $email = $_POST['email'];
+        $password = $_POST['password'];
         $phone = $_POST['phone'];
         $address = $_POST['address'];
         $gender = $_POST['gender'];
@@ -438,16 +445,8 @@
         $school_name = $_POST['school_name'];
         $school_no = $_POST['school_no'];
 
-        $insert_query = "INSERT INTO principal_1 VALUES (NULL, '$principal_image', '$principal_full_name', '$date_of_birth', '$email', '$phone', '$address', '$gender', '$qualification', '$salary', '$school_name', '$school_no')";
-        $insert_result = mysqli_query($conn, $insert_query);
-
-        if ($insert_result) {
-            if (headers_sent()) {
-                die("Headers already sent. Cannot redirect.");
-            }
-            header("Location: principal-enroll.php");
-            exit();
-        }        
+        $insert_query = "INSERT INTO principal_1 VALUES (NULL, '$principal_image', '$principal_full_name', '$date_of_birth', '$email', '$password', '$phone', '$address', '$gender', '$qualification', '$salary', '$school_name', '$school_no')";
+        $insert_result = mysqli_query($conn, $insert_query);     
     }
     ?>
 

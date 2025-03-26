@@ -23,14 +23,10 @@ $fpn = $_SESSION["student_id"];
     <meta name="author" content="AdminKit">
     <meta name="keywords"
         content="adminkit, bootstrap, bootstrap 5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
-
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
-
     <link rel="canonical" href="https://demo-basic.adminkit.io/" />
-
     <title>Student Portal</title>
-
     <link href="css/app.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <!-- <link rel="stylesheet" href="/schoolMonitoring/adminouncdev/static/css/card-direction.css"> -->
@@ -38,6 +34,7 @@ $fpn = $_SESSION["student_id"];
     .fill {
         background: white;
         margin: 25px;
+        border-radius: 5px;
     }
 
     .cus {
@@ -274,6 +271,37 @@ $fpn = $_SESSION["student_id"];
     #standardFilter {
         margin-bottom: 1rem;
     }
+
+    .bol {
+        font-size: 20px;
+    }
+
+    .td {
+        font-size: 18px;
+    }
+
+    .custom-profile {
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+
+    .car {
+        display: flex;
+    }
+
+    .pass {
+        color: green;
+        font-weight: bold;
+    }
+
+    .fail {
+        color: red;
+        font-weight: bold;
+    }
     </style>
 </head>
 
@@ -313,7 +341,7 @@ $fpn = $_SESSION["student_id"];
                             ?>
 
                         <?php
-                                    $mquery = "select * from student_marks where marks_id = 1";
+                                    $mquery = "select * from student_marks where student_name = '$full_name'";
                                     $mresult = mysqli_query($conn, $mquery);
                                     if ($mresult) {
                                         while ($mrow = mysqli_fetch_assoc($mresult)) {
@@ -327,86 +355,96 @@ $fpn = $_SESSION["student_id"];
                         <div class="row">
                             <div class="col-12">
                                 <h1 class="h3 mb-3"><strong class="h1">Profile</strong> Details</h1>
-                                <div class="card mb-3">
+                                <div class="custom-profile mb-3">
                                     <div class="card-body text-center">
-                                        <div class="car">
-                                            <img src="<?php echo $student_image; ?>"
-                                                class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                                        <img src="<?php echo $student_image; ?>" class="img-fluid rounded mb-2"
+                                            width="200" height="200" />
 
-                                            <h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?>
-                                            </h5>
-                                            <table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Date-of-birth:</b>
-                                                    </td>
-                                                    <td style="text-align: left;"><?php echo $date_of_birth; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Address:</b></td>
-                                                    <td style="text-align: left;">
-                                                        <?php echo $residential_address; ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Gender:</b></td>
-                                                    <td style="text-align: left;"><?php echo $gender; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Standard:</b></td>
-                                                    <td style="text-align: left;"><?php echo $standard; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Roll-No.:</b></td>
-                                                    <td style="text-align: left;"><?php echo $roll_number; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Mother Name:</b>
-                                                    </td>
-                                                    <td style="text-align: left;"><?php echo $mother_name; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;">
-                                                        <b>Mother-Phone-No.:</b>
-                                                    </td>
-                                                    <td style="text-align: left;">
-                                                        <?php echo $mother_phone_number; ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Father Name:</b>
-                                                    </td>
-                                                    <td style="text-align: left;"><?php echo $father_name; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;">
-                                                        <b>Father-Phone-No.:</b>
-                                                    </td>
-                                                    <td style="text-align: left;">
-                                                        <?php echo $father_phone_number; ?>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Blood-Group:</b>
-                                                    </td>
-                                                    <td style="text-align: left;"><?php echo $blood_group; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>School Name:</b>
-                                                    </td>
-                                                    <td style="text-align: left;"><?php echo $school_name; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>Acedemic Year:</b>
-                                                    </td>
-                                                    <td style="text-align: left;"><?php echo $academic_year; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="bol" style="text-align: left;"><b>School Number:</b>
-                                                    </td>
-                                                    <td style="text-align: left;"><?php echo $school_number; ?></td>
-                                                </tr>
-                                            </table>
-
+                                        <h5 class="font" style="font-size: xx-large;"><?php echo $full_name; ?>
+                                        </h5>
+                                        <div class="car mt-4 gap-5 mb-4">
+                                            <div>
+                                                <table class=" m-2">
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Date-of-birth:</b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $date_of_birth; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Gender:</b></td>
+                                                        <td style="text-align: left;" class="td"><?php echo $gender; ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Standard:</b></td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $standard; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Roll-No: </b></td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $roll_number; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Mother Name: </b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $mother_name; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;">
+                                                            <b>Mother Phone No :</b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $mother_phone_number; ?>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!-- section-2 -->
+                                            <div>
+                                                <table class=" m-2">
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Father Name: </b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $father_name; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;" class="td">
+                                                            <b>Father Phone No :</b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $father_phone_number; ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Blood-Group: </b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $blood_group; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Address:</b></td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $residential_address; ?>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>Acedemic Year:</b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $academic_year; ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="bol" style="text-align: left;"><b>School Number:</b>
+                                                        </td>
+                                                        <td style="text-align: left;" class="td">
+                                                            <?php echo $school_number; ?></td>
+                                                    </tr>
+                                                </table>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -418,10 +456,54 @@ $fpn = $_SESSION["student_id"];
                                 }
                             } ?>
                     </section>
+                    <!-- Mark Sheet -->
+                    <section id="mark-sheet" class="mt-4">
+                        <h1 class="h3 mb-3"><strong class="h1">Marksheet</strong></h1>
+                        <div class="fill p-4 m-0">
+                            <div class="container mt-4">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered table-striped text-center">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>Mathematics</th>
+                                                <th>Gujarati</th>
+                                                <th>Hindi</th>
+                                                <th>Arts & Craft</th>
+                                                <th>Physical Education</th>
+                                                <th>Percentage</th>
+                                            </tr>
+                                            <tr>
+                                                <td><?php echo $mathematics ?></td>
+                                                <td><?php echo $gujarati ?></td>
+                                                <td><?php echo $hindi ?></td>
+                                                <td><?php echo $art_craft ?></td>
+                                                <td><?php echo $physical_education ?></td>
+                                                <td id="total"></td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php while ($row = $result->fetch_assoc()): 
+                    $percentage = ($row['marks'] / $row['total_marks']) * 100;
+                    $status = ($percentage >= 35) ? '<span class="pass">Pass</span>' : '<span class="fail">Fail</span>';
+                ?>
+                                            <tr>
+                                                <td><?= htmlspecialchars($row['student_name']) ?></td>
+                                                <td><?= htmlspecialchars($row['subject']) ?></td>
+                                                <td><?= $row['marks'] . " / " . $row['total_marks'] ?></td>
+                                                <td><?= round($percentage, 2) . "%" ?></td>
+                                                <td><?= $status ?></td>
+                                            </tr>
+                                            <?php endwhile; ?>
+                                        </tbody>
 
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                     <section id="result" class="mt-5">
-                        <h1 class="h3 mb-3"><strong class="h1">Result</strong> Progress</h1>
-                        <div class="fill">
+                        <h1 class="h3 mb-3"><strong class="h1">Progress</strong> Graph</h1>
+                        <div class="fill m-0">
                             <!-- <div class="cus1 col-md-4 col-xl-3"> -->
                             <div class="cus card1 flex-fill w-100">
                                 <div class="card flex-fill w-100" style="height: 60vh; margin: 20px; box-shadow:none;">
@@ -436,7 +518,7 @@ $fpn = $_SESSION["student_id"];
                                                 </div>
                                             </div>
 
-                                            <table class="table mb-0">
+                                            <table class="table mt-5">
                                                 <tbody>
                                                     <tr>
                                                         <td>Percentage</td>
@@ -447,7 +529,6 @@ $fpn = $_SESSION["student_id"];
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="card flex-fill w-100" style="margin: 20px; box-shadow:none;">
                                     <div class="card-header">
                                         <h5 class="card-title mb-0">Subject Graph</h5>
@@ -570,19 +651,18 @@ $fpn = $_SESSION["student_id"];
                                 });
                             }
                             </script>
-
                         </div>
                     </section>
 
-
                     <!-- announcement section -->
                     <section id="announcement" class="mt-5">
-                        <h1 class="h3 mb-3"><strong class="h1">Announcement</strong> </h1>
-                        <div>
-                            <div class="container-f">
+                        <h1 class="h3 mb-3 mt-4 ml"><strong class="h1">Announcement</strong></h1>
+                        <div class="fill m-0">
+                            <div class="container-f ">
                                 <h2 class="h2">Available Announcement</h2>
-                                <label class="label" for="standardFilter">Filter by Standard:</label>
-                                <select id="standardFilter" onchange="filterCards()">
+                                <label class="label" style="padding: 8px 4px;" for="standardFilter">Filter by
+                                    Standard:</label>
+                                <select id="standardFilter" onchange="filterCards()" class="mb-4">
                                     <option value="all">All Standards</option>
                                     <option value="1">Standard 1</option>
                                     <option value="2">Standard 2</option>
@@ -596,19 +676,73 @@ $fpn = $_SESSION["student_id"];
 
                                 <div class="pdf-container mb-3">
                                     <?php
-                    $jsonFile = '../shared_announce/documents.json';
+                            $jsonFile = '../shared_announce/documents.json';
+                            if (file_exists($jsonFile)) {
+                                $data = json_decode(file_get_contents($jsonFile), true);
+                                foreach ($data as $doc) {
+                                    echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
+								<div class='pdf-title'>{$doc['title']}</div>
+								<div class='pdf-standard'>Standard: {$doc['standard']}</div>
+								<div class='pdf-message'>Message: {$doc['message']}</div>
+                        <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
+                    </div>";
+                                }
+                            } else {
+                                echo "<p>No Announcement available</p>";
+                            }
+                            ?>
+                                </div>
+
+                                <script>
+                                function filterCards() {
+                                    let standard = document.getElementById('standardFilter').value;
+                                    let cards = document.querySelectorAll('.pdf-card');
+
+                                    cards.forEach(card => {
+                                        let cardStandard = card.getAttribute('data-standard');
+                                        if (standard === "all" || cardStandard === standard) {
+                                            card.style.display = "block";
+                                        } else {
+                                            card.style.display = "none";
+                                        }
+                                    });
+                                }
+                                </script>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- activites section -->
+                    <section id="activites" class="mt-5">
+                        <h1 class="h3 mb-1"><strong class="h1">Activites</strong></h1>
+                        <div>
+                            <div class="container-f">
+                                <h2 class="h2">Available Activities</h2>
+                                <label class="label" for="standardFilter">Filter by Standard:</label>
+                                <select id="standardFilter" onchange="filterCards()">
+                                    <option value="all">All Standards</option>
+                                    <option value="1">Standard 1</option>
+                                    <option value="2">Standard 2</option>
+                                    <option value="3">Standard 3</option>
+                                    <option value="4">Standard 4</option>
+                                    <option value="5">Standard 5</option>
+                                    <option value="6">Standard 6</option>
+                                    <option value="7">Standard 7</option>
+                                    <option value="8">Standard 8</option>
+                                </select>
+                                <div class="pdf-container mb-3">
+                                    <?php
+                    $jsonFile = '../shared_activity/documents.json';
                     if (file_exists($jsonFile)) {
                         $data = json_decode(file_get_contents($jsonFile), true);
                         foreach ($data as $doc) {
                             echo "<div class='pdf-card' data-standard='{$doc['standard']}'>
                         <div class='pdf-title'>{$doc['title']}</div>
                         <div class='pdf-standard'>Standard: {$doc['standard']}</div>
-						<div class='pdf-message'>Message: {$doc['message']}</div>
                         <a class='pdf-link' href='{$doc['file']}' target='_blank'>View</a>
                     </div>";
                         }
                     } else {
-                        echo "<p>No Announcement available</p>";
+                        echo "<p>No Activities available</p>";
                     }
                     ?>
                                 </div>
@@ -631,51 +765,22 @@ $fpn = $_SESSION["student_id"];
                             </script>
                         </div>
                     </section>
-                    <!-- activites section -->
-                    <section id="activites" class="mt-5">
-                        <h1 class="h3 mb-1"><strong class="h1">Activites</strong></h1>
-                        <div>
-                            <div class="container-f">
-                                <h2 class="h2">Available Activities</h2>
-                                <label class="label" for="standardFilter">Filter by Standard:</label>
-                                <select id="standardFilter" onchange="filterCards()">
-                                    <option value="all">All Standards</option>
-                                    <option value="1">Standard 1</option>
-                                    <option value="2">Standard 2</option>
-                                    <option value="3">Standard 3</option>
-                                    <option value="4">Standard 4</option>
-                                    <option value="5">Standard 5</option>
-                                    <option value="6">Standard 6</option>
-                                    <option value="7">Standard 7</option>
-                                    <option value="8">Standard 8</option>
-                                </select>
-                                <script>
-                                cards.forEach(card => {
-                                    let cardStandard = card.getAttribute('data-standard');
-                                    if (standard === "all" || cardStandard === standard) {
-                                        card.style.display = "block";
-                                    } else {
-                                        card.style.display = "none";
-                                    }
-                                });
-                                </script>
-                            </div>
-                        </div>
-                    </section>
                 </div>
             </main>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="text-muted">
+                        <div class="text-end">
+                            <p class="mb-0">
+                                <strong>schoolAdmin</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     </div>
 
-
-    <script src="js/app.js"></script>
-    <script>
-    // Auto open the PDF when the page loads
-    window.onload = function() {
-        // Replace 'your-pdf-file.pdf' with the path to your PDF file
-        window.open('your-pdf-file.pdf', '_blank');
-    }
-    </script>
     <script src="js/app.js"></script>
     <script>
     // Auto open the PDF when the page loads
@@ -733,10 +838,9 @@ $fpn = $_SESSION["student_id"];
     var total = mathematics + gujarati + hindi + art_craft + physical_education;
     var percentage = (total / 5); // Assuming average calculation
     var other = 100 - percentage;
-
-    // Ensure percentage does not exceed 100
     percentage = Math.min(percentage, 100);
     other = Math.max(other, 0);
+    document.getElementById("total").innerText = percentage + "%";    // Ensure percentage does not exceed 100
     document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("percentageTd").innerText = percentage + "%";
     })
@@ -751,10 +855,7 @@ $fpn = $_SESSION["student_id"];
                 labels: ["Percentage", "."],
                 datasets: [{
                     data: [percentage, other],
-                    backgroundColor: [
-                        window.theme.primary,
-                        window.theme.warning,
-                    ],
+                    backgroundColor: ["blue", "lightgrey"],
                     borderWidth: 5
                 }]
             },
@@ -769,23 +870,22 @@ $fpn = $_SESSION["student_id"];
         });
     });
     </script>
-
     <script>
     document.addEventListener("DOMContentLoaded", function() {
         // Bar chart
         new Chart(document.getElementById("chartjs-dashboard-bar"), {
             type: "bar",
             data: {
-                labels: ["mathematics", "gujarati", "hindi", "art_craft", "physical_education"],
+                labels: ["Mathematics", "Gujarati", "Hindi", "Art & Craft", "P.E."],
                 datasets: [{
                     label: "Marks",
-                    backgroundColor: window.theme.primary,
-                    borderColor: window.theme.primary,
-                    hoverBackgroundColor: window.theme.primary,
-                    hoverBorderColor: window.theme.primary,
+                    backgroundColor: "blue",
+                    borderColor: "blue",
+                    hoverBackgroundColor: "blue",
+                    hoverBorderColor: "blue",
                     data: [mathematics, gujarati, hindi, art_craft, physical_education],
-                    barPercentage: .75,
-                    categoryPercentage: .5
+                    barPercentage: 0.55,
+                    categoryPercentage: 0.5
                 }]
             },
             options: {
@@ -798,7 +898,7 @@ $fpn = $_SESSION["student_id"];
                         gridLines: {
                             display: false
                         },
-                        stacked: false,
+                        stacked: true,
                         ticks: {
                             stepSize: 20
                         }
@@ -807,6 +907,11 @@ $fpn = $_SESSION["student_id"];
                         stacked: false,
                         gridLines: {
                             color: "transparent"
+                        },
+                        ticks: {
+                            maxRotation: 0, // Ensures horizontal labels
+                            minRotation: 0,
+                            autoSkip: false // Prevents skipping labels
                         }
                     }]
                 }

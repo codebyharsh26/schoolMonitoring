@@ -153,6 +153,7 @@ select {
     color: white;
     padding: 15px;
     border-radius: 10px;
+    margin: 0.8rem 0;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -938,8 +939,6 @@ select:focus {
                                 </div>
 
                                 <?php
-                include_once 'connection.php'; // Include database connection
-
                             if (isset($_POST['submitBtn'])) {
                                 // Get form data
                                 $student_name = mysqli_real_escape_string($conn, $_POST['student_name']);

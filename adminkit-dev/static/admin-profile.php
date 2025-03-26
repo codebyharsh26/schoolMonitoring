@@ -17,10 +17,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/adminkit-dev/static/css/admin-custom-style.css">
     <style>
-    .profile-container {
+    .car{
         display: flex;
-        align-items: center;
+    }
+    .bol {
+        font-size: 20px;
+    }
+
+    .td {
+        font-size: 18px;
+    }
+
+    .custom-profile {
+        background-color: white;
+        border-radius: 5px;
+        display: flex;
         flex-direction: column;
+        align-items: center;
+        padding: 1rem;
     }
     </style>
 </head>
@@ -48,6 +62,7 @@
                     $result = mysqli_query($conn, $query);
                     if ($result) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            $principal_image = $row["principal_image"];
                             $principal_full_name = $row["principal_full_name"];
                             $date_of_birth = $row["date_of_birth"];
                             $email = $row["email"];
@@ -59,61 +74,53 @@
                             $school_no = $row["school_no"];
                             $salary = $row["salary"];
                     ?>
-                    <div class="container">
-                        <div class="card">
-                            <div class="p-7 text-center profile-container">
-                                <img src="img/avatars/avatar-4.jpg" alt="Christina Mason"
-                                    class="img-fluid rounded-circle mb-2" width="128" height="128" />
+                    <div class="custom-profile mb-3">
+                            <div class="card-body text-center">
+                                <img src="<?php echo $principal_image; ?>" alt="Christina Mason"
+                                    class="img-fluid rounded mb-2" width="128" height="128" />
 
                                 <h5 class="font" style="font-size: xx-large;">
                                     <?php echo $principal_full_name; ?></h5>
-                                <div class="gap-3">
-                                    <table style="width: 100%; margin-top: 5vh; margin-left: 4vh;">
+                                <div class="car mt-4 gap-5 mb-4">
+                                    <div>
+                                    <table class=" m-2">
 
                                         <tr>
                                             <td class="bol" style="text-align: left;"><b>DOB:</b></td>
-                                            <td style="text-align: left;"><?php echo $date_of_birth; ?></td>
+                                            <td style="text-align: left;" class="td"><?php echo $date_of_birth; ?></td>
                                         </tr>
                                         <tr>
                                             <td class="bol" style="text-align: left;"><b>Gender:</b></td>
-                                            <td style="text-align: left;"><?php echo $gender; ?></td>
+                                            <td style="text-align: left;"class="td"><?php echo $gender; ?></td>
                                         </tr>
                                         <tr>
+                                            <td class="bol" style="text-align: left;"><b>Address:</b></td>
+                                            <td style="text-align: left;"class="td"><?php echo $address; ?></td>
+                                        </tr>
+                                        
+                                        
+                                    </table>
+                                    </div>
+                                    <div>
+                                        <table class=" m-2">
+                                        <tr>
                                             <td class="bol" style="text-align: left;"><b>Email:</b></td>
-                                            <td style="text-align: left;"><?php echo $email; ?></td>
+                                            <td style="text-align: left;"class="td"><?php echo $email; ?></td>
                                         </tr>
                                         <tr>
                                             <td class="bol" style="text-align: left;"><b>Phone:</b></td>
-                                            <td style="text-align: left;"><?php echo $phone; ?></td>
+                                            <td style="text-align: left;"class="td"><?php echo $phone; ?></td>
                                         </tr>
                                         <tr>
                                             <td class="bol" style="text-align: left;"><b>Qualification:</b>
                                             </td>
-                                            <td style="text-align: left;"><?php echo $qualification; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="bol" style="text-align: left;"><b>Address:</b></td>
-                                            <td style="text-align: left;"><?php echo $address; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="bol" style="text-align: left;"><b>School Name:</b>
-                                            </td>
-                                            <td style="text-align: left;"><?php echo $school_name; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="bol" style="text-align: left;"><b>School-Number:</b>
-                                            </td>
-                                            <td style="text-align: left;"><?php echo $school_no; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="bol" style="text-align: left;"><b>Salary:</b></td>
-                                            <td style="text-align: left;"><?php echo $salary; ?></td>
+                                            <td style="text-align: left;"class="td"><?php echo $qualification; ?></td>
                                         </tr>
                                     </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <?php
                         }
                     } ?>
